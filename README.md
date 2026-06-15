@@ -1,6 +1,18 @@
-# V16.3.1 — Ajuste simples
+# Prado Sports AI — V16.4.1 Ao Vivo Compacto
 
-- Alterado somente o nome do botão inferior de **Jogos** para **Home**.
-- Nenhuma outra parte foi modificada.
+## Regra desta versão
+Esta versão mexe SOMENTE na aba Ao vivo.
 
-Teste: `?v=16-3-1`
+## Corrigido
+- A versão anterior ficou grande e desorganizada.
+- Agora a aba Ao vivo está mais compacta.
+- Cards menores e mais fáceis de ler no iPhone.
+- Mantém visual moderno, mas sem exagerar.
+- Jogos ao vivo mostram: placar, entrada IA, confiança e odd.
+- Próximos jogos ficaram mais simples e organizados.
+
+## Não alterado
+- Home, IA, Bilhetes, Scanner, Configurações, Notificações, botão IA flutuante e menu inferior.
+
+## Teste
+https://prado-ia.vercel.app/?v=16-4-1
