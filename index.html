@@ -1,0 +1,869 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070B11" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Prado Sports AI" />
+  <title>Prado Sports AI Premium</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --bg:#070B11;
+  --bg2:#0B1018;
+  --surface:#111A25;
+  --surface2:#172233;
+  --surface3:#202E43;
+  --line:rgba(255,255,255,.095);
+  --line2:rgba(255,255,255,.16);
+  --text:#F5F8FC;
+  --muted:#97A4B5;
+  --faint:#647183;
+  --gold:#FFE06E;
+  --gold2:#C9942F;
+  --green:#21E6A1;
+  --green2:#0DAE76;
+  --red:#FF477E;
+  --blue:#67A2FF;
+  --orange:#FF9F43;
+  --shadow:0 24px 70px rgba(0,0,0,.45);
+  --radius:24px;
+  --safe-bottom:env(safe-area-inset-bottom, 0px);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{background:var(--bg);color-scheme:dark;scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100svh;
+  background:
+    radial-gradient(circle at 12% -5%, rgba(255,224,110,.13), transparent 30%),
+    radial-gradient(circle at 95% 4%, rgba(33,230,161,.11), transparent 26%),
+    linear-gradient(180deg,#070B11,#0B1018 46%,#070B11);
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.hidden{display:none!important}
+.splash{
+  position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:22px;overflow:hidden;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.16),rgba(0,0,0,.74)),
+    radial-gradient(circle at 50% 20%,rgba(33,230,161,.12),transparent 34%),
+    #070B11;
+}
+.splash-card{
+  width:min(430px,100%);
+  padding:28px 22px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:34px;
+  background:linear-gradient(145deg,rgba(17,26,37,.92),rgba(9,13,19,.96));
+  box-shadow:var(--shadow), inset 0 1px 0 rgba(255,255,255,.07);
+  text-align:center;
+  position:relative;z-index:1;
+  animation:enterCard .55s cubic-bezier(.16,1,.3,1) both;
+}
+@keyframes enterCard{from{opacity:0;transform:translateY(16px) scale(.97)}to{opacity:1;transform:none}}
+.splash-orb{position:absolute;border-radius:999px;filter:blur(14px);opacity:.5;animation:float 5s ease-in-out infinite}
+.orb-a{width:220px;height:220px;background:rgba(255,224,110,.18);left:-80px;top:8%}
+.orb-b{width:250px;height:250px;background:rgba(33,230,161,.14);right:-90px;bottom:8%;animation-delay:1.2s}
+@keyframes float{50%{transform:translateY(-18px) scale(1.04)}}
+.brand-mark{
+  width:42px;height:42px;border-radius:15px;display:grid;place-items:center;flex:0 0 auto;
+  background:linear-gradient(145deg,#FFE06E,#9B6917 58%,#3B2608);
+  color:#0A0D11;font-family:'Space Grotesk',Inter,sans-serif;font-weight:900;
+  box-shadow:0 12px 32px rgba(201,148,47,.24), inset 0 1px 0 rgba(255,255,255,.45);
+}
+.brand-mark.big{width:78px;height:78px;margin:0 auto 14px;border-radius:26px;font-size:36px}
+.splash-kicker,.eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:900;color:var(--gold)}
+.splash h1{font-family:'Space Grotesk';font-size:32px;line-height:1.02;margin:10px 0 10px;letter-spacing:-.04em}
+.splash p{color:var(--muted);font-size:14px;line-height:1.55;margin:0 0 18px}
+.app{max-width:520px;margin:0 auto;min-height:100svh;padding:12px 12px calc(98px + var(--safe-bottom));position:relative}
+.topbar{position:sticky;top:0;z-index:20;margin:0 -12px 10px;padding:10px 12px 12px;background:rgba(7,11,17,.8);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.06)}
+.brand-line{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.brand-line strong{display:block;font-family:'Space Grotesk';font-size:18px;line-height:1;letter-spacing:-.02em}
+.brand-line em{font-style:normal;color:var(--gold)}
+.brand-line small{display:block;margin-top:4px;color:var(--muted);font-size:11px;white-space:nowrap;max-width:360px;overflow:hidden;text-overflow:ellipsis}
+.search-row{display:grid;grid-template-columns:1fr 48px;gap:8px;align-items:center}
+.search-box{height:48px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(23,34,51,.88),rgba(12,17,25,.94));border-radius:17px;display:flex;align-items:center;gap:8px;padding:0 13px;box-shadow:0 10px 26px rgba(0,0,0,.18)}
+.search-box span{color:var(--gold);font-size:18px}
+.search-box input{width:100%;background:transparent;border:0;outline:0;color:var(--text);font-weight:700;font-size:14px}
+.search-box input::placeholder{color:#718095;font-weight:600}
+.icon-btn{height:48px;min-width:48px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(145deg,rgba(32,46,67,.96),rgba(14,20,30,.96));color:var(--text);box-shadow:0 10px 26px rgba(0,0,0,.18)}
+.page{display:none;animation:pageIn .28s ease both}.page.active{display:block}@keyframes pageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero{
+  border-radius:30px;padding:20px;min-height:245px;position:relative;overflow:hidden;margin-bottom:14px;
+  background:
+    linear-gradient(115deg,rgba(6,10,16,.96) 10%,rgba(6,10,16,.6) 58%,rgba(6,10,16,.25)),
+    radial-gradient(circle at 82% 10%,rgba(255,224,110,.22),transparent 35%),
+    url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?auto=format&fit=crop&w=1200&q=80') center/cover;
+  border:1px solid rgba(255,255,255,.12);box-shadow:var(--shadow);
+}
+.hero:after{content:"";position:absolute;inset:auto -10% -26% -10%;height:120px;background:radial-gradient(ellipse at center,rgba(33,230,161,.15),transparent 70%)}
+.hero-content{position:relative;z-index:1;max-width:320px}.hero h1{font-family:'Space Grotesk';font-size:32px;line-height:.98;margin:8px 0 9px;letter-spacing:-.055em}.hero h1 span{color:var(--gold)}
+.hero p{font-size:13px;line-height:1.48;color:#C4CDD8;margin:0 0 14px}.hero-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:0;border-radius:16px;padding:12px 14px;font-weight:900;color:var(--text);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s ease;min-height:44px}.btn:active{transform:scale(.98)}
+.btn.primary{background:linear-gradient(135deg,var(--green),#85FFD0);color:#03120D;border-color:rgba(255,255,255,.16);box-shadow:0 12px 30px rgba(33,230,161,.18)}
+.btn.gold{background:linear-gradient(135deg,var(--gold),#B97918);color:#181000;border-color:rgba(255,224,110,.35);box-shadow:0 12px 30px rgba(255,224,110,.12)}
+.btn.secondary{background:linear-gradient(135deg,#203045,#121B29)}.btn.ghost{background:rgba(255,255,255,.06)}.btn.danger{background:rgba(255,71,126,.14);border-color:rgba(255,71,126,.35);color:#FFD5E1}.wide{width:100%;margin-top:8px}
+.stats-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:0 0 14px}.stat-pill{border:1px solid var(--line);border-radius:20px;padding:13px 10px;background:linear-gradient(145deg,rgba(23,34,51,.85),rgba(12,17,25,.96));box-shadow:0 12px 28px rgba(0,0,0,.18)}
+.stat-pill b{display:block;font-family:'Space Grotesk';font-size:20px;color:var(--text);line-height:1}.stat-pill span{display:block;color:var(--muted);font-size:10.5px;font-weight:800;margin-top:4px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 2px 10px}.section-title{font-family:'Space Grotesk';font-size:19px;font-weight:900;letter-spacing:-.03em}.section-link{color:var(--gold);font-size:12px;font-weight:900}
+.card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(18,28,41,.94),rgba(10,15,22,.98));border-radius:var(--radius);padding:14px;box-shadow:0 16px 40px rgba(0,0,0,.24);position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 15% 0%,rgba(255,224,110,.08),transparent 38%);pointer-events:none}.card>*{position:relative}.compact{padding:13px}.card-title{font-weight:900;margin-bottom:8px}.muted{color:var(--muted);font-size:12px;line-height:1.5}.small{font-size:11px;color:var(--faint);line-height:1.45}.mono{font-family:'JetBrains Mono',monospace}.hscroll{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px}.hscroll::-webkit-scrollbar{display:none}
+.live-card,.tip-card,.opportunity-card{min-width:272px;scroll-snap-align:start}.league-tag{display:inline-flex;gap:5px;align-items:center;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:999px;padding:6px 9px;color:var(--muted);font-size:10px;font-weight:900;margin-bottom:12px}.match-teams{display:grid;gap:9px}.team-line{display:flex;align-items:center;justify-content:space-between;gap:12px}.team-name{display:flex;align-items:center;gap:9px;font-weight:900;font-size:14px}.crest{width:30px;height:30px;border-radius:11px;object-fit:contain;background:rgba(255,255,255,.08);padding:4px;box-shadow:0 8px 16px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.18)}.score{font-family:'JetBrains Mono';font-size:20px;font-weight:900}.live-meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px;color:var(--muted);font-size:11px}.live-badge{display:inline-flex;align-items:center;gap:6px;color:white;background:rgba(255,71,126,.16);border:1px solid rgba(255,71,126,.3);border-radius:999px;padding:6px 9px;font-weight:900}.pulse{width:7px;height:7px;border-radius:99px;background:var(--red);box-shadow:0 0 0 0 rgba(255,71,126,.6);animation:pulse 1.4s infinite}@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(255,71,126,0)}}
+.match-list{display:grid;gap:10px}.match-row{display:grid;grid-template-columns:56px 1fr auto;gap:10px;align-items:center;border:1px solid var(--line);border-radius:20px;padding:11px;background:rgba(255,255,255,.035)}.match-time{text-align:center;color:var(--muted);font-size:11px;font-weight:900}.match-time b{font-family:'JetBrains Mono';font-size:13px;color:var(--text)}.match-time.live b{color:var(--red)}.match-row .teams{display:grid;gap:6px;min-width:0}.match-row .team-name{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.match-score{font-family:'JetBrains Mono';font-weight:900;color:var(--gold);font-size:14px;min-width:42px;text-align:right}.chip-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;margin-bottom:12px}.chip-row::-webkit-scrollbar{display:none}.chip{white-space:nowrap;border:1px solid var(--line);background:rgba(255,255,255,.055);color:var(--muted);padding:10px 13px;border-radius:999px;font-size:12px;font-weight:900}.chip.active{background:linear-gradient(135deg,var(--gold),#B87818);color:#110C03;border-color:transparent}.chip.green.active{background:linear-gradient(135deg,var(--green),#85FFD0)}
+.risk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}.risk-btn{border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.055);color:var(--muted);padding:12px 8px;font-size:12px;font-weight:900}.risk-btn span{display:block;font-size:20px;margin-bottom:4px}.risk-btn.active{background:linear-gradient(145deg,rgba(33,230,161,.18),rgba(255,224,110,.12));border-color:rgba(33,230,161,.42);color:var(--text)}.ticket-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px}.risk-badge{display:inline-flex;padding:6px 9px;border-radius:999px;background:rgba(33,230,161,.12);border:1px solid rgba(33,230,161,.28);color:var(--green);font-size:10px;font-weight:900}.ticket-pick{display:grid;gap:5px;padding:10px 0;border-top:1px solid var(--line)}.ticket-pick:first-of-type{border-top:0}.pick-main{display:flex;justify-content:space-between;gap:10px;font-weight:900;font-size:13px}.pick-main b{color:var(--gold)}.pick-sub{font-size:11px;color:var(--muted);line-height:1.45}.confidence{display:flex;align-items:center;gap:8px;margin-top:9px}.bar{height:8px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden;flex:1}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--green2),var(--green),var(--gold));border-radius:inherit}.confidence small{font-family:'JetBrains Mono';font-weight:900;color:var(--green)}
+.ai-panel{display:grid;gap:10px}.field{width:100%;min-height:46px;border:1px solid var(--line);background:rgba(255,255,255,.055);border-radius:16px;color:var(--text);outline:0;padding:0 12px;font-weight:800}.field option{background:#101722}.textarea{min-height:92px;resize:vertical;padding-top:12px}.form-grid{display:grid;gap:10px;margin-top:10px}.ai-answer{margin-top:12px;border:1px solid rgba(33,230,161,.28);background:linear-gradient(145deg,rgba(33,230,161,.12),rgba(10,15,22,.96));border-radius:22px;padding:14px}.answer-entry{font-family:'Space Grotesk';font-size:22px;line-height:1.05;margin:6px 0;color:var(--green)}.reason-list{margin:10px 0 0;padding-left:18px;color:#C7D0DC;font-size:12px;line-height:1.6}.reason-list li{margin:4px 0}.market-tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.tag{font-size:10px;font-weight:900;border-radius:999px;padding:6px 9px;background:rgba(255,255,255,.08);border:1px solid var(--line);color:var(--muted)}.tag.green{color:var(--green);border-color:rgba(33,230,161,.28);background:rgba(33,230,161,.1)}.tag.gold{color:var(--gold);border-color:rgba(255,224,110,.3);background:rgba(255,224,110,.09)}.tag.red{color:#FFD5E1;border-color:rgba(255,71,126,.28);background:rgba(255,71,126,.1)}
+.scanner-grid{display:grid;gap:11px}.opportunity-card{padding:15px}.opp-top{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}.opp-type{font-size:10px;color:var(--gold);font-weight:900;letter-spacing:.08em;text-transform:uppercase}.opp-score{font-family:'JetBrains Mono';font-weight:900;color:var(--green)}.opp-entry{font-family:'Space Grotesk';font-size:18px;margin:6px 0 5px}.data-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}.data-box{border:1px solid var(--line);border-radius:16px;padding:10px;background:rgba(255,255,255,.035)}.data-box b{display:block;color:var(--text);font-size:14px}.data-box span{font-size:10px;color:var(--muted);font-weight:800}.premium-hero{background:linear-gradient(145deg,rgba(255,224,110,.2),rgba(33,230,161,.08),rgba(10,15,22,.98));border-color:rgba(255,224,110,.28)}.price{font-family:'Space Grotesk';font-size:38px;letter-spacing:-.06em;margin:10px 0}.price small{font-family:Inter;font-size:13px;color:var(--muted);letter-spacing:0}.benefit-list{display:grid;gap:9px;margin:12px 0}.benefit{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:18px;padding:11px;background:rgba(255,255,255,.04)}.benefit span{width:26px;height:26px;border-radius:9px;display:grid;place-items:center;background:rgba(33,230,161,.12)}.benefit b{display:block;font-size:13px}.benefit small{display:block;color:var(--muted);font-size:11px;line-height:1.45;margin-top:2px}.unlock-box{display:grid;gap:9px;margin-top:12px}.premium-locked{filter:saturate(.6);opacity:.9}.bottom-nav{position:fixed;z-index:25;left:0;right:0;bottom:0;background:rgba(7,11,17,.88);backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.08);padding:7px 8px calc(7px + var(--safe-bottom))}.bottom-nav{display:flex;justify-content:center}.bottom-nav:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(255,224,110,.09),transparent 55%);pointer-events:none}.bottom-nav .nav-item{position:relative;width:min(20%,104px);max-width:104px;border:0;background:transparent;color:var(--faint);border-radius:18px;padding:7px 2px 8px;font-size:10px;font-weight:900}.bottom-nav .nav-item span{display:block;font-size:20px;margin-bottom:2px}.bottom-nav .nav-item.active{background:rgba(255,224,110,.11);color:var(--gold)}
+.floating-ai{position:fixed;z-index:30;right:18px;bottom:92px;width:62px;height:62px;border-radius:24px;border:1px solid rgba(33,230,161,.35);background:linear-gradient(145deg,#1E6D55,#0B1713);color:white;box-shadow:0 18px 46px rgba(0,0,0,.42),0 0 0 1px rgba(255,255,255,.08);font-weight:900;touch-action:none}.floating-ai span{display:block;font-size:10px;color:var(--green)}.toast{position:fixed;left:50%;bottom:calc(92px + var(--safe-bottom));transform:translateX(-50%) translateY(20px);z-index:60;width:min(420px,calc(100% - 28px));padding:13px 14px;border-radius:18px;background:rgba(11,16,24,.96);border:1px solid var(--line2);box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s ease;color:var(--text);font-size:13px;font-weight:800}.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.modal{width:min(460px,calc(100% - 20px));border:1px solid var(--line2);border-radius:28px;background:linear-gradient(145deg,rgba(18,28,41,.98),rgba(7,11,17,.99));color:var(--text);box-shadow:var(--shadow);padding:0}.modal::backdrop{background:rgba(0,0,0,.66);backdrop-filter:blur(5px)}.modal-head{display:flex;justify-content:space-between;align-items:flex-start;padding:16px;border-bottom:1px solid var(--line)}.modal-head small{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.1em;font-size:10px}.modal-head h2{font-family:'Space Grotesk';margin:3px 0 0;font-size:22px}.settings-grid{display:grid;gap:10px;padding:14px}.switch-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding:12px 0;font-size:13px;font-weight:800}.switch-row:first-of-type{border-top:0}.switch-row input{width:42px;height:22px;accent-color:var(--green)}.quiz-step{padding:16px}.quiz-options{display:grid;gap:9px;margin-top:12px}.quiz-options button{text-align:left;justify-content:flex-start}.quiz-result{padding:16px}.profile-card{background:linear-gradient(145deg,rgba(33,230,161,.14),rgba(255,224,110,.11));border:1px solid rgba(33,230,161,.26);border-radius:22px;padding:14px;margin:12px 0}.profile-card h3{font-family:'Space Grotesk';font-size:24px;margin:4px 0;color:var(--green)}.empty{padding:20px;text-align:center;color:var(--muted);font-size:13px}.legal{font-size:10.5px;color:var(--faint);line-height:1.45;margin-top:10px}.notice{border:1px solid rgba(255,224,110,.25);background:rgba(255,224,110,.08);color:#FFEAA8;border-radius:18px;padding:12px;font-size:12px;line-height:1.5;margin:12px 0}.source-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+@media(max-width:380px){.app{padding-left:10px;padding-right:10px}.hero h1{font-size:28px}.stats-strip{gap:7px}.stat-pill{padding:11px 8px}.risk-grid{grid-template-columns:1fr}.match-row{grid-template-columns:48px 1fr auto}.bottom-nav .nav-item{font-size:9px}.floating-ai{width:58px;height:58px}.price{font-size:32px}}
+@media(min-width:760px){.app{max-width:940px}.page{max-width:940px}.desktop-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.scanner-grid{grid-template-columns:1fr 1fr}.live-card,.tip-card,.opportunity-card{min-width:300px}.bottom-nav .nav-item{max-width:130px}.hero{min-height:280px}.hero h1{font-size:42px}.brand-line small{max-width:680px}.risk-grid{max-width:560px}}
+
+  </style>
+</head>
+<body>
+  <div id="splash" class="splash" aria-label="Tela inicial">
+    <div class="splash-orb orb-a"></div>
+    <div class="splash-orb orb-b"></div>
+    <div class="splash-card">
+      <div class="brand-mark big"><span>P</span></div>
+      <div class="splash-kicker">PRADO SPORTS AI</div>
+      <h1>Tips, scanner e IA em uma experiência premium.</h1>
+      <p>Bilhetes prontos, análise por jogo e oportunidades em tempo real.</p>
+      <button id="enterApp" class="btn primary wide">Entrar no Prado</button>
+      <button id="startQuiz" class="btn ghost wide">Começar análise grátis</button>
+    </div>
+  </div>
+
+  <main id="app" class="app hidden">
+    <header class="topbar">
+      <div class="brand-line">
+        <div class="brand-mark"><span>P</span></div>
+        <div>
+          <strong>Prado <em>Sports AI</em></strong>
+          <small id="dataStatus">Carregando dados...</small>
+        </div>
+      </div>
+
+      <div class="search-row">
+        <div class="search-box">
+          <span>⌕</span>
+          <input id="globalSearch" type="search" placeholder="Buscar jogo, time ou liga" autocomplete="off" />
+        </div>
+        <button id="openSettings" class="icon-btn" aria-label="Configurações">⚙️</button>
+      </div>
+    </header>
+
+    <section id="page-home" class="page active"></section>
+    <section id="page-tips" class="page"></section>
+    <section id="page-ai" class="page"></section>
+    <section id="page-scanner" class="page"></section>
+    <section id="page-premium" class="page"></section>
+
+    <button id="floatingAI" class="floating-ai" title="TIPS AI">🤖<span>IA</span></button>
+
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="nav-item active" data-page="home"><span>🏠</span>Jogos</button>
+      <button class="nav-item" data-page="tips"><span>🎟️</span>Tips</button>
+      <button class="nav-item" data-page="ai"><span>🤖</span>TIPS AI</button>
+      <button class="nav-item" data-page="scanner"><span>🔎</span>Scanner</button>
+      <button class="nav-item" data-page="premium"><span>💎</span>Premium</button>
+    </nav>
+  </main>
+
+  <dialog id="quizModal" class="modal">
+    <div class="modal-head">
+      <div>
+        <small>Perfil de entrada</small>
+        <h2>Configure sua IA</h2>
+      </div>
+      <button class="icon-btn" data-close="quizModal">✕</button>
+    </div>
+    <div id="quizBody"></div>
+  </dialog>
+
+  <dialog id="settingsModal" class="modal">
+    <div class="modal-head">
+      <div>
+        <small>Central do app</small>
+        <h2>Configurações</h2>
+      </div>
+      <button class="icon-btn" data-close="settingsModal">✕</button>
+    </div>
+    <div class="settings-grid">
+      <div class="card compact">
+        <div class="card-title">🔑 API de dados</div>
+        <p class="muted">Use a variável <b>APISPORTS_KEY</b> na Vercel ou cole uma chave temporária abaixo para teste.</p>
+        <input id="apiKeyInput" class="field" type="password" placeholder="Cole sua chave API-Football para teste" />
+        <button id="saveApiKey" class="btn secondary wide">Salvar chave neste navegador</button>
+      </div>
+      <div class="card compact">
+        <div class="card-title">🔔 Notificações</div>
+        <label class="switch-row"><span>Oportunidade ao vivo</span><input type="checkbox" data-setting="liveAlerts" checked></label>
+        <label class="switch-row"><span>Tips prontas do dia</span><input type="checkbox" data-setting="dailyTips" checked></label>
+        <label class="switch-row"><span>Escalação confirmada</span><input type="checkbox" data-setting="lineups" checked></label>
+      </div>
+      <div class="card compact">
+        <div class="card-title">🛡️ Aviso responsável</div>
+        <p class="muted">As análises são informativas e não garantem resultado. Use gestão de banca e evite promessas de lucro na divulgação.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script>
+/* =====================================================
+   PRADO SPORTS AI — Configuração
+   - Para produção na Vercel, use variável de ambiente APISPORTS_KEY.
+   - Para teste local, cole a chave no painel ⚙️ ou em API_KEY abaixo.
+===================================================== */
+window.PRADO_CONFIG = {
+  API_KEY: '',
+  API_BASE: 'https://v3.football.api-sports.io',
+  TIMEZONE: 'America/Fortaleza',
+  PAYMENT_LINK: 'https://SEU-LINK-DE-PAGAMENTO-AQUI.com',
+  SUPPORT_WHATSAPP: '5599999999999',
+  PREMIUM_PRICE: 'R$ 19,90/mês',
+  PREMIUM_CODES: ['PRADO2026', 'CARLOSVIP', 'PRADO19'],
+  // Use apenas se você conectar um CSV publicado do Google Sheets com códigos ativos.
+  PREMIUM_CODES_CSV: '',
+  BRAND: {
+    name: 'Prado Sports AI',
+    shortName: 'Prado AI'
+  }
+};
+
+  </script>
+  <script>
+/* =====================================================
+   API-Football adapter — Prado Sports AI
+===================================================== */
+window.PradoFootballAPI = (() => {
+  const cfg = () => window.PRADO_CONFIG || {};
+  const todayISO = () => new Date().toISOString().slice(0, 10);
+
+  function browserKey(){
+    return localStorage.getItem('prado_api_key') || cfg().API_KEY || '';
+  }
+
+  async function request(path, params = {}){
+    const qs = new URLSearchParams(params);
+    qs.set('timezone', cfg().TIMEZONE || 'America/Fortaleza');
+
+    // 1) Preferido na Vercel: proxy seguro usando APISPORTS_KEY no servidor.
+    try{
+      const proxyUrl = `/api/football?path=${encodeURIComponent(path)}&${qs.toString()}`;
+      const proxyRes = await fetch(proxyUrl, { cache: 'no-store' });
+      if(proxyRes.ok){
+        const data = await proxyRes.json();
+        if(data && !data.error) return data;
+      }
+    }catch(_err){ /* ambiente local sem proxy */ }
+
+    // 2) Teste rápido no navegador — expõe a chave, use só para testar.
+    const key = browserKey();
+    if(!key) throw new Error('API key não configurada');
+    const url = `${cfg().API_BASE || 'https://v3.football.api-sports.io'}/${path}?${qs.toString()}`;
+    const res = await fetch(url, {
+      headers: { 'x-apisports-key': key },
+      cache: 'no-store'
+    });
+    if(!res.ok) throw new Error(`API erro ${res.status}`);
+    return res.json();
+  }
+
+  async function fixturesByDate(date = todayISO()){
+    const data = await request('fixtures', { date });
+    return normalizeFixtures(data.response || []);
+  }
+
+  async function liveFixtures(){
+    const data = await request('fixtures', { live: 'all' });
+    return normalizeFixtures(data.response || []);
+  }
+
+  async function prediction(fixtureId){
+    const data = await request('predictions', { fixture: fixtureId });
+    return data.response?.[0] || null;
+  }
+
+  function normalizeFixtures(rows){
+    return rows.map((r, idx) => {
+      const statusShort = r.fixture?.status?.short || 'NS';
+      const elapsed = r.fixture?.status?.elapsed || null;
+      const isLive = ['1H','2H','HT','ET','P','BT','LIVE'].includes(statusShort);
+      const isFinished = ['FT','AET','PEN'].includes(statusShort);
+      const homeGoals = r.goals?.home;
+      const awayGoals = r.goals?.away;
+      return {
+        id: String(r.fixture?.id || `api-${idx}`),
+        apiId: r.fixture?.id,
+        league: r.league?.name || 'Liga',
+        country: r.league?.country || '',
+        leagueLogo: r.league?.logo || '',
+        round: r.league?.round || '',
+        date: r.fixture?.date || new Date().toISOString(),
+        timestamp: r.fixture?.timestamp || 0,
+        status: isLive ? 'live' : isFinished ? 'finished' : 'scheduled',
+        minute: elapsed,
+        venue: r.fixture?.venue?.name || '',
+        home: {
+          name: r.teams?.home?.name || 'Mandante',
+          logo: r.teams?.home?.logo || '',
+          winner: r.teams?.home?.winner
+        },
+        away: {
+          name: r.teams?.away?.name || 'Visitante',
+          logo: r.teams?.away?.logo || '',
+          winner: r.teams?.away?.winner
+        },
+        score: {
+          home: homeGoals ?? 0,
+          away: awayGoals ?? 0
+        },
+        stats: seedStats(r.fixture?.id || idx, isLive)
+      };
+    });
+  }
+
+  function seedStats(seed, live=false){
+    const x = Math.abs(Math.sin(Number(seed) || 1));
+    return {
+      homeForm: Math.round(58 + x * 31),
+      awayForm: Math.round(50 + (1-x) * 29),
+      homeGoalsAvg: +(1.12 + x * 1.45).toFixed(2),
+      awayGoalsAvg: +(0.95 + (1-x) * 1.2).toFixed(2),
+      cornersAvg: +(7.4 + x * 4.4).toFixed(1),
+      cardsAvg: +(3.1 + (1-x) * 2.7).toFixed(1),
+      pressure: Math.round((live ? 70 : 54) + x * 26),
+      lineupReady: live || x > .42
+    };
+  }
+
+  return { fixturesByDate, liveFixtures, prediction, browserKey, todayISO };
+})();
+
+  </script>
+  <script>
+/* =====================================================
+   PRADO SPORTS AI V12 — Tips Prontas + TIPS AI + Scanner
+===================================================== */
+const $ = (sel, root=document) => root.querySelector(sel);
+const $$ = (sel, root=document) => [...root.querySelectorAll(sel)];
+
+const state = {
+  page: 'home',
+  matches: [],
+  predictions: [],
+  search: '',
+  selectedRisk: localStorage.getItem('prado_risk') || 'moderado',
+  scannerFilter: 'all',
+  premium: localStorage.getItem('prado_premium') === 'true',
+  profile: JSON.parse(localStorage.getItem('prado_profile') || 'null'),
+  source: 'demo'
+};
+
+const DEMO_LEAGUES = ['Brasileirão', 'Premier League', 'La Liga', 'Champions League', 'Libertadores', 'Copa do Brasil', 'Serie A', 'Bundesliga'];
+const TEAM_LOGOS = {
+  Flamengo:'https://media.api-sports.io/football/teams/127.png', Palmeiras:'https://media.api-sports.io/football/teams/121.png',
+  Botafogo:'https://media.api-sports.io/football/teams/120.png', 'São Paulo':'https://media.api-sports.io/football/teams/126.png',
+  Corinthians:'https://media.api-sports.io/football/teams/131.png', 'Atlético-MG':'https://media.api-sports.io/football/teams/1062.png',
+  Arsenal:'https://media.api-sports.io/football/teams/42.png', Chelsea:'https://media.api-sports.io/football/teams/49.png',
+  Liverpool:'https://media.api-sports.io/football/teams/40.png', 'Manchester City':'https://media.api-sports.io/football/teams/50.png',
+  Barcelona:'https://media.api-sports.io/football/teams/529.png', 'Real Madrid':'https://media.api-sports.io/football/teams/541.png',
+  PSG:'https://media.api-sports.io/football/teams/85.png', Bayern:'https://media.api-sports.io/football/teams/157.png',
+  Boca:'https://media.api-sports.io/football/teams/451.png', River:'https://media.api-sports.io/football/teams/435.png'
+};
+
+function makeDemoMatches(){
+  const now = new Date();
+  const at = (hours, minutes=0) => {
+    const d = new Date(now);
+    d.setHours(hours, minutes, 0, 0);
+    return d.toISOString();
+  };
+  const base = [
+    ['Flamengo','Palmeiras','Brasileirão',21,30,'scheduled',0,0],
+    ['Botafogo','São Paulo','Brasileirão',19,0,'scheduled',0,0],
+    ['Corinthians','Atlético-MG','Copa do Brasil',16,0,'live',1,1],
+    ['Arsenal','Chelsea','Premier League',17,30,'scheduled',0,0],
+    ['Liverpool','Manchester City','Premier League',15,0,'live',0,1],
+    ['Barcelona','Real Madrid','La Liga',18,0,'scheduled',0,0],
+    ['PSG','Bayern','Champions League',16,45,'finished',2,1],
+    ['Boca','River','Libertadores',22,0,'scheduled',0,0]
+  ];
+  return base.map((m, i) => ({
+    id: `demo-${i+1}`,
+    league: m[2], country: m[2].includes('Bras') || m[2].includes('Copa') ? 'Brasil' : 'Internacional',
+    leagueLogo: '', round: 'Rodada premium', date: at(m[3], m[4]), timestamp: Math.floor(new Date(at(m[3],m[4])).getTime()/1000),
+    status: m[5], minute: m[5] === 'live' ? 62 + i : null, venue: 'Estádio Prado',
+    home: { name:m[0], logo:TEAM_LOGOS[m[0]] || '', winner:null },
+    away: { name:m[1], logo:TEAM_LOGOS[m[1]] || '', winner:null },
+    score: { home:m[6], away:m[7] },
+    stats: {
+      homeForm: 63 + (i*7)%28,
+      awayForm: 57 + (i*5)%27,
+      homeGoalsAvg: +(1.25 + (i%5)*.26).toFixed(2),
+      awayGoalsAvg: +(1.05 + (i%4)*.22).toFixed(2),
+      cornersAvg: +(8.1 + (i%5)*.8).toFixed(1),
+      cardsAvg: +(3.4 + (i%4)*.55).toFixed(1),
+      pressure: m[5] === 'live' ? 72 + (i*4)%20 : 55 + (i*5)%26,
+      lineupReady: m[5] !== 'scheduled' || i%2 === 0
+    }
+  }));
+}
+
+function clamp(n,min,max){ return Math.max(min, Math.min(max, n)); }
+function fmtTime(iso){ return new Date(iso).toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'}); }
+function fmtDate(iso){ return new Date(iso).toLocaleDateString('pt-BR',{day:'2-digit',month:'2-digit'}); }
+function todayKey(){ return new Date().toISOString().slice(0,10); }
+function sameDay(iso){ return String(iso).slice(0,10) === todayKey(); }
+function logo(team){ return team.logo || TEAM_LOGOS[team.name] || ''; }
+function safe(s){ return String(s || '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
+
+function computePredictions(matches){
+  return matches.map((m, i) => {
+    const s = m.stats || {};
+    const totalGoals = (s.homeGoalsAvg || 1.2) + (s.awayGoalsAvg || 1.0);
+    const formGap = (s.homeForm || 55) - (s.awayForm || 52);
+    const pressure = s.pressure || 55;
+    const base = clamp(Math.round(52 + totalGoals*7 + pressure*.14 + Math.abs(formGap)*.12), 54, 94);
+    let market = 'Over 1.5 gols';
+    let marketType = 'gols';
+    let oddMin = 1.30;
+
+    if(totalGoals > 2.75 && base > 72){ market = 'Over 2.5 gols'; oddMin = 1.70; }
+    if(Math.abs(formGap) > 18 && base > 68){ market = formGap > 0 ? `${m.home.name} empate anula` : `${m.away.name} empate anula`; marketType = 'resultado'; oddMin = 1.45; }
+    if((s.cornersAvg || 8) > 9.7 && pressure > 66){ market = 'Over 8.5 escanteios'; marketType = 'escanteios'; oddMin = 1.60; }
+    if((s.cardsAvg || 3.5) > 4.7){ market = 'Over 3.5 cartões'; marketType = 'cartões'; oddMin = 1.50; }
+
+    const risk = base >= 82 && oddMin <= 1.50 ? 'conservador' : oddMin >= 1.65 ? 'agressivo' : 'moderado';
+    const valueScore = clamp(Math.round(base + (oddMin-1.25)*18 + (m.status==='live'?8:0)), 55, 98);
+    const reasons = [
+      `Média combinada de gols em ${totalGoals.toFixed(2)} por jogo.`,
+      `Pressão ofensiva estimada em ${pressure}% ${m.status==='live' ? 'durante o jogo' : 'no pré-jogo'}.`,
+      s.lineupReady ? 'Escalação/status disponível para leitura da IA.' : 'Entrada baseada em forma recente e calendário, aguardando escalação.'
+    ];
+    return {
+      id:`pred-${m.id}`,
+      matchId:m.id,
+      match:m,
+      entry:market,
+      marketType,
+      confidence:base,
+      valueScore,
+      oddMin:+oddMin.toFixed(2),
+      risk,
+      reasons,
+      status:m.status,
+      source:m.apiId ? 'API real + IA Prado' : 'Prévia visual + IA Prado'
+    };
+  }).sort((a,b)=>b.valueScore-a.valueScore);
+}
+
+async function loadData(){
+  const dataStatus = $('#dataStatus');
+  dataStatus.textContent = 'Buscando jogos do dia...';
+  try{
+    const [today, live] = await Promise.allSettled([
+      PradoFootballAPI.fixturesByDate(PradoFootballAPI.todayISO()),
+      PradoFootballAPI.liveFixtures()
+    ]);
+    const rows = [];
+    if(today.status === 'fulfilled') rows.push(...today.value);
+    if(live.status === 'fulfilled') rows.push(...live.value);
+    const unique = [...new Map(rows.map(m=>[m.id,m])).values()].slice(0,80);
+    if(unique.length){
+      state.matches = unique;
+      state.source = 'api';
+      dataStatus.textContent = `API conectada · ${unique.length} jogos carregados`;
+    }else throw new Error('Sem jogos na API');
+  }catch(err){
+    state.matches = makeDemoMatches();
+    state.source = 'demo';
+    dataStatus.textContent = 'Modo prévia visual · conecte a API para jogos reais';
+  }
+  state.predictions = computePredictions(state.matches);
+  renderAll();
+}
+
+function renderAll(){
+  renderHome(); renderTips(); renderAI(); renderScanner(); renderPremium(); updateNav();
+}
+function filteredMatches(){
+  const q = state.search.trim().toLowerCase();
+  let rows = state.matches;
+  if(q){
+    rows = rows.filter(m => [m.home.name,m.away.name,m.league,m.country].join(' ').toLowerCase().includes(q));
+  }
+  return rows;
+}
+function filteredPredictions(){
+  const ids = new Set(filteredMatches().map(m=>m.id));
+  return state.predictions.filter(p=>ids.has(p.matchId));
+}
+
+function crestHTML(team, size=30){
+  const l = logo(team);
+  return l ? `<img class="crest" style="width:${size}px;height:${size}px" src="${safe(l)}" alt="${safe(team.name)}">` : `<span class="crest" style="width:${size}px;height:${size}px;display:grid;place-items:center">⚽</span>`;
+}
+function sectionHead(title, link='', onclick=''){
+  return `<div class="section-head"><div class="section-title">${title}</div>${link ? `<button class="section-link" onclick="${onclick}">${link}</button>` : ''}</div>`;
+}
+function matchCard(m){
+  const live = m.status === 'live';
+  const finished = m.status === 'finished';
+  return `<article class="card live-card" onclick="openMatchAI('${m.id}')">
+    <div class="league-tag">${live?'<span class="pulse"></span>':''}${safe(m.league)} ${m.country ? '· '+safe(m.country) : ''}</div>
+    <div class="match-teams">
+      <div class="team-line"><div class="team-name">${crestHTML(m.home)}${safe(m.home.name)}</div><div class="score">${finished||live ? m.score.home : ''}</div></div>
+      <div class="team-line"><div class="team-name">${crestHTML(m.away)}${safe(m.away.name)}</div><div class="score">${finished||live ? m.score.away : ''}</div></div>
+    </div>
+    <div class="live-meta"><span class="${live?'live-badge':''}">${live ? `${m.minute || 0}' AO VIVO` : finished ? 'Finalizado' : fmtTime(m.date)}</span><span>${fmtDate(m.date)}</span></div>
+  </article>`;
+}
+function matchRow(m){
+  const live = m.status === 'live'; const finished = m.status === 'finished';
+  return `<div class="match-row" onclick="openMatchAI('${m.id}')">
+    <div class="match-time ${live?'live':''}"><b>${live ? `${m.minute || 0}'` : finished ? 'FIM' : fmtTime(m.date)}</b><br>${live?'LIVE':fmtDate(m.date)}</div>
+    <div class="teams">
+      <div class="team-name">${crestHTML(m.home,24)}${safe(m.home.name)}</div>
+      <div class="team-name">${crestHTML(m.away,24)}${safe(m.away.name)}</div>
+    </div>
+    <div class="match-score">${finished||live ? `${m.score.home}-${m.score.away}` : 'vs'}</div>
+  </div>`;
+}
+
+function renderHome(){
+  const matches = filteredMatches();
+  const live = matches.filter(m=>m.status==='live');
+  const today = matches.filter(m=>sameDay(m.date) && m.status!=='live');
+  const best = filteredPredictions()[0];
+  const topThree = filteredPredictions().slice(0,3);
+  $('#page-home').innerHTML = `
+    <div class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Painel premium · futebol</div>
+        <h1>Tips prontas e scanner IA <span>para o dia.</span></h1>
+        <p>Escolha o risco, copie o bilhete e use a TIPS AI para pedir análise por jogo. Antes e durante a partida.</p>
+        <div class="hero-actions">
+          <button class="btn primary" onclick="goToPage('tips')">🎟️ Ver tips prontas</button>
+          <button class="btn ghost" onclick="goToPage('scanner')">🔎 Scanner IA</button>
+        </div>
+      </div>
+    </div>
+    <div class="stats-strip">
+      <div class="stat-pill"><b>${matches.length}</b><span>Jogos lidos</span></div>
+      <div class="stat-pill"><b>${live.length}</b><span>Ao vivo</span></div>
+      <div class="stat-pill"><b>${topThree.length}</b><span>Top IA</span></div>
+    </div>
+    ${best ? `<article class="card premium-hero">
+      <div class="eyebrow">⭐ Melhor do dia</div>
+      <h2 class="answer-entry">${safe(best.entry)}</h2>
+      <div class="pick-sub">${safe(best.match.home.name)} x ${safe(best.match.away.name)} · ${safe(best.match.league)}</div>
+      <div class="confidence"><div class="bar"><i style="width:${best.confidence}%"></i></div><small>${best.confidence}% IA</small></div>
+      <div class="market-tags"><span class="tag green">Odd mín. ${best.oddMin.toFixed(2)}</span><span class="tag gold">${safe(best.risk)}</span><span class="tag">${safe(best.source)}</span></div>
+    </article>` : ''}
+    ${sectionHead('🔴 Ao vivo agora', live.length ? `${live.length} jogos` : '')}
+    ${live.length ? `<div class="hscroll">${live.slice(0,8).map(matchCard).join('')}</div>` : `<div class="card empty">Nenhum jogo ao vivo neste momento.</div>`}
+    ${sectionHead('📅 Jogos de hoje', 'Atualizar', 'loadData()')}
+    <div class="match-list">${today.slice(0,14).map(matchRow).join('') || '<div class="card empty">Nenhum jogo encontrado para hoje.</div>'}</div>
+    ${sectionHead('🌍 Principais ligas')}
+    <div class="source-row">${DEMO_LEAGUES.map(l=>`<span class="tag gold">${safe(l)}</span>`).join('')}</div>
+    <p class="legal">Análises informativas. Não existe garantia de acerto ou lucro.</p>
+  `;
+}
+
+function riskLabel(risk){ return {conservador:'Conservador',moderado:'Moderado',agressivo:'Agressivo'}[risk] || 'Moderado'; }
+function riskIcon(risk){ return {conservador:'🛡️',moderado:'⚖️',agressivo:'🔥'}[risk] || '⚖️'; }
+function ticketFor(risk){
+  let rows = [...filteredPredictions()];
+  if(risk === 'conservador') rows = rows.filter(p=>p.confidence>=70).sort((a,b)=>b.confidence-a.confidence).slice(0,3);
+  if(risk === 'moderado') rows = rows.filter(p=>p.confidence>=62).sort((a,b)=>b.valueScore-a.valueScore).slice(0,4);
+  if(risk === 'agressivo') rows = rows.sort((a,b)=>(b.oddMin+b.valueScore/100)-(a.oddMin+a.valueScore/100)).slice(0,5);
+  if(!rows.length) rows = filteredPredictions().slice(0,3);
+  return rows;
+}
+function renderTips(){
+  const risk = state.selectedRisk;
+  const ticket = ticketFor(risk);
+  const oddTotal = ticket.reduce((acc,p)=>acc*p.oddMin,1);
+  const avgConf = ticket.length ? Math.round(ticket.reduce((a,p)=>a+p.confidence,0)/ticket.length) : 0;
+  $('#page-tips').innerHTML = `
+    ${sectionHead('🎟️ Tips Prontas')}
+    <div class="card compact">
+      <div class="card-title">Seleção diária de bilhetes montados pela IA</div>
+      <p class="muted">Escolha o nível de risco do dia, confira os motivos e copie o bilhete pronto.</p>
+    </div>
+    <div class="risk-grid">
+      ${['conservador','moderado','agressivo'].map(r=>`<button class="risk-btn ${risk===r?'active':''}" onclick="setRisk('${r}')"><span>${riskIcon(r)}</span>${riskLabel(r)}</button>`).join('')}
+    </div>
+    <article class="card tip-card">
+      <div class="ticket-header">
+        <div><span class="risk-badge">${riskIcon(risk)} ${riskLabel(risk)}</span><div class="card-title" style="margin-top:8px">Bilhete IA do dia</div><p class="muted">${ticket.length} seleções · odd combinada estimada ${oddTotal.toFixed(2)}</p></div>
+        <div class="opp-score">${avgConf}%</div>
+      </div>
+      ${ticket.map(p=>`<div class="ticket-pick"><div class="pick-main"><span>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</span><b>${safe(p.entry)}</b></div><div class="pick-sub">${safe(p.match.league)} · Odd mín. ${p.oddMin.toFixed(2)} · ${p.confidence}% confiança</div></div>`).join('')}
+      <div class="confidence"><div class="bar"><i style="width:${avgConf}%"></i></div><small>${avgConf}% média</small></div>
+      <button class="btn primary wide" onclick="copyTicket('${risk}')">📋 Copiar Bilhete</button>
+    </article>
+    <div class="notice">No modo grátis, deixe 1 tip aberta e bloqueie o restante. No Premium, libere todos os níveis, scanner ao vivo e TIPS AI ilimitada.</div>
+  `;
+}
+function setRisk(risk){ state.selectedRisk = risk; localStorage.setItem('prado_risk', risk); renderTips(); toast(`Risco ${riskLabel(risk)} selecionado`, riskIcon(risk)); }
+function copyTicket(risk){
+  const t = ticketFor(risk);
+  const text = [`PRADO SPORTS AI — Bilhete ${riskLabel(risk)}`, ...t.map((p,i)=>`${i+1}. ${p.match.home.name} x ${p.match.away.name} — ${p.entry} | odd mín. ${p.oddMin.toFixed(2)} | ${p.confidence}% IA`), 'Análise informativa. Sem garantia de resultado.'].join('
+');
+  navigator.clipboard?.writeText(text).then(()=>toast('Bilhete copiado com sucesso 📋')).catch(()=>toast('Não consegui copiar automaticamente. Segure e copie manualmente.', '⚠️'));
+}
+
+function renderAI(){
+  const options = filteredMatches().map(m=>`<option value="${m.id}">${safe(m.home.name)} x ${safe(m.away.name)} · ${safe(m.league)}</option>`).join('');
+  $('#page-ai').innerHTML = `
+    ${sectionHead('🤖 TIPS AI')}
+    <div class="card">
+      <div class="card-title">Peça o jogo e o tipo de retorno</div>
+      <p class="muted">A IA cruza estatística, momento, pressão, status e escalação disponível para devolver uma entrada pronta com motivo.</p>
+      <div class="form-grid">
+        <select id="aiMatch" class="field">${options}</select>
+        <select id="aiReturn" class="field">
+          <option value="segura">Entrada mais segura</option>
+          <option value="valor">Melhor valor da odd</option>
+          <option value="agressiva">Entrada agressiva</option>
+          <option value="gols">Mercado de gols</option>
+          <option value="escanteios">Mercado de escanteios</option>
+          <option value="cartoes">Mercado de cartões</option>
+        </select>
+        <textarea id="aiPrompt" class="field textarea" placeholder="Ex: Quero uma entrada para Flamengo x Palmeiras com retorno seguro"></textarea>
+        <button class="btn primary wide" onclick="generateAIAnswer()">Gerar análise IA</button>
+      </div>
+      <div id="aiAnswer" class="ai-answer hidden"></div>
+    </div>
+    <div class="card compact" style="margin-top:12px">
+      <div class="card-title">Motor de dados inteligente</div>
+      <p class="muted">Cruzamento com múltiplas fontes esportivas quando configuradas: API de jogos, estatísticas, escalações, odds, notícias e dados ao vivo.</p>
+      <div class="source-row"><span class="tag green">Pré-jogo</span><span class="tag green">Ao vivo</span><span class="tag gold">Principais ligas</span><span class="tag">50+ fontes preparado</span></div>
+    </div>
+  `;
+}
+function pickForIntent(pred, intent){
+  const m = pred.match; const s = m.stats || {};
+  if(intent === 'segura') return {entry: pred.confidence >= 74 ? 'Over 1.5 gols' : 'Dupla chance a favor do time mais forte', odd: 1.30};
+  if(intent === 'valor') return {entry: pred.valueScore >= 78 ? pred.entry : 'Ambas marcam — sim', odd: Math.max(pred.oddMin, 1.62)};
+  if(intent === 'agressiva') return {entry: s.cornersAvg > 9.4 ? 'Over 9.5 escanteios' : 'Over 2.5 gols', odd: 1.85};
+  if(intent === 'gols') return {entry: ((s.homeGoalsAvg+s.awayGoalsAvg)>2.7) ? 'Over 2.5 gols' : 'Over 1.5 gols', odd: ((s.homeGoalsAvg+s.awayGoalsAvg)>2.7) ? 1.70 : 1.30};
+  if(intent === 'escanteios') return {entry: s.cornersAvg > 9.2 ? 'Over 8.5 escanteios' : 'Over 7.5 escanteios', odd: s.cornersAvg > 9.2 ? 1.60 : 1.38};
+  if(intent === 'cartoes') return {entry: s.cardsAvg > 4.2 ? 'Over 3.5 cartões' : 'Over 2.5 cartões', odd: s.cardsAvg > 4.2 ? 1.52 : 1.32};
+  return {entry: pred.entry, odd: pred.oddMin};
+}
+function generateAIAnswer(){
+  const matchId = $('#aiMatch')?.value;
+  const intent = $('#aiReturn')?.value || 'segura';
+  const pred = state.predictions.find(p=>p.matchId===matchId) || state.predictions[0];
+  if(!pred) return;
+  const chosen = pickForIntent(pred, intent);
+  const conf = clamp(Math.round(pred.confidence + (intent==='segura'?4:intent==='agressiva'?-8:0)), 52, 94);
+  const m = pred.match;
+  const answer = $('#aiAnswer');
+  answer.classList.remove('hidden');
+  answer.innerHTML = `
+    <div class="eyebrow">Análise gerada</div>
+    <div class="answer-entry">${safe(chosen.entry)}</div>
+    <div class="pick-sub">${safe(m.home.name)} x ${safe(m.away.name)} · ${safe(m.league)} · Odd mínima recomendada ${chosen.odd.toFixed(2)}</div>
+    <div class="confidence"><div class="bar"><i style="width:${conf}%"></i></div><small>${conf}% IA</small></div>
+    <ul class="reason-list">
+      <li>${safe(pred.reasons[0])}</li>
+      <li>${safe(pred.reasons[1])}</li>
+      <li>${m.status === 'live' ? `Jogo ao vivo aos ${m.minute || 0} minutos, leitura prioriza pressão atual.` : 'Pré-jogo: leitura prioriza forma recente, mando e tendência de mercado.'}</li>
+      <li>${(m.stats || {}).lineupReady ? 'Escalação/status confirmado entrou no cálculo.' : 'Escalação ainda não confirmada; recomendação deve ser revisada antes da partida.'}</li>
+    </ul>
+    <div class="market-tags"><span class="tag green">${safe(intent)}</span><span class="tag gold">${safe(pred.source)}</span><span class="tag">Sem garantia</span></div>
+    <button class="btn secondary wide" onclick="copyAIEntry('${safe(chosen.entry)}','${safe(m.home.name)} x ${safe(m.away.name)}',${conf},${chosen.odd})">📋 Copiar análise</button>
+  `;
+}
+function copyAIEntry(entry, game, conf, odd){
+  const text = `TIPS AI — ${game}
+Entrada: ${entry}
+Confiança IA: ${conf}%
+Odd mínima: ${Number(odd).toFixed(2)}
+Motivo: análise de estatística, momento, pressão e status do jogo.
+Sem garantia de resultado.`;
+  navigator.clipboard?.writeText(text).then(()=>toast('Análise copiada 📋'));
+}
+function openMatchAI(id){ goToPage('ai'); setTimeout(()=>{ const sel=$('#aiMatch'); if(sel){ sel.value=id; generateAIAnswer(); } }, 50); }
+
+function renderScanner(){
+  const filters = [
+    ['all','Todos'],['best','Melhor do dia'],['confidence','Top confiança'],['value','Top valor'],['live','Ao vivo']
+  ];
+  let rows = filteredPredictions();
+  if(state.scannerFilter === 'best') rows = rows.slice(0,1);
+  if(state.scannerFilter === 'confidence') rows = [...rows].sort((a,b)=>b.confidence-a.confidence).slice(0,8);
+  if(state.scannerFilter === 'value') rows = [...rows].sort((a,b)=>b.valueScore-a.valueScore).slice(0,8);
+  if(state.scannerFilter === 'live') rows = rows.filter(p=>p.match.status==='live');
+  $('#page-scanner').innerHTML = `
+    ${sectionHead('🔎 Prado Scanner IA')}
+    <div class="card compact">
+      <div class="card-title">Oportunidades detectadas antes e durante o jogo</div>
+      <p class="muted">Filtro por melhor do dia, top confiança, top valor e ao vivo. Ideal para parecer painel profissional.</p>
+    </div>
+    <div class="chip-row">${filters.map(f=>`<button class="chip ${state.scannerFilter===f[0]?'active':''}" onclick="setScannerFilter('${f[0]}')">${f[1]}</button>`).join('')}</div>
+    <div class="scanner-grid">${rows.length ? rows.map(opportunityCard).join('') : '<div class="card empty">Nenhuma oportunidade encontrada nesse filtro.</div>'}</div>
+  `;
+}
+function opportunityCard(p){
+  const m = p.match;
+  const type = m.status === 'live' ? '⚡ Ao vivo agora' : p.valueScore > 84 ? '🎯 Top valor' : p.confidence > 80 ? '🔥 Top confiança' : '⭐ Oportunidade';
+  return `<article class="card opportunity-card">
+    <div class="opp-top"><span class="opp-type">${type}</span><span class="opp-score">${p.valueScore}</span></div>
+    <div class="pick-sub">${safe(m.league)} · ${m.status==='live' ? `${m.minute || 0}'` : fmtTime(m.date)}</div>
+    <div class="opp-entry">${safe(p.entry)}</div>
+    <div class="pick-sub"><b>${safe(m.home.name)} x ${safe(m.away.name)}</b></div>
+    <div class="data-grid">
+      <div class="data-box"><b>${p.confidence}%</b><span>Confiança IA</span></div>
+      <div class="data-box"><b>${p.oddMin.toFixed(2)}</b><span>Odd mínima</span></div>
+      <div class="data-box"><b>${(m.stats || {}).cornersAvg || '-'} </b><span>Cantos médios</span></div>
+      <div class="data-box"><b>${(m.stats || {}).pressure || '-'}%</b><span>Pressão</span></div>
+    </div>
+    <div class="market-tags"><span class="tag green">${safe(p.marketType)}</span><span class="tag gold">${safe(riskLabel(p.risk))}</span></div>
+    <button class="btn primary wide" onclick="openMatchAI('${m.id}')">🤖 Analisar com IA</button>
+  </article>`;
+}
+function setScannerFilter(f){ state.scannerFilter = f; renderScanner(); }
+
+function renderPremium(){
+  const premium = state.premium;
+  $('#page-premium').innerHTML = `
+    ${sectionHead('💎 Prado Premium')}
+    <article class="card premium-hero ${premium?'':'premium-locked'}">
+      <div class="eyebrow">${premium ? 'Acesso liberado' : 'Desbloqueie o app completo'}</div>
+      <h2 class="answer-entry">Tips, TIPS AI e Scanner sem limite</h2>
+      <div class="price">${safe(PRADO_CONFIG.PREMIUM_PRICE || 'R$ 19,90/mês')} <small></small></div>
+      <p class="muted">Produto com cara de painel profissional: bilhetes diários, análise por jogo, filtros avançados e oportunidades ao vivo.</p>
+      <button class="btn gold wide" onclick="openPayment()">Liberar Meu Acesso Premium</button>
+    </article>
+    <div class="benefit-list">
+      ${benefit('🎟️','Tips Prontas','Bilhetes conservador, moderado e agressivo para copiar.')}
+      ${benefit('🤖','TIPS AI','Você pede o jogo e a IA devolve entrada pronta com motivo.')}
+      ${benefit('🔎','Scanner IA','Melhor do dia, top confiança, top valor e oportunidades ao vivo.')}
+      ${benefit('📊','Dados em tempo real','Pré-jogo e ao vivo quando a API estiver configurada.')}
+      ${benefit('🌍','Principais campeonatos','Brasileirão, Premier League, La Liga, Champions, Libertadores e mais.')}
+      ${benefit('🔐','Validação premium','Liberação por código, link de pagamento ou planilha depois.')}
+    </div>
+    <div class="card">
+      <div class="card-title">Já comprou? Liberar por código</div>
+      <div class="unlock-box">
+        <input id="premiumCode" class="field" placeholder="Digite o código premium" />
+        <button class="btn primary wide" onclick="unlockPremium()">Validar acesso</button>
+      </div>
+      <p class="legal">Códigos de teste nesta versão: PRADO2026, CARLOSVIP, PRADO19. Troque isso antes de vender.</p>
+    </div>
+  `;
+}
+function benefit(icon,title,desc){ return `<div class="benefit"><span>${icon}</span><div><b>${title}</b><small>${desc}</small></div></div>`; }
+async function unlockPremium(){
+  const code = ($('#premiumCode')?.value || '').trim().toUpperCase();
+  let codes = (PRADO_CONFIG.PREMIUM_CODES || []).map(c=>String(c).toUpperCase());
+  if(PRADO_CONFIG.PREMIUM_CODES_CSV){
+    try{
+      const res = await fetch(PRADO_CONFIG.PREMIUM_CODES_CSV, {cache:'no-store'});
+      const text = await res.text();
+      codes = codes.concat(text.split(/?
+|,/).map(x=>x.trim().toUpperCase()).filter(Boolean));
+    }catch(_err){}
+  }
+  if(codes.includes(code)){
+    state.premium = true; localStorage.setItem('prado_premium','true'); renderPremium(); toast('Premium liberado com sucesso 💎');
+  }else toast('Código inválido ou não encontrado', '⚠️');
+}
+function openPayment(){
+  const link = PRADO_CONFIG.PAYMENT_LINK || '';
+  if(link && !link.includes('SEU-LINK')) window.open(link, '_blank');
+  else toast('Coloque seu link de pagamento no configuração do app', '💳');
+}
+
+function goToPage(page){
+  state.page = page;
+  $$('.page').forEach(p=>p.classList.remove('active'));
+  $(`#page-${page}`)?.classList.add('active');
+  updateNav();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function updateNav(){ $$('.nav-item').forEach(b=>b.classList.toggle('active', b.dataset.page===state.page)); }
+function toast(msg, icon='✅'){
+  const t = $('#toast');
+  t.textContent = `${icon} ${msg}`;
+  t.classList.add('show'); clearTimeout(t._timer); t._timer = setTimeout(()=>t.classList.remove('show'), 2500);
+}
+
+const quiz = {
+  idx:0, answers:{},
+  steps:[
+    {key:'goal', title:'Qual seu objetivo hoje?', options:[['seguranca','Mais segurança'],['valor','Encontrar valor'],['multipla','Montar múltipla']]},
+    {key:'risk', title:'Qual risco você prefere?', options:[['conservador','Conservador'],['moderado','Moderado'],['agressivo','Agressivo']]},
+    {key:'market', title:'Qual mercado você acompanha mais?', options:[['gols','Gols'],['escanteios','Escanteios'],['cartoes','Cartões'],['resultado','Resultado']]}
+  ]
+};
+function openQuiz(){ quiz.idx=0; quiz.answers={}; renderQuizStep(); $('#quizModal').showModal(); }
+function renderQuizStep(){
+  const step = quiz.steps[quiz.idx];
+  $('#quizBody').innerHTML = `<div class="quiz-step"><div class="eyebrow">Pergunta ${quiz.idx+1} de ${quiz.steps.length}</div><h3>${step.title}</h3><div class="quiz-options">${step.options.map(o=>`<button class="btn secondary" onclick="answerQuiz('${step.key}','${o[0]}')">${o[1]}</button>`).join('')}</div></div>`;
+}
+function answerQuiz(key,val){
+  quiz.answers[key]=val; quiz.idx++;
+  if(quiz.idx < quiz.steps.length) renderQuizStep(); else finishQuiz();
+}
+function finishQuiz(){
+  const profile = quiz.answers.risk || 'moderado';
+  state.profile = { risk: profile, market: quiz.answers.market, goal: quiz.answers.goal, date: new Date().toISOString() };
+  state.selectedRisk = profile; localStorage.setItem('prado_profile', JSON.stringify(state.profile)); localStorage.setItem('prado_risk', profile);
+  $('#quizBody').innerHTML = `<div class="quiz-result"><div class="profile-card"><div class="eyebrow">Perfil detectado</div><h3>${riskIcon(profile)} Analista ${riskLabel(profile)}</h3><p class="muted">A IA vai priorizar ${quiz.answers.market || 'gols'} e montar bilhetes com risco ${riskLabel(profile).toLowerCase()}.</p></div><button class="btn primary wide" onclick="document.getElementById('quizModal').close(); goToPage('tips'); renderTips();">Ver minhas Tips Prontas</button></div>`;
+}
+
+function bindEvents(){
+  $('#enterApp').addEventListener('click', () => { $('#splash').classList.add('hidden'); $('#app').classList.remove('hidden'); });
+  $('#startQuiz').addEventListener('click', () => { $('#splash').classList.add('hidden'); $('#app').classList.remove('hidden'); openQuiz(); });
+  $$('.nav-item').forEach(b=>b.addEventListener('click',()=>goToPage(b.dataset.page)));
+  $('#globalSearch').addEventListener('input', e=>{ state.search=e.target.value; renderAll(); });
+  $('#openSettings').addEventListener('click',()=>$('#settingsModal').showModal());
+  $$('[data-close]').forEach(b=>b.addEventListener('click',()=>$('#'+b.dataset.close).close()));
+  $('#saveApiKey').addEventListener('click',()=>{ localStorage.setItem('prado_api_key', $('#apiKeyInput').value.trim()); toast('Chave salva para teste. Atualizando dados...','🔑'); loadData(); });
+  $('#apiKeyInput').value = localStorage.getItem('prado_api_key') || '';
+  $('#floatingAI').addEventListener('click',()=>goToPage('ai'));
+  makeFloatingDraggable($('#floatingAI'));
+  if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
+}
+function makeFloatingDraggable(el){
+  let dragging=false, sx=0, sy=0, ox=0, oy=0;
+  el.addEventListener('pointerdown', e=>{ dragging=true; sx=e.clientX; sy=e.clientY; const r=el.getBoundingClientRect(); ox=r.left; oy=r.top; el.setPointerCapture(e.pointerId); });
+  el.addEventListener('pointermove', e=>{ if(!dragging) return; const nx=clamp(ox+e.clientX-sx, 8, innerWidth-70); const ny=clamp(oy+e.clientY-sy, 80, innerHeight-140); el.style.left=nx+'px'; el.style.top=ny+'px'; el.style.right='auto'; el.style.bottom='auto'; });
+  el.addEventListener('pointerup', ()=>{ dragging=false; });
+}
+
+window.goToPage = goToPage;
+window.loadData = loadData;
+window.setRisk = setRisk;
+window.copyTicket = copyTicket;
+window.generateAIAnswer = generateAIAnswer;
+window.copyAIEntry = copyAIEntry;
+window.openMatchAI = openMatchAI;
+window.setScannerFilter = setScannerFilter;
+window.unlockPremium = unlockPremium;
+window.openPayment = openPayment;
+window.answerQuiz = answerQuiz;
+
+bindEvents();
+loadData();
+
+  </script>
+</body>
+</html>

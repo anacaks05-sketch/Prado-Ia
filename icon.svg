@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#FFE06E"/>
+      <stop offset="0.55" stop-color="#C9942F"/>
+      <stop offset="1" stop-color="#21E6A1"/>
+    </linearGradient>
+    <filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="22" stdDeviation="18" flood-color="#000" flood-opacity="0.45"/></filter>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="#070B11"/>
+  <circle cx="410" cy="92" r="130" fill="#21E6A1" opacity="0.10"/>
+  <circle cx="94" cy="420" r="150" fill="#FFE06E" opacity="0.11"/>
+  <rect x="74" y="74" width="364" height="364" rx="96" fill="url(#g)" filter="url(#s)"/>
+  <rect x="102" y="102" width="308" height="308" rx="76" fill="#0A0D11" opacity="0.92"/>
+  <text x="256" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="176" font-weight="900" fill="#FFE06E">P</text>
+  <path d="M154 340h204" stroke="#21E6A1" stroke-width="18" stroke-linecap="round"/>
+  <path d="M183 376h146" stroke="#C9942F" stroke-width="12" stroke-linecap="round"/>
+</svg>
