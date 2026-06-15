@@ -1,12 +1,13 @@
-# Prado Sports AI — V12 V9 Ajustes Carlos
+# Prado Sports AI — V12 V10 Premium
 
-## Ajustes desta versão
-- Remove os títulos grandes das páginas de Bilhetes e Scanner.
-- Corrige a barra de pesquisa para ficar limpa e ocupar a largura certa.
-- Remove o botão de confirmação da busca para não deixar espaço vazio.
-- Diminui o nome do topo (Prado AI) e compacta o cabeçalho.
-- Botão flutuante da IA volta a ser móvel/arrastável no iPhone e Android.
+## Alterações desta versão
+- Home mais premium e organizada.
+- Ações rápidas: Ao vivo, Top IA, Bilhetes e Analisar jogo.
+- Faixa premium compacta com botão Configurar.
+- Melhor do dia mantido, mas com organização melhor.
+- Cards extras com oportunidades fortes do dia.
+- Mantém correções da V9: busca limpa, títulos removidos e botão IA móvel.
 
 ## Como testar
 Suba na Vercel e abra com:
-https://prado-ia.vercel.app/?v=9
+https://prado-ia.vercel.app/?v=10

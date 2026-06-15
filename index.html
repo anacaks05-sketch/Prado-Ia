@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Prado Sports AI" />
-  <title>Prado Sports AI Premium</title>
+  <title>Prado Sports AI V10 Premium</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="icon-192.png" />
@@ -771,6 +771,132 @@ body[data-page="home"] .home-search-row{display:block !important;}
   .home-search-row .search-box{height:48px !important;border-radius:20px !important;}
 }
 
+
+/* ===== V10 Premium Home ===== */
+.hero{
+  min-height:198px !important;
+  padding:17px !important;
+  margin-bottom:11px !important;
+  border-radius:25px !important;
+}
+.hero h1{
+  font-size:27px !important;
+  line-height:1.02 !important;
+}
+.hero p{
+  max-width:300px;
+}
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  margin:0 0 11px;
+}
+.quick-card{
+  border:1px solid rgba(255,255,255,.085);
+  background:linear-gradient(145deg,rgba(18,28,42,.92),rgba(7,11,17,.96));
+  border-radius:18px;
+  padding:12px;
+  display:flex;
+  gap:9px;
+  align-items:center;
+  min-height:64px;
+  box-shadow:0 12px 28px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.03);
+}
+.quick-card span{
+  width:34px;
+  height:34px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(145deg,rgba(33,230,161,.18),rgba(255,224,110,.08));
+  border:1px solid rgba(33,230,161,.18);
+  color:var(--green);
+  font-weight:900;
+}
+.quick-card b{
+  display:block;
+  font-size:12.5px;
+  line-height:1.1;
+}
+.quick-card small{
+  display:block;
+  color:var(--muted);
+  font-size:9.7px;
+  margin-top:3px;
+  font-weight:800;
+}
+.home-premium-strip{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  border:1px solid rgba(255,224,110,.22);
+  background:linear-gradient(145deg,rgba(255,224,110,.095),rgba(33,230,161,.055));
+  border-radius:18px;
+  padding:11px 12px;
+  margin:0 0 11px;
+}
+.home-premium-strip b{
+  display:block;
+  font-size:12px;
+}
+.home-premium-strip small{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  margin-top:2px;
+}
+.home-premium-strip button{
+  white-space:nowrap;
+  min-height:34px !important;
+  padding:7px 10px !important;
+  font-size:11px !important;
+  border-radius:12px !important;
+}
+.best-card{
+  margin-bottom:11px;
+}
+.stats-strip{
+  margin-bottom:11px !important;
+}
+.stat-pill{
+  min-height:62px;
+}
+@media(max-width:600px){
+  .hero{
+    min-height:174px !important;
+    padding:14px !important;
+    border-radius:23px !important;
+  }
+  .hero h1{
+    font-size:24px !important;
+  }
+  .hero p{
+    font-size:11.5px !important;
+    max-width:250px;
+  }
+  .quick-grid{
+    gap:7px;
+  }
+  .quick-card{
+    padding:10px;
+    min-height:58px;
+    border-radius:16px;
+  }
+  .quick-card span{
+    width:30px;
+    height:30px;
+    border-radius:11px;
+  }
+  .quick-card b{
+    font-size:11.5px;
+  }
+  .quick-card small{
+    font-size:9px;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -1410,6 +1536,7 @@ function renderHome(){
   const today = matches.filter(m=>sameDay(m.date) && m.status!=='live');
   const best = filteredPredictions()[0];
   const topThree = filteredPredictions().slice(0,3);
+  const nextStrong = filteredPredictions().slice(0,2);
   $('#page-home').innerHTML = `
     <div class="hero">
       <div class="hero-content">
@@ -1422,11 +1549,25 @@ function renderHome(){
         </div>
       </div>
     </div>
+
+    <div class="quick-grid">
+      <button class="quick-card" onclick="goToPage('live')"><span>●</span><div><b>Ao vivo</b><small>${live.length} jogos monitorados</small></div></button>
+      <button class="quick-card" onclick="goToPage('scanner')"><span>IA</span><div><b>Top IA</b><small>${topThree.length} oportunidades</small></div></button>
+      <button class="quick-card" onclick="goToPage('tips')"><span>🎟</span><div><b>Bilhetes</b><small>Automáticos e personalizados</small></div></button>
+      <button class="quick-card" onclick="goToPage('ai')"><span>↗</span><div><b>Analisar jogo</b><small>Entrada pronta com motivo</small></div></button>
+    </div>
+
+    <div class="home-premium-strip">
+      <div><b>Prado Premium preparado</b><small>Tips, scanner, IA e alertas no mesmo app</small></div>
+      <button class="btn gold" onclick="document.body.classList.add('modal-open');document.getElementById('settingsModal').showModal()">Configurar</button>
+    </div>
+
     <div class="stats-strip">
       <div class="stat-pill"><b>${matches.length}</b><span>Jogos lidos</span></div>
       <div class="stat-pill"><b>${live.length}</b><span>Ao vivo</span></div>
       <div class="stat-pill"><b>${topThree.length}</b><span>Top IA</span></div>
     </div>
+
     ${best ? `<article class="card best-card">
       <div class="eyebrow">Melhor do dia</div>
       <h2 class="answer-entry">${safe(best.entry)}</h2>
@@ -1434,6 +1575,9 @@ function renderHome(){
       <div class="confidence"><div class="bar"><i style="width:${best.confidence}%"></i></div><small>${best.confidence}% IA</small></div>
       <div class="market-tags"><span class="tag green">Odd mín. ${best.oddMin.toFixed(2)}</span><span class="tag gold">${safe(best.risk)}</span><span class="tag">${safe(best.source)}</span></div>
     </article>` : ''}
+
+    ${nextStrong.length ? `<div class="quick-grid">${nextStrong.map(p=>`<button class="quick-card" onclick="openMatchDetail('${p.match.id}')"><span>${p.confidence}%</span><div><b>${safe(p.entry)}</b><small>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</small></div></button>`).join('')}</div>` : ''}
+
     ${sectionHead('Ao vivo agora', 'Ver todos', "goToPage('live')")}
     ${live.length ? `<div class="hscroll">${live.slice(0,6).map(matchCard).join('')}</div>` : `<div class="card empty">Nenhum jogo ao vivo neste momento.</div>`}
     ${sectionHead('Jogos de hoje', 'Atualizar', 'loadData()')}
