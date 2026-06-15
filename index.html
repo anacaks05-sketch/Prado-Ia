@@ -2026,41 +2026,78 @@ body.modal-open #floatingAI{
 }
 
 
-/* ===== V16.4.1 — AO VIVO COMPACTO SOMENTE ===== */
-body[data-page="live"] .live-compact-dashboard{display:grid;gap:8px;margin:0 0 10px;}
-body[data-page="live"] .live-top-mini{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;}
-body[data-page="live"] .live-mini-kpi{min-height:52px;padding:9px 10px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(145deg,rgba(18,28,42,.92),rgba(8,12,18,.98));}
-body[data-page="live"] .live-mini-kpi b{display:block;font-family:'JetBrains Mono';font-size:17px;line-height:1;color:#fff;}
-body[data-page="live"] .live-mini-kpi span{display:block;margin-top:5px;font-size:8.8px;line-height:1.15;color:var(--muted);font-weight:900;}
-body[data-page="live"] .live-mini-kpi.green{border-color:rgba(33,230,161,.16);background:linear-gradient(145deg,rgba(33,230,161,.10),rgba(8,12,18,.98));}
-body[data-page="live"] .live-mini-kpi.gold{border-color:rgba(255,224,110,.16);background:linear-gradient(145deg,rgba(255,224,110,.10),rgba(8,12,18,.98));}
-body[data-page="live"] .live-compact-note{padding:9px 10px !important;border-radius:16px !important;background:rgba(255,255,255,.035) !important;}
-body[data-page="live"] .live-compact-note .card-title{font-size:12px !important;margin-bottom:2px !important;}
-body[data-page="live"] .live-compact-note .muted{font-size:9.8px !important;line-height:1.32 !important;}
-body[data-page="live"] .live-list-compact{display:grid;gap:8px;}
-body[data-page="live"] .live-game-card{position:relative;display:grid;gap:9px;padding:11px;border-radius:18px;border:1px solid rgba(255,71,126,.16);background:linear-gradient(145deg,rgba(15,22,34,.94),rgba(8,12,18,.98));box-shadow:0 12px 28px rgba(0,0,0,.18);overflow:hidden;}
-body[data-page="live"] .live-game-card::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 86% 16%,rgba(255,71,126,.08),transparent 34%);pointer-events:none;}
-body[data-page="live"] .live-game-top{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:8px;}
-body[data-page="live"] .live-chip{display:inline-flex;align-items:center;gap:6px;max-width:76%;padding:6px 9px;border-radius:999px;border:1px solid rgba(255,71,126,.25);background:rgba(255,71,126,.10);color:#ffd8e7;font-size:9.5px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-body[data-page="live"] .live-score-mini{font-family:'JetBrains Mono';font-size:19px;font-weight:900;color:var(--gold);white-space:nowrap;}
-body[data-page="live"] .live-team-lines{position:relative;z-index:1;display:grid;gap:7px;}
-body[data-page="live"] .live-team-line{display:flex;align-items:center;justify-content:space-between;gap:10px;}
-body[data-page="live"] .live-team-main{display:flex;align-items:center;gap:9px;min-width:0;}
-body[data-page="live"] .live-team-main .name{font-size:15px;font-weight:900;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-body[data-page="live"] .live-goal{font-family:'JetBrains Mono';font-size:18px;font-weight:900;color:#fff;min-width:22px;text-align:right;}
-body[data-page="live"] .live-game-bottom{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px;padding-top:7px;border-top:1px solid rgba(255,255,255,.06);}
-body[data-page="live"] .live-prediction{display:flex;align-items:center;gap:6px;min-width:0;flex-wrap:wrap;}
-body[data-page="live"] .live-prediction .tag{font-size:8.5px !important;padding:5px 7px !important;}
-body[data-page="live"] .live-open{font-size:9px;color:var(--green);font-weight:900;white-space:nowrap;}
-body[data-page="live"] .live-upcoming-compact{display:grid;gap:8px;}
-body[data-page="live"] .live-upcoming-row{display:grid;grid-template-columns:58px 1fr auto;gap:10px;align-items:center;padding:10px;border-radius:17px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(145deg,rgba(17,24,35,.92),rgba(8,12,18,.98));}
-body[data-page="live"] .live-time-box{text-align:center;}
-body[data-page="live"] .live-time-box b{display:block;font-family:'JetBrains Mono';font-size:14px;color:#fff;}
-body[data-page="live"] .live-time-box span{display:block;margin-top:2px;font-size:8.5px;color:var(--muted);font-weight:900;}
-body[data-page="live"] .live-upcoming-teams{display:grid;gap:5px;min-width:0;}
-body[data-page="live"] .live-upcoming-teams .team-name{font-size:13px;}
-body[data-page="live"] .live-vs-mini{color:var(--gold);font-weight:900;font-size:12px;}
-@media(max-width:430px){body[data-page="live"] .live-top-mini{gap:6px;}body[data-page="live"] .live-mini-kpi{min-height:48px;padding:8px;}body[data-page="live"] .live-mini-kpi b{font-size:15px;}body[data-page="live"] .live-mini-kpi span{font-size:8px;}body[data-page="live"] .live-game-card{padding:10px;border-radius:17px;}body[data-page="live"] .live-team-main .name{font-size:14px;}body[data-page="live"] .live-upcoming-row{grid-template-columns:52px 1fr auto;gap:8px;}}
+/* ===== V16.5 — IA SOMENTE ===== */
+body[data-page="ai"] .ai-v165-shell{display:grid;gap:10px}
+body[data-page="ai"] .ai-v165-hero{position:relative;overflow:hidden;padding:14px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(155deg,rgba(10,18,28,.98),rgba(7,13,22,.98));box-shadow:0 18px 38px rgba(0,0,0,.22)}
+body[data-page="ai"] .ai-v165-hero::after{content:"";position:absolute;right:-32px;top:-28px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle, rgba(33,230,161,.15), transparent 62%);pointer-events:none}
+body[data-page="ai"] .ai-v165-head{position:relative;z-index:1;display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+body[data-page="ai"] .ai-v165-title h2{margin:0;font-family:'Space Grotesk';font-size:24px;line-height:1.02}
+body[data-page="ai"] .ai-v165-title p{margin:6px 0 0;color:var(--muted);font-size:11px;line-height:1.42;max-width:320px}
+body[data-page="ai"] .ai-v165-badge{padding:9px 11px;border-radius:14px;background:rgba(33,230,161,.12);border:1px solid rgba(33,230,161,.18);font-size:11px;font-weight:900;color:var(--green);white-space:nowrap}
+body[data-page="ai"] .ai-v165-kpis{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-top:11px}
+body[data-page="ai"] .ai-v165-kpi{padding:9px 10px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+body[data-page="ai"] .ai-v165-kpi b{display:block;font-family:'JetBrains Mono';font-size:17px;line-height:1;color:#fff}
+body[data-page="ai"] .ai-v165-kpi span{display:block;margin-top:5px;font-size:8.8px;line-height:1.15;color:var(--muted);font-weight:900}
+body[data-page="ai"] .ai-v165-kpi.green{background:rgba(33,230,161,.08);border-color:rgba(33,230,161,.14)}
+body[data-page="ai"] .ai-v165-kpi.gold{background:rgba(255,224,110,.08);border-color:rgba(255,224,110,.14)}
+body[data-page="ai"] .ai-v165-chat-preview{display:grid;gap:8px}
+body[data-page="ai"] .ai-v165-bubble{padding:11px 12px;border-radius:18px;border:1px solid rgba(255,255,255,.06);box-shadow:0 10px 24px rgba(0,0,0,.14)}
+body[data-page="ai"] .ai-v165-bubble.user{margin-left:auto;max-width:90%;background:linear-gradient(135deg,rgba(136,245,207,.96),rgba(82,218,255,.95));color:#081018}
+body[data-page="ai"] .ai-v165-bubble.user b{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.12em;opacity:.72;margin-bottom:4px}
+body[data-page="ai"] .ai-v165-bubble.user p{margin:0;font-size:12px;font-weight:800;line-height:1.35}
+body[data-page="ai"] .ai-v165-bubble.bot{margin-right:auto;max-width:94%;background:linear-gradient(145deg,rgba(18,27,44,.98),rgba(9,15,24,.98));color:#fff}
+body[data-page="ai"] .ai-v165-bubble.bot b{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:4px}
+body[data-page="ai"] .ai-v165-bubble.bot p{margin:0;font-size:11px;color:var(--muted);line-height:1.42}
+body[data-page="ai"] .ai-v165-chip-row{display:flex;gap:7px;overflow:auto;padding-bottom:2px}
+body[data-page="ai"] .ai-v165-chip{white-space:nowrap;border-radius:999px;padding:9px 11px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);font-size:11px;font-weight:900;color:#fff}
+body[data-page="ai"] .ai-v165-chip.green{border-color:rgba(33,230,161,.18);background:rgba(33,230,161,.08);color:var(--green)}
+body[data-page="ai"] .ai-v165-chip.gold{border-color:rgba(255,224,110,.18);background:rgba(255,224,110,.08);color:var(--gold)}
+body[data-page="ai"] .ai-v165-builder{padding:13px !important;border-radius:22px !important;background:linear-gradient(160deg,rgba(12,19,31,.98),rgba(8,12,18,.99)) !important}
+body[data-page="ai"] .ai-v165-builder-head{display:flex;justify-content:space-between;gap:8px;align-items:flex-start;margin-bottom:10px}
+body[data-page="ai"] .ai-v165-builder-head h3{margin:0;font-family:'Space Grotesk';font-size:21px;line-height:1.02}
+body[data-page="ai"] .ai-v165-builder-head p{margin:5px 0 0;color:var(--muted);font-size:10px;line-height:1.35;max-width:320px}
+body[data-page="ai"] .ai-v165-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+body[data-page="ai"] .ai-v165-grid .field{min-height:48px;border-radius:16px !important;font-size:13px !important}
+body[data-page="ai"] .ai-v165-grid .textarea{grid-column:1/-1;min-height:88px !important;padding-top:12px !important}
+body[data-page="ai"] .ai-v165-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+body[data-page="ai"] .ai-v165-actions .btn{min-height:42px !important;padding:0 14px !important;font-size:12px !important;border-radius:15px !important}
+body[data-page="ai"] .ai-v165-answer{padding:13px !important;border-radius:22px !important;background:linear-gradient(160deg,rgba(8,33,25,.96),rgba(9,15,22,.99)) !important;border:1px solid rgba(33,230,161,.16) !important;display:grid;gap:10px}
+body[data-page="ai"] .ai-v165-answer-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+body[data-page="ai"] .ai-v165-answer-top .eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:900;margin-bottom:4px}
+body[data-page="ai"] .ai-v165-answer-top .entry{font-family:'Space Grotesk';font-size:24px;line-height:1.02;color:#fff}
+body[data-page="ai"] .ai-v165-answer-top p{margin:4px 0 0;color:var(--muted);font-size:11px;line-height:1.35}
+body[data-page="ai"] .ai-v165-score{min-width:74px;padding:9px 10px;border-radius:16px;background:rgba(33,230,161,.14);border:1px solid rgba(33,230,161,.18);text-align:center}
+body[data-page="ai"] .ai-v165-score b{display:block;font-size:20px;line-height:1;color:var(--green)}
+body[data-page="ai"] .ai-v165-score span{display:block;margin-top:4px;font-size:9px;color:#dbe4ec}
+body[data-page="ai"] .ai-v165-pill-row{display:flex;flex-wrap:wrap;gap:7px}
+body[data-page="ai"] .ai-v165-pill{padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);font-size:10px;font-weight:800}
+body[data-page="ai"] .ai-v165-plan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+body[data-page="ai"] .ai-v165-plan .plan{padding:10px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+body[data-page="ai"] .ai-v165-plan .plan b{display:block;font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
+body[data-page="ai"] .ai-v165-plan .plan span{display:block;font-size:11px;font-weight:800;line-height:1.32}
+body[data-page="ai"] .ai-v165-plan .plan small{display:block;margin-top:4px;font-size:9px;color:var(--muted);line-height:1.3}
+body[data-page="ai"] .ai-v165-reasons{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+body[data-page="ai"] .ai-v165-reason{padding:9px 10px;border-radius:15px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);font-size:10px;line-height:1.45;color:#dbe3ec}
+body[data-page="ai"] .ai-v165-reason b{color:#fff}
+body[data-page="ai"] .ai-v165-mini-panels{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+body[data-page="ai"] .ai-v165-mini-panels .card{padding:11px !important;border-radius:18px !important}
+body[data-page="ai"] .ai-v165-mini-panels .card-title{font-size:12px !important;margin-bottom:5px !important}
+body[data-page="ai"] .ai-v165-mini-panels .muted{font-size:10px !important;line-height:1.35 !important}
+@media(max-width:430px){
+  body[data-page="ai"] .ai-v165-head{display:grid;gap:8px}
+  body[data-page="ai"] .ai-v165-title h2{font-size:22px}
+  body[data-page="ai"] .ai-v165-kpis{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  body[data-page="ai"] .ai-v165-kpi{padding:8px}
+  body[data-page="ai"] .ai-v165-kpi b{font-size:15px}
+  body[data-page="ai"] .ai-v165-kpi span{font-size:8px}
+  body[data-page="ai"] .ai-v165-grid{grid-template-columns:1fr}
+  body[data-page="ai"] .ai-v165-grid .textarea{grid-column:auto}
+  body[data-page="ai"] .ai-v165-plan{grid-template-columns:1fr}
+  body[data-page="ai"] .ai-v165-reasons{grid-template-columns:1fr}
+  body[data-page="ai"] .ai-v165-mini-panels{grid-template-columns:1fr}
+  body[data-page="ai"] .ai-v165-answer-top{align-items:flex-start}
+  body[data-page="ai"] .ai-v165-answer-top .entry{font-size:22px}
+}
 
 </style>
 </head>
@@ -2817,35 +2854,15 @@ function renderHome(){
 function renderLive(){
   const live = filteredMatches().filter(m=>m.status==='live');
   const pre = filteredMatches().filter(m=>m.status!=='live').slice(0,8);
-  const livePreds = filteredPredictions().filter(p=>p.match.status==='live').sort((a,b)=>b.confidence-a.confidence);
-  const bestLive = livePreds[0] || null;
-  const avgConfidence = livePreds.length ? Math.round(livePreds.reduce((acc,p)=>acc+p.confidence,0)/livePreds.length) : 0;
-  const liveCompactCard = (m) => {
-    const pred = state.predictions.find(p=>p.matchId===m.id) || computePredictions([m])[0];
-    return `<article class="live-game-card" onclick="openMatchDetail('${m.id}')">
-      <div class="live-game-top"><div class="live-chip"><span class="pulse"></span>${m.minute || 0}' AO VIVO · ${safe(m.league)}</div><div class="live-score-mini">${m.score.home}-${m.score.away}</div></div>
-      <div class="live-team-lines">
-        <div class="live-team-line"><div class="live-team-main">${crestHTML(m.home,28)}<span class="name">${safe(m.home.name)}</span></div><div class="live-goal">${m.score.home}</div></div>
-        <div class="live-team-line"><div class="live-team-main">${crestHTML(m.away,28)}<span class="name">${safe(m.away.name)}</span></div><div class="live-goal">${m.score.away}</div></div>
-      </div>
-      <div class="live-game-bottom"><div class="live-prediction"><span class="tag green">${safe(pred.entry)}</span><span class="tag gold">${pred.confidence}% IA</span><span class="tag">Odd ${pred.oddMin.toFixed(2)}</span></div><div class="live-open">Abrir →</div></div>
-    </article>`;
-  };
-  const upcomingCompact = (m) => `<article class="live-upcoming-row" onclick="openMatchDetail('${m.id}')">
-      <div class="live-time-box"><b>${m.status==='finished' ? 'FIM' : fmtTime(m.date)}</b><span>${fmtDate(m.date)}</span></div>
-      <div class="live-upcoming-teams"><div class="team-name">${crestHTML(m.home,22)}${safe(m.home.name)}</div><div class="team-name">${crestHTML(m.away,22)}${safe(m.away.name)}</div></div>
-      <div class="live-vs-mini">${m.status==='finished' ? `${m.score.home}-${m.score.away}` : 'VS'}</div>
-    </article>`;
   $('#page-live').innerHTML = `
     ${sectionHead('Ao vivo agora', live.length ? `${live.length} jogos` : '')}
-    <div class="live-compact-dashboard">
-      <div class="live-top-mini"><div class="live-mini-kpi green"><b>${live.length}</b><span>Jogos ao vivo</span></div><div class="live-mini-kpi gold"><b>${bestLive ? bestLive.confidence+'%' : '--'}</b><span>Top IA</span></div><div class="live-mini-kpi"><b>${avgConfidence || '--'}%</b><span>Média IA</span></div></div>
-      <div class="card compact live-compact-note"><div class="card-title">Central ao vivo compacta</div><p class="muted">Toque no jogo para abrir resumo, stats, escalação, H2H, classificação e melhor entrada da IA.</p></div>
+    <div class="card compact mini-note">
+      <div class="card-title">Resumo rápido do ao vivo</div>
+      <p class="muted">Toque no jogo para abrir resumo, stats, escalação, H2H, classificação e entrada da IA.</p>
     </div>
-    ${live.length ? `<div class="live-list-compact">${live.map(liveCompactCard).join('')}</div>` : '<div class="card empty">Nenhum jogo ao vivo neste momento.</div>'}
-    ${livePreds.length ? `<div class="card compact live-compact-note" style="margin-top:10px"><div class="card-title">Melhor leitura ao vivo</div><p class="muted">${safe(bestLive.match.home.name)} x ${safe(bestLive.match.away.name)} · ${safe(bestLive.entry)} · ${bestLive.confidence}% IA.</p></div>` : ''}
+    ${live.length ? `<div class="match-list live-list">${live.map(matchRow).join('')}</div>` : '<div class="card empty">Nenhum jogo ao vivo neste momento.</div>'}
     ${sectionHead('Próximos jogos para monitorar')}
-    <div class="live-upcoming-compact">${pre.map(upcomingCompact).join('') || '<div class="card empty">Nenhum jogo pré-jogo encontrado.</div>'}</div>
+    <div class="match-list">${pre.map(matchRow).join('') || '<div class="card empty">Nenhum jogo pré-jogo encontrado.</div>'}</div>
   `;
 }
 

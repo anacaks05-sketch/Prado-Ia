@@ -1,18 +1,24 @@
-# Prado Sports AI — V16.4.1 Ao Vivo Compacto
+# Prado Sports AI — V16.5 IA Premium
 
-## Regra desta versão
-Esta versão mexe SOMENTE na aba Ao vivo.
+## Escopo
+Somente a aba IA.
 
-## Corrigido
-- A versão anterior ficou grande e desorganizada.
-- Agora a aba Ao vivo está mais compacta.
-- Cards menores e mais fáceis de ler no iPhone.
-- Mantém visual moderno, mas sem exagerar.
-- Jogos ao vivo mostram: placar, entrada IA, confiança e odd.
-- Próximos jogos ficaram mais simples e organizados.
+## Alterado
+- IA ficou mais premium e mais organizada.
+- Layout mais compacto para iPhone.
+- Chips rápidos de mercado.
+- Bloco “Montar análise” mais bonito.
+- Resposta da IA com entrada, confiança, plano B e leitura do confronto.
+- Visual mais parecido com app pago.
 
 ## Não alterado
-- Home, IA, Bilhetes, Scanner, Configurações, Notificações, botão IA flutuante e menu inferior.
+- Home
+- Ao vivo
+- Bilhetes
+- Scanner
+- Configurações
+- Botão flutuante
+- Menu inferior
 
 ## Teste
-https://prado-ia.vercel.app/?v=16-4-1
+Use: ?v=16-5
