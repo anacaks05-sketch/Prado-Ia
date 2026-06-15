@@ -38,14 +38,16 @@
   --safe-bottom:env(safe-area-inset-bottom, 0px);
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{background:var(--bg);color-scheme:dark;scroll-behavior:smooth}
+html{
+  background:#070B11;
+  color-scheme:dark;
+  scroll-behavior:smooth;
+}
 body{
   margin:0;
   min-height:100svh;
   background:
-    radial-gradient(circle at 12% -5%, rgba(255,224,110,.13), transparent 30%),
-    radial-gradient(circle at 95% 4%, rgba(33,230,161,.11), transparent 26%),
-    linear-gradient(180deg,#070B11,#0B1018 46%,#070B11);
+    linear-gradient(180deg,#070B11 0%, #070B11 92px, #0B1018 210px, #070B11 100%);
   color:var(--text);
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 }
@@ -129,7 +131,7 @@ button{cursor:pointer}
 
 
 /* =====================================================
-   V12.1 — MODO CELULAR COMPACTO
+   V12.2 — MODO CELULAR COMPACTO
    Tela menor, cards mais baixos e melhor encaixe no iPhone.
 ===================================================== */
 @media (max-width:600px){
@@ -137,11 +139,18 @@ button{cursor:pointer}
   body{font-size:14px;}
   .app{
     max-width:100%;
-    padding:30px 10px calc(76px + var(--safe-bottom)) !important;
+    padding:0 10px calc(72px + var(--safe-bottom)) !important;
   }
   .topbar{
-    margin:0 -10px 8px !important;
-    padding:6px 10px 9px !important;
+    position:sticky !important;
+    top:0 !important;
+    z-index:30 !important;
+    margin:0 -10px 7px !important;
+    padding:calc(6px + env(safe-area-inset-top)) 10px 8px !important;
+    background:#070B11 !important;
+    backdrop-filter:none !important;
+    -webkit-backdrop-filter:none !important;
+    border-bottom:1px solid rgba(255,255,255,.05) !important;
   }
   .brand-line{gap:8px !important;margin-bottom:7px !important;}
   .brand-mark{width:34px !important;height:34px !important;border-radius:12px !important;font-size:17px !important;}
@@ -156,30 +165,30 @@ button{cursor:pointer}
   .search-box span{font-size:16px !important;}
 
   .hero{
-    min-height:176px !important;
-    padding:15px !important;
+    min-height:160px !important;
+    padding:13px !important;
     border-radius:24px !important;
     margin-bottom:10px !important;
   }
   .hero-content{max-width:265px !important;}
   .eyebrow,.splash-kicker{font-size:9.5px !important;letter-spacing:.11em !important;}
-  .hero h1{font-size:25px !important;line-height:1.02 !important;margin:6px 0 7px !important;letter-spacing:-.05em !important;}
-  .hero p{font-size:12px !important;line-height:1.38 !important;margin:0 0 10px !important;}
+  .hero h1{font-size:22px !important;line-height:1.02 !important;margin:6px 0 7px !important;letter-spacing:-.05em !important;}
+  .hero p{font-size:11px !important;line-height:1.38 !important;margin:0 0 10px !important;}
   .hero-actions{gap:6px !important;}
 
-  .btn{min-height:38px !important;padding:8px 11px !important;border-radius:13px !important;font-size:13px !important;gap:6px !important;}
+  .btn{min-height:36px !important;padding:7px 10px !important;border-radius:12px !important;font-size:12px !important;gap:6px !important;}
   .wide{margin-top:7px !important;}
 
   .stats-strip{gap:7px !important;margin-bottom:10px !important;}
-  .stat-pill{padding:9px 8px !important;border-radius:16px !important;}
-  .stat-pill b{font-size:17px !important;}
+  .stat-pill{padding:8px 7px !important;border-radius:16px !important;}
+  .stat-pill b{font-size:15px !important;}
   .stat-pill span{font-size:9.5px !important;margin-top:3px !important;}
 
   .section-head{margin:13px 2px 7px !important;}
   .section-title{font-size:16px !important;}
   .section-link{font-size:10.5px !important;padding:5px 9px !important;border-radius:999px;background:rgba(255,224,110,.1);border:1px solid rgba(255,224,110,.18);}
 
-  .card{padding:12px !important;border-radius:20px !important;box-shadow:0 12px 28px rgba(0,0,0,.22) !important;}
+  .card{padding:10px !important;border-radius:20px !important;box-shadow:0 12px 28px rgba(0,0,0,.22) !important;}
   .compact{padding:11px !important;}
   .card-title{font-size:13px !important;margin-bottom:6px !important;}
   .muted{font-size:11.5px !important;line-height:1.42 !important;}
@@ -193,7 +202,7 @@ button{cursor:pointer}
   .tag{font-size:9.3px !important;padding:5px 7px !important;}
 
   .hscroll{gap:8px !important;}
-  .live-card,.tip-card,.opportunity-card{min-width:238px !important;}
+  .live-card,.tip-card,.opportunity-card{min-width:220px !important;}
   .league-tag{font-size:9px !important;padding:5px 7px !important;margin-bottom:8px !important;}
   .match-teams{gap:6px !important;}
   .team-name{font-size:12.5px !important;gap:7px !important;}
@@ -241,9 +250,9 @@ button{cursor:pointer}
 
   .floating-ai{width:50px !important;height:50px !important;border-radius:18px !important;right:12px !important;bottom:78px !important;font-size:14px !important;}
   .floating-ai span{font-size:8.5px !important;}
-  .bottom-nav{padding:5px 7px calc(5px + var(--safe-bottom)) !important;}
+  .bottom-nav{padding:4px 6px calc(4px + var(--safe-bottom)) !important;}
   .bottom-nav .nav-item{border-radius:14px !important;padding:5px 1px 6px !important;font-size:9px !important;}
-  .bottom-nav .nav-item span{font-size:18px !important;margin-bottom:1px !important;}
+  .bottom-nav .nav-item span{font-size:16px !important;margin-bottom:1px !important;}
 
   .splash-card{padding:22px 18px !important;border-radius:28px !important;}
   .splash h1{font-size:27px !important;line-height:1.03 !important;}
@@ -263,7 +272,48 @@ button{cursor:pointer}
   .live-card,.tip-card,.opportunity-card{min-width:224px !important;}
 }
 
-  </style>
+  
+/* =====================================================
+   V12.2 — V4 FINAL COMPACTA
+   Topo preto real no iPhone + tela inicial mais baixa.
+===================================================== */
+@media (max-width:600px){
+  html, body{background-color:#070B11 !important;}
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0 0 auto 0;
+    height:calc(100px + env(safe-area-inset-top));
+    background:#070B11;
+    z-index:18;
+    pointer-events:none;
+  }
+  .topbar{position:sticky !important;z-index:31 !important;}
+  .brand-line{margin-top:0 !important;}
+  .hero{background-position:center bottom !important;}
+  .hero-content{max-width:250px !important;}
+  .hero-actions .btn:first-child{min-width:172px !important;}
+  .stats-strip{grid-template-columns:repeat(3,minmax(0,1fr)) !important;}
+  .answer-entry{font-size:18px !important;}
+  .confidence b{font-size:12px !important;}
+  .section-head + .hscroll{margin-bottom:2px !important;}
+  .bottom-nav{
+    background:rgba(7,11,17,.97) !important;
+    backdrop-filter:blur(12px) !important;
+    -webkit-backdrop-filter:blur(12px) !important;
+  }
+}
+@media(max-width:380px){
+  .brand-line strong{font-size:15px !important;}
+  .brand-line small{font-size:9.5px !important;max-width:255px !important;}
+  .search-box,.icon-btn{height:40px !important;min-width:40px !important;}
+  .hero{min-height:152px !important;padding:12px !important;}
+  .hero h1{font-size:21px !important;}
+  .btn{min-height:34px !important;font-size:11.5px !important;}
+  .floating-ai{width:46px !important;height:46px !important;}
+}
+
+</style>
 </head>
 <body>
   <div id="splash" class="splash" aria-label="Tela inicial">

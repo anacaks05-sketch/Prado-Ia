@@ -1,10 +1,18 @@
-# Prado Sports AI V12 — Versão celular sem pastas
+# Prado Sports AI — V12 V4 Final Compacta
 
-Esta versão foi feita para subir pelo celular sem precisar enviar pastas.
+Versão preparada para teste pelo celular, sem precisar configurar API agora.
 
-## Arquivos para enviar no GitHub
-Envie estes arquivos na raiz do repositório:
+## O que foi ajustado
+- Topo do iPhone totalmente preto.
+- Home mais compacta.
+- Logo e busca menores.
+- Banner principal menor.
+- Cards e botões menores.
+- Menu inferior mais discreto.
+- Mantém modo prévia/demo sem API.
 
+## Como publicar
+Suba estes arquivos no GitHub:
 - index.html
 - manifest.json
 - sw.js
@@ -12,18 +20,8 @@ Envie estes arquivos na raiz do repositório:
 - icon-192.png
 - icon-512.png
 
-## Para API segura na Vercel
-O GitHub pelo celular não envia pasta inteira. Então crie manualmente um arquivo novo com este nome:
+Depois abra na Vercel com:
+https://SEU-LINK.vercel.app/?v=4
 
-api/football.js
-
-Depois cole o conteúdo de `API-FOOTBALL-COPIAR.txt`.
-
-Na Vercel, vá em Settings > Environment Variables e adicione:
-
-APISPORTS_KEY = sua chave da API-Football
-
-Depois faça Redeploy.
-
-## Teste rápido sem proxy
-Também dá para testar pelo botão ⚙️ do app colando a chave da API no navegador, mas para vender o produto use a variável da Vercel.
+## API
+A API fica para depois. Quando for colocar API real, adicione a rota /api/football.js e a variável APISPORTS_KEY na Vercel.
