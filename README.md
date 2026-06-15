@@ -1,24 +1,13 @@
-# Prado Sports AI — V12 V11 Ultra Compact IA
+# Prado Sports AI — V12 iPhone Ajustes
 
-## Melhorias
-- Interface geral mais compacta.
-- Home menor e mais organizada.
-- Bilhetes mais modernos e compactos.
-- Gerador de bilhete com mais mercados:
-  - Gols partida
-  - Gols 1T
-  - Ambas marcam
-  - Escanteios
-  - Cartões
-  - Dupla chance
-  - Empate anula
-  - Jogos para gols
-- IA Prado mais forte:
-  - botões rápidos por objetivo;
-  - leitura de confiança, odd mínima e pressão;
-  - resposta mais completa com motivo principal, status, escalação e leitura do jogo.
-- Cards, fontes e espaçamentos reduzidos para caber melhor no iPhone.
+## Ajustes desta versão
+- Tela de notificações movida para uma aba separada dentro das configurações.
+- Novas notificações: escanteios ao vivo e cartão amarelo.
+- Layout geral mais compacto para iPhone.
+- Card "Bilhetes IA automáticos" reduzido para não ficar grande demais.
+- Faixa "Premium pronto" removida da tela inicial.
+- Ajustes extras de espaçamento, topo e botões.
 
 ## Como testar
 Suba na Vercel e abra com:
-https://prado-ia.vercel.app/?v=11
+https://prado-ia.vercel.app/?v=12
