@@ -703,6 +703,51 @@ body[data-page="match"] .bottom-nav{
   .search-done{height:43px !important;min-width:43px !important}
 }
 
+
+/* ===== V8 Carlos ===== */
+#openSearch{display:none !important;}
+body[data-page="home"] .home-search-row{display:grid !important;}
+body.search-open[data-page="home"] .home-search-row{display:grid !important;}
+.home-search-row{grid-template-columns:1fr 46px !important;}
+.search-done{opacity:0;pointer-events:none;transform:scale(.92);transition:opacity .18s ease, transform .18s ease;}
+body.search-focused .search-done,
+body.search-has-text .search-done{opacity:1;pointer-events:auto;transform:scale(1);}
+#globalSearch,.field,select,textarea{font-size:16px !important;}
+body.modal-open .bottom-nav,
+body.modal-open #floatingAI{transform:translateY(120%) !important;opacity:0 !important;pointer-events:none !important;}
+.bottom-nav{will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden;}
+body[data-page="ai"] #floatingAI,
+body[data-page="tips"] #floatingAI,
+body[data-page="match"] #floatingAI{display:none !important;}
+.modal{max-height:84svh;overflow:hidden;}
+.modal-head{position:sticky;top:0;z-index:2;background:linear-gradient(145deg,rgba(18,28,41,.98),rgba(7,11,17,.99));}
+.settings-grid{max-height:calc(84svh - 86px);overflow:auto;padding:12px 12px 16px;}
+.settings-grid::-webkit-scrollbar{width:6px}.settings-grid::-webkit-scrollbar-thumb{background:rgba(255,255,255,.12);border-radius:999px}
+.switch-row{padding:10px 0 !important;font-size:12.5px !important;}
+.page.active{animation:pageSlide .28s ease both;}
+.app-enter{animation:appReveal .5s cubic-bezier(.2,.8,.2,1) both;}
+@keyframes appReveal{0%{opacity:0;transform:translateY(14px) scale(.985)}100%{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes pageSlide{0%{opacity:.4;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}
+.rank-pill{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(145deg,rgba(33,230,161,.16),rgba(255,224,110,.1));border:1px solid rgba(255,255,255,.08);font-weight:900;color:var(--gold);font-family:'JetBrains Mono';}
+.table-row{grid-template-columns:38px 1fr auto !important;gap:10px !important;padding:11px 12px !important;border-radius:18px !important;background:linear-gradient(145deg,rgba(18,27,40,.9),rgba(8,12,19,.94)) !important;}
+.table-team{display:grid;gap:4px;min-width:0}.table-team b{font-size:14px !important;line-height:1.1}.table-team small{color:#92A0B4 !important;line-height:1.25;font-size:11px !important}
+.pts-pill{display:grid;gap:2px;justify-items:end;min-width:48px}.pts-pill small{font-size:10px !important;color:#A4AFBF !important;letter-spacing:.08em}.pts-pill .pts{font-size:16px !important}
+.lineup-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.lineup-team{padding:14px !important;background:linear-gradient(145deg,rgba(12,19,31,.96),rgba(6,11,18,.98)) !important;border-radius:22px !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.03),0 14px 30px rgba(0,0,0,.18)}
+.player-list{gap:8px !important}
+.player{justify-content:space-between;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:8px 10px;background:rgba(255,255,255,.025)}
+.player i{width:30px !important;height:30px !important;background:linear-gradient(145deg,rgba(255,224,110,.12),rgba(255,255,255,.04)) !important;border:1px solid rgba(255,255,255,.06);font-size:12px !important;font-weight:900}
+.player-meta{display:grid;gap:2px;flex:1;min-width:0}.player-meta b{font-size:14px;line-height:1.15}.player-meta small{font-size:10px;color:#8D9AAF;font-weight:800}
+.starter-dot{width:9px;height:9px;border-radius:999px;background:var(--green);box-shadow:0 0 12px rgba(33,230,161,.32)}
+@media(max-width:600px){
+  .home-search-row{grid-template-columns:1fr 44px !important;gap:7px !important;}
+  .search-done{height:44px !important;min-width:44px !important;border-radius:17px !important;}
+  .modal{width:min(430px,calc(100% - 16px)) !important;max-height:80svh !important;border-radius:22px !important}
+  .settings-grid{max-height:calc(80svh - 78px) !important;padding:10px !important}
+  .table-row{grid-template-columns:34px 1fr auto !important;padding:10px !important}
+  .detail-tabs{padding-right:8px}
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -740,7 +785,7 @@ body[data-page="match"] .bottom-nav{
       <div class="search-row home-search-row" id="searchPanel">
         <div class="search-box">
           <span class="ui-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.8 18.2a7.4 7.4 0 1 1 5.23-12.63 7.4 7.4 0 0 1-5.23 12.63Zm0-2.4a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm5.55.85 3.3 3.3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-          <input id="globalSearch" type="search" placeholder="Buscar jogo, time ou liga" autocomplete="off" />
+          <input id="globalSearch" type="text" inputmode="search" placeholder="Buscar jogo, time ou liga" autocomplete="off" />
         </div>
         <button id="closeSearch" class="icon-btn search-done" aria-label="Fechar busca"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12.5 4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
@@ -983,7 +1028,11 @@ const state = {
   source: 'demo',
   selectedMatchId: null,
   detailTab: 'summary',
-  lastMainPage: 'home'
+  lastMainPage: 'home',
+  customMarket: 'gols_partida',
+  customLine: '2.5',
+  customGames: 3,
+  customTicket: null
 };
 
 const DEMO_LEAGUES = ['Brasileirão', 'Premier League', 'La Liga', 'Champions League', 'Libertadores', 'Copa do Brasil', 'Serie A', 'Bundesliga'];
@@ -1202,7 +1251,16 @@ function makeH2H(m){
 }
 function makeTable(m){
   const teams = [m.home.name,m.away.name,'Flamengo','Palmeiras','Botafogo','São Paulo','Arsenal','Chelsea'].filter((v,i,a)=>a.indexOf(v)===i).slice(0,6);
-  return teams.map((t,idx)=>({pos:idx+1,name:t,pts:clamp(24-(idx*3)+(m.home.name===t?2:0),8,30),j:12+idx,v:7-idx%3})).sort((a,b)=>b.pts-a.pts).map((row,i)=>({...row,pos:i+1}));
+  return teams.map((t,idx)=>({
+    pos:idx+1,
+    name:t,
+    pts:clamp(26-(idx*4)+(m.home.name===t?2:0),9,32),
+    j:12+idx,
+    v:7-idx%3,
+    e:2+idx%2,
+    d:1+idx%3,
+    sg:clamp(11-(idx*2)+(m.home.name===t?2:0),1,14)
+  })).sort((a,b)=>b.pts-a.pts).map((row,i)=>({...row,pos:i+1}));
 }
 
 function makeCompareStats(m){
@@ -1275,14 +1333,21 @@ function renderMatchDetail(){
     </div>`;
   } else if(state.detailTab==='lineup'){
     const home = probableLineup(m.home.name), away = probableLineup(m.away.name);
+    const role = i => ['Goleiro','Lateral','Zagueiro','Zagueiro','Lateral','Volante','Meia','Meia','Ponta','Atacante','Centroavante'][i] || 'Reserva';
     content = `<div class="lineup-board">
-      <div class="lineup-team"><div class="card-title">${crestHTML(m.home,24)} ${safe(m.home.name)}</div><div class="player-list">${home.map((pl,i)=>`<div class="player"><i>${i+1}</i>${safe(pl)}</div>`).join('')}</div></div>
-      <div class="lineup-team"><div class="card-title">${crestHTML(m.away,24)} ${safe(m.away.name)}</div><div class="player-list">${away.map((pl,i)=>`<div class="player"><i>${i+1}</i>${safe(pl)}</div>`).join('')}</div></div>
+      <div class="lineup-team">
+        <div class="lineup-top"><div class="card-title">${crestHTML(m.home,24)} ${safe(m.home.name)}</div><div class="market-tags"><span class="tag green">Provável XI</span><span class="tag">4-3-3</span></div></div>
+        <div class="player-list">${home.map((pl,i)=>`<div class="player"><i>${i+1}</i><div class="player-meta"><b>${safe(pl)}</b><small>${role(i)}</small></div><span class="starter-dot"></span></div>`).join('')}</div>
+      </div>
+      <div class="lineup-team">
+        <div class="lineup-top"><div class="card-title">${crestHTML(m.away,24)} ${safe(m.away.name)}</div><div class="market-tags"><span class="tag green">Provável XI</span><span class="tag">4-2-3-1</span></div></div>
+        <div class="player-list">${away.map((pl,i)=>`<div class="player"><i>${i+1}</i><div class="player-meta"><b>${safe(pl)}</b><small>${role(i)}</small></div><span class="starter-dot"></span></div>`).join('')}</div>
+      </div>
     </div>`;
   } else if(state.detailTab==='h2h'){
     content = `<div class="card"><div class="card-title">Confrontos diretos recentes</div><div class="h2h-list">${makeH2H(m).map(([d,txt])=>`<div class="h2h-row"><small>${safe(d)}</small><div>${safe(txt)}</div><b>H2H</b></div>`).join('')}</div></div>`;
   } else if(state.detailTab==='table'){
-    content = `<div class="card"><div class="card-title">Classificação do torneio</div><div class="table-mini">${makeTable(m).map(r=>`<div class="table-row"><small>${r.pos}º</small><div><b>${safe(r.name)}</b><small>${r.j}j · ${r.v}v</small></div><small>PTS</small><div class="pts">${r.pts}</div></div>`).join('')}</div></div>`;
+    content = `<div class="card"><div class="card-title">Classificação do torneio</div><div class="table-mini">${makeTable(m).map(r=>`<div class="table-row"><div class="rank-pill">${r.pos}º</div><div class="table-team"><b>${safe(r.name)}</b><small>${r.j}j · ${r.v}v · ${r.e}e · ${r.d}d · SG ${r.sg}</small></div><div class="pts-pill"><small>PTS</small><div class="pts">${r.pts}</div></div></div>`).join('')}</div></div>`;
   } else if(state.detailTab==='ai'){
     content = `<div class="ai-answer" style="margin-top:0"><div class="eyebrow">Melhor entrada IA para o jogo</div><div class="answer-entry">${safe(p.entry)}</div><div class="pick-sub">${safe(m.home.name)} x ${safe(m.away.name)} · Odd mínima ${p.oddMin.toFixed(2)}</div><div class="confidence"><div class="bar"><i style="width:${p.confidence}%"></i></div><small>${p.confidence}% IA</small></div><ul class="reason-list">${p.reasons.map(r=>`<li>${safe(r)}</li>`).join('')}</ul><div class="market-tags"><span class="tag green">${safe(p.marketType)}</span><span class="tag gold">${safe(riskLabel(p.risk))}</span><span class="tag">${safe(p.source)}</span></div><button class="btn secondary wide" onclick="openMatchAI('${m.id}')">Abrir no IA Prado</button></div>`;
   }
@@ -1371,6 +1436,75 @@ function renderLive(){
   `;
 }
 
+
+const CUSTOM_MARKETS = {
+  gols_partida:{label:'Gols na Partida', lines:['1.5','2.5','3.5'], build:v=>`Over ${v} gols`},
+  gols_1t:{label:'Gols 1 Tempo', lines:['0.5','1.5'], build:v=>`Over ${v} gols HT`},
+  ambos_marcam:{label:'Ambos Times Marcam', lines:['sim'], build:()=>`Ambos marcam — Sim`},
+  escanteios:{label:'Escanteios Partida', lines:['7.5','8.5','9.5'], build:v=>`Over ${v} escanteios`},
+  cartoes:{label:'Cartões na Partida', lines:['3.5','4.5','5.5'], build:v=>`Over ${v} cartões`},
+  jogos_gols:{label:'Jogos para Gols', lines:['1.5','2.5'], build:v=>`Jogo para over ${v} gols`}
+};
+function getCustomLineOptions(market){ return (CUSTOM_MARKETS[market] || CUSTOM_MARKETS.gols_partida).lines; }
+function marketLabelByKey(key){ return (CUSTOM_MARKETS[key] || CUSTOM_MARKETS.gols_partida).label; }
+function setCustomMarket(v){ state.customMarket = v; const opts = getCustomLineOptions(v); if(!opts.includes(state.customLine)) state.customLine = opts[0]; renderTips(); }
+function setCustomLine(v){ state.customLine = v; }
+function setCustomGames(v){ state.customGames = Number(v||3); }
+function customOddFor(market, line){
+  const table = {
+    gols_partida:{'1.5':1.35,'2.5':1.70,'3.5':2.10},
+    gols_1t:{'0.5':1.42,'1.5':2.05},
+    ambos_marcam:{'sim':1.72},
+    escanteios:{'7.5':1.45,'8.5':1.60,'9.5':1.84},
+    cartoes:{'3.5':1.52,'4.5':1.76,'5.5':1.96},
+    jogos_gols:{'1.5':1.44,'2.5':1.82}
+  };
+  return (table[market] && table[market][line]) || 1.60;
+}
+function buildCustomPick(match, market, line){
+  const s = match.stats || {};
+  const goals = Number((s.homeGoalsAvg || 1.2) + (s.awayGoalsAvg || 1.0));
+  const corners = Number(s.cornersAvg || 8.5);
+  const cards = Number(s.cardsAvg || 4.2);
+  const pressure = Number(s.pressure || 70);
+  let confidence = 70;
+  if(market==='gols_partida') confidence = 63 + goals*9 - Number(line)*5 + pressure*.06;
+  if(market==='gols_1t') confidence = 60 + goals*8 - Number(line)*11 + pressure*.05;
+  if(market==='ambos_marcam') confidence = 62 + goals*8 + ((s.homeForm||50)+(s.awayForm||50)-100)*.08;
+  if(market==='escanteios') confidence = 60 + corners*4.2 - Number(line)*4;
+  if(market==='cartoes') confidence = 60 + cards*7.5 - Number(line)*4.5;
+  if(market==='jogos_gols') confidence = 64 + goals*8.4 - Number(line)*6 + ((s.homeForm||50)+(s.awayForm||50)-100)*.05;
+  if(match.status==='live') confidence += 2;
+  confidence = clamp(Math.round(confidence), 58, 92);
+  return {
+    match,
+    entry:(CUSTOM_MARKETS[market] || CUSTOM_MARKETS.gols_partida).build(line),
+    confidence,
+    oddMin:customOddFor(market, line),
+    marketKey:market,
+    reasons:[
+      `Mercado escolhido: ${marketLabelByKey(market)}.`,
+      `Leitura da IA com base em forma, pressão e médias recentes.`,
+      `Confiança calibrada para o cenário ${match.status==='live' ? 'ao vivo' : 'pré-jogo'}.`
+    ]
+  };
+}
+function generateCustomTicket(){
+  const market = state.customMarket;
+  const line = state.customLine;
+  const games = Number(state.customGames || 3);
+  const picks = filteredMatches().map(m=>buildCustomPick(m, market, line)).sort((a,b)=>b.confidence-a.confidence).slice(0, games);
+  state.customTicket = {market, line, games, picks};
+  renderTips();
+  toast(`Bilhete ${marketLabelByKey(market)} gerado`, '🎟️');
+}
+function copyCustomTicket(){
+  if(!state.customTicket || !state.customTicket.picks?.length) return;
+  const g = state.customTicket;
+  const text = [`PRADO SPORTS AI — Bilhete personalizado`, `Mercado: ${marketLabelByKey(g.market)} · Linha: ${g.line} · Jogos: ${g.games}`, ...g.picks.map((p,i)=>`${i+1}. ${p.match.home.name} x ${p.match.away.name} — ${p.entry} | odd mín. ${p.oddMin.toFixed(2)} | ${p.confidence}% IA`), 'Análise informativa. Sem garantia de resultado.'].join('
+');
+  navigator.clipboard?.writeText(text).then(()=>toast('Bilhete personalizado copiado 📋')).catch(()=>toast('Copie manualmente o bilhete personalizado', '⚠️'));
+}
 function riskLabel(risk){ return {conservador:'Conservador',moderado:'Moderado',agressivo:'Agressivo'}[risk] || 'Moderado'; }
 function riskIcon(risk){ return {conservador:'🛡️',moderado:'⚖️',agressivo:'🔥'}[risk] || '⚖️'; }
 function ticketFor(risk){
@@ -1386,11 +1520,13 @@ function renderTips(){
   const ticket = ticketFor(risk);
   const oddTotal = ticket.reduce((acc,p)=>acc*p.oddMin,1);
   const avgConf = ticket.length ? Math.round(ticket.reduce((a,p)=>a+p.confidence,0)/ticket.length) : 0;
+  const lineOptions = getCustomLineOptions(state.customMarket);
+  const custom = state.customTicket;
   $('#page-tips').innerHTML = `
     ${sectionHead('🎟️ Bilhetes IA')}
     <div class="card compact">
       <div class="card-title">Seleção diária de bilhetes montados pela IA</div>
-      <p class="muted">Escolha o nível de risco do dia, confira os motivos e copie o bilhete pronto.</p>
+      <p class="muted">Conservador, moderado e agressivo são gerados automaticamente pela IA com o que ela tem mais confiança no dia.</p>
     </div>
     <div class="risk-grid">
       ${['conservador','moderado','agressivo'].map(r=>`<button class="risk-btn ${risk===r?'active':''}" onclick="setRisk('${r}')"><span>${riskIcon(r)}</span>${riskLabel(r)}</button>`).join('')}
@@ -1404,6 +1540,20 @@ function renderTips(){
       <div class="confidence"><div class="bar"><i style="width:${avgConf}%"></i></div><small>${avgConf}% média</small></div>
       <button class="btn primary wide" onclick="copyTicket('${risk}')">📋 Copiar Bilhete</button>
     </article>
+
+    <article class="card compact">
+      <div class="card-title">Monte seu bilhete do seu jeito</div>
+      <p class="muted">Escolha o mercado, a linha e a quantidade de jogos. Depois a IA monta um bilhete personalizado para o cliente.</p>
+      <div class="form-grid">
+        <select class="field" onchange="setCustomMarket(this.value)">${Object.entries(CUSTOM_MARKETS).map(([k,v])=>`<option value="${k}" ${state.customMarket===k?'selected':''}>${v.label}</option>`).join('')}</select>
+        <select class="field" onchange="setCustomLine(this.value)">${lineOptions.map(v=>`<option value="${v}" ${state.customLine===v?'selected':''}>${state.customMarket==='ambos_marcam' ? 'Ambos marcam — Sim' : 'Linha ' + v}</option>`).join('')}</select>
+        <select class="field" onchange="setCustomGames(this.value)">${[2,3,4,5].map(v=>`<option value="${v}" ${Number(state.customGames)===v?'selected':''}>${v} jogos</option>`).join('')}</select>
+        <button class="btn gold wide" onclick="generateCustomTicket()">Gerar Bilhete</button>
+      </div>
+    </article>
+
+    ${custom && custom.picks?.length ? `<article class="card tip-card"><div class="ticket-header"><div><span class="risk-badge">🎯 Personalizado</span><div class="card-title" style="margin-top:8px">Bilhete do cliente</div><p class="muted">${marketLabelByKey(custom.market)} · ${custom.games} jogos · linha ${custom.line}</p></div><div class="opp-score">${Math.round(custom.picks.reduce((a,p)=>a+p.confidence,0)/custom.picks.length)}%</div></div>${custom.picks.map(p=>`<div class="ticket-pick"><div class="pick-main"><span>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</span><b>${safe(p.entry)}</b></div><div class="pick-sub">${safe(p.match.league)} · Odd mín. ${p.oddMin.toFixed(2)} · ${p.confidence}% confiança</div></div>`).join('')}<button class="btn primary wide" onclick="copyCustomTicket()">📋 Copiar Bilhete Personalizado</button></article>` : ''}
+
     <div class="notice">No modo grátis, deixe 1 tip aberta e bloqueie o restante. No Premium, libere todos os níveis, scanner ao vivo e IA Prado ilimitada.</div>
   `;
 }
@@ -1579,7 +1729,7 @@ function openPayment(){
 }
 
 function goToPage(page){
-  if(page !== 'home') document.body.classList.remove('search-open');
+  if(page !== 'home'){ document.body.classList.remove('search-open'); document.body.classList.remove('search-focused'); }
   if(page !== 'match') state.lastMainPage = page;
   state.page = page;
   document.body.dataset.page = page;
@@ -1624,46 +1774,96 @@ function finishQuiz(){
   $('#quizBody').innerHTML = `<div class="quiz-result"><div class="profile-card"><div class="eyebrow">Perfil detectado</div><h3>${riskIcon(profile)} Analista ${riskLabel(profile)}</h3><p class="muted">A IA vai priorizar ${quiz.answers.market || 'gols'} e montar bilhetes com risco ${riskLabel(profile).toLowerCase()}.</p></div><button class="btn primary wide" onclick="document.getElementById('quizModal').close(); goToPage('tips'); renderTips();">Ver meus Bilhetes IA</button></div>`;
 }
 
+
+function showAppIntro(after){
+  $('#splash').classList.add('hidden');
+  $('#app').classList.remove('hidden');
+  $('#app').classList.add('app-enter');
+  setTimeout(()=>$('#app').classList.remove('app-enter'), 520);
+  if(typeof after === 'function') setTimeout(after, 120);
+}
 function bindEvents(){
-  $('#enterApp').addEventListener('click', () => { $('#splash').classList.add('hidden'); $('#app').classList.remove('hidden'); });
-  $('#startQuiz').addEventListener('click', () => { $('#splash').classList.add('hidden'); $('#app').classList.remove('hidden'); openQuiz(); });
+  $('#enterApp').addEventListener('click', () => { showAppIntro(); });
+  $('#startQuiz').addEventListener('click', () => { showAppIntro(openQuiz); });
   $$('.nav-item').forEach(b=>b.addEventListener('click',()=>goToPage(b.dataset.page)));
-  $('#globalSearch').addEventListener('input', e=>{ state.search=e.target.value; renderAll(); });
-  $('#openSearch')?.addEventListener('click',()=>{
-    document.body.classList.toggle('search-open');
-    if(document.body.classList.contains('search-open')){
-      setTimeout(()=>$('#globalSearch')?.focus({preventScroll:true}), 80);
+
+  const searchInput = $('#globalSearch');
+  const searchPanel = $('#searchPanel');
+  const syncSearchState = () => {
+    const hasText = !!searchInput.value.trim();
+    document.body.classList.toggle('search-has-text', hasText);
+    state.search = searchInput.value;
+    renderAll();
+  };
+  searchInput?.addEventListener('focus', ()=>{ document.body.classList.add('search-focused'); });
+  searchInput?.addEventListener('input', syncSearchState);
+  searchInput?.addEventListener('blur', ()=>{ setTimeout(()=>document.body.classList.remove('search-focused'), 120); });
+  $('#openSearch')?.addEventListener('click',()=>{ goToPage('home'); setTimeout(()=>searchInput?.focus({preventScroll:true}), 50); });
+  $('#closeSearch')?.addEventListener('click',()=>{
+    document.body.classList.remove('search-focused');
+    document.body.classList.remove('search-has-text');
+    searchInput.value='';
+    state.search='';
+    renderAll();
+    searchInput?.blur();
+  });
+  document.addEventListener('click', e=>{
+    if(state.page !== 'home') return;
+    if(searchPanel && !searchPanel.contains(e.target) && !$('#openSettingsMini')?.contains(e.target) && !$('#openSearch')?.contains(e.target)){
+      document.body.classList.remove('search-focused');
+      searchInput?.blur();
     }
   });
-  $('#closeSearch')?.addEventListener('click',()=>{
-    document.body.classList.remove('search-open');
-    $('#globalSearch')?.blur();
+
+  const settings = $('#settingsModal');
+  const quizModal = $('#quizModal');
+  const openModal = (dlg)=>{ if(!dlg) return; document.body.classList.add('modal-open'); dlg.showModal(); };
+  const closeModal = (dlg)=>{ if(!dlg) return; dlg.close(); document.body.classList.remove('modal-open'); };
+  $('#openSettingsMini')?.addEventListener('click',()=>openModal(settings));
+  $$('[data-close]').forEach(b=>b.addEventListener('click',()=>closeModal($('#'+b.dataset.close))));
+  [settings, quizModal].forEach(dlg=>{
+    if(!dlg) return;
+    dlg.addEventListener('close', ()=>document.body.classList.remove('modal-open'));
+    dlg.addEventListener('click', e=>{
+      const rect = dlg.getBoundingClientRect();
+      const inside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+      if(!inside) closeModal(dlg);
+    });
   });
-  $('#openSettingsMini')?.addEventListener('click',()=>$('#settingsModal').showModal());
+
+  const updateKeyboardState = () => {
+    if(window.visualViewport){
+      const keyboardLikely = window.visualViewport.height < window.innerHeight * 0.78;
+      document.body.classList.toggle('keyboard-open', keyboardLikely);
+    }
+  };
   document.addEventListener('focusin', e=>{
     if(e.target.matches('input, textarea, select')) document.body.classList.add('keyboard-open');
   });
   document.addEventListener('focusout', e=>{
     if(e.target.matches('input, textarea, select')) setTimeout(()=>document.body.classList.remove('keyboard-open'), 180);
   });
-  $$('[data-close]').forEach(b=>b.addEventListener('click',()=>$('#'+b.dataset.close).close()));
+  if(window.visualViewport){
+    visualViewport.addEventListener('resize', updateKeyboardState);
+    visualViewport.addEventListener('scroll', updateKeyboardState);
+  }
+
   $('#saveApiKey')?.addEventListener('click',()=>{ localStorage.setItem('prado_api_key', $('#apiKeyInput').value.trim()); toast('Chave salva para teste. Atualizando dados...','🔑'); loadData(); });
   if($('#apiKeyInput')) $('#apiKeyInput').value = localStorage.getItem('prado_api_key') || '';
   $('#floatingAI').addEventListener('click',()=>goToPage('ai'));
-  makeFloatingDraggable($('#floatingAI'));
   if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
-function makeFloatingDraggable(el){
-  let dragging=false, sx=0, sy=0, ox=0, oy=0;
-  el.addEventListener('pointerdown', e=>{ dragging=true; sx=e.clientX; sy=e.clientY; const r=el.getBoundingClientRect(); ox=r.left; oy=r.top; el.setPointerCapture(e.pointerId); });
-  el.addEventListener('pointermove', e=>{ if(!dragging) return; const nx=clamp(ox+e.clientX-sx, 8, innerWidth-70); const ny=clamp(oy+e.clientY-sy, 80, innerHeight-140); el.style.left=nx+'px'; el.style.top=ny+'px'; el.style.right='auto'; el.style.bottom='auto'; });
-  el.addEventListener('pointerup', ()=>{ dragging=false; });
-}
+function makeFloatingDraggable(el){ return el; }
 
 window.goToPage = goToPage;
 window.loadData = loadData;
 window.setRisk = setRisk;
 window.copyTicket = copyTicket;
+window.setCustomMarket = setCustomMarket;
+window.setCustomLine = setCustomLine;
+window.setCustomGames = setCustomGames;
+window.generateCustomTicket = generateCustomTicket;
+window.copyCustomTicket = copyCustomTicket;
 window.generateAIAnswer = generateAIAnswer;
 window.copyAIEntry = copyAIEntry;
 window.openMatchAI = openMatchAI;

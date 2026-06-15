@@ -1,18 +1,18 @@
-# Prado Sports AI — V12 V7 Carlos
+# Prado Sports AI — V12 V8 Carlos
 
 ## Ajustes desta versão
-- Corrige o zoom horrível do iPhone ao tocar na busca.
-- Busca e configurações ficam no topo, em dois botões modernos.
-- A busca abre só na página inicial.
-- A barra inferior fica mais estável e some enquanto o teclado está aberto.
-- Ícone de configuração trocado por controles modernos.
-- Nome "Tips" foi trocado para "Bilhetes" para não ficar dois nomes parecidos.
-- Aba de Stats do detalhe do jogo agora ficou no modelo comparativo: verde x azul, posse, xG, finalizações, escanteios, faltas e cartões.
-- O botão flutuante da IA não cobre mais a tela de detalhes.
+- Busca da home sempre visível e mais estável no iPhone.
+- Botão verde da busca aparece ao focar e some sozinho ao tocar fora.
+- Corrigido o zoom da busca e melhorado o comportamento ao trocar de aba.
+- Barra inferior mais estável; some quando teclado ou modal estão abertos.
+- IA flutuante não sobe mais nem atrapalha páginas IA/Bilhetes/Detalhes.
+- Configurações menores, com cabeçalho fixo e rolagem interna.
+- Animação de entrada mais real ao abrir o app.
+- Classificação do torneio mais organizada e moderna.
+- Escalação mais premium e moderna.
+- Bilhetes: mantém Conservador/Moderado/Agressivo automáticos pela IA.
+- Bilhetes: adiciona gerador personalizado com mercado, linha e quantidade de jogos.
 
 ## Como testar
-Suba os arquivos no GitHub/Vercel e abra com:
-https://SEU-LINK.vercel.app/?v=7
-
-## API
-Continua em modo prévia visual. A API fica para depois.
+Suba na Vercel e abra com:
+https://prado-ia.vercel.app/?v=8
