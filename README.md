@@ -1,17 +1,16 @@
-# Prado Sports AI — V16.1.1 Home Ajuste
+# Prado Sports AI — V16.1.2 Home sem aba Ao vivo
 
 ## Escopo
-Apenas ajuste da HOME.
+Somente HOME.
 
 ## Alterado
-- Removido o card duplicado "Ao vivo agora" da grade superior.
-- Mantidos apenas: Scanner IA, Bilhetes e IA Prado.
-- Grade da home ficou mais compacta para iPhone.
+- Removida a seção "Ao vivo agora" da tela inicial.
+- Mantidos os outros blocos da Home.
 
 ## Não alterado
-- Bilhetes (aba completa)
-- IA (aba completa)
-- Scanner (aba completa)
-- Ao vivo (aba completa)
+- IA
+- Bilhetes
+- Scanner
+- Ao vivo
 - Configurações
 - Botão IA flutuante

@@ -2591,8 +2591,6 @@ function renderHome(){
       </article>
     </div>
 
-    ${sectionHead('Ao vivo agora', 'Ver todos', "goToPage('live')")}
-    ${live.length ? `<div class="hscroll">${live.slice(0,6).map(matchCard).join('')}</div>` : `<div class="card empty">Nenhum jogo ao vivo neste momento.</div>`}
     ${sectionHead('Jogos de hoje', 'Atualizar', 'loadData()')}
     <div class="match-list">${today.slice(0,12).map(matchRow).join('') || '<div class="card empty">Nenhum jogo encontrado para hoje.</div>'}</div>
     ${sectionHead('Principais ligas')}
