@@ -1,22 +1,23 @@
-# Prado Sports AI — V16.5.4 IA Modelo 1 Corrigido
+# Prado Sports AI — V16.5.5 IA Modelo Escolhido
 
-## Correção
-A versão anterior ainda mostrava a IA antiga. Nesta versão a aba IA foi corrigida de verdade para o Modelo 1 escolhido.
-
-## Mantido
-- Aba Ao vivo compacta.
-- Home.
-- Scanner.
-- Bilhetes.
-- Botão flutuante.
-- Menu inferior.
+## Escopo
+Somente visual da aba IA.
 
 ## Alterado
-- Somente a aba IA.
-- Modelo 1 aplicado com dashboard avançado.
-- Cards com tamanho padronizado.
-- Mercados rápidos organizados.
-- Resposta da IA mais completa.
+- Cérebro novo no card principal da IA.
+- Visual mais moderno e premium.
+- Efeito de movimento no cérebro com animação suave.
+- Card principal mais parecido com o modelo escolhido.
+- Cards e construtor mantidos, só refinados visualmente.
+
+## Não alterado
+- Home
+- Ao vivo
+- Scanner
+- Bilhetes
+- Configurações
+- Botão flutuante
+- Menu inferior
 
 ## Teste
-Use: ?v=16-5-4
+Use: ?v=16-5-5

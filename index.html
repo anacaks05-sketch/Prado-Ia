@@ -2269,6 +2269,246 @@ body[data-page="ai"] .ia-m1-why-card p{margin:5px 0 7px;color:var(--muted);font-
 body[data-page="ai"] .ia-m1-why-card .line{height:4px;border-radius:99px;background:rgba(255,255,255,.08);overflow:hidden}
 body[data-page="ai"] .ia-m1-why-card .line i{display:block;width:72%;height:100%;background:var(--green);border-radius:inherit}
 
+
+/* ===== V16.5.5 — IA MODELO ESCOLHIDO: VISUAL FINAL ===== */
+body[data-page="ai"] .ia-m1-page{
+  gap:11px !important;
+}
+body[data-page="ai"] .ia-m1-hero{
+  min-height:186px !important;
+  padding:0 !important;
+  border-radius:26px !important;
+  border:1px solid rgba(33,230,161,.28) !important;
+  background:
+    linear-gradient(90deg, rgba(2,8,12,.98) 0%, rgba(3,18,15,.94) 48%, rgba(2,7,11,.98) 100%) !important;
+  box-shadow:
+    0 22px 48px rgba(0,0,0,.32),
+    inset 0 1px 0 rgba(255,255,255,.05),
+    0 0 0 1px rgba(33,230,161,.04) !important;
+}
+body[data-page="ai"] .ia-m1-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 24% 44%, rgba(33,230,161,.20), transparent 28%),
+    linear-gradient(100deg, rgba(33,230,161,.05), transparent 42%),
+    repeating-linear-gradient(100deg, transparent 0 34px, rgba(33,230,161,.055) 35px 36px);
+  opacity:.95;
+  pointer-events:none;
+}
+body[data-page="ai"] .ia-m1-hero::after{
+  content:"";
+  position:absolute;
+  right:-24px;
+  top:18px;
+  width:260px;
+  height:144px;
+  border:1px solid rgba(33,230,161,.12);
+  border-radius:22px;
+  transform:skewX(-12deg) rotate(-3deg);
+  background:
+    repeating-linear-gradient(90deg, transparent 0 25px, rgba(33,230,161,.075) 26px 27px),
+    repeating-linear-gradient(0deg, transparent 0 20px, rgba(33,230,161,.055) 21px 22px);
+  opacity:.78;
+  pointer-events:none;
+}
+body[data-page="ai"] .ia-m1-hero-top{
+  min-height:186px;
+  padding:18px 16px 15px;
+  align-items:center !important;
+  gap:12px !important;
+}
+body[data-page="ai"] .ia-m1-brain{
+  width:128px !important;
+  height:128px !important;
+  flex:0 0 128px;
+  border-radius:28px !important;
+  overflow:hidden;
+  position:relative;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(33,230,161,.25), transparent 70%),
+    rgba(0,0,0,.18) !important;
+  border:1px solid rgba(33,230,161,.26) !important;
+  box-shadow:
+    inset 0 0 38px rgba(33,230,161,.09),
+    0 0 35px rgba(33,230,161,.18) !important;
+}
+body[data-page="ai"] .ia-m1-brain::before{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  background-image:url("brain-ai.png");
+  background-size:cover;
+  background-position:center;
+  filter:saturate(1.2) contrast(1.05);
+  opacity:.96;
+  animation:pradoBrainFloat 5.8s ease-in-out infinite;
+}
+body[data-page="ai"] .ia-m1-brain::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 45% 35%, rgba(255,255,255,.08), transparent 18%),
+    linear-gradient(110deg, transparent, rgba(33,230,161,.08), transparent);
+  animation:pradoBrainSweep 3.8s linear infinite;
+}
+body[data-page="ai"] .ia-m1-brain svg{
+  display:none !important;
+}
+@keyframes pradoBrainFloat{
+  0%,100%{transform:scale(1.03) translate3d(0,0,0)}
+  50%{transform:scale(1.08) translate3d(3px,-2px,0)}
+}
+@keyframes pradoBrainSweep{
+  0%{transform:translateX(-110%);opacity:.2}
+  45%{opacity:.55}
+  100%{transform:translateX(110%);opacity:.15}
+}
+body[data-page="ai"] .ia-m1-copy{
+  position:relative;
+  z-index:2;
+  padding-top:0 !important;
+}
+body[data-page="ai"] .ia-m1-kicker{
+  font-size:11px !important;
+  letter-spacing:.22em !important;
+  color:#21f3a6 !important;
+  text-shadow:0 0 14px rgba(33,230,161,.22);
+}
+body[data-page="ai"] .ia-m1-copy h2{
+  font-size:41px !important;
+  letter-spacing:-.04em;
+  margin:6px 0 6px !important;
+  text-shadow:0 10px 30px rgba(0,0,0,.35);
+}
+body[data-page="ai"] .ia-m1-copy p{
+  max-width:360px !important;
+  font-size:13px !important;
+  line-height:1.35 !important;
+  color:#c9d3df !important;
+}
+body[data-page="ai"] .ia-m1-online{
+  position:absolute;
+  right:14px;
+  top:14px;
+  z-index:3;
+  padding:8px 13px !important;
+  border-radius:999px !important;
+  background:rgba(6,70,48,.72) !important;
+  border:1px solid rgba(33,230,161,.36) !important;
+  color:#23f0a3 !important;
+  box-shadow:0 0 24px rgba(33,230,161,.14), inset 0 1px 0 rgba(255,255,255,.10);
+}
+body[data-page="ai"] .ia-m1-formula{
+  margin-top:14px !important;
+  padding:10px 14px !important;
+  border-radius:17px !important;
+  background:linear-gradient(135deg, rgba(0,94,58,.36), rgba(4,30,25,.72)) !important;
+  border:1px solid rgba(33,230,161,.32) !important;
+  box-shadow:0 0 22px rgba(33,230,161,.11), inset 0 1px 0 rgba(255,255,255,.06);
+  color:#31f6ae !important;
+  font-size:12px !important;
+}
+body[data-page="ai"] .ia-m1-stats{
+  gap:8px !important;
+}
+body[data-page="ai"] .ia-m1-stat{
+  border-radius:20px !important;
+  border-color:rgba(255,255,255,.12) !important;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(33,230,161,.10), transparent 42%),
+    linear-gradient(145deg, rgba(15,24,36,.96), rgba(7,11,17,.99)) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+body[data-page="ai"] .ia-m1-stat.gold{
+  border-color:rgba(255,224,110,.26) !important;
+  background:
+    radial-gradient(circle at 82% 20%, rgba(255,224,110,.13), transparent 42%),
+    linear-gradient(145deg, rgba(15,24,36,.96), rgba(7,11,17,.99)) !important;
+}
+body[data-page="ai"] .ia-m1-markets{
+  gap:8px !important;
+}
+body[data-page="ai"] .ia-m1-market{
+  border-radius:18px !important;
+  border-color:rgba(255,255,255,.13) !important;
+  background:linear-gradient(145deg, rgba(16,25,37,.96), rgba(7,11,17,.99)) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+body[data-page="ai"] .ia-m1-market.active{
+  border-color:rgba(33,230,161,.65) !important;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(33,230,161,.20), transparent 42%),
+    linear-gradient(145deg, rgba(13,54,41,.94), rgba(7,11,17,.99)) !important;
+  box-shadow:0 0 22px rgba(33,230,161,.18), inset 0 1px 0 rgba(255,255,255,.05) !important;
+}
+body[data-page="ai"] .ia-m1-market.gold{
+  border-color:rgba(255,224,110,.36) !important;
+  background:
+    radial-gradient(circle at 30% 0%, rgba(255,224,110,.14), transparent 46%),
+    linear-gradient(145deg, rgba(43,34,14,.84), rgba(7,11,17,.99)) !important;
+}
+body[data-page="ai"] .ia-m1-builder{
+  border:1px solid rgba(33,230,161,.24) !important;
+  background:
+    radial-gradient(circle at 92% 12%, rgba(33,230,161,.10), transparent 36%),
+    linear-gradient(155deg,rgba(12,19,28,.98),rgba(7,11,17,.99)) !important;
+  box-shadow:0 16px 36px rgba(0,0,0,.18), inset 0 1px 0 rgba(255,255,255,.04);
+}
+body[data-page="ai"] .ia-m1-builder h3::before{
+  content:"🧠";
+  display:inline-block;
+  margin-right:8px;
+  color:var(--green);
+}
+body[data-page="ai"] .ia-m1-field .field{
+  background:rgba(255,255,255,.045) !important;
+  border-color:rgba(255,255,255,.11) !important;
+}
+body[data-page="ai"] .ia-m1-builder .btn.primary{
+  background:linear-gradient(135deg,#0d8f5d,#18d890,#0b7e58) !important;
+  color:#eafff6 !important;
+  border:1px solid rgba(129,255,202,.32) !important;
+  box-shadow:0 0 22px rgba(33,230,161,.20), inset 0 1px 0 rgba(255,255,255,.18);
+}
+@media(max-width:430px){
+  body[data-page="ai"] .ia-m1-hero{
+    min-height:170px !important;
+  }
+  body[data-page="ai"] .ia-m1-hero-top{
+    min-height:170px !important;
+    padding:14px 12px !important;
+    gap:10px !important;
+  }
+  body[data-page="ai"] .ia-m1-brain{
+    width:108px !important;
+    height:108px !important;
+    flex-basis:108px;
+    border-radius:24px !important;
+  }
+  body[data-page="ai"] .ia-m1-copy h2{
+    font-size:34px !important;
+  }
+  body[data-page="ai"] .ia-m1-copy p{
+    font-size:11.2px !important;
+    max-width:235px !important;
+  }
+  body[data-page="ai"] .ia-m1-formula{
+    font-size:10.5px !important;
+    padding:8px 10px !important;
+    margin-top:11px !important;
+    max-width:260px;
+  }
+  body[data-page="ai"] .ia-m1-online{
+    right:11px;
+    top:10px;
+    font-size:8.6px !important;
+    padding:6px 9px !important;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
