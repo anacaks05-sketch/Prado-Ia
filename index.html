@@ -1949,6 +1949,82 @@ body.modal-open #floatingAI{
   }
 }
 
+
+/* ===== V16.3 — CHAT FLUTUANTE DA IA ===== */
+#floatingAIChat{position:fixed;inset:0;z-index:12000;display:none}
+#floatingAIChat.open{display:block}
+#floatingAIChat .ai-chat-backdrop{position:absolute;inset:0;background:rgba(3,8,14,.74);backdrop-filter:blur(8px)}
+#floatingAIChat .ai-chat-panel{
+  position:absolute;left:12px;right:12px;bottom:12px;max-height:82vh;
+  display:flex;flex-direction:column;gap:12px;padding:14px;
+  border-radius:28px;border:1px solid rgba(89,118,164,.22);
+  background:linear-gradient(180deg,rgba(11,20,34,.98),rgba(7,13,24,.98));
+  box-shadow:0 28px 64px rgba(0,0,0,.42),0 0 0 1px rgba(255,255,255,.04) inset;
+}
+.ai-chat-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 2px 4px}
+.ai-chat-title{display:flex;align-items:center;gap:10px;min-width:0}
+.ai-chat-badge{
+  width:42px;height:42px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:18px;color:#0c2b22;background:linear-gradient(135deg,#8ff7d0,#47e0ff);
+  box-shadow:0 10px 26px rgba(71,224,255,.18)
+}
+.ai-chat-title b{display:block;font-size:20px;line-height:1.05}
+.ai-chat-title small{display:block;color:var(--muted);font-size:12px;margin-top:4px}
+.ai-chat-close{width:44px;height:44px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text);font-size:22px;font-weight:800}
+.ai-chat-messages{flex:1;min-height:220px;max-height:44vh;overflow:auto;display:flex;flex-direction:column;gap:10px;padding-right:2px}
+.ai-chat-msg{display:flex;flex-direction:column;gap:6px;max-width:92%}
+.ai-chat-msg.user{margin-left:auto;align-items:flex-end}
+.ai-chat-msg.bot{margin-right:auto}
+.ai-chat-bubble{
+  border-radius:22px;padding:14px 16px;line-height:1.4;border:1px solid rgba(255,255,255,.06);
+  box-shadow:0 10px 22px rgba(0,0,0,.16)
+}
+.ai-chat-msg.bot .ai-chat-bubble{background:linear-gradient(180deg,rgba(18,29,48,.96),rgba(10,19,33,.98));color:var(--text)}
+.ai-chat-msg.user .ai-chat-bubble{background:linear-gradient(135deg,rgba(146,248,214,.98),rgba(92,222,255,.95));color:#071018;font-weight:700}
+.ai-chat-time{font-size:11px;color:var(--muted);padding:0 4px}
+.ai-chat-rich .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:900;margin-bottom:8px}
+.ai-chat-rich .entry{font-size:24px;line-height:1.05;font-weight:900;margin-bottom:4px}
+.ai-chat-rich .sub{color:var(--muted);font-size:14px;margin-bottom:10px}
+.ai-chat-stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0}
+.ai-chat-stat{padding:10px 12px;border-radius:16px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06)}
+.ai-chat-stat b{display:block;font-size:18px;line-height:1.05}
+.ai-chat-stat span{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+.ai-chat-pills{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.ai-chat-pills span{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);font-size:12px;font-weight:800}
+.ai-chat-pills .green{color:var(--green);border-color:rgba(33,230,161,.22);background:rgba(33,230,161,.07)}
+.ai-chat-pills .gold{color:var(--gold);border-color:rgba(255,224,110,.22);background:rgba(255,224,110,.08)}
+.ai-chat-reasons{display:grid;gap:8px;margin-top:10px}
+.ai-chat-reason{padding:11px 12px;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.05);font-size:13px;color:var(--text-soft)}
+.ai-chat-reason b{color:var(--text)}
+.ai-chat-chips{display:flex;gap:8px;overflow:auto;padding-bottom:2px}
+.ai-chat-chip{white-space:nowrap;border-radius:999px;padding:10px 13px;font-weight:800;font-size:12px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);color:var(--text)}
+.ai-chat-chip.green{border-color:rgba(33,230,161,.2);background:rgba(33,230,161,.07);color:var(--green)}
+.ai-chat-chip.gold{border-color:rgba(255,224,110,.2);background:rgba(255,224,110,.07);color:var(--gold)}
+.ai-chat-input-row{display:grid;grid-template-columns:1fr 64px;gap:10px;align-items:center}
+#floatingAIInput{
+  min-height:58px;border-radius:20px;border:1px solid rgba(255,255,255,.08);background:rgba(18,28,46,.96);
+  color:var(--text);padding:0 18px;font-size:17px;outline:none;box-shadow:0 0 0 1px rgba(255,255,255,.02) inset
+}
+#floatingAIInput::placeholder{color:#8b94aa}
+#floatingAISend{
+  height:58px;border:none;border-radius:20px;background:linear-gradient(135deg,#90f7d1,#61dcff);
+  color:#071018;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(97,220,255,.22)
+}
+#floatingAISend svg{width:26px;height:26px}
+.ai-chat-typing{display:flex;align-items:center;gap:6px;padding:14px 16px}
+.ai-chat-typing i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.72);display:block;animation:chatTyping 1s infinite ease-in-out}
+.ai-chat-typing i:nth-child(2){animation-delay:.15s}.ai-chat-typing i:nth-child(3){animation-delay:.3s}
+@keyframes chatTyping{0%,80%,100%{transform:translateY(0);opacity:.35}40%{transform:translateY(-5px);opacity:1}}
+@media (max-width:430px){
+  #floatingAIChat .ai-chat-panel{left:10px;right:10px;bottom:10px;padding:12px;border-radius:24px;max-height:84vh}
+  .ai-chat-title b{font-size:18px}
+  .ai-chat-rich .entry{font-size:22px}
+  .ai-chat-messages{max-height:42vh}
+  .ai-chat-input-row{grid-template-columns:1fr 60px}
+  #floatingAIInput{font-size:16px;height:56px}
+  #floatingAISend{height:56px}
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -2002,6 +2078,37 @@ body.modal-open #floatingAI{
     <section id="page-tips" class="page"></section>
 
     <button id="floatingAI" class="floating-ai" title="IA Prado"><b>AI</b><span>IA</span></button>
+
+
+    <div id="floatingAIChat" aria-hidden="true">
+      <div class="ai-chat-backdrop" onclick="closeFloatingAIChat()"></div>
+      <div class="ai-chat-panel" role="dialog" aria-modal="true" aria-labelledby="floatingAIChatTitle">
+        <div class="ai-chat-head">
+          <div class="ai-chat-title">
+            <div class="ai-chat-badge">AI</div>
+            <div>
+              <b id="floatingAIChatTitle">IA Prado</b>
+              <small>Conversa rápida com leitura premium</small>
+            </div>
+          </div>
+          <button class="ai-chat-close" type="button" onclick="closeFloatingAIChat()">×</button>
+        </div>
+        <div id="floatingAIChatMessages" class="ai-chat-messages"></div>
+        <div class="ai-chat-chips">
+          <button class="ai-chat-chip green" type="button" onclick="sendFloatingAIQuick('Qual a melhor entrada do dia?')">Melhor entrada</button>
+          <button class="ai-chat-chip" type="button" onclick="sendFloatingAIQuick('Quero mercado de gols')">Mercado de gols</button>
+          <button class="ai-chat-chip" type="button" onclick="sendFloatingAIQuick('Quero mercado de escanteios')">Escanteios</button>
+          <button class="ai-chat-chip gold" type="button" onclick="sendFloatingAIQuick('Me passa um plano B')">Plano B</button>
+        </div>
+        <div class="ai-chat-input-row">
+          <input id="floatingAIInput" type="text" autocomplete="off" placeholder="Pergunte sobre odds, mercados, times..." />
+          <button id="floatingAISend" type="button" aria-label="Enviar mensagem">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 3.8 3.9 10.7l6.3 2.5 2.5 6.3 7-15.7Zm-9.6 9.4 9.2-9.2" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
 
     <nav class="bottom-nav" aria-label="Navegação principal">
       <button class="nav-item active" data-page="home"><span class="nav-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.2 12 4l8 7.2v8.3a1.5 1.5 0 0 1-1.5 1.5H15v-6h-6v6H5.5A1.5 1.5 0 0 1 4 19.5v-8.3Z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/></svg></span>Jogos</button>
@@ -3175,6 +3282,150 @@ function bindEvents(){
   if($('#apiKeyInput')) $('#apiKeyInput').value = localStorage.getItem('prado_api_key') || '';
   if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
+
+function normalizePradoText(text){
+  return (text || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+function currentChatMatch(){
+  return getSelectedMatch() || state.matches.find(m=>m.status==='live') || filteredMatches()[0] || state.matches[0] || null;
+}
+function resolveChatMatch(text){
+  const q = normalizePradoText(text);
+  const all = filteredMatches().length ? filteredMatches() : state.matches;
+  let chosen = all.find(m=> q.includes(normalizePradoText(m.home.name)) && q.includes(normalizePradoText(m.away.name)));
+  if(chosen) return chosen;
+  chosen = all.find(m=> q.includes(normalizePradoText(m.home.name)) || q.includes(normalizePradoText(m.away.name)) || q.includes(normalizePradoText(m.league)));
+  return chosen || currentChatMatch();
+}
+function resolveChatIntent(text){
+  const q = normalizePradoText(text);
+  if(q.includes('escante')) return 'escanteios';
+  if(q.includes('cart') || q.includes('amarelo')) return 'cartoes';
+  if(q.includes('agress')) return 'agressiva';
+  if(q.includes('valor')) return 'valor';
+  if(q.includes('segur')) return 'segura';
+  if(q.includes('gol') || q.includes('btts') || q.includes('ambos')) return 'gols';
+  if(q.includes('ao vivo') || q.includes('live')) return 'valor';
+  return 'segura';
+}
+function buildFloatingChatReply(text){
+  const match = resolveChatMatch(text);
+  if(!match){
+    return `<div class="ai-chat-rich"><div class="entry">Ainda sem leitura</div><div class="sub">Não encontrei jogo para analisar agora. Tente perguntar por um time, por exemplo: Flamengo, Corinthians ou Palmeiras.</div></div>`;
+  }
+  const pred = state.predictions.find(p=>p.matchId===match.id) || computePredictions([match])[0];
+  if(!pred) return `<div class="ai-chat-rich"><div class="entry">Sem dados suficientes</div><div class="sub">A leitura da IA precisa de um jogo carregado para montar a resposta.</div></div>`;
+  const intent = resolveChatIntent(text);
+  const playbook = buildAIPlaybook(pred, intent);
+  const chosen = playbook.primary;
+  const s = match.stats || {};
+  const conf = clamp(Math.round(pred.confidence + (intent==='segura'?4:intent==='agressiva'?-5:0)), 54, 95);
+  const liveNote = match.status === 'live' ? `Jogo ao vivo aos ${match.minute || 0}' com pressão ${s.pressure || 70}%.` : 'Leitura pré-jogo com foco em forma, mando e tendência estatística.';
+  return `
+    <div class="ai-chat-rich">
+      <div class="eyebrow">Leitura premium da IA</div>
+      <div class="entry">${safe(chosen.entry)}</div>
+      <div class="sub">${safe(match.home.name)} x ${safe(match.away.name)} · ${safe(match.league)} · odd mínima ${Number(chosen.odd).toFixed(2)}</div>
+      <div class="ai-chat-stats">
+        <div class="ai-chat-stat"><b>${conf}%</b><span>Confiança IA</span></div>
+        <div class="ai-chat-stat"><b>${Number(chosen.odd).toFixed(2)}</b><span>Odd mínima</span></div>
+        <div class="ai-chat-stat"><b>${s.cornersAvg || '-'}</b><span>Cantos médios</span></div>
+        <div class="ai-chat-stat"><b>${s.cardsAvg || '-'}</b><span>Cartões médios</span></div>
+      </div>
+      <div class="ai-chat-pills"><span class="green">${safe(intent)}</span><span class="gold">${safe(riskLabel(pred.risk))}</span><span>${safe(pred.marketType)}</span><span>${match.status==='live' ? 'Ao vivo' : 'Pré-jogo'}</span></div>
+      <div class="ai-chat-reasons">
+        <div class="ai-chat-reason"><b>Motivo principal:</b> ${safe(pred.reasons[0] || 'A leitura combina forma, volume e contexto do confronto.')}</div>
+        <div class="ai-chat-reason"><b>Plano B:</b> ${safe(playbook.backup.entry)}</div>
+        <div class="ai-chat-reason"><b>Gatilho ao vivo:</b> ${safe(playbook.live.entry)}</div>
+        <div class="ai-chat-reason"><b>Status do jogo:</b> ${safe(liveNote)}</div>
+      </div>
+    </div>`;
+}
+function appendFloatingAIMessage(role, content, asHtml=false){
+  const wrap = document.createElement('div');
+  wrap.className = `ai-chat-msg ${role}`;
+  const bubble = document.createElement('div');
+  bubble.className = 'ai-chat-bubble';
+  if(asHtml) bubble.innerHTML = content;
+  else bubble.textContent = content;
+  const time = document.createElement('div');
+  time.className = 'ai-chat-time';
+  time.textContent = new Date().toLocaleTimeString('pt-BR', {hour:'2-digit', minute:'2-digit'});
+  wrap.appendChild(bubble);
+  wrap.appendChild(time);
+  $('#floatingAIChatMessages')?.appendChild(wrap);
+  const box = $('#floatingAIChatMessages');
+  if(box) box.scrollTop = box.scrollHeight + 300;
+}
+function seedFloatingAIChat(){
+  const box = $('#floatingAIChatMessages');
+  if(!box || box.dataset.seeded === '1') return;
+  box.dataset.seeded = '1';
+  appendFloatingAIMessage('bot', 'Olá! Sou a IA do Prado Sports. Posso analisar partidas, sugerir mercados e responder suas dúvidas sobre futebol. Em que posso ajudar?');
+}
+function openFloatingAIChat(prefill=''){
+  const shell = $('#floatingAIChat');
+  if(!shell) return;
+  seedFloatingAIChat();
+  shell.classList.add('open');
+  shell.setAttribute('aria-hidden','false');
+  document.body.classList.add('modal-open','chat-open');
+  const input = $('#floatingAIInput');
+  if(input){
+    if(prefill) input.value = prefill;
+    setTimeout(()=>input.focus(), 60);
+  }
+}
+function closeFloatingAIChat(){
+  const shell = $('#floatingAIChat');
+  if(!shell) return;
+  shell.classList.remove('open');
+  shell.setAttribute('aria-hidden','true');
+  document.body.classList.remove('modal-open','chat-open','keyboard-open');
+}
+function setFloatingAITyping(show){
+  const box = $('#floatingAIChatMessages');
+  if(!box) return;
+  const existing = $('#floatingAITyping');
+  if(show){
+    if(existing) return;
+    const item = document.createElement('div');
+    item.className = 'ai-chat-msg bot';
+    item.id = 'floatingAITyping';
+    item.innerHTML = `<div class="ai-chat-bubble ai-chat-typing"><i></i><i></i><i></i></div>`;
+    box.appendChild(item);
+    box.scrollTop = box.scrollHeight + 200;
+  }else if(existing){
+    existing.remove();
+  }
+}
+function sendFloatingAIQuick(text){
+  openFloatingAIChat(text);
+  setTimeout(()=>sendFloatingAIMessage(text), 40);
+}
+function sendFloatingAIMessage(forcedText=''){
+  const input = $('#floatingAIInput');
+  const text = (forcedText || input?.value || '').trim();
+  if(!text) return;
+  appendFloatingAIMessage('user', text);
+  if(input) input.value = '';
+  setFloatingAITyping(true);
+  setTimeout(()=>{
+    setFloatingAITyping(false);
+    appendFloatingAIMessage('bot', buildFloatingChatReply(text), true);
+  }, 420);
+}
+function initFloatingAIChat(){
+  seedFloatingAIChat();
+  $('#floatingAISend')?.addEventListener('click', ()=>sendFloatingAIMessage());
+  $('#floatingAIInput')?.addEventListener('keydown', e=>{
+    if(e.key === 'Enter'){
+      e.preventDefault();
+      sendFloatingAIMessage();
+    }
+  });
+}
+
 function makeFloatingDraggable(el){
   if(!el) return el;
 
@@ -3271,7 +3522,7 @@ function makeFloatingDraggable(el){
     }
 
     suppressClick = false;
-    goToPage("ai");
+    openFloatingAIChat();
   };
 
   el.addEventListener("touchstart", start, {passive:false});
@@ -3315,7 +3566,12 @@ window.setScannerFilter = setScannerFilter;
 window.unlockPremium = unlockPremium;
 window.openPayment = openPayment;
 window.answerQuiz = answerQuiz;
+window.openFloatingAIChat = openFloatingAIChat;
+window.closeFloatingAIChat = closeFloatingAIChat;
+window.sendFloatingAIQuick = sendFloatingAIQuick;
+window.sendFloatingAIMessage = sendFloatingAIMessage;
 
+initFloatingAIChat();
 makeFloatingDraggable($('#floatingAI'));
 bindEvents();
 loadData();
