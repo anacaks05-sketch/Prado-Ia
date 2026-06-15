@@ -1,15 +1,14 @@
-# Prado Sports AI — V16.5 IA Premium
+# Prado Sports AI — V16.5.1 IA Organizada
 
 ## Escopo
 Somente a aba IA.
 
-## Alterado
-- IA ficou mais premium e mais organizada.
-- Layout mais compacto para iPhone.
-- Chips rápidos de mercado.
-- Bloco “Montar análise” mais bonito.
-- Resposta da IA com entrada, confiança, plano B e leitura do confronto.
-- Visual mais parecido com app pago.
+## Melhorias
+- IA ficou mais organizada e mais moderna.
+- Layout mais limpo no iPhone.
+- Chips rápidos em grade.
+- Formulário mais bem separado e com rótulos.
+- Resposta da IA mais arrumada visualmente.
 
 ## Não alterado
 - Home
@@ -21,4 +20,4 @@ Somente a aba IA.
 - Menu inferior
 
 ## Teste
-Use: ?v=16-5
+Use: ?v=16-5-1
