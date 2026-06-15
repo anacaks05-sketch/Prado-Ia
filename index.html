@@ -2846,6 +2846,442 @@ body[data-page="scanner"] .scan-u-day p{
   body[data-page="scanner"] .scan-u-read{min-height:24px;font-size:7.6px}
 }
 
+
+/* ===== V16.7 — BILHETES PREMIUM / SOMENTE ABA BILHETES ===== */
+body[data-page="tips"] #page-tips{
+  padding-bottom:96px !important;
+}
+body[data-page="tips"] .tickets-v167{
+  display:grid;
+  gap:12px;
+}
+body[data-page="tips"] .tickets-v167-hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
+  border:1px solid rgba(255,224,110,.22);
+  background:
+    radial-gradient(circle at 84% 24%, rgba(33,230,161,.16), transparent 30%),
+    linear-gradient(135deg, rgba(13,21,30,.98), rgba(6,12,17,.99));
+  box-shadow:0 18px 42px rgba(0,0,0,.26), inset 0 1px 0 rgba(255,255,255,.05);
+}
+body[data-page="tips"] .tickets-v167-hero::before{
+  content:"";
+  position:absolute;
+  right:14px;
+  top:14px;
+  width:150px;
+  height:105px;
+  opacity:.34;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(33,230,161,.15), transparent 48%),
+    repeating-radial-gradient(circle, rgba(33,230,161,.18) 0 1px, transparent 2px 18px);
+  border-radius:28px;
+}
+body[data-page="tips"] .tickets-v167-top{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:64px 1fr;
+  gap:12px;
+  align-items:center;
+  padding:16px 16px 10px;
+}
+body[data-page="tips"] .tickets-v167-icon{
+  width:58px;
+  height:58px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  font-size:30px;
+  color:var(--green);
+  border:1px solid rgba(33,230,161,.26);
+  background:
+    radial-gradient(circle, rgba(33,230,161,.20), transparent 65%),
+    rgba(33,230,161,.06);
+  box-shadow:0 0 26px rgba(33,230,161,.13);
+}
+body[data-page="tips"] .tickets-v167-title h2{
+  margin:0;
+  font-family:'Space Grotesk';
+  font-size:25px;
+  line-height:1.03;
+  color:#fff;
+}
+body[data-page="tips"] .tickets-v167-title p{
+  margin:6px 0 0;
+  color:#c4cfda;
+  font-size:11px;
+  line-height:1.36;
+}
+body[data-page="tips"] .tickets-v167-risk{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:8px;
+  padding:0 16px 16px;
+}
+body[data-page="tips"] .tickets-v167-risk-btn{
+  min-height:78px;
+  padding:10px 8px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.11);
+  background:linear-gradient(145deg,rgba(19,28,39,.88),rgba(8,12,18,.96));
+  color:#fff;
+  display:grid;
+  grid-template-columns:34px 1fr;
+  align-items:center;
+  gap:8px;
+  text-align:left;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+}
+body[data-page="tips"] .tickets-v167-risk-btn .r-icon{
+  width:34px;
+  height:34px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  font-size:22px;
+  background:rgba(255,255,255,.04);
+}
+body[data-page="tips"] .tickets-v167-risk-btn b{
+  display:block;
+  font-size:13px;
+  line-height:1;
+}
+body[data-page="tips"] .tickets-v167-risk-btn small{
+  display:block;
+  margin-top:5px;
+  color:var(--muted);
+  font-size:8.4px;
+  line-height:1.15;
+  font-weight:800;
+}
+body[data-page="tips"] .tickets-v167-risk-btn.active{
+  border-color:rgba(33,230,161,.68);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(33,230,161,.22), transparent 58%),
+    linear-gradient(145deg,rgba(13,61,43,.86),rgba(8,12,18,.98));
+  box-shadow:0 0 26px rgba(33,230,161,.20), inset 0 1px 0 rgba(255,255,255,.06);
+}
+body[data-page="tips"] .tickets-v167-risk-btn[data-risk="agressivo"].active,
+body[data-page="tips"] .tickets-v167-risk-btn[data-risk="agressivo"]{
+  border-color:rgba(255,224,110,.22);
+}
+body[data-page="tips"] .tickets-v167-auto{
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
+  border:1px solid rgba(255,224,110,.27);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(255,224,110,.09), transparent 28%),
+    linear-gradient(155deg, rgba(13,21,29,.98), rgba(7,11,17,.99));
+  box-shadow:0 18px 42px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.04);
+  padding:15px;
+}
+body[data-page="tips"] .tickets-v167-auto-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
+}
+body[data-page="tips"] .tickets-v167-auto-title{
+  display:flex;
+  gap:10px;
+  min-width:0;
+}
+body[data-page="tips"] .tickets-v167-bolt{
+  width:36px;
+  height:36px;
+  flex:0 0 36px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:var(--gold);
+  background:rgba(255,224,110,.08);
+  border:1px solid rgba(255,224,110,.15);
+  font-size:22px;
+}
+body[data-page="tips"] .tickets-v167-auto h3{
+  margin:0;
+  font-family:'Space Grotesk';
+  font-size:25px;
+  line-height:1.02;
+  color:#fff;
+}
+body[data-page="tips"] .tickets-v167-auto p{
+  margin:5px 0 0;
+  color:#c4cfda;
+  font-size:11px;
+  line-height:1.35;
+}
+body[data-page="tips"] .tickets-v167-meter{
+  min-width:86px;
+  padding:8px 10px;
+  border-radius:17px;
+  border:1px solid rgba(33,230,161,.30);
+  background:rgba(33,230,161,.10);
+  text-align:center;
+  box-shadow:0 0 20px rgba(33,230,161,.10);
+}
+body[data-page="tips"] .tickets-v167-meter b{
+  display:block;
+  font-family:'JetBrains Mono';
+  color:var(--green);
+  font-size:26px;
+  line-height:1;
+}
+body[data-page="tips"] .tickets-v167-meter span{
+  display:block;
+  margin-top:4px;
+  color:#eaf4ef;
+  font-size:9px;
+  font-weight:900;
+}
+body[data-page="tips"] .tickets-v167-list{
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(255,255,255,.025);
+}
+body[data-page="tips"] .tickets-v167-pick{
+  display:grid;
+  grid-template-columns:34px 88px 1fr auto 18px;
+  gap:9px;
+  align-items:center;
+  min-height:68px;
+  padding:10px;
+  border-bottom:1px solid rgba(255,255,255,.07);
+}
+body[data-page="tips"] .tickets-v167-pick:last-child{
+  border-bottom:0;
+}
+body[data-page="tips"] .tickets-v167-num{
+  width:30px;
+  height:30px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  font-family:'JetBrains Mono';
+  font-size:17px;
+  font-weight:900;
+  color:var(--green);
+  background:rgba(33,230,161,.12);
+}
+body[data-page="tips"] .tickets-v167-teams{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  min-width:0;
+}
+body[data-page="tips"] .tickets-v167-teams .crest{
+  width:30px !important;
+  height:30px !important;
+}
+body[data-page="tips"] .tickets-v167-vs{
+  color:#d9e2ec;
+  font-weight:900;
+  font-size:12px;
+}
+body[data-page="tips"] .tickets-v167-game{
+  min-width:0;
+}
+body[data-page="tips"] .tickets-v167-game b{
+  display:block;
+  color:#fff;
+  font-size:14px;
+  line-height:1.15;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+body[data-page="tips"] .tickets-v167-game span{
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:9px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+body[data-page="tips"] .tickets-v167-entry{
+  color:var(--gold);
+  font-size:12px;
+  font-weight:900;
+  white-space:nowrap;
+  text-align:right;
+}
+body[data-page="tips"] .tickets-v167-arrow{
+  color:#b7c1cc;
+  font-size:18px;
+}
+body[data-page="tips"] .tickets-v167-summary{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  margin-top:10px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:17px;
+  overflow:hidden;
+  background:rgba(255,255,255,.03);
+}
+body[data-page="tips"] .tickets-v167-sum-box{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:60px;
+  padding:11px;
+}
+body[data-page="tips"] .tickets-v167-sum-box + .tickets-v167-sum-box{
+  border-left:1px solid rgba(255,255,255,.08);
+}
+body[data-page="tips"] .tickets-v167-sum-icon{
+  font-size:26px;
+  color:var(--green);
+}
+body[data-page="tips"] .tickets-v167-sum-box b{
+  display:block;
+  color:var(--green);
+  font-size:19px;
+  line-height:1;
+}
+body[data-page="tips"] .tickets-v167-sum-box span{
+  display:block;
+  margin-top:4px;
+  color:#dce4ed;
+  font-size:10px;
+}
+body[data-page="tips"] .tickets-v167-copy{
+  width:100%;
+  min-height:52px;
+  margin-top:12px;
+  border:0;
+  border-radius:16px;
+  background:linear-gradient(135deg,#20df94,#7affcc);
+  color:#06120d;
+  font-size:14px;
+  font-weight:900;
+  box-shadow:0 0 26px rgba(33,230,161,.15), inset 0 1px 0 rgba(255,255,255,.22);
+}
+body[data-page="tips"] .tickets-v167-more{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  min-height:40px;
+  color:rgba(255,255,255,.24);
+  font-size:13px;
+  font-weight:900;
+}
+body[data-page="tips"] .tickets-v167-more span{
+  color:var(--green);
+  font-size:18px;
+}
+@media(max-width:430px){
+  body[data-page="tips"] .tickets-v167{gap:10px}
+  body[data-page="tips"] .tickets-v167-top{
+    grid-template-columns:52px 1fr;
+    gap:10px;
+    padding:13px 13px 9px;
+  }
+  body[data-page="tips"] .tickets-v167-icon{
+    width:48px;
+    height:48px;
+    border-radius:15px;
+    font-size:25px;
+  }
+  body[data-page="tips"] .tickets-v167-title h2{
+    font-size:21px;
+  }
+  body[data-page="tips"] .tickets-v167-title p{
+    font-size:10px;
+  }
+  body[data-page="tips"] .tickets-v167-risk{
+    gap:7px;
+    padding:0 13px 13px;
+  }
+  body[data-page="tips"] .tickets-v167-risk-btn{
+    min-height:66px;
+    padding:8px 6px;
+    grid-template-columns:1fr;
+    justify-items:center;
+    text-align:center;
+    gap:4px;
+  }
+  body[data-page="tips"] .tickets-v167-risk-btn .r-icon{
+    width:28px;
+    height:28px;
+    font-size:18px;
+  }
+  body[data-page="tips"] .tickets-v167-risk-btn b{
+    font-size:11px;
+  }
+  body[data-page="tips"] .tickets-v167-risk-btn small{
+    font-size:7.5px;
+    margin-top:3px;
+  }
+  body[data-page="tips"] .tickets-v167-auto{
+    padding:12px;
+  }
+  body[data-page="tips"] .tickets-v167-auto h3{
+    font-size:22px;
+  }
+  body[data-page="tips"] .tickets-v167-auto p{
+    font-size:10px;
+  }
+  body[data-page="tips"] .tickets-v167-meter{
+    min-width:74px;
+    padding:7px 8px;
+  }
+  body[data-page="tips"] .tickets-v167-meter b{
+    font-size:23px;
+  }
+  body[data-page="tips"] .tickets-v167-pick{
+    grid-template-columns:28px 72px 1fr auto 12px;
+    gap:7px;
+    min-height:61px;
+    padding:8px;
+  }
+  body[data-page="tips"] .tickets-v167-num{
+    width:25px;
+    height:25px;
+    border-radius:8px;
+    font-size:14px;
+  }
+  body[data-page="tips"] .tickets-v167-teams .crest{
+    width:25px !important;
+    height:25px !important;
+  }
+  body[data-page="tips"] .tickets-v167-game b{
+    font-size:11.5px;
+  }
+  body[data-page="tips"] .tickets-v167-game span{
+    font-size:8px;
+  }
+  body[data-page="tips"] .tickets-v167-entry{
+    font-size:10px;
+    max-width:94px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  body[data-page="tips"] .tickets-v167-summary{
+    margin-top:8px;
+  }
+  body[data-page="tips"] .tickets-v167-sum-box{
+    min-height:52px;
+    padding:9px;
+  }
+  body[data-page="tips"] .tickets-v167-sum-box b{
+    font-size:16px;
+  }
+  body[data-page="tips"] .tickets-v167-copy{
+    min-height:47px;
+    font-size:12px;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -3758,51 +4194,72 @@ function renderTips(){
   const ticket = ticketFor(risk);
   const oddTotal = ticket.reduce((acc,p)=>acc*p.oddMin,1);
   const avgConf = ticket.length ? Math.round(ticket.reduce((a,p)=>a+p.confidence,0)/ticket.length) : 0;
-  const lineOptions = getCustomLineOptions(state.customMarket);
-  const custom = state.customTicket;
+  const riskSub = (r) => r==='conservador' ? 'Entrada protegida' : r==='moderado' ? 'Equilíbrio premium' : 'Retorno mais alto';
+
   $('#page-tips').innerHTML = `
-    <div class="ticket-luxe-shell">
-      <div class="ticket-top-banner">
-        <div class="title">Bilhetes profissionais da IA</div>
-        <div class="sub">Modo automático por risco para quem quer rapidez, e gerador personalizado para o cliente montar o mercado que preferir.</div>
-        <div class="risk-grid luxe">
-          ${['conservador','moderado','agressivo'].map(r=>`<button class="risk-btn ${risk===r?'active':''}" onclick="setRisk('${r}')"><span>${riskIcon(r)}</span>${riskLabel(r)}<small>${r==='conservador'?'Entrada protegida':r==='moderado'?'Equilíbrio premium':'Retorno mais alto'}</small></button>`).join('')}
+    <div class="tickets-v167">
+      <section class="tickets-v167-hero">
+        <div class="tickets-v167-top">
+          <div class="tickets-v167-icon">🎟️</div>
+          <div class="tickets-v167-title">
+            <h2>Bilhetes profissionais da IA</h2>
+            <p>Bilhetes automáticos gerados pela IA de acordo com o seu perfil de risco.</p>
+          </div>
         </div>
-      </div>
+        <div class="tickets-v167-risk">
+          ${['conservador','moderado','agressivo'].map(r=>`
+            <button data-risk="${r}" class="tickets-v167-risk-btn ${risk===r?'active':''}" onclick="setRisk('${r}')">
+              <span class="r-icon">${riskIcon(r)}</span>
+              <span><b>${riskLabel(r)}</b><small>${riskSub(r)}</small></span>
+            </button>
+          `).join('')}
+        </div>
+      </section>
 
-      <div class="ticket-dual-grid">
-        <article class="card ticket-main-card">
-          <div class="topline">
-            <div><h3>Bilhete automático</h3><p>A IA puxou as melhores combinações do dia para o perfil ${riskLabel(risk).toLowerCase()}.</p></div>
-            <div class="ticket-meter"><b>${avgConf}%</b><span>média IA</span></div>
+      <article class="tickets-v167-auto">
+        <div class="tickets-v167-auto-head">
+          <div class="tickets-v167-auto-title">
+            <div class="tickets-v167-bolt">⚡</div>
+            <div>
+              <h3>Bilhete automático</h3>
+              <p>Selecionado pela IA com base no perfil ${riskLabel(risk).toLowerCase()} de risco.</p>
+            </div>
           </div>
-          ${ticket.map((p,i)=>`<div class="ticket-pro-pick"><div class="game"><div><b>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</b><div class="meta">${safe(p.match.league)} · ${p.confidence}% confiança</div></div><span>${safe(p.entry)}</span></div><div class="meta">Seleção ${i+1} · odd mínima ${p.oddMin.toFixed(2)} · uso ideal para bilhete ${riskLabel(risk).toLowerCase()}</div></div>`).join('')}
-          <div class="confidence"><div class="bar"><i style="width:${avgConf}%"></i></div><small>${avgConf}% média de confiança · odd total estimada ${oddTotal.toFixed(2)}</small></div>
-          <div class="ticket-stats-mini"><div class="mini"><b>${ticket.length}</b><small>seleções</small></div><div class="mini"><b>${oddTotal.toFixed(2)}</b><small>odd total</small></div><div class="mini"><b>${riskLabel(risk)}</b><small>perfil atual</small></div></div>
-          <button class="btn primary wide" onclick="copyTicket('${risk}')">📋 Copiar bilhete automático</button>
-        </article>
+          <div class="tickets-v167-meter"><b>${avgConf}%</b><span>média IA</span></div>
+        </div>
 
-        <article class="ticket-custom-card">
-          <div class="head"><div><h3>Gerador personalizado</h3><p>Escolha o mercado, a linha e a quantidade. A IA encontra os jogos mais compatíveis.</p></div><span class="tag gold">Modo cliente</span></div>
-          <div class="builder-tile-grid">
-            ${Object.entries(CUSTOM_MARKETS).map(([k,v])=>`<button class="builder-tile ${state.customMarket===k?'active':''}" onclick="setCustomMarket('${k}')"><b>${v.label}</b><small>${v.hint || 'Mercado IA'}</small></button>`).join('')}
-          </div>
-          <div class="builder-inline-selects">
-            <select class="mini-select" onchange="setCustomLine(this.value)">${lineOptions.map(v=>`<option value="${v}" ${state.customLine===v?'selected':''}>${state.customMarket==='ambos_marcam' ? 'Sim' : 'Linha ' + v}</option>`).join('')}</select>
-            <select class="mini-select" onchange="setCustomGames(this.value)">${[2,3,4,5,6].map(v=>`<option value="${v}" ${Number(state.customGames)===v?'selected':''}>${v} jogos</option>`).join('')}</select>
-            <select class="mini-select" onchange="setRisk(this.value)">${['conservador','moderado','agressivo'].map(v=>`<option value="${v}" ${risk===v?'selected':''}>${riskLabel(v)}</option>`).join('')}</select>
-          </div>
-          <div class="builder-footer"><div class="hint">Mercado ${marketLabelByKey(state.customMarket)} · linha ${state.customLine} · ${state.customGames} jogos</div><button class="btn gold" onclick="generateCustomTicket()">Gerar Bilhete</button></div>
-        </article>
-      </div>
+        <div class="tickets-v167-list">
+          ${ticket.map((p,i)=>`
+            <div class="tickets-v167-pick" onclick="openMatchDetail('${p.match.id}')">
+              <div class="tickets-v167-num">${i+1}</div>
+              <div class="tickets-v167-teams">${crestHTML(p.match.home,28)}<span class="tickets-v167-vs">x</span>${crestHTML(p.match.away,28)}</div>
+              <div class="tickets-v167-game">
+                <b>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</b>
+                <span>${safe(p.match.league)} · ${p.confidence}% confiança</span>
+              </div>
+              <div class="tickets-v167-entry">${safe(p.entry)}</div>
+              <div class="tickets-v167-arrow">›</div>
+            </div>
+          `).join('')}
+        </div>
 
-      ${custom && custom.picks?.length ? `<article class="card custom-results-card"><div class="topline"><div><h3>Bilhete do cliente</h3><p>${marketLabelByKey(custom.market)} · ${custom.games} jogos · linha ${custom.line}</p></div><div class="ticket-meter"><b>${Math.round(custom.picks.reduce((a,p)=>a+p.confidence,0)/custom.picks.length)}%</b><span>média IA</span></div></div>${custom.picks.map((p,i)=>`<div class="ticket-pro-pick"><div class="game"><div><b>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</b><div class="meta">${safe(p.match.league)} · ${p.confidence}% confiança</div></div><span>${safe(p.entry)}</span></div><div class="meta">Seleção ${i+1} · odd mínima ${p.oddMin.toFixed(2)} · leitura do mercado ${marketLabelByKey(custom.market).toLowerCase()}</div></div>`).join('')}<button class="btn primary wide" onclick="copyCustomTicket()">📋 Copiar bilhete personalizado</button></article>` : ''}
+        <div class="tickets-v167-summary">
+          <div class="tickets-v167-sum-box">
+            <div class="tickets-v167-sum-icon">▮▮▮</div>
+            <div><b>${avgConf}%</b><span>média de confiança<br>${ticket.length} seleções</span></div>
+          </div>
+          <div class="tickets-v167-sum-box">
+            <div><b>${oddTotal.toFixed(2)}</b><span>odd total estimada</span></div>
+          </div>
+        </div>
+
+        <button class="tickets-v167-copy" onclick="copyTicket('${risk}')">📋 Copiar bilhete automático</button>
+      </article>
+
+      <div class="tickets-v167-more"><span>⌄</span> Mais opções e ferramentas</div>
     </div>
-
-    <div class="notice">No grátis, deixe 1 tipo aberto. No Premium, libere todos os níveis, scanner ao vivo e IA Prado ilimitada.</div>
   `;
 }
-
 
 function setRisk(risk){ state.selectedRisk = risk; localStorage.setItem('prado_risk', risk); renderTips(); toast(`Risco ${riskLabel(risk)} selecionado`, riskIcon(risk)); }
 function copyTicket(risk){
