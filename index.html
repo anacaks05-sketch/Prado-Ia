@@ -1624,6 +1624,259 @@ body[data-page="match"] #floatingAI{display:none !important}
   .builder-footer{grid-template-columns:1fr}
 }
 
+
+/* ===== V16.1 — HOME SOMENTE =====
+   Escopo: só tela inicial. Não altera IA, Bilhetes, Scanner, Ao Vivo ou Configurações.
+*/
+body[data-page="home"] .hero-v161{
+  min-height:248px !important;
+  padding:14px !important;
+  border-radius:26px !important;
+  overflow:hidden;
+  position:relative;
+  border:1px solid rgba(255,255,255,.09);
+  background:
+    linear-gradient(115deg,rgba(5,9,15,.97) 10%,rgba(5,9,15,.76) 54%,rgba(5,9,15,.30)),
+    radial-gradient(circle at 86% 10%,rgba(255,224,110,.18),transparent 32%),
+    radial-gradient(circle at 14% 92%,rgba(33,230,161,.14),transparent 36%),
+    url('https://images.unsplash.com/photo-1518604666860-9ed391f76460?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat !important;
+  box-shadow:0 20px 46px rgba(0,0,0,.25);
+  margin-bottom:9px !important;
+}
+body[data-page="home"] .hero-v161::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(7,11,17,0) 30%,rgba(7,11,17,.50) 100%);
+  pointer-events:none;
+}
+body[data-page="home"] .hero-v161 .hero-content{
+  position:relative;
+  z-index:1;
+  max-width:none !important;
+  height:100%;
+}
+body[data-page="home"] .home-panel-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+body[data-page="home"] .home-panel-copy{
+  max-width:320px;
+}
+body[data-page="home"] .home-kicker{
+  display:inline-flex;
+  align-items:center;
+  padding:7px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.075);
+  border:1px solid rgba(255,255,255,.09);
+  color:var(--gold);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  margin-bottom:10px;
+}
+body[data-page="home"] .home-panel-copy h1{
+  font-size:27px !important;
+  line-height:1.02 !important;
+  letter-spacing:-.055em;
+  margin:0 0 8px !important;
+  max-width:280px;
+}
+body[data-page="home"] .home-panel-copy h1 span{
+  color:var(--gold);
+}
+body[data-page="home"] .home-panel-copy p{
+  font-size:12px !important;
+  line-height:1.42 !important;
+  color:#d7e0ea;
+  margin:0 0 12px !important;
+  max-width:286px;
+}
+body[data-page="home"] .home-panel-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  max-width:310px;
+}
+body[data-page="home"] .home-panel-actions .btn{
+  min-height:42px !important;
+  border-radius:15px !important;
+  font-size:13px !important;
+}
+body[data-page="home"] .home-panel-actions .btn.ghost{
+  background:rgba(255,255,255,.075);
+  border-color:rgba(255,255,255,.13);
+  color:#fff;
+}
+body[data-page="home"] .home-panel-stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
+}
+body[data-page="home"] .home-mini-stat{
+  padding:9px 9px 8px;
+  border-radius:16px;
+  background:linear-gradient(180deg,rgba(10,17,27,.82),rgba(6,11,18,.94));
+  border:1px solid rgba(255,255,255,.08);
+}
+body[data-page="home"] .home-mini-stat b{
+  display:block;
+  font-family:'Space Grotesk';
+  font-size:18px;
+  line-height:1;
+  color:#fff;
+}
+body[data-page="home"] .home-mini-stat span{
+  display:block;
+  font-size:8.5px;
+  line-height:1.2;
+  color:var(--muted);
+  font-weight:800;
+  margin-top:4px;
+}
+body[data-page="home"] .home-mini-stat.green{
+  border-color:rgba(33,230,161,.16);
+  background:linear-gradient(180deg,rgba(33,230,161,.12),rgba(6,11,18,.94));
+}
+body[data-page="home"] .home-mini-stat.gold{
+  border-color:rgba(255,224,110,.18);
+  background:linear-gradient(180deg,rgba(255,224,110,.12),rgba(6,11,18,.94));
+}
+body[data-page="home"] .home-v161-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+  margin:0 0 9px;
+}
+body[data-page="home"] .home-v161-card{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  min-height:60px;
+  padding:10px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(145deg,rgba(15,22,34,.95),rgba(8,12,18,.98));
+  box-shadow:0 12px 26px rgba(0,0,0,.16);
+  text-align:left;
+}
+body[data-page="home"] .home-v161-card .icon{
+  width:32px;
+  height:32px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  flex:0 0 auto;
+  color:var(--green);
+  background:rgba(33,230,161,.105);
+  border:1px solid rgba(33,230,161,.15);
+  font-weight:900;
+}
+body[data-page="home"] .home-v161-card b{
+  display:block;
+  font-size:12px;
+  line-height:1.1;
+  color:#fff;
+}
+body[data-page="home"] .home-v161-card small{
+  display:block;
+  color:var(--muted);
+  font-size:9px;
+  line-height:1.25;
+  margin-top:3px;
+  font-weight:800;
+}
+body[data-page="home"] .home-v161-focus{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:8px;
+  margin-bottom:9px;
+}
+body[data-page="home"] .home-v161-best{
+  padding:12px !important;
+  border-radius:22px !important;
+  background:linear-gradient(165deg,rgba(8,34,25,.95),rgba(7,11,18,.98)) !important;
+  border-color:rgba(33,230,161,.18) !important;
+}
+body[data-page="home"] .home-v161-best .eyebrow{
+  font-size:9px !important;
+}
+body[data-page="home"] .home-v161-best .answer-entry{
+  font-size:22px !important;
+}
+body[data-page="home"] .home-v161-best .btn{
+  margin-top:8px;
+}
+body[data-page="home"] .home-v161-ticket{
+  padding:12px !important;
+  border-radius:22px !important;
+  background:linear-gradient(165deg,rgba(39,31,9,.66),rgba(7,11,18,.98)) !important;
+  border-color:rgba(255,224,110,.18) !important;
+}
+body[data-page="home"] .home-v161-ticket h3{
+  margin:0 0 6px;
+  font-family:'Space Grotesk';
+  font-size:18px;
+  line-height:1.04;
+}
+body[data-page="home"] .home-v161-ticket p{
+  margin:0 0 8px;
+  color:var(--muted);
+  font-size:10.5px;
+  line-height:1.38;
+}
+body[data-page="home"] .home-ticket-lines{
+  display:grid;
+  gap:6px;
+  margin:8px 0;
+}
+body[data-page="home"] .home-ticket-lines .line{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  padding:8px 9px;
+  border-radius:13px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.05);
+}
+body[data-page="home"] .home-ticket-lines b{
+  font-size:11px;
+  line-height:1.15;
+}
+body[data-page="home"] .home-ticket-lines span{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+}
+body[data-page="home"] .stats-strip{
+  margin-bottom:9px !important;
+}
+@media(max-width:430px){
+  body[data-page="home"] .hero-v161{
+    min-height:228px !important;
+    padding:13px !important;
+    border-radius:24px !important;
+  }
+  body[data-page="home"] .home-panel-copy h1{
+    font-size:25px !important;
+  }
+  body[data-page="home"] .home-panel-copy p{
+    font-size:11.4px !important;
+  }
+  body[data-page="home"] .home-panel-actions .btn{
+    min-height:40px !important;
+    font-size:12.5px !important;
+  }
+  body[data-page="home"] .home-v161-card{
+    min-height:56px;
+    padding:9px;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -2290,61 +2543,52 @@ function renderHome(){
   const autoTicket = ticketFor(state.selectedRisk || 'moderado');
   const autoOdd = autoTicket.reduce((acc,p)=>acc*p.oddMin,1);
   const autoAvg = autoTicket.length ? Math.round(autoTicket.reduce((a,p)=>a+p.confidence,0)/autoTicket.length) : 0;
-  const scannerCount = predictions.slice(0,4).length;
+
   $('#page-home').innerHTML = `
-    <div class="hero hero-v15 premium-home">
-      <div class="hero-content hero-v15-grid">
-        <div class="hero-v15-copy">
-          <div class="hero-kicker">PAINEL PRADO · FUTEBOL</div>
-          <h1>Scanner IA para hoje.</h1>
-          <p>Jogos ao vivo, bilhetes por risco e análises prontas em uma tela, com leitura forte e visual premium.</p>
-          <div class="hero-cta-row">
+    <div class="hero hero-v161">
+      <div class="hero-content home-panel-grid">
+        <div class="home-panel-copy">
+          <div class="home-kicker">Painel Prado · Futebol</div>
+          <h1>Scanner IA <span>para hoje.</span></h1>
+          <p>Jogos ao vivo, bilhetes por risco e análise rápida em uma tela premium.</p>
+          <div class="home-panel-actions">
             <button class="btn primary" onclick="goToPage('live')">Ao vivo</button>
             <button class="btn ghost" onclick="goToPage('scanner')">Scanner IA</button>
           </div>
-          <div class="hero-label-row">
-            <span class="hero-label">${matches.length} jogos lidos</span>
-            <span class="hero-label">${autoAvg}% confiança média</span>
-            <span class="hero-label">Bilhetes pro</span>
-          </div>
         </div>
-        <div class="hero-v15-side">
-          <div class="hero-v15-stat green"><b>${live.length}</b><span>Ao vivo agora</span><small>Abra o bloco ao vivo para resumo, stats, H2H e leitura da IA.</small></div>
-          <div class="hero-v15-stat"><b>${scannerCount}</b><span>Scanner em alta</span><small>Leituras quentes prontas para filtro rápido e análise.</small></div>
-          ${best ? `<div class="hero-v15-stat gold"><b>${best.confidence}%</b><span>Melhor do dia</span><small>${safe(best.entry)} · ${safe(best.match.home.name)} x ${safe(best.match.away.name)}</small></div>` : ''}
+        <div class="home-panel-stats">
+          <div class="home-mini-stat"><b>${matches.length}</b><span>Jogos lidos</span></div>
+          <div class="home-mini-stat green"><b>${live.length}</b><span>Ao vivo</span></div>
+          <div class="home-mini-stat gold"><b>${predictions.slice(0,3).length}</b><span>Top IA</span></div>
         </div>
       </div>
     </div>
 
-    <div class="luxe-card-grid">
-      <button class="luxe-quick-card" onclick="goToPage('live')"><span class="icon">●</span><div><b>Ao vivo</b><small>${live.length} jogos monitorados com leitura rápida e detalhes por partida.</small></div></button>
-      <button class="luxe-quick-card" onclick="goToPage('scanner')"><span class="icon">IA</span><div><b>Radar IA</b><small>${scannerCount} entradas fortes filtradas por valor, confiança e live.</small></div></button>
-      <button class="luxe-quick-card" onclick="goToPage('tips')"><span class="icon">🎟</span><div><b>Bilhetes</b><small>Modo automático por risco + gerador personalizado para o cliente.</small></div></button>
-      <button class="luxe-quick-card" onclick="goToPage('ai')"><span class="icon">↗</span><div><b>Analisar</b><small>Entrada principal, motivo, plano B e gatilho ao vivo.</small></div></button>
+    <div class="home-v161-grid">
+      <button class="home-v161-card" onclick="goToPage('live')"><span class="icon">●</span><div><b>Ao vivo agora</b><small>${live.length} jogos monitorados</small></div></button>
+      <button class="home-v161-card" onclick="goToPage('scanner')"><span class="icon">IA</span><div><b>Scanner IA</b><small>${predictions.slice(0,4).length} oportunidades</small></div></button>
+      <button class="home-v161-card" onclick="goToPage('tips')"><span class="icon">🎟</span><div><b>Bilhetes</b><small>Automático + cliente</small></div></button>
+      <button class="home-v161-card" onclick="goToPage('ai')"><span class="icon">↗</span><div><b>IA Prado</b><small>Entrada + plano B</small></div></button>
     </div>
 
-    <div class="home-premium-grid">
-      ${best ? `<article class="home-premium-card primary">
-        <h3>Radar da IA</h3>
-        <div class="entry-big">${safe(best.entry)}</div>
-        <p>${safe(best.match.home.name)} x ${safe(best.match.away.name)} · ${safe(best.match.league)} · ${best.confidence}% de confiança IA.</p>
-        <div class="confidence"><div class="bar"><i style="width:${best.confidence}%"></i></div><small>${best.confidence}% leitura principal</small></div>
-        <div class="support-strip"><span class="tag green">Odd ${best.oddMin.toFixed(2)}</span><span class="tag gold">${safe(best.risk)}</span><span class="tag">Plano B na IA</span></div>
+    <div class="home-v161-focus">
+      ${best ? `<article class="card home-v161-best">
+        <div class="eyebrow">Melhor do dia</div>
+        <h2 class="answer-entry">${safe(best.entry)}</h2>
+        <div class="pick-sub">${safe(best.match.home.name)} x ${safe(best.match.away.name)} · ${safe(best.match.league)}</div>
+        <div class="confidence"><div class="bar"><i style="width:${best.confidence}%"></i></div><small>${best.confidence}% IA</small></div>
+        <div class="market-tags"><span class="tag green">Odd mín. ${best.oddMin.toFixed(2)}</span><span class="tag gold">${safe(best.risk)}</span><span class="tag">Prévia visual + IA Prado</span></div>
         <button class="btn primary wide" onclick="openMatchDetail('${best.match.id}')">Ver leitura completa</button>
       </article>` : ''}
-      <article class="home-premium-card gold">
+
+      <article class="card home-v161-ticket">
         <h3>Bilhete automático</h3>
-        <p>A IA separou o dia em risco ${riskLabel(state.selectedRisk || 'moderado').toLowerCase()} com odd estimada ${autoOdd.toFixed(2)} e média de ${autoAvg}%.</p>
-        <div class="pro-billet-preview">${autoTicket.slice(0,3).map(p=>`<div class="row"><div><b>${safe(p.entry)}</b><span>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</span></div><div class="odd">${p.oddMin.toFixed(2)}</div></div>`).join('')}</div>
-        <div class="support-strip"><span class="tag green">${riskLabel(state.selectedRisk || 'moderado')}</span><span class="tag">${autoTicket.length} seleções</span><span class="tag gold">${autoAvg}% média</span></div>
+        <p>Modo ${riskLabel(state.selectedRisk || 'moderado').toLowerCase()} pronto com ${autoTicket.length} seleções, odd estimada ${autoOdd.toFixed(2)} e ${autoAvg}% média IA.</p>
+        <div class="home-ticket-lines">
+          ${autoTicket.slice(0,2).map(p=>`<div class="line"><b>${safe(p.entry)}</b><span>${p.oddMin.toFixed(2)}</span></div>`).join('')}
+        </div>
         <button class="btn gold wide" onclick="goToPage('tips')">Abrir bilhetes</button>
       </article>
-    </div>
-
-    <div class="stats-strip">
-      <div class="stat-pill"><b>${matches.length}</b><span>Jogos lidos</span></div>
-      <div class="stat-pill"><b>${live.length}</b><span>Ao vivo</span></div>
-      <div class="stat-pill"><b>${predictions.slice(0,3).length}</b><span>Top IA</span></div>
     </div>
 
     ${sectionHead('Ao vivo agora', 'Ver todos', "goToPage('live')")}
