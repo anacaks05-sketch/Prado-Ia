@@ -1,27 +1,19 @@
-# Prado Sports AI — V12 V4 Final Compacta
+# Prado Sports AI — V12 V5 Ajustado Carlos
 
-Versão preparada para teste pelo celular, sem precisar configurar API agora.
+## Alterações desta versão
+- Barra de busca modernizada.
+- Busca aparece somente na página inicial.
+- Ícones do menu inferior trocados por SVGs mais modernos.
+- Aba Premium removida do menu inicial.
+- Premium e liberação por código foram para Configurações.
+- Configurações com mais opções: gols, início/fim de jogo, cartão vermelho, escalação, oportunidades IA e tips do dia.
+- Aba "Ao vivo" entrou no lugar de "Tips".
+- Aba "Tips" foi movida para o último lugar, onde antes ficava Premium.
+- Tela inicial sem texto "Painel Premium".
 
-## O que foi ajustado
-- Topo do iPhone totalmente preto.
-- Home mais compacta.
-- Logo e busca menores.
-- Banner principal menor.
-- Cards e botões menores.
-- Menu inferior mais discreto.
-- Mantém modo prévia/demo sem API.
-
-## Como publicar
-Suba estes arquivos no GitHub:
-- index.html
-- manifest.json
-- sw.js
-- icon.svg
-- icon-192.png
-- icon-512.png
-
-Depois abra na Vercel com:
-https://SEU-LINK.vercel.app/?v=4
+## Como testar
+Suba os arquivos no GitHub/Vercel e abra com:
+https://SEU-LINK.vercel.app/?v=5
 
 ## API
-A API fica para depois. Quando for colocar API real, adicione a rota /api/football.js e a variável APISPORTS_KEY na Vercel.
+Continua em modo prévia visual. A API fica para depois.

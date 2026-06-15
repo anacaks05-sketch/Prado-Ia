@@ -313,9 +313,135 @@ button{cursor:pointer}
   .floating-ai{width:46px !important;height:46px !important;}
 }
 
+
+/* =====================================================
+   V12.3 — Ajustes pedidos pelo Carlos
+   - Busca só na tela inicial
+   - Ícones SVG modernos no menu
+   - Premium dentro das configurações
+   - Aba Ao vivo no lugar de Tips e Tips no lugar do Premium
+===================================================== */
+.ui-icon,
+.nav-svg{
+  display:grid;
+  place-items:center;
+  color:currentColor;
+}
+.ui-icon svg,
+.icon-btn svg{
+  width:21px;
+  height:21px;
+  display:block;
+}
+.nav-svg svg{
+  width:22px;
+  height:22px;
+  display:block;
+}
+.top-mini-settings{
+  margin-left:auto;
+  display:none;
+}
+body:not([data-page="home"]) .home-search-row{
+  display:none !important;
+}
+body:not([data-page="home"]) .top-mini-settings{
+  display:grid !important;
+}
+body[data-page="home"] .top-mini-settings{
+  display:none !important;
+}
+.home-search-row{
+  grid-template-columns:1fr 52px;
+  gap:10px;
+}
+.home-search-row .search-box{
+  border-radius:23px;
+  background:
+    linear-gradient(145deg,rgba(23,34,51,.96),rgba(7,11,17,.98)),
+    radial-gradient(circle at 12% 0%,rgba(255,224,110,.12),transparent 40%);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),0 14px 32px rgba(0,0,0,.26);
+}
+.home-search-row .icon-btn{
+  border-radius:22px;
+  background:linear-gradient(145deg,rgba(30,42,62,.96),rgba(10,14,22,.98));
+  color:#DCE7F7;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 14px 32px rgba(0,0,0,.3);
+}
+.bottom-nav .nav-item span.nav-svg{
+  width:26px;
+  height:24px;
+  margin:0 auto 2px;
+  font-size:0 !important;
+}
+.bottom-nav .nav-item.active .nav-svg{
+  color:var(--gold);
+  filter:drop-shadow(0 0 12px rgba(255,224,110,.18));
+}
+.bottom-nav .nav-item:not(.active) .nav-svg{
+  color:#8F9AAF;
+}
+.floating-ai{
+  font-family:'Space Grotesk',Inter,sans-serif;
+  letter-spacing:.02em;
+}
+.floating-ai b{
+  display:block;
+  font-size:17px;
+  line-height:1;
+}
+.best-card{
+  border-color:rgba(255,224,110,.28);
+  background:linear-gradient(145deg,rgba(6,32,27,.96),rgba(9,15,22,.98));
+}
+.live-list .match-row{
+  border-color:rgba(255,71,126,.22);
+}
+@media(max-width:600px){
+  .brand-line{
+    align-items:center !important;
+  }
+  .home-search-row{
+    grid-template-columns:1fr 46px !important;
+    gap:8px !important;
+  }
+  .home-search-row .search-box{
+    height:42px !important;
+    border-radius:18px !important;
+  }
+  .home-search-row .icon-btn{
+    height:42px !important;
+    min-width:42px !important;
+    border-radius:18px !important;
+  }
+  .ui-icon svg,.icon-btn svg{width:19px;height:19px;}
+  .bottom-nav .nav-item span.nav-svg{
+    width:23px !important;
+    height:21px !important;
+    margin-bottom:1px !important;
+  }
+  .nav-svg svg{width:21px;height:21px;}
+  .bottom-nav .nav-item{
+    font-size:8.6px !important;
+  }
+}
+@media(max-width:380px){
+  .home-search-row .search-box{
+    height:39px !important;
+  }
+  .home-search-row .icon-btn{
+    height:39px !important;
+    min-width:39px !important;
+  }
+  .bottom-nav .nav-item{
+    font-size:8px !important;
+  }
+}
+
 </style>
 </head>
-<body>
+<body data-page="home">
   <div id="splash" class="splash" aria-label="Tela inicial">
     <div class="splash-orb orb-a"></div>
     <div class="splash-orb orb-b"></div>
@@ -337,31 +463,32 @@ button{cursor:pointer}
           <strong>Prado <em>Sports AI</em></strong>
           <small id="dataStatus">Carregando dados...</small>
         </div>
+        <button id="openSettingsMini" class="icon-btn top-mini-settings" aria-label="Configurações"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.4A3.4 3.4 0 1 0 12 8.6a3.4 3.4 0 0 0 0 6.8Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19.4 13.4c.08-.46.08-.92 0-1.38l2-1.55-2-3.45-2.46 1a7.5 7.5 0 0 0-1.18-.7L15.4 4.7h-4l-.36 2.62c-.42.18-.82.42-1.19.7l-2.45-1-2 3.45 2 1.55a7.8 7.8 0 0 0 0 1.38l-2 1.55 2 3.45 2.45-1c.37.28.77.52 1.19.7l.36 2.62h4l.36-2.62c.41-.18.81-.42 1.18-.7l2.46 1 2-3.45-2-1.55Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
       </div>
 
-      <div class="search-row">
+      <div class="search-row home-search-row">
         <div class="search-box">
-          <span>⌕</span>
-          <input id="globalSearch" type="search" placeholder="Buscar jogo ou time" autocomplete="off" />
+          <span class="ui-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.8 18.2a7.4 7.4 0 1 1 5.23-12.63 7.4 7.4 0 0 1-5.23 12.63Zm0-2.4a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm5.55.85 3.3 3.3" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
+          <input id="globalSearch" type="search" placeholder="Buscar jogo, time ou liga" autocomplete="off" />
         </div>
-        <button id="openSettings" class="icon-btn" aria-label="Configurações">⚙️</button>
+        <button id="openSettings" class="icon-btn" aria-label="Configurações"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15.4A3.4 3.4 0 1 0 12 8.6a3.4 3.4 0 0 0 0 6.8Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19.4 13.4c.08-.46.08-.92 0-1.38l2-1.55-2-3.45-2.46 1a7.5 7.5 0 0 0-1.18-.7L15.4 4.7h-4l-.36 2.62c-.42.18-.82.42-1.19.7l-2.45-1-2 3.45 2 1.55a7.8 7.8 0 0 0 0 1.38l-2 1.55 2 3.45 2.45-1c.37.28.77.52 1.19.7l.36 2.62h4l.36-2.62c.41-.18.81-.42 1.18-.7l2.46 1 2-3.45-2-1.55Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></button>
       </div>
     </header>
 
     <section id="page-home" class="page active"></section>
-    <section id="page-tips" class="page"></section>
+    <section id="page-live" class="page"></section>
     <section id="page-ai" class="page"></section>
     <section id="page-scanner" class="page"></section>
-    <section id="page-premium" class="page"></section>
+    <section id="page-tips" class="page"></section>
 
-    <button id="floatingAI" class="floating-ai" title="TIPS AI">🤖<span>IA</span></button>
+    <button id="floatingAI" class="floating-ai" title="TIPS AI"><b>AI</b><span>IA</span></button>
 
     <nav class="bottom-nav" aria-label="Navegação principal">
-      <button class="nav-item active" data-page="home"><span>🏠</span>Jogos</button>
-      <button class="nav-item" data-page="tips"><span>🎟️</span>Tips</button>
-      <button class="nav-item" data-page="ai"><span>🤖</span>TIPS AI</button>
-      <button class="nav-item" data-page="scanner"><span>🔎</span>Scanner</button>
-      <button class="nav-item" data-page="premium"><span>💎</span>Premium</button>
+      <button class="nav-item active" data-page="home"><span class="nav-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.2 12 4l8 7.2v8.3a1.5 1.5 0 0 1-1.5 1.5H15v-6h-6v6H5.5A1.5 1.5 0 0 1 4 19.5v-8.3Z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/></svg></span>Jogos</button>
+      <button class="nav-item" data-page="live"><span class="nav-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"/><path d="M6.4 6.4a8 8 0 0 0 0 11.2M17.6 6.4a8 8 0 0 1 0 11.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Ao vivo</button>
+      <button class="nav-item" data-page="ai"><span class="nav-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="6.5" width="14" height="12" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 11.5h.01M15 11.5h.01M10 15h4M12 3v3.5M8 3h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>TIPS AI</button>
+      <button class="nav-item" data-page="scanner"><span class="nav-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16M7 12h10" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><path d="M12 8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".55"/></svg></span>Scanner</button>
+      <button class="nav-item" data-page="tips"><span class="nav-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.8 8.5a2 2 0 0 1 2-2h10.4a2 2 0 0 1 2 2v2.1a2.2 2.2 0 0 0 0 4.8v2.1a2 2 0 0 1-2 2H6.8a2 2 0 0 1-2-2v-2.1a2.2 2.2 0 0 0 0-4.8V8.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 9h4M10 12h4M10 15h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>Tips</button>
     </nav>
   </main>
 
@@ -386,17 +513,44 @@ button{cursor:pointer}
     </div>
     <div class="settings-grid">
       <div class="card compact">
+        <div class="card-title">🔔 Notificações do jogo</div>
+        <p class="muted">Ative os alertas que o cliente vai querer receber quando a API e o push estiverem conectados.</p>
+        <label class="switch-row"><span>Gols ao vivo</span><input type="checkbox" data-setting="goalAlerts" checked></label>
+        <label class="switch-row"><span>Início, intervalo e fim de jogo</span><input type="checkbox" data-setting="statusAlerts" checked></label>
+        <label class="switch-row"><span>Cartão vermelho</span><input type="checkbox" data-setting="redCardAlerts" checked></label>
+        <label class="switch-row"><span>Escalação confirmada</span><input type="checkbox" data-setting="lineups" checked></label>
+        <label class="switch-row"><span>Oportunidade detectada pela IA</span><input type="checkbox" data-setting="liveAlerts" checked></label>
+        <label class="switch-row"><span>Tips prontas do dia</span><input type="checkbox" data-setting="dailyTips" checked></label>
+        <button class="btn secondary wide" onclick="toast('Prévia de notificação ativada. Push real entra junto com a API.','🔔')">Testar alerta visual</button>
+      </div>
+
+      <div class="card compact">
+        <div class="card-title">💎 Premium e liberação</div>
+        <p class="muted">Plano premium com Tips Prontas, Scanner IA, TIPS AI e oportunidades ao vivo.</p>
+        <div class="price">R$ 19,90/mês</div>
+        <button class="btn gold wide" onclick="openPayment()">Liberar Meu Acesso Premium</button>
+        <div class="unlock-box">
+          <input id="premiumCode" class="field" placeholder="Digite o código premium" />
+          <button class="btn primary wide" onclick="unlockPremium()">Validar acesso</button>
+        </div>
+        <p class="legal">Códigos de teste: PRADO2026, CARLOSVIP, PRADO19. Troque antes de vender.</p>
+      </div>
+
+      <div class="card compact">
+        <div class="card-title">⚙️ Preferências da IA</div>
+        <label class="switch-row"><span>Priorizar entradas conservadoras</span><input type="checkbox" data-setting="safeMode"></label>
+        <label class="switch-row"><span>Mostrar odds mínimas recomendadas</span><input type="checkbox" data-setting="showOdds" checked></label>
+        <label class="switch-row"><span>Exibir motivo da escolha</span><input type="checkbox" data-setting="showReason" checked></label>
+        <label class="switch-row"><span>Modo prévia visual sem API</span><input type="checkbox" data-setting="demoMode" checked></label>
+      </div>
+
+      <div class="card compact">
         <div class="card-title">🔑 API de dados</div>
-        <p class="muted">Use a variável <b>APISPORTS_KEY</b> na Vercel ou cole uma chave temporária abaixo para teste.</p>
-        <input id="apiKeyInput" class="field" type="password" placeholder="Cole sua chave API-Football para teste" />
+        <p class="muted">Agora vamos testar sem API. Depois use a variável <b>APISPORTS_KEY</b> na Vercel ou cole uma chave temporária abaixo.</p>
+        <input id="apiKeyInput" class="field" type="password" placeholder="Cole sua chave API-Football depois" />
         <button id="saveApiKey" class="btn secondary wide">Salvar chave neste navegador</button>
       </div>
-      <div class="card compact">
-        <div class="card-title">🔔 Notificações</div>
-        <label class="switch-row"><span>Oportunidade ao vivo</span><input type="checkbox" data-setting="liveAlerts" checked></label>
-        <label class="switch-row"><span>Tips prontas do dia</span><input type="checkbox" data-setting="dailyTips" checked></label>
-        <label class="switch-row"><span>Escalação confirmada</span><input type="checkbox" data-setting="lineups" checked></label>
-      </div>
+
       <div class="card compact">
         <div class="card-title">🛡️ Aviso responsável</div>
         <p class="muted">As análises são informativas e não garantem resultado. Use gestão de banca e evite promessas de lucro na divulgação.</p>
@@ -682,7 +836,7 @@ async function loadData(){
 }
 
 function renderAll(){
-  renderHome(); renderTips(); renderAI(); renderScanner(); renderPremium(); updateNav();
+  renderHome(); renderLive(); renderAI(); renderScanner(); renderTips(); updateNav();
 }
 function filteredMatches(){
   const q = state.search.trim().toLowerCase();
@@ -737,12 +891,12 @@ function renderHome(){
   $('#page-home').innerHTML = `
     <div class="hero">
       <div class="hero-content">
-        <div class="eyebrow">Painel premium · futebol</div>
-        <h1>Tips e Scanner IA <span>para hoje.</span></h1>
-        <p>Bilhetes por risco, análise por jogo e oportunidades ao vivo.</p>
+        <div class="eyebrow">Painel Prado · futebol</div>
+        <h1>Scanner IA <span>para hoje.</span></h1>
+        <p>Jogos ao vivo, bilhetes por risco e análises prontas em uma tela.</p>
         <div class="hero-actions">
-          <button class="btn primary" onclick="goToPage('tips')">🎟️ Ver tips prontas</button>
-          <button class="btn ghost" onclick="goToPage('scanner')">🔎 Scanner IA</button>
+          <button class="btn primary" onclick="goToPage('live')">Ao vivo agora</button>
+          <button class="btn ghost" onclick="goToPage('scanner')">Scanner IA</button>
         </div>
       </div>
     </div>
@@ -751,20 +905,35 @@ function renderHome(){
       <div class="stat-pill"><b>${live.length}</b><span>Ao vivo</span></div>
       <div class="stat-pill"><b>${topThree.length}</b><span>Top IA</span></div>
     </div>
-    ${best ? `<article class="card premium-hero">
-      <div class="eyebrow">⭐ Melhor do dia</div>
+    ${best ? `<article class="card best-card">
+      <div class="eyebrow">Melhor do dia</div>
       <h2 class="answer-entry">${safe(best.entry)}</h2>
       <div class="pick-sub">${safe(best.match.home.name)} x ${safe(best.match.away.name)} · ${safe(best.match.league)}</div>
       <div class="confidence"><div class="bar"><i style="width:${best.confidence}%"></i></div><small>${best.confidence}% IA</small></div>
       <div class="market-tags"><span class="tag green">Odd mín. ${best.oddMin.toFixed(2)}</span><span class="tag gold">${safe(best.risk)}</span><span class="tag">${safe(best.source)}</span></div>
     </article>` : ''}
-    ${sectionHead('🔴 Ao vivo agora', live.length ? `${live.length} jogos` : '')}
-    ${live.length ? `<div class="hscroll">${live.slice(0,8).map(matchCard).join('')}</div>` : `<div class="card empty">Nenhum jogo ao vivo neste momento.</div>`}
-    ${sectionHead('📅 Jogos de hoje', 'Atualizar', 'loadData()')}
-    <div class="match-list">${today.slice(0,14).map(matchRow).join('') || '<div class="card empty">Nenhum jogo encontrado para hoje.</div>'}</div>
-    ${sectionHead('🌍 Principais ligas')}
+    ${sectionHead('Ao vivo agora', 'Ver todos', "goToPage('live')")}
+    ${live.length ? `<div class="hscroll">${live.slice(0,6).map(matchCard).join('')}</div>` : `<div class="card empty">Nenhum jogo ao vivo neste momento.</div>`}
+    ${sectionHead('Jogos de hoje', 'Atualizar', 'loadData()')}
+    <div class="match-list">${today.slice(0,12).map(matchRow).join('') || '<div class="card empty">Nenhum jogo encontrado para hoje.</div>'}</div>
+    ${sectionHead('Principais ligas')}
     <div class="source-row">${DEMO_LEAGUES.map(l=>`<span class="tag gold">${safe(l)}</span>`).join('')}</div>
     <p class="legal">Análises informativas. Não existe garantia de acerto ou lucro.</p>
+  `;
+}
+
+function renderLive(){
+  const live = filteredMatches().filter(m=>m.status==='live');
+  const pre = filteredMatches().filter(m=>m.status!=='live').slice(0,8);
+  $('#page-live').innerHTML = `
+    ${sectionHead('Ao vivo agora', live.length ? `${live.length} jogos` : '')}
+    <div class="card compact">
+      <div class="card-title">Jogos ao vivo separados da tela inicial</div>
+      <p class="muted">Aqui ficam os jogos em andamento, com placar, minuto e botão para análise IA.</p>
+    </div>
+    ${live.length ? `<div class="match-list live-list">${live.map(matchRow).join('')}</div>` : '<div class="card empty">Nenhum jogo ao vivo neste momento.</div>'}
+    ${sectionHead('Próximos jogos para monitorar')}
+    <div class="match-list">${pre.map(matchRow).join('') || '<div class="card empty">Nenhum jogo pré-jogo encontrado.</div>'}</div>
   `;
 }
 
@@ -966,7 +1135,7 @@ async function unlockPremium(){
     }catch(_err){}
   }
   if(codes.includes(code)){
-    state.premium = true; localStorage.setItem('prado_premium','true'); renderPremium(); toast('Premium liberado com sucesso 💎');
+    state.premium = true; localStorage.setItem('prado_premium','true'); toast('Premium liberado com sucesso 💎');
   }else toast('Código inválido ou não encontrado', '⚠️');
 }
 function openPayment(){
@@ -977,12 +1146,16 @@ function openPayment(){
 
 function goToPage(page){
   state.page = page;
+  document.body.dataset.page = page;
   $$('.page').forEach(p=>p.classList.remove('active'));
   $(`#page-${page}`)?.classList.add('active');
   updateNav();
   window.scrollTo({top:0,behavior:'smooth'});
 }
-function updateNav(){ $$('.nav-item').forEach(b=>b.classList.toggle('active', b.dataset.page===state.page)); }
+function updateNav(){
+  document.body.dataset.page = state.page;
+  $$('.nav-item').forEach(b=>b.classList.toggle('active', b.dataset.page===state.page));
+}
 function toast(msg, icon='✅'){
   const t = $('#toast');
   t.textContent = `${icon} ${msg}`;
@@ -1019,9 +1192,10 @@ function bindEvents(){
   $$('.nav-item').forEach(b=>b.addEventListener('click',()=>goToPage(b.dataset.page)));
   $('#globalSearch').addEventListener('input', e=>{ state.search=e.target.value; renderAll(); });
   $('#openSettings').addEventListener('click',()=>$('#settingsModal').showModal());
+  $('#openSettingsMini')?.addEventListener('click',()=>$('#settingsModal').showModal());
   $$('[data-close]').forEach(b=>b.addEventListener('click',()=>$('#'+b.dataset.close).close()));
-  $('#saveApiKey').addEventListener('click',()=>{ localStorage.setItem('prado_api_key', $('#apiKeyInput').value.trim()); toast('Chave salva para teste. Atualizando dados...','🔑'); loadData(); });
-  $('#apiKeyInput').value = localStorage.getItem('prado_api_key') || '';
+  $('#saveApiKey')?.addEventListener('click',()=>{ localStorage.setItem('prado_api_key', $('#apiKeyInput').value.trim()); toast('Chave salva para teste. Atualizando dados...','🔑'); loadData(); });
+  if($('#apiKeyInput')) $('#apiKeyInput').value = localStorage.getItem('prado_api_key') || '';
   $('#floatingAI').addEventListener('click',()=>goToPage('ai'));
   makeFloatingDraggable($('#floatingAI'));
   if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
