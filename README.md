@@ -1,25 +1,17 @@
-# Prado Sports AI — V16.1 Home Somente
+# Prado Sports AI — V16.1.1 Home Ajuste
 
-## Regra desta versão
-Esta versão mexe SOMENTE na tela inicial/home.
+## Escopo
+Apenas ajuste da HOME.
 
 ## Alterado
-- Painel principal da home reorganizado.
-- Botões "Ao vivo" e "Scanner IA" lado a lado e funcionando.
-- Home mais compacta para iPhone.
-- Melhor do dia e Bilhete automático na home mais organizados.
-- Atalhos principais mais limpos.
+- Removido o card duplicado "Ao vivo agora" da grade superior.
+- Mantidos apenas: Scanner IA, Bilhetes e IA Prado.
+- Grade da home ficou mais compacta para iPhone.
 
 ## Não alterado
-- Aba IA
-- Aba Bilhetes
-- Aba Scanner
-- Aba Ao vivo
+- Bilhetes (aba completa)
+- IA (aba completa)
+- Scanner (aba completa)
+- Ao vivo (aba completa)
 - Configurações
-- Notificações
 - Botão IA flutuante
-- Menu inferior
-
-## Teste
-Suba na Vercel e abra com:
-https://prado-ia.vercel.app/?v=16-1
