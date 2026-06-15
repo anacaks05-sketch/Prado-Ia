@@ -759,8 +759,8 @@ body[data-page="match"] #floatingAI{display:none !important;}
       <div class="splash-kicker">PRADO SPORTS AI</div>
       <h1>Tips, scanner e IA em uma experiência premium.</h1>
       <p>Bilhetes prontos, análise por jogo e oportunidades em tempo real.</p>
-      <button id="enterApp" class="btn primary wide">Entrar no Prado</button>
-      <button id="startQuiz" class="btn ghost wide">Começar análise grátis</button>
+      <button id="enterApp" class="btn primary wide" onclick="document.getElementById('splash').classList.add('hidden');document.getElementById('app').classList.remove('hidden')">Entrar no Prado</button>
+      <button id="startQuiz" class="btn ghost wide" onclick="document.getElementById('splash').classList.add('hidden');document.getElementById('app').classList.remove('hidden');setTimeout(()=>{try{openQuiz()}catch(e){}},100)">Começar análise grátis</button>
     </div>
   </div>
 
@@ -1501,8 +1501,7 @@ function generateCustomTicket(){
 function copyCustomTicket(){
   if(!state.customTicket || !state.customTicket.picks?.length) return;
   const g = state.customTicket;
-  const text = [`PRADO SPORTS AI — Bilhete personalizado`, `Mercado: ${marketLabelByKey(g.market)} · Linha: ${g.line} · Jogos: ${g.games}`, ...g.picks.map((p,i)=>`${i+1}. ${p.match.home.name} x ${p.match.away.name} — ${p.entry} | odd mín. ${p.oddMin.toFixed(2)} | ${p.confidence}% IA`), 'Análise informativa. Sem garantia de resultado.'].join('
-');
+  const text = [`PRADO SPORTS AI — Bilhete personalizado`, `Mercado: ${marketLabelByKey(g.market)} · Linha: ${g.line} · Jogos: ${g.games}`, ...g.picks.map((p,i)=>`${i+1}. ${p.match.home.name} x ${p.match.away.name} — ${p.entry} | odd mín. ${p.oddMin.toFixed(2)} | ${p.confidence}% IA`), 'Análise informativa. Sem garantia de resultado.'].join('\\n');
   navigator.clipboard?.writeText(text).then(()=>toast('Bilhete personalizado copiado 📋')).catch(()=>toast('Copie manualmente o bilhete personalizado', '⚠️'));
 }
 function riskLabel(risk){ return {conservador:'Conservador',moderado:'Moderado',agressivo:'Agressivo'}[risk] || 'Moderado'; }
