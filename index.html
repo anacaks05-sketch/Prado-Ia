@@ -621,8 +621,7 @@ function renderTips(){
 function setRisk(risk){ state.selectedRisk = risk; localStorage.setItem('prado_risk', risk); renderTips(); toast(`Risco ${riskLabel(risk)} selecionado`, riskIcon(risk)); }
 function copyTicket(risk){
   const t = ticketFor(risk);
-  const text = [`PRADO SPORTS AI — Bilhete ${riskLabel(risk)}`, ...t.map((p,i)=>`${i+1}. ${p.match.home.name} x ${p.match.away.name} — ${p.entry} | odd mín. ${p.oddMin.toFixed(2)} | ${p.confidence}% IA`), 'Análise informativa. Sem garantia de resultado.'].join('
-');
+  const text = [`PRADO SPORTS AI — Bilhete ${riskLabel(risk)}`, ...t.map((p,i)=>`${i+1}. ${p.match.home.name} x ${p.match.away.name} — ${p.entry} | odd mín. ${p.oddMin.toFixed(2)} | ${p.confidence}% IA`), 'Análise informativa. Sem garantia de resultado.'].join('\n');
   navigator.clipboard?.writeText(text).then(()=>toast('Bilhete copiado com sucesso 📋')).catch(()=>toast('Não consegui copiar automaticamente. Segure e copie manualmente.', '⚠️'));
 }
 
@@ -777,8 +776,7 @@ async function unlockPremium(){
     try{
       const res = await fetch(PRADO_CONFIG.PREMIUM_CODES_CSV, {cache:'no-store'});
       const text = await res.text();
-      codes = codes.concat(text.split(/?
-|,/).map(x=>x.trim().toUpperCase()).filter(Boolean));
+      codes = codes.concat(text.split(/\r?\n|,/).map(x=>x.trim().toUpperCase()).filter(Boolean));
     }catch(_err){}
   }
   if(codes.includes(code)){
