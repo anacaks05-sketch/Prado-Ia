@@ -3282,6 +3282,68 @@ body[data-page="tips"] .tickets-v167-more span{
   }
 }
 
+
+/* ===== V16.7.1 — BILHETES SEM BOTÃO COPIAR ===== */
+body[data-page="tips"] .tickets-v167-copy{
+  display:none !important;
+}
+body[data-page="tips"] .tickets-v167-ready{
+  margin-top:12px;
+  min-height:48px;
+  padding:10px 12px;
+  border-radius:16px;
+  border:1px solid rgba(33,230,161,.22);
+  background:
+    radial-gradient(circle at 8% 50%, rgba(33,230,161,.14), transparent 35%),
+    linear-gradient(135deg, rgba(12,28,24,.94), rgba(7,11,17,.99));
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+body[data-page="tips"] .tickets-v167-ready strong{
+  display:block;
+  color:#fff;
+  font-size:12px;
+  line-height:1.15;
+}
+body[data-page="tips"] .tickets-v167-ready span{
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:9px;
+  line-height:1.25;
+}
+body[data-page="tips"] .tickets-v167-ready .ready-badge{
+  flex:0 0 auto;
+  padding:7px 10px;
+  border-radius:999px;
+  color:var(--green);
+  background:rgba(33,230,161,.09);
+  border:1px solid rgba(33,230,161,.18);
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+@media(max-width:430px){
+  body[data-page="tips"] .tickets-v167-ready{
+    min-height:44px;
+    padding:9px 10px;
+  }
+  body[data-page="tips"] .tickets-v167-ready strong{
+    font-size:11px;
+  }
+  body[data-page="tips"] .tickets-v167-ready span{
+    font-size:8px;
+  }
+  body[data-page="tips"] .tickets-v167-ready .ready-badge{
+    font-size:8px;
+    padding:6px 8px;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -4253,7 +4315,10 @@ function renderTips(){
           </div>
         </div>
 
-        <button class="tickets-v167-copy" onclick="copyTicket('${risk}')">📋 Copiar bilhete automático</button>
+        <div class="tickets-v167-ready">
+          <div><strong>Bilhete automático pronto</strong><span>Use as 4 seleções acima como leitura da IA para o perfil escolhido.</span></div>
+          <div class="ready-badge">IA ativa</div>
+        </div>
       </article>
 
       <div class="tickets-v167-more"><span>⌄</span> Mais opções e ferramentas</div>

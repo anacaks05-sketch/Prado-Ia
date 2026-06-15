@@ -1,15 +1,13 @@
-# Prado Sports AI — V16.7 Bilhetes Premium
+# Prado Sports AI — V16.7.1 Bilhetes sem copiar
 
 ## Escopo
 Somente a aba Bilhetes.
 
 ## Alterado
-- Visual aprovado para Bilhetes.
-- Foco em Conservador, Moderado e Agressivo.
-- Bilhete automático mais premium e organizado.
-- Gerador personalizado removido da tela principal para reduzir excesso de informação.
-- Cards menores e alinhados para iPhone.
-- Botão de copiar bilhete mantido.
+- Removido botão "Copiar bilhete automático".
+- Colocado bloco limpo "Bilhete automático pronto".
+- Mantido o modelo premium aprovado.
+- Mantido foco em Conservador, Moderado e Agressivo.
 
 ## Não alterado
 - Home
@@ -21,4 +19,4 @@ Somente a aba Bilhetes.
 - Menu inferior
 
 ## Teste
-Use: ?v=16-7
+Use: ?v=16-7-1
