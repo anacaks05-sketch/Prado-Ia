@@ -1,12 +1,12 @@
-# Prado Sports AI — V16.7.1 Bilhetes sem copiar
+# Prado Sports AI — V16.7.2 Bilhetes limpo
 
 ## Escopo
 Somente a aba Bilhetes.
 
 ## Alterado
-- Removido botão "Copiar bilhete automático".
-- Colocado bloco limpo "Bilhete automático pronto".
-- Mantido o modelo premium aprovado.
+- Removido texto "Mais opções e ferramentas".
+- Ajustado texto do bloco final para não falar 4 seleções.
+- Mantido visual premium aprovado.
 - Mantido foco em Conservador, Moderado e Agressivo.
 
 ## Não alterado
@@ -19,4 +19,4 @@ Somente a aba Bilhetes.
 - Menu inferior
 
 ## Teste
-Use: ?v=16-7-1
+Use: ?v=16-7-2
