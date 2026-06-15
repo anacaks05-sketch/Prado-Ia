@@ -1,22 +1,22 @@
-# Prado Sports AI — V16.5.3 Corrigido
+# Prado Sports AI — V16.5.4 IA Modelo 1 Corrigido
 
 ## Correção
-O zip anterior manteve a aba Ao vivo no modelo antigo. Nesta versão eu corrigi isso.
+A versão anterior ainda mostrava a IA antiga. Nesta versão a aba IA foi corrigida de verdade para o Modelo 1 escolhido.
 
 ## Mantido
-- Aba IA no Modelo 1 escolhido.
-- Botão IA flutuante.
+- Aba Ao vivo compacta.
 - Home.
 - Scanner.
 - Bilhetes.
+- Botão flutuante.
 - Menu inferior.
 
-## Corrigido
-- Aba Ao vivo voltou para o modelo compacto e organizado.
-- Cards ao vivo menores.
-- KPIs no topo.
-- Melhor leitura ao vivo.
-- Próximos jogos mais limpos.
+## Alterado
+- Somente a aba IA.
+- Modelo 1 aplicado com dashboard avançado.
+- Cards com tamanho padronizado.
+- Mercados rápidos organizados.
+- Resposta da IA mais completa.
 
 ## Teste
-Use: ?v=16-5-3
+Use: ?v=16-5-4
