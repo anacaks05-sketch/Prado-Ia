@@ -2509,6 +2509,510 @@ body[data-page="ai"] .ia-m1-builder .btn.primary{
   }
 }
 
+
+/* ===== V16.6 — SCANNER RADAR / SOMENTE ABA SCANNER ===== */
+body[data-page="scanner"] #page-scanner{padding-bottom:98px}
+body[data-page="scanner"] .scanner-v166{display:grid;gap:10px}
+body[data-page="scanner"] .scanner-v166-hero{
+  position:relative;
+  overflow:hidden;
+  min-height:178px;
+  border-radius:24px;
+  border:1px solid rgba(33,230,161,.24);
+  background:
+    radial-gradient(circle at 76% 45%, rgba(33,230,161,.16), transparent 34%),
+    linear-gradient(110deg, rgba(4,9,13,.98), rgba(7,18,18,.94), rgba(4,9,13,.98));
+  box-shadow:0 20px 42px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.04);
+}
+body[data-page="scanner"] .scanner-v166-hero::before{
+  content:"";
+  position:absolute;
+  right:-34px;
+  top:-20px;
+  width:235px;
+  height:235px;
+  border-radius:50%;
+  background:
+    repeating-radial-gradient(circle, rgba(33,230,161,.18) 0 1px, transparent 2px 25px),
+    conic-gradient(from 270deg, rgba(33,230,161,.00), rgba(33,230,161,.42), rgba(33,230,161,.00) 29%);
+  filter:drop-shadow(0 0 20px rgba(33,230,161,.22));
+  animation:scannerRadarSpin 4.8s linear infinite;
+  opacity:.95;
+}
+body[data-page="scanner"] .scanner-v166-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(110deg, rgba(0,0,0,.10), transparent 42%),
+    repeating-linear-gradient(90deg, transparent 0 34px, rgba(33,230,161,.045) 35px 36px);
+  pointer-events:none;
+}
+@keyframes scannerRadarSpin{to{transform:rotate(360deg)}}
+body[data-page="scanner"] .scanner-v166-hero-content{
+  position:relative;
+  z-index:1;
+  min-height:178px;
+  padding:17px 18px;
+  display:grid;
+  align-content:center;
+  max-width:62%;
+}
+body[data-page="scanner"] .scanner-v166-badge{
+  display:inline-flex;
+  width:max-content;
+  align-items:center;
+  gap:7px;
+  padding:7px 11px;
+  border-radius:999px;
+  border:1px solid rgba(33,230,161,.28);
+  color:#22f0a1;
+  background:rgba(33,230,161,.08);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+body[data-page="scanner"] .scanner-v166-hero h2{
+  margin:8px 0 6px;
+  font-family:'Space Grotesk';
+  font-size:34px;
+  line-height:.98;
+  color:#fff;
+}
+body[data-page="scanner"] .scanner-v166-hero h2 span{color:var(--green)}
+body[data-page="scanner"] .scanner-v166-hero p{
+  margin:0;
+  color:#c7d1dc;
+  font-size:13px;
+  line-height:1.34;
+}
+body[data-page="scanner"] .scanner-v166-live{
+  display:inline-flex;
+  width:max-content;
+  margin-top:13px;
+  align-items:center;
+  gap:7px;
+  color:#23f0a3;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+body[data-page="scanner"] .scanner-v166-live i{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 0 4px rgba(33,230,161,.14);
+}
+body[data-page="scanner"] .scanner-v166-kpis{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+body[data-page="scanner"] .scanner-v166-kpi{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.09);
+  background:
+    radial-gradient(circle at 10% 50%, rgba(33,230,161,.09), transparent 42%),
+    linear-gradient(145deg, rgba(15,24,36,.94), rgba(7,11,17,.99));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+body[data-page="scanner"] .scanner-v166-kpi.gold{
+  border-color:rgba(255,224,110,.22);
+  background:
+    radial-gradient(circle at 10% 50%, rgba(255,224,110,.10), transparent 42%),
+    linear-gradient(145deg, rgba(15,24,36,.94), rgba(7,11,17,.99));
+}
+body[data-page="scanner"] .scanner-v166-kpi .ico{
+  width:43px;
+  height:43px;
+  flex:0 0 43px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:var(--green);
+  background:rgba(33,230,161,.08);
+  border:1px solid rgba(33,230,161,.12);
+  font-size:22px;
+}
+body[data-page="scanner"] .scanner-v166-kpi.gold .ico{color:var(--gold);background:rgba(255,224,110,.08);border-color:rgba(255,224,110,.14)}
+body[data-page="scanner"] .scanner-v166-kpi small{
+  display:block;
+  font-size:10px;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  color:#aeb8c4;
+  font-weight:900;
+}
+body[data-page="scanner"] .scanner-v166-kpi b{
+  display:block;
+  margin-top:3px;
+  font-family:'JetBrains Mono';
+  font-size:25px;
+  line-height:1;
+  color:var(--green);
+}
+body[data-page="scanner"] .scanner-v166-kpi.gold b{color:var(--gold)}
+body[data-page="scanner"] .scanner-v166-kpi span{
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:11px;
+}
+body[data-page="scanner"] .scanner-v166-filters{
+  display:flex;
+  gap:8px;
+  overflow:auto;
+  padding:1px 0 2px;
+}
+body[data-page="scanner"] .scanner-v166-filters::-webkit-scrollbar{display:none}
+body[data-page="scanner"] .scanner-v166-filter{
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.035);
+  color:#eaf0f8;
+  border-radius:999px;
+  min-height:42px;
+  padding:0 14px;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  white-space:nowrap;
+  font-size:12px;
+  font-weight:900;
+}
+body[data-page="scanner"] .scanner-v166-filter.active{
+  color:#07140f;
+  background:linear-gradient(135deg,#21e6a1,#70ffd0);
+  border-color:transparent;
+  box-shadow:0 0 20px rgba(33,230,161,.20);
+}
+body[data-page="scanner"] .scanner-v166-list{display:grid;gap:10px}
+body[data-page="scanner"] .scanner-v166-card{
+  position:relative;
+  overflow:hidden;
+  min-height:164px;
+  padding:13px;
+  border-radius:22px;
+  border:1px solid rgba(33,230,161,.17);
+  background:
+    radial-gradient(circle at 8% 22%, rgba(33,230,161,.11), transparent 36%),
+    linear-gradient(145deg, rgba(9,22,21,.96), rgba(7,11,17,.99));
+  box-shadow:0 16px 34px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.035);
+}
+body[data-page="scanner"] .scanner-v166-card.gold{
+  border-color:rgba(255,224,110,.24);
+  background:
+    radial-gradient(circle at 8% 22%, rgba(255,224,110,.12), transparent 36%),
+    linear-gradient(145deg, rgba(24,20,12,.96), rgba(7,11,17,.99));
+}
+body[data-page="scanner"] .scanner-v166-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(100deg, transparent, rgba(255,255,255,.025), transparent);
+  pointer-events:none;
+}
+body[data-page="scanner"] .scanner-v166-card-main{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:74px 1fr 116px;
+  gap:12px;
+  align-items:center;
+}
+body[data-page="scanner"] .scanner-v166-orb{
+  width:66px;
+  height:66px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background:
+    radial-gradient(circle, rgba(33,230,161,.22), transparent 65%),
+    rgba(33,230,161,.07);
+  border:1px solid rgba(33,230,161,.18);
+  box-shadow:0 0 28px rgba(33,230,161,.12);
+  font-size:30px;
+}
+body[data-page="scanner"] .scanner-v166-card.gold .scanner-v166-orb{
+  color:var(--gold);
+  background:radial-gradient(circle, rgba(255,224,110,.22), transparent 65%), rgba(255,224,110,.07);
+  border-color:rgba(255,224,110,.18);
+}
+body[data-page="scanner"] .scanner-v166-entry .market{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  padding:5px 9px;
+  border-radius:999px;
+  border:1px solid rgba(33,230,161,.22);
+  color:var(--green);
+  background:rgba(33,230,161,.08);
+  font-size:9px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:900;
+}
+body[data-page="scanner"] .scanner-v166-card.gold .scanner-v166-entry .market{
+  color:var(--gold);
+  border-color:rgba(255,224,110,.22);
+  background:rgba(255,224,110,.08);
+}
+body[data-page="scanner"] .scanner-v166-entry h3{
+  margin:8px 0 4px;
+  color:#fff;
+  font-family:'Space Grotesk';
+  font-size:24px;
+  line-height:1.02;
+}
+body[data-page="scanner"] .scanner-v166-entry p{
+  margin:0;
+  color:#cbd4df;
+  font-size:12px;
+  line-height:1.28;
+}
+body[data-page="scanner"] .scanner-v166-tags{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+body[data-page="scanner"] .scanner-v166-mini-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  padding:6px 9px;
+  border-radius:999px;
+  background:rgba(33,230,161,.08);
+  border:1px solid rgba(33,230,161,.14);
+  color:var(--green);
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+body[data-page="scanner"] .scanner-v166-mini-tag.gold{
+  color:var(--gold);
+  background:rgba(255,224,110,.08);
+  border-color:rgba(255,224,110,.16);
+}
+body[data-page="scanner"] .scanner-v166-side{
+  display:grid;
+  justify-items:end;
+  gap:9px;
+  text-align:right;
+}
+body[data-page="scanner"] .scanner-v166-ring{
+  width:78px;
+  height:78px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:conic-gradient(var(--gold) 0 18%, var(--green) 18% 87%, rgba(255,255,255,.08) 87% 100%);
+  position:relative;
+}
+body[data-page="scanner"] .scanner-v166-ring::before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  border-radius:50%;
+  background:#071017;
+}
+body[data-page="scanner"] .scanner-v166-ring span{
+  position:relative;
+  z-index:1;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-weight:900;
+  font-size:19px;
+  line-height:.9;
+}
+body[data-page="scanner"] .scanner-v166-ring small{
+  display:block;
+  font-size:8px;
+  color:#cbd4df;
+  font-weight:800;
+}
+body[data-page="scanner"] .scanner-v166-odd{
+  display:grid;
+  gap:2px;
+}
+body[data-page="scanner"] .scanner-v166-odd small{
+  font-size:10px;
+  color:var(--muted);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:900;
+}
+body[data-page="scanner"] .scanner-v166-odd b{
+  font-family:'JetBrains Mono';
+  color:var(--green);
+  font-size:24px;
+  line-height:1;
+}
+body[data-page="scanner"] .scanner-v166-card.gold .scanner-v166-odd b{color:var(--gold)}
+body[data-page="scanner"] .scanner-v166-read{
+  min-height:38px;
+  padding:0 18px;
+  border:0;
+  border-radius:999px;
+  color:#06120d;
+  background:linear-gradient(135deg,#20e698,#70ffd0);
+  font-size:12px;
+  font-weight:900;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+body[data-page="scanner"] .scanner-v166-card.gold .scanner-v166-read{
+  color:#170f02;
+  background:linear-gradient(135deg,#ffe06e,#d49b27);
+}
+body[data-page="scanner"] .scanner-v166-small-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px;
+}
+body[data-page="scanner"] .scanner-v166-small{
+  position:relative;
+  min-height:126px;
+  padding:12px;
+  border-radius:20px;
+  border:1px solid rgba(33,230,161,.14);
+  background:linear-gradient(145deg, rgba(9,22,21,.94), rgba(7,11,17,.99));
+}
+body[data-page="scanner"] .scanner-v166-small.gold{border-color:rgba(255,224,110,.20)}
+body[data-page="scanner"] .scanner-v166-small .market{
+  display:inline-flex;
+  padding:4px 8px;
+  border-radius:999px;
+  color:var(--green);
+  border:1px solid rgba(33,230,161,.18);
+  background:rgba(33,230,161,.07);
+  font-size:8px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:900;
+}
+body[data-page="scanner"] .scanner-v166-small.gold .market{color:var(--gold);border-color:rgba(255,224,110,.18);background:rgba(255,224,110,.07)}
+body[data-page="scanner"] .scanner-v166-small h4{
+  margin:8px 0 3px;
+  font-size:17px;
+  color:#fff;
+  line-height:1.05;
+}
+body[data-page="scanner"] .scanner-v166-small p{
+  margin:0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.25;
+}
+body[data-page="scanner"] .scanner-v166-small-bottom{
+  position:absolute;
+  left:12px;
+  right:12px;
+  bottom:10px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+}
+body[data-page="scanner"] .scanner-v166-small-bottom b{
+  color:var(--green);
+  font-family:'JetBrains Mono';
+  font-size:17px;
+}
+body[data-page="scanner"] .scanner-v166-small.gold .scanner-v166-small-bottom b{color:var(--gold)}
+body[data-page="scanner"] .scanner-v166-small-bottom span{
+  font-size:9px;
+  color:#08120e;
+  background:linear-gradient(135deg,#a8ffd7,#20e698);
+  padding:6px 9px;
+  border-radius:999px;
+  font-weight:900;
+}
+body[data-page="scanner"] .scanner-v166-day{
+  min-height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:13px;
+  border-radius:20px;
+  border:1px solid rgba(255,224,110,.22);
+  background:
+    radial-gradient(circle at 8% 50%, rgba(33,230,161,.14), transparent 34%),
+    linear-gradient(145deg, rgba(12,22,20,.96), rgba(7,11,17,.99));
+}
+body[data-page="scanner"] .scanner-v166-day b{
+  display:block;
+  color:var(--gold);
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+body[data-page="scanner"] .scanner-v166-day p{
+  margin:4px 0 0;
+  color:#eef4f8;
+  font-size:13px;
+  line-height:1.35;
+}
+body[data-page="scanner"] .scanner-v166-day .target{
+  width:54px;
+  height:54px;
+  flex:0 0 54px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:var(--green);
+  font-size:28px;
+  background:rgba(33,230,161,.10);
+  border:1px solid rgba(33,230,161,.16);
+}
+@media(max-width:430px){
+  body[data-page="scanner"] .scanner-v166-hero{min-height:156px}
+  body[data-page="scanner"] .scanner-v166-hero::before{
+    width:184px;
+    height:184px;
+    right:-36px;
+    top:-4px;
+  }
+  body[data-page="scanner"] .scanner-v166-hero-content{
+    max-width:70%;
+    min-height:156px;
+    padding:14px;
+  }
+  body[data-page="scanner"] .scanner-v166-hero h2{font-size:30px}
+  body[data-page="scanner"] .scanner-v166-hero p{font-size:11.5px}
+  body[data-page="scanner"] .scanner-v166-kpi{min-height:70px;padding:10px}
+  body[data-page="scanner"] .scanner-v166-kpi .ico{width:36px;height:36px;flex-basis:36px;font-size:18px}
+  body[data-page="scanner"] .scanner-v166-kpi b{font-size:22px}
+  body[data-page="scanner"] .scanner-v166-card-main{
+    grid-template-columns:58px 1fr 86px;
+    gap:9px;
+  }
+  body[data-page="scanner"] .scanner-v166-orb{width:52px;height:52px;font-size:24px}
+  body[data-page="scanner"] .scanner-v166-entry h3{font-size:21px}
+  body[data-page="scanner"] .scanner-v166-entry p{font-size:11px}
+  body[data-page="scanner"] .scanner-v166-ring{width:62px;height:62px}
+  body[data-page="scanner"] .scanner-v166-ring::before{inset:7px}
+  body[data-page="scanner"] .scanner-v166-ring span{font-size:16px}
+  body[data-page="scanner"] .scanner-v166-side{gap:7px}
+  body[data-page="scanner"] .scanner-v166-odd b{font-size:20px}
+  body[data-page="scanner"] .scanner-v166-read{min-height:34px;padding:0 12px;font-size:10.5px}
+  body[data-page="scanner"] .scanner-v166-small-grid{gap:7px}
+  body[data-page="scanner"] .scanner-v166-small{min-height:120px;padding:10px}
+  body[data-page="scanner"] .scanner-v166-small h4{font-size:15px}
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -3646,43 +4150,120 @@ Sem garantia de resultado.`;
 }
 function openMatchAI(id){ goToPage('ai'); setTimeout(()=>{ const sel=$('#aiMatch'); if(sel){ sel.value=id; generateAIAnswer(); } }, 50); }
 
+function scannerMarketIcon(type){
+  const t = String(type || '').toLowerCase();
+  if(t.includes('escante')) return '⚑';
+  if(t.includes('cart')) return '▯';
+  if(t.includes('resultado')) return '◈';
+  return '⚽';
+}
+function scannerMarketName(type){
+  const t = String(type || '').toLowerCase();
+  if(t.includes('escante')) return 'Escanteios';
+  if(t.includes('cart')) return 'Cartões';
+  if(t.includes('resultado')) return 'Resultado';
+  return 'Gols';
+}
 function renderScanner(){
   const filters = [
-    ['all','Todos'],['best','Melhor do dia'],['confidence','Top confiança'],['value','Top valor'],['live','Ao vivo']
+    ['all','▦','Todos'],
+    ['live','⌁','Ao vivo'],
+    ['confidence','☆','Top confiança'],
+    ['value','◈','Valor'],
+    ['best','⚑','Melhor do dia']
   ];
   let rows = filteredPredictions();
   if(state.scannerFilter === 'best') rows = rows.slice(0,1);
   if(state.scannerFilter === 'confidence') rows = [...rows].sort((a,b)=>b.confidence-a.confidence).slice(0,8);
   if(state.scannerFilter === 'value') rows = [...rows].sort((a,b)=>b.valueScore-a.valueScore).slice(0,8);
   if(state.scannerFilter === 'live') rows = rows.filter(p=>p.match.status==='live');
+
+  const allRows = filteredPredictions();
+  const liveCount = filteredMatches().filter(m=>m.status==='live').length;
+  const best = allRows[0];
+  const topConfidence = allRows.length ? Math.max(...allRows.map(p=>p.confidence)) : 0;
+  const bestOdd = allRows.length ? Math.min(...allRows.map(p=>p.oddMin)).toFixed(2) : '--';
+  const markets = new Set(allRows.map(p=>p.marketType)).size || 0;
+  const featured = rows.slice(0,2);
+  const compact = rows.slice(2,6);
+
   $('#page-scanner').innerHTML = `
-    <div class="card compact mini-note">
-      <div class="card-title">Oportunidades da IA</div>
-      <p class="muted">Filtro rápido por melhor do dia, confiança, valor e ao vivo.</p>
+    <div class="scanner-v166">
+      <section class="scanner-v166-hero">
+        <div class="scanner-v166-hero-content">
+          <div class="scanner-v166-badge">Scanner Pro</div>
+          <h2>Scanner <span>Radar</span></h2>
+          <p>Leitura rápida das melhores oportunidades do dia.</p>
+          <div class="scanner-v166-live"><i></i> IA Prado · análise em tempo real</div>
+        </div>
+      </section>
+
+      <div class="scanner-v166-kpis">
+        <div class="scanner-v166-kpi"><div class="ico">⌁</div><div><small>Ao vivo</small><b>${liveCount}</b><span>Jogos ao vivo</span></div></div>
+        <div class="scanner-v166-kpi gold"><div class="ico">☆</div><div><small>Top confiança</small><b>${topConfidence || '--'}%</b><span>Confiança média</span></div></div>
+        <div class="scanner-v166-kpi"><div class="ico">◇</div><div><small>Melhor valor</small><b>${bestOdd}+</b><span>Odd mínima</span></div></div>
+        <div class="scanner-v166-kpi"><div class="ico">◎</div><div><small>Mercados ativos</small><b>${markets}</b><span>Mercados monitorados</span></div></div>
+      </div>
+
+      <div class="scanner-v166-filters">
+        ${filters.map(f=>`<button class="scanner-v166-filter ${state.scannerFilter===f[0]?'active':''}" onclick="setScannerFilter('${f[0]}')"><span>${f[1]}</span>${f[2]}</button>`).join('')}
+      </div>
+
+      ${rows.length ? `
+        <div class="scanner-v166-list">
+          ${featured.map(scannerOpportunityCard).join('')}
+        </div>
+        ${compact.length ? `<div class="scanner-v166-small-grid">${compact.map(scannerSmallOpportunityCard).join('')}</div>` : ''}
+        ${best ? `<div class="scanner-v166-day" onclick="openMatchDetail('${best.match.id}')">
+          <div class="target">◎</div>
+          <div><b>Radar do dia</b><p>${safe(best.entry)} com ${best.confidence}% de confiança e odd mínima ${best.oddMin.toFixed(2)}.</p></div>
+          <span class="tag gold">Top leitura</span>
+        </div>` : ''}
+      ` : '<div class="card empty">Nenhuma oportunidade encontrada nesse filtro.</div>'}
     </div>
-    <div class="chip-row">${filters.map(f=>`<button class="chip ${state.scannerFilter===f[0]?'active':''}" onclick="setScannerFilter('${f[0]}')">${f[1]}</button>`).join('')}</div>
-    <div class="scanner-grid">${rows.length ? rows.map(opportunityCard).join('') : '<div class="card empty">Nenhuma oportunidade encontrada nesse filtro.</div>'}</div>
   `;
 }
 
-function opportunityCard(p){
+function scannerOpportunityCard(p){
   const m = p.match;
-  const type = m.status === 'live' ? '⚡ Ao vivo agora' : p.valueScore > 84 ? '🎯 Top valor' : p.confidence > 80 ? '🔥 Top confiança' : '⭐ Oportunidade';
-  return `<article class="card opportunity-card">
-    <div class="opp-top"><span class="opp-type">${type}</span><span class="opp-score">${p.valueScore}</span></div>
-    <div class="pick-sub">${safe(m.league)} · ${m.status==='live' ? `${m.minute || 0}'` : fmtTime(m.date)}</div>
-    <div class="opp-entry">${safe(p.entry)}</div>
-    <div class="pick-sub"><b>${safe(m.home.name)} x ${safe(m.away.name)}</b></div>
-    <div class="data-grid">
-      <div class="data-box"><b>${p.confidence}%</b><span>Confiança IA</span></div>
-      <div class="data-box"><b>${p.oddMin.toFixed(2)}</b><span>Odd mínima</span></div>
-      <div class="data-box"><b>${(m.stats || {}).cornersAvg || '-'} </b><span>Cantos médios</span></div>
-      <div class="data-box"><b>${(m.stats || {}).pressure || '-'}%</b><span>Pressão</span></div>
+  const isGold = p.valueScore >= 84 || p.risk === 'agressivo';
+  const live = m.status === 'live';
+  return `<article class="scanner-v166-card ${isGold?'gold':''}">
+    <div class="scanner-v166-card-main">
+      <div class="scanner-v166-orb">${scannerMarketIcon(p.marketType)}</div>
+      <div class="scanner-v166-entry">
+        <div class="market">${safe(scannerMarketName(p.marketType))}</div>
+        <h3>${safe(p.entry)}</h3>
+        <p>${safe(m.home.name)} x ${safe(m.away.name)}<br>${safe(m.league)}${live ? ` · ${m.minute || 0}'` : ''}</p>
+        <div class="scanner-v166-tags">
+          <span class="scanner-v166-mini-tag">${live ? '● Ao vivo' : 'Pré-jogo'}</span>
+          <span class="scanner-v166-mini-tag gold">⚡ ${safe(riskLabel(p.risk))}</span>
+        </div>
+      </div>
+      <div class="scanner-v166-side">
+        <div class="scanner-v166-ring"><span>${p.confidence}%<small>Confiança</small></span></div>
+        <div class="scanner-v166-odd"><small>Odd</small><b>${p.oddMin.toFixed(2)}</b></div>
+        <button class="scanner-v166-read" onclick="openMatchDetail('${m.id}')">Ver leitura →</button>
+      </div>
     </div>
-    <div class="market-tags"><span class="tag green">${safe(p.marketType)}</span><span class="tag gold">${safe(riskLabel(p.risk))}</span></div>
-    <button class="btn primary wide" onclick="openMatchDetail('${m.id}')">🤖 Analisar com IA</button>
   </article>`;
 }
+
+function scannerSmallOpportunityCard(p){
+  const m = p.match;
+  const isGold = p.valueScore >= 84 || p.risk === 'agressivo';
+  return `<article class="scanner-v166-small ${isGold?'gold':''}" onclick="openMatchDetail('${m.id}')">
+    <span class="market">${safe(scannerMarketName(p.marketType))}</span>
+    <h4>${safe(p.entry)}</h4>
+    <p>${safe(m.home.name)} x ${safe(m.away.name)}<br>${safe(m.league)}</p>
+    <div class="scanner-v166-small-bottom"><b>${p.confidence}% · ${p.oddMin.toFixed(2)}</b><span>${safe(riskLabel(p.risk))}</span></div>
+  </article>`;
+}
+
+function opportunityCard(p){
+  return scannerOpportunityCard(p);
+}
+
 function setScannerFilter(f){ state.scannerFilter = f; renderScanner(); }
 
 function renderPremium(){

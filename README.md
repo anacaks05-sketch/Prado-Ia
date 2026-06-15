@@ -1,23 +1,26 @@
-# Prado Sports AI — V16.5.5 IA Modelo Escolhido
+# Prado Sports AI — V16.6 Scanner Radar
 
 ## Escopo
-Somente visual da aba IA.
+Somente a aba Scanner.
 
 ## Alterado
-- Cérebro novo no card principal da IA.
-- Visual mais moderno e premium.
-- Efeito de movimento no cérebro com animação suave.
-- Card principal mais parecido com o modelo escolhido.
-- Cards e construtor mantidos, só refinados visualmente.
+- Scanner no modelo escolhido pelo Carlos.
+- Topo premium Scanner Radar.
+- KPIs organizados.
+- Filtros modernos.
+- Cards de oportunidades mais bonitos e compactos.
+- Cards menores no final.
+- Radar do dia.
+- Visual mobile-first para iPhone.
 
 ## Não alterado
 - Home
 - Ao vivo
-- Scanner
+- IA
 - Bilhetes
 - Configurações
 - Botão flutuante
 - Menu inferior
 
 ## Teste
-Use: ?v=16-5-5
+Use: ?v=16-6
