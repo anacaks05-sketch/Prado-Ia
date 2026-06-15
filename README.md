@@ -1,16 +1,24 @@
-# Prado Sports AI — V16.1.2 Home sem aba Ao vivo
+# Prado Sports AI — V16.2 Botão IA Somente
 
-## Escopo
-Somente HOME.
+## Regra desta versão
+Esta versão mexe SOMENTE no botão flutuante da IA.
 
 ## Alterado
-- Removida a seção "Ao vivo agora" da tela inicial.
-- Mantidos os outros blocos da Home.
+- Botão IA agora fica flutuante corretamente.
+- Pode tocar para abrir a aba IA.
+- Pode arrastar e soltar no lugar desejado.
+- A posição fica salva no celular.
+- Evita abrir a IA sem querer enquanto arrasta.
 
 ## Não alterado
-- IA
+- Home
 - Bilhetes
 - Scanner
 - Ao vivo
 - Configurações
-- Botão IA flutuante
+- Notificações
+- Menu inferior
+
+## Teste
+Suba na Vercel e abra com:
+https://prado-ia.vercel.app/?v=16-2
