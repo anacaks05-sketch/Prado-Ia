@@ -1,13 +1,13 @@
-# Prado Sports AI — V13 Premium IA
+# Prado AI — V14 Ultra Premium
 
-## Melhorias principais
-- Cards introdutórios da aba Ao vivo e Scanner reduzidos.
-- Botão IA flutuante mantido e com visual mais premium.
-- Home mais premium, compacta e com atalhos melhores.
-- IA Prado reforçada com análise mais bonita, plano B e gatilhos ao vivo.
-- Aba Bilhetes mais moderna, com bilhete automático e gerador do cliente melhor organizados.
-- Ajustes para iPhone mantendo layout mais compacto.
+## O que foi melhorado
+- Nova animação de abertura automática, mais premium e sem travar na tela inicial.
+- Home reformulada, com visual mais limpo, premium e organizado.
+- Botão IA flutuante reforçado e clicável/arrastável.
+- IA Prado com visual mais forte e análise mais avançada.
+- Aba Bilhetes com aparência mais profissional, estilo app pago.
+- Ajustes para manter boa leitura no iPhone.
 
-## Teste na Vercel
-Use uma URL com cache-buster:
-https://prado-ia.vercel.app/?v=13
+## Publicação
+Depois de subir na Vercel, teste com cache-buster:
+https://seu-app.vercel.app/?v=14

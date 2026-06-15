@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Prado Sports AI" />
-  <title>Prado Sports AI V10 Premium</title>
+  <title>Prado AI V14 Ultra Premium</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="icon-192.png" />
@@ -1384,19 +1384,161 @@ body[data-page="home"] .home-search-row{display:block !important;}
   .ticket-mini-grid{grid-template-columns:repeat(3,1fr)}
 }
 
+
+/* ===== V14 ultra premium ===== */
+.intro-splash{background:
+  linear-gradient(180deg,rgba(0,0,0,.22),rgba(0,0,0,.82)),
+  radial-gradient(circle at 50% 18%,rgba(255,224,110,.12),transparent 28%),
+  radial-gradient(circle at 50% 82%,rgba(33,230,161,.12),transparent 30%),
+  #070B11;}
+.intro-card{padding:30px 22px 26px !important;text-align:center;overflow:hidden}
+.intro-card h1{font-size:34px !important;margin-bottom:8px !important}
+.intro-card p{max-width:310px;margin:0 auto 14px !important}
+.pulse-brand{animation:pulseBrand 1.6s ease-in-out infinite}
+@keyframes pulseBrand{0%,100%{transform:scale(1);box-shadow:0 12px 32px rgba(201,148,47,.24), inset 0 1px 0 rgba(255,255,255,.45)}50%{transform:scale(1.05);box-shadow:0 18px 40px rgba(201,148,47,.36), inset 0 1px 0 rgba(255,255,255,.5)}}
+.intro-loader{height:8px;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);margin:14px auto 10px;max-width:290px}
+.intro-loader i{display:block;height:100%;width:45%;border-radius:999px;background:linear-gradient(90deg,var(--gold),var(--green));box-shadow:0 0 16px rgba(33,230,161,.28);animation:introLoad 1.8s ease-in-out infinite}
+@keyframes introLoad{0%{transform:translateX(-100%)}55%{transform:translateX(170%)}100%{transform:translateX(220%)}}
+.intro-meta{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.intro-meta span{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:10px;font-weight:800;color:#d7dee8}
+.intro-ring{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.06);pointer-events:none;animation:introFloat 8s ease-in-out infinite}
+.intro-ring.ring-a{width:320px;height:320px;left:-120px;top:18%}
+.intro-ring.ring-b{width:360px;height:360px;right:-150px;bottom:5%;animation-delay:1.2s}
+@keyframes introFloat{50%{transform:translateY(-10px) scale(1.03)}}
+
+.hero-v14{min-height:250px !important;padding:18px !important;background:
+  linear-gradient(115deg,rgba(6,10,16,.96) 8%,rgba(6,10,16,.72) 54%,rgba(6,10,16,.3)),
+  radial-gradient(circle at 88% 12%,rgba(255,224,110,.22),transparent 36%),
+  radial-gradient(circle at 16% 100%,rgba(33,230,161,.18),transparent 38%),
+  url('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat !important;}
+.hero-v14 .hero-content{max-width:none !important}
+.hero-v14-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:12px;align-items:stretch;min-height:100%}
+.hero-v14-copy h1{margin-top:0 !important;font-size:34px !important;max-width:320px}
+.hero-v14-copy p{max-width:320px}
+.hero-v14-copy .hero-actions{margin-top:12px}
+.hero-mini-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.hero-mini-chip{padding:7px 9px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font-size:10px;font-weight:800;color:#d4deea}
+.hero-side-board{display:grid;gap:9px;align-content:start}
+.hero-side-stat{padding:12px 12px 11px;border-radius:20px;background:linear-gradient(180deg,rgba(11,18,28,.86),rgba(6,11,18,.95));border:1px solid rgba(255,255,255,.08);box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.hero-side-stat b{display:block;font-family:'Space Grotesk';font-size:26px;line-height:1;color:#fff;margin-bottom:4px}
+.hero-side-stat span{display:block;font-size:11px;color:var(--muted);font-weight:700}
+.hero-side-stat small{display:block;font-size:9px;color:#cad4de;margin-top:5px;line-height:1.35}
+.hero-side-stat.gold{background:linear-gradient(180deg,rgba(255,224,110,.12),rgba(11,18,28,.95));border-color:rgba(255,224,110,.18)}
+.home-action-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px}
+.home-action-card{display:flex;align-items:center;gap:10px;padding:12px;border-radius:20px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(18,28,41,.94),rgba(10,15,22,.98));box-shadow:0 14px 32px rgba(0,0,0,.2)}
+.home-action-card .icon{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:rgba(33,230,161,.1);border:1px solid rgba(33,230,161,.16);color:var(--green);font-weight:900;font-size:16px;flex:0 0 auto}
+.home-action-card b{display:block;font-size:14px;line-height:1.1;color:#fff}
+.home-action-card small{display:block;font-size:10px;color:var(--muted);margin-top:4px;line-height:1.35}
+.home-focus-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-bottom:10px}
+.focus-card{padding:14px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(15,24,35,.95),rgba(8,12,19,.98));box-shadow:0 16px 34px rgba(0,0,0,.22)}
+.focus-card b{display:block;font-family:'Space Grotesk';font-size:17px;line-height:1.05;margin-bottom:6px}
+.focus-card p{font-size:12px;line-height:1.4;color:var(--muted);margin:0 0 10px}
+.focus-card .market-tags{margin-top:10px}
+.focus-card.primary{background:linear-gradient(165deg,rgba(8,35,25,.95),rgba(8,12,20,.98));border-color:rgba(33,230,161,.18)}
+.focus-card.gold{background:linear-gradient(165deg,rgba(34,28,9,.78),rgba(10,14,22,.98));border-color:rgba(255,224,110,.2)}
+.compact-divider{height:1px;background:rgba(255,255,255,.06);margin:9px 0}
+.home-pro-callout{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px 14px;border-radius:20px;border:1px solid rgba(255,224,110,.18);background:linear-gradient(145deg,rgba(255,224,110,.08),rgba(15,20,28,.96));margin-bottom:10px}
+.home-pro-callout .txt b{display:block;font-size:15px;margin-bottom:3px}.home-pro-callout .txt span{display:block;font-size:11px;color:var(--muted)}
+.home-pro-callout .btn{min-width:130px}
+
+.ticket-pro-shell{display:grid;gap:10px}
+.ticket-pro-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:8px}
+.ticket-pro-head h3{margin:0;font-family:'Space Grotesk';font-size:22px;line-height:1}
+.ticket-pro-head p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.45}
+.ticket-score-badge{padding:10px 12px;border-radius:16px;background:rgba(33,230,161,.14);border:1px solid rgba(33,230,161,.18);font-weight:900;color:var(--green);font-size:18px;min-width:68px;text-align:center}
+.ticket-pro-card{padding:15px !important;border-radius:26px !important;background:
+ linear-gradient(160deg,rgba(11,18,28,.97),rgba(7,11,17,.98)) !important;}
+.ticket-strip{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.ticket-pill{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:10px;font-weight:800}
+.ticket-insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0}
+.ticket-insight{padding:9px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.ticket-insight b{display:block;font-size:13px;color:#fff}.ticket-insight small{display:block;font-size:9px;color:var(--muted);margin-top:3px}
+.pro-builder{padding:14px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(145deg,rgba(16,23,35,.98),rgba(8,12,19,.98))}
+.pro-builder .card-title{font-size:16px !important}
+.builder-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:8px}
+.builder-top .tag{white-space:nowrap}
+.builder-select-row{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:8px}
+.builder-select-row select{width:100%}
+.builder-market-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:8px}
+.builder-market{padding:11px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);text-align:left}
+.builder-market.active{background:linear-gradient(145deg,rgba(33,230,161,.18),rgba(20,31,40,.98));border-color:rgba(33,230,161,.22)}
+.builder-market b{display:block;font-size:13px;color:#fff}.builder-market small{display:block;font-size:9px;color:var(--muted);margin-top:3px}
+.pro-builder .actions{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;margin-top:10px}
+.pro-builder .actions .hint{font-size:10px;color:var(--muted)}
+.custom-ticket-card{padding:15px !important;border-radius:26px !important;background:linear-gradient(165deg,rgba(9,33,24,.95),rgba(9,12,19,.98)) !important;border-color:rgba(33,230,161,.18) !important}
+
+.ai-shell-pro{display:grid;gap:10px}
+.ai-top-pro{padding:15px 14px;border-radius:28px;background:linear-gradient(160deg,rgba(11,18,28,.98),rgba(8,12,19,.98));border:1px solid rgba(255,255,255,.08);position:relative;overflow:hidden}
+.ai-top-pro::after{content:'';position:absolute;right:-20px;top:-20px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle, rgba(33,230,161,.15), transparent 58%);pointer-events:none}
+.ai-pro-header{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:9px}
+.ai-pro-header h3{margin:0;font-family:'Space Grotesk';font-size:24px;line-height:1}
+.ai-pro-header p{margin:6px 0 0;font-size:12px;line-height:1.45;color:var(--muted);max-width:360px}
+.ai-pro-badge{padding:10px 12px;border-radius:16px;background:rgba(33,230,161,.12);border:1px solid rgba(33,230,161,.18);font-weight:900;color:var(--green);font-size:14px;white-space:nowrap}
+.ai-kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:8px 0 10px}
+.ai-kpi{padding:9px;border-radius:15px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.ai-kpi b{display:block;font-size:14px}.ai-kpi small{display:block;font-size:9px;color:var(--muted);margin-top:3px}
+.ai-preset-row{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-bottom:9px}
+.ai-preset{padding:10px;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);text-align:left}
+.ai-preset b{display:block;font-size:12px;color:#fff}.ai-preset small{display:block;font-size:9px;color:var(--muted);margin-top:3px}
+.ai-preset.active,.ai-preset:hover{background:linear-gradient(145deg,rgba(33,230,161,.16),rgba(20,30,39,.98));border-color:rgba(33,230,161,.22)}
+.ai-preview-row{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:10px}
+.ai-preview-card{padding:10px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.ai-preview-card b{display:block;font-size:10px;color:#ffe58a;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}.ai-preview-card span{display:block;font-size:11px;color:#fff;font-weight:800;line-height:1.35}.ai-preview-card small{display:block;font-size:9px;color:var(--muted);margin-top:4px}
+.ai-answer.v14{padding:14px !important;border-radius:24px !important}
+.ai-answer.v14 .topline{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.ai-answer.v14 .big-entry{font-family:'Space Grotesk';font-size:24px;line-height:1.03;margin:4px 0 4px}
+.ai-answer.v14 .meta{font-size:12px;color:var(--muted);line-height:1.45}
+.ai-answer.v14 .scorebox{padding:10px 12px;border-radius:16px;background:rgba(33,230,161,.14);border:1px solid rgba(33,230,161,.18);font-size:18px;font-weight:900;color:var(--green)}
+.ai-pill-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.ai-pill{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);font-size:10px;font-weight:800}
+.ai-analysis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:10px 0}
+.ai-analysis-card{padding:9px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}
+.ai-analysis-card b{display:block;font-size:10px;color:#ffe58a;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}.ai-analysis-card span{display:block;font-size:11px;color:#fff;font-weight:800;line-height:1.3}.ai-analysis-card small{display:block;font-size:9px;color:var(--muted);margin-top:4px}
+.ai-reason-grid{display:grid;gap:6px;margin-top:10px}
+.ai-reason{padding:8px 9px;border-radius:14px;background:rgba(255,255,255,.04);font-size:10px;line-height:1.45;color:#d8e0e8}
+.ai-reason b{color:#fff}
+.ai-copy-row{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;margin-top:10px}
+
+#floatingAI{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:2px;width:64px;height:64px;border-radius:24px;right:18px;bottom:94px;animation:floatingPulseV14 3.2s ease-in-out infinite}
+#floatingAI::before{content:'';position:absolute;inset:-6px;border-radius:28px;border:1px solid rgba(33,230,161,.14);pointer-events:none}
+@keyframes floatingPulseV14{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+body[data-page="ai"] #floatingAI{display:none !important;}
+body[data-page="home"] #floatingAI,body[data-page="live"] #floatingAI,body[data-page="scanner"] #floatingAI,body[data-page="tips"] #floatingAI{display:flex !important;opacity:.96 !important}
+body[data-page="match"] #floatingAI{display:none !important}
+
+@media(max-width:430px){
+  .intro-card h1{font-size:28px !important}
+  .hero-v14{min-height:205px !important;padding:14px !important}
+  .hero-v14-grid{grid-template-columns:1fr !important}
+  .hero-side-board{grid-template-columns:repeat(2,1fr)}
+  .hero-v14-copy h1{font-size:25px !important;max-width:260px}
+  .home-action-card{padding:10px}
+  .home-action-card .icon{width:34px;height:34px;border-radius:12px;font-size:14px}
+  .home-action-card b{font-size:12px}.home-action-card small{font-size:9px}
+  .home-focus-grid{grid-template-columns:1fr}
+  .home-pro-callout{padding:10px 12px}
+  .ticket-insight-grid,.ai-kpi-row,.ai-preview-row,.ai-analysis-grid{grid-template-columns:1fr 1fr}
+  .ai-preset-row{grid-template-columns:1fr 1fr}
+  .builder-market-grid{grid-template-columns:1fr 1fr}
+  .builder-select-row{grid-template-columns:1fr}
+  .ai-copy-row,.pro-builder .actions{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body data-page="home">
-  <div id="splash" class="splash" aria-label="Tela inicial">
+  <div id="splash" class="splash intro-splash" aria-label="Abertura do app">
     <div class="splash-orb orb-a"></div>
     <div class="splash-orb orb-b"></div>
-    <div class="splash-card">
-      <div class="brand-mark big"><span>P</span></div>
-      <div class="splash-kicker">PRADO SPORTS AI</div>
-      <h1>Tips, scanner e IA em uma experiência premium.</h1>
-      <p>Bilhetes prontos, análise por jogo e oportunidades em tempo real.</p>
-      <button id="enterApp" class="btn primary wide" onclick="document.getElementById('splash').classList.add('hidden');document.getElementById('app').classList.remove('hidden')">Entrar no Prado</button>
-      <button id="startQuiz" class="btn ghost wide" onclick="document.getElementById('splash').classList.add('hidden');document.getElementById('app').classList.remove('hidden');setTimeout(()=>{try{openQuiz()}catch(e){}},100)">Começar análise grátis</button>
+    <div class="intro-ring ring-a"></div>
+    <div class="intro-ring ring-b"></div>
+    <div class="splash-card intro-card">
+      <div class="brand-mark big pulse-brand"><span>P</span></div>
+      <div class="splash-kicker">PRADO AI</div>
+      <h1>Central premium de futebol.</h1>
+      <p>Scanner ao vivo, IA avançada e bilhetes profissionais carregando para você.</p>
+      <div class="intro-loader"><i></i></div>
+      <div class="intro-meta"><span>IA Forte</span><span>Scanner Live</span><span>Bilhetes Pro</span></div>
     </div>
   </div>
 
@@ -2043,67 +2185,64 @@ function renderHome(){
   const matches = filteredMatches();
   const live = matches.filter(m=>m.status==='live');
   const today = matches.filter(m=>sameDay(m.date) && m.status!=='live');
-  const best = filteredPredictions()[0];
-  const topThree = filteredPredictions().slice(0,3);
-  const nextStrong = filteredPredictions().slice(0,2);
+  const predictions = filteredPredictions();
+  const best = predictions[0];
+  const autoTicket = ticketFor(state.selectedRisk || 'moderado');
+  const autoOdd = autoTicket.reduce((acc,p)=>acc*p.oddMin,1);
+  const autoAvg = autoTicket.length ? Math.round(autoTicket.reduce((a,p)=>a+p.confidence,0)/autoTicket.length) : 0;
   $('#page-home').innerHTML = `
-    <div class="hero premium-home">
-      <div class="hero-content">
-        <div class="hero-badge">Prado AI · premium match center</div>
-        <div class="hero-topline">
-          <div>
-            <div class="eyebrow">Painel Prado · futebol</div>
-            <h1>IA, scanner e bilhetes <span>mais premium.</span></h1>
-            <p>Home compacta para iPhone, leitura forte da IA e atalhos para jogo ao vivo, bilhete e análise por partida.</p>
+    <div class="hero hero-v14 premium-home">
+      <div class="hero-content hero-v14-grid">
+        <div class="hero-v14-copy">
+          <h1>IA, scanner e bilhetes do jeito premium.</h1>
+          <p>Home mais forte para iPhone, menos poluição visual e leitura rápida para abrir ao vivo, IA ou bilhetes.</p>
+          <div class="hero-actions compact">
+            <button class="btn primary" onclick="goToPage('live')">Ao vivo agora</button>
+            <button class="btn ghost" onclick="goToPage('scanner')">Abrir scanner</button>
           </div>
-          <div class="hero-kpi-stack">
-            <div class="hero-kpi"><b>${live.length}</b><span>Ao vivo agora</span></div>
-            <div class="hero-kpi"><b>${topThree.length}</b><span>Top IA do dia</span></div>
+          <div class="hero-mini-row">
+            <span class="hero-mini-chip">${live.length} jogos ao vivo</span>
+            <span class="hero-mini-chip">${predictions.length} leituras da IA</span>
+            <span class="hero-mini-chip">Bilhete personalizado</span>
           </div>
         </div>
-        <div class="hero-actions compact">
-          <button class="btn primary" onclick="goToPage('live')">Ao vivo agora</button>
-          <button class="btn ghost" onclick="goToPage('ai')">Abrir IA Prado</button>
+        <div class="hero-side-board">
+          <div class="hero-side-stat"><b>${live.length}</b><span>Ao vivo agora</span><small>Monitore jogos e abra resumo, stats e melhor entrada.</small></div>
+          <div class="hero-side-stat"><b>${predictions.slice(0,3).length}</b><span>Top IA</span><small>Entradas mais fortes do dia prontas para abrir.</small></div>
+          ${best ? `<div class="hero-side-stat gold"><b>${best.confidence}%</b><span>Entrada destaque</span><small>${safe(best.entry)} em ${safe(best.match.home.name)} x ${safe(best.match.away.name)}</small></div>` : ''}
         </div>
       </div>
     </div>
 
-    <div class="quick-grid">
-      <button class="quick-card" onclick="goToPage('live')"><span>●</span><div><b>Ao vivo</b><small>${live.length} jogos monitorados</small></div></button>
-      <button class="quick-card" onclick="goToPage('scanner')"><span>IA</span><div><b>Radar IA</b><small>${topThree.length} entradas fortes</small></div></button>
-      <button class="quick-card" onclick="goToPage('tips')"><span>🎟</span><div><b>Bilhetes</b><small>Auto + personalizado</small></div></button>
-      <button class="quick-card" onclick="goToPage('ai')"><span>↗</span><div><b>Analisar</b><small>Motivo + plano B</small></div></button>
+    <div class="home-action-grid">
+      <button class="home-action-card" onclick="goToPage('live')"><span class="icon">●</span><div><b>Ao vivo</b><small>${live.length} jogos monitorados agora</small></div></button>
+      <button class="home-action-card" onclick="goToPage('scanner')"><span class="icon">IA</span><div><b>Scanner</b><small>${predictions.slice(0,4).length} leituras mais quentes</small></div></button>
+      <button class="home-action-card" onclick="goToPage('tips')"><span class="icon">🎟</span><div><b>Bilhetes Pro</b><small>Modo automático e personalizado</small></div></button>
+      <button class="home-action-card" onclick="goToPage('ai')"><span class="icon">↗</span><div><b>IA Prado</b><small>Plano A, B e gatilho ao vivo</small></div></button>
     </div>
 
-    <div class="home-smart-strip">
-      <div class="smart-card">
-        <b>Radar da IA</b>
-        <small>${best ? `${safe(best.match.home.name)} x ${safe(best.match.away.name)} com ${best.confidence}% de confiança.` : 'A IA vai destacar a melhor oportunidade do dia.'}</small>
-        ${best ? `<div class="market-tags"><span class="tag green">${safe(best.entry)}</span><span class="tag gold">Odd ${best.oddMin.toFixed(2)}</span></div>` : ''}
-      </div>
-      <div class="smart-card">
-        <b>Bilhete pronto</b>
-        <small>Abra Bilhetes para usar modo automático por risco ou o gerador personalizado.</small>
-        <div class="market-tags"><span class="tag green">Conservador</span><span class="tag">Personalizado</span></div>
-      </div>
+    <div class="home-focus-grid">
+      ${best ? `<article class="focus-card primary">
+        <b>Entrada forte do dia</b>
+        <p>${safe(best.match.home.name)} x ${safe(best.match.away.name)} com ${best.confidence}% de confiança pela IA.</p>
+        <div class="market-tags"><span class="tag green">${safe(best.entry)}</span><span class="tag gold">Odd ${best.oddMin.toFixed(2)}</span></div>
+        <button class="btn primary wide" onclick="openMatchDetail('${best.match.id}')">Ver leitura completa</button>
+      </article>` : ''}
+      <article class="focus-card gold">
+        <b>Bilhete premium</b>
+        <p>Seu modo ${riskLabel(state.selectedRisk || 'moderado').toLowerCase()} está pronto com ${autoTicket.length} seleções e odd estimada ${autoOdd.toFixed(2)}.</p>
+        <div class="market-tags"><span class="tag green">${riskLabel(state.selectedRisk || 'moderado')}</span><span class="tag">${autoAvg}% média IA</span></div>
+        <button class="btn gold wide" onclick="goToPage('tips')">Abrir bilhetes</button>
+      </article>
     </div>
 
     <div class="stats-strip">
       <div class="stat-pill"><b>${matches.length}</b><span>Jogos lidos</span></div>
       <div class="stat-pill"><b>${live.length}</b><span>Ao vivo</span></div>
-      <div class="stat-pill"><b>${topThree.length}</b><span>Top IA</span></div>
+      <div class="stat-pill"><b>${predictions.slice(0,3).length}</b><span>Top IA</span></div>
     </div>
 
-    ${best ? `<article class="card best-card">
-      <div class="eyebrow">Melhor do dia</div>
-      <h2 class="answer-entry">${safe(best.entry)}</h2>
-      <div class="pick-sub">${safe(best.match.home.name)} x ${safe(best.match.away.name)} · ${safe(best.match.league)}</div>
-      <div class="confidence"><div class="bar"><i style="width:${best.confidence}%"></i></div><small>${best.confidence}% IA</small></div>
-      <div class="market-tags"><span class="tag green">Odd mín. ${best.oddMin.toFixed(2)}</span><span class="tag gold">${safe(best.risk)}</span><span class="tag">${safe(best.source)}</span></div>
-      <div class="hero-actions compact" style="margin-top:8px"><button class="btn primary" onclick="openMatchDetail('${best.match.id}')">Ver análise</button><button class="btn ghost" onclick="openMatchAI('${best.match.id}')">Levar para IA</button></div>
-    </article>` : ''}
-
-    ${nextStrong.length ? `<div class="quick-grid">${nextStrong.map(p=>`<button class="quick-card" onclick="openMatchDetail('${p.match.id}')"><span>${p.confidence}%</span><div><b>${safe(p.entry)}</b><small>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</small></div></button>`).join('')}</div>` : ''}
+    <div class="home-pro-callout"><div class="txt"><b>Modo premium do app</b><span>IA forte, scanner live, bilhete auto e gerador do cliente.</span></div><button class="btn gold" onclick="goToPage('ai')">Abrir IA</button></div>
 
     ${sectionHead('Ao vivo agora', 'Ver todos', "goToPage('live')")}
     ${live.length ? `<div class="hscroll">${live.slice(0,6).map(matchCard).join('')}</div>` : `<div class="card empty">Nenhum jogo ao vivo neste momento.</div>`}
@@ -2549,15 +2688,23 @@ function finishQuiz(){
 
 
 function showAppIntro(after){
-  $('#splash').classList.add('hidden');
-  $('#app').classList.remove('hidden');
-  $('#app').classList.add('app-enter');
-  setTimeout(()=>$('#app').classList.remove('app-enter'), 520);
+  const splash = $('#splash');
+  const app = $('#app');
+  if(splash) splash.classList.add('hidden');
+  if(app){
+    app.classList.remove('hidden');
+    app.classList.add('app-enter');
+    setTimeout(()=>app.classList.remove('app-enter'), 520);
+  }
   if(typeof after === 'function') setTimeout(after, 120);
 }
+function startSplashSequence(){
+  clearTimeout(window.__pradoSplashTimer);
+  window.__pradoSplashTimer = setTimeout(()=>showAppIntro(), 1850);
+}
 function bindEvents(){
-  $('#enterApp').addEventListener('click', () => { showAppIntro(); });
-  $('#startQuiz').addEventListener('click', () => { showAppIntro(openQuiz); });
+  $('#enterApp')?.addEventListener('click', () => { showAppIntro(); });
+  $('#startQuiz')?.addEventListener('click', () => { showAppIntro(openQuiz); });
   $$('.nav-item').forEach(b=>b.addEventListener('click',()=>goToPage(b.dataset.page)));
 
   const searchInput = $('#globalSearch');
@@ -2625,12 +2772,12 @@ function bindEvents(){
 
   $('#saveApiKey')?.addEventListener('click',()=>{ localStorage.setItem('prado_api_key', $('#apiKeyInput').value.trim()); toast('Chave salva para teste. Atualizando dados...','🔑'); loadData(); });
   if($('#apiKeyInput')) $('#apiKeyInput').value = localStorage.getItem('prado_api_key') || '';
-  $('#floatingAI').addEventListener('click',()=>goToPage('ai'));
+  $('#floatingAI')?.addEventListener('click',()=>goToPage('ai'));
   if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
 function makeFloatingDraggable(el){
   if(!el) return el;
-  let dragging = false, startX = 0, startY = 0, baseX = 0, baseY = 0;
+  let pointerDown = false, moved = false, startX = 0, startY = 0, baseX = 0, baseY = 0;
   const saved = localStorage.getItem('prado_floating_ai_pos');
   if(saved){
     try{
@@ -2641,22 +2788,24 @@ function makeFloatingDraggable(el){
       el.style.top = 'auto';
     }catch(e){}
   }
-  const getPoint = ev => (ev.touches && ev.touches[0]) ? ev.touches[0] : ev;
+  const getPoint = ev => (ev.touches && ev.touches[0]) ? ev.touches[0] : (ev.changedTouches && ev.changedTouches[0]) ? ev.changedTouches[0] : ev;
   const start = ev => {
     const p = getPoint(ev);
-    dragging = true;
-    el.classList.add('dragging');
+    pointerDown = true; moved = false;
     const rect = el.getBoundingClientRect();
     startX = p.clientX; startY = p.clientY;
     baseX = window.innerWidth - rect.right;
     baseY = window.innerHeight - rect.bottom;
+    el.classList.add('dragging');
     ev.preventDefault();
   };
   const move = ev => {
-    if(!dragging) return;
+    if(!pointerDown) return;
     const p = getPoint(ev);
     const dx = p.clientX - startX;
     const dy = p.clientY - startY;
+    if(Math.abs(dx) > 5 || Math.abs(dy) > 5) moved = true;
+    if(!moved) return;
     const size = el.getBoundingClientRect();
     let right = baseX - dx;
     let bottom = baseY - dy;
@@ -2672,12 +2821,13 @@ function makeFloatingDraggable(el){
     el.style.top = 'auto';
   };
   const end = () => {
-    if(!dragging) return;
-    dragging = false;
+    if(!pointerDown) return;
+    pointerDown = false;
     el.classList.remove('dragging');
     const rect = el.getBoundingClientRect();
     const pos = { right: window.innerWidth - rect.right, bottom: window.innerHeight - rect.bottom };
     localStorage.setItem('prado_floating_ai_pos', JSON.stringify(pos));
+    if(!moved) goToPage('ai');
   };
   el.addEventListener('touchstart', start, {passive:false});
   window.addEventListener('touchmove', move, {passive:false});
@@ -2712,6 +2862,7 @@ window.answerQuiz = answerQuiz;
 makeFloatingDraggable($('#floatingAI'));
 bindEvents();
 loadData();
+startSplashSequence();
 
   </script>
 </body>
