@@ -1,19 +1,14 @@
-# Prado Sports AI — V12 V5 Ajustado Carlos
+# Prado Sports AI — V12 V6 Detalhes
 
-## Alterações desta versão
-- Barra de busca modernizada.
-- Busca aparece somente na página inicial.
-- Ícones do menu inferior trocados por SVGs mais modernos.
-- Aba Premium removida do menu inicial.
-- Premium e liberação por código foram para Configurações.
-- Configurações com mais opções: gols, início/fim de jogo, cartão vermelho, escalação, oportunidades IA e tips do dia.
-- Aba "Ao vivo" entrou no lugar de "Tips".
-- Aba "Tips" foi movida para o último lugar, onde antes ficava Premium.
-- Tela inicial sem texto "Painel Premium".
+## Ajustes desta versão
+- Remove a faixa preta que estava cobrindo parte dos nomes.
+- Barra de busca mais moderna.
+- Busca continua só na página inicial.
+- Ao tocar em um jogo, abre uma tela de detalhes, não a aba TIPS AI.
+- Tela de detalhes com: Resumo, Stats, Escalação, H2H, Classificação e IA.
+- Mantém Premium dentro de Configurações.
+- Continua em modo prévia visual sem API obrigatória.
 
 ## Como testar
-Suba os arquivos no GitHub/Vercel e abra com:
-https://SEU-LINK.vercel.app/?v=5
-
-## API
-Continua em modo prévia visual. A API fica para depois.
+Suba os arquivos e abra com:
+https://SEU-LINK.vercel.app/?v=6
