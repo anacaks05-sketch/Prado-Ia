@@ -127,6 +127,142 @@ button{cursor:pointer}
 @media(max-width:380px){.app{padding-left:10px;padding-right:10px}.hero h1{font-size:28px}.stats-strip{gap:7px}.stat-pill{padding:11px 8px}.risk-grid{grid-template-columns:1fr}.match-row{grid-template-columns:48px 1fr auto}.bottom-nav .nav-item{font-size:9px}.floating-ai{width:58px;height:58px}.price{font-size:32px}}
 @media(min-width:760px){.app{max-width:940px}.page{max-width:940px}.desktop-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.scanner-grid{grid-template-columns:1fr 1fr}.live-card,.tip-card,.opportunity-card{min-width:300px}.bottom-nav .nav-item{max-width:130px}.hero{min-height:280px}.hero h1{font-size:42px}.brand-line small{max-width:680px}.risk-grid{max-width:560px}}
 
+
+/* =====================================================
+   V12.1 — MODO CELULAR COMPACTO
+   Tela menor, cards mais baixos e melhor encaixe no iPhone.
+===================================================== */
+@media (max-width:600px){
+  :root{--radius:20px;}
+  body{font-size:14px;}
+  .app{
+    max-width:100%;
+    padding:30px 10px calc(76px + var(--safe-bottom)) !important;
+  }
+  .topbar{
+    margin:0 -10px 8px !important;
+    padding:6px 10px 9px !important;
+  }
+  .brand-line{gap:8px !important;margin-bottom:7px !important;}
+  .brand-mark{width:34px !important;height:34px !important;border-radius:12px !important;font-size:17px !important;}
+  .brand-mark.big{width:68px !important;height:68px !important;border-radius:22px !important;font-size:31px !important;margin-bottom:12px !important;}
+  .brand-line strong{font-size:16px !important;line-height:.95 !important;}
+  .brand-line small{font-size:10px !important;margin-top:3px !important;max-width:285px !important;}
+
+  .search-row{grid-template-columns:1fr 43px !important;gap:7px !important;}
+  .search-box,.icon-btn{height:43px !important;min-width:43px !important;border-radius:15px !important;}
+  .search-box{padding:0 11px !important;}
+  .search-box input{font-size:13px !important;}
+  .search-box span{font-size:16px !important;}
+
+  .hero{
+    min-height:176px !important;
+    padding:15px !important;
+    border-radius:24px !important;
+    margin-bottom:10px !important;
+  }
+  .hero-content{max-width:265px !important;}
+  .eyebrow,.splash-kicker{font-size:9.5px !important;letter-spacing:.11em !important;}
+  .hero h1{font-size:25px !important;line-height:1.02 !important;margin:6px 0 7px !important;letter-spacing:-.05em !important;}
+  .hero p{font-size:12px !important;line-height:1.38 !important;margin:0 0 10px !important;}
+  .hero-actions{gap:6px !important;}
+
+  .btn{min-height:38px !important;padding:8px 11px !important;border-radius:13px !important;font-size:13px !important;gap:6px !important;}
+  .wide{margin-top:7px !important;}
+
+  .stats-strip{gap:7px !important;margin-bottom:10px !important;}
+  .stat-pill{padding:9px 8px !important;border-radius:16px !important;}
+  .stat-pill b{font-size:17px !important;}
+  .stat-pill span{font-size:9.5px !important;margin-top:3px !important;}
+
+  .section-head{margin:13px 2px 7px !important;}
+  .section-title{font-size:16px !important;}
+  .section-link{font-size:10.5px !important;padding:5px 9px !important;border-radius:999px;background:rgba(255,224,110,.1);border:1px solid rgba(255,224,110,.18);}
+
+  .card{padding:12px !important;border-radius:20px !important;box-shadow:0 12px 28px rgba(0,0,0,.22) !important;}
+  .compact{padding:11px !important;}
+  .card-title{font-size:13px !important;margin-bottom:6px !important;}
+  .muted{font-size:11.5px !important;line-height:1.42 !important;}
+  .small{font-size:10.5px !important;}
+
+  .answer-entry{font-size:20px !important;margin:5px 0 4px !important;}
+  .pick-sub{font-size:10.8px !important;}
+  .confidence{gap:7px !important;margin-top:8px !important;}
+  .bar{height:7px !important;}
+  .market-tags,.source-row{gap:5px !important;margin-top:8px !important;}
+  .tag{font-size:9.3px !important;padding:5px 7px !important;}
+
+  .hscroll{gap:8px !important;}
+  .live-card,.tip-card,.opportunity-card{min-width:238px !important;}
+  .league-tag{font-size:9px !important;padding:5px 7px !important;margin-bottom:8px !important;}
+  .match-teams{gap:6px !important;}
+  .team-name{font-size:12.5px !important;gap:7px !important;}
+  .crest{width:26px !important;height:26px !important;border-radius:9px !important;}
+  .score{font-size:17px !important;}
+  .live-meta{font-size:10px !important;margin-top:8px !important;}
+  .live-badge{padding:5px 7px !important;font-size:10px !important;}
+
+  .match-list{gap:7px !important;}
+  .match-row{grid-template-columns:46px 1fr auto !important;gap:8px !important;padding:9px !important;border-radius:16px !important;}
+  .match-time{font-size:9.5px !important;}
+  .match-time b{font-size:11.5px !important;}
+  .match-row .team-name{font-size:11.8px !important;}
+  .match-score{font-size:12px !important;min-width:34px !important;}
+
+  .risk-grid{gap:6px !important;margin-bottom:9px !important;}
+  .risk-btn{padding:9px 6px !important;border-radius:14px !important;font-size:10.5px !important;}
+  .risk-btn span{font-size:17px !important;margin-bottom:2px !important;}
+  .ticket-header{gap:8px !important;margin-bottom:9px !important;}
+  .risk-badge{font-size:9px !important;padding:5px 7px !important;}
+  .ticket-pick{padding:8px 0 !important;}
+  .pick-main{font-size:12px !important;}
+
+  .ai-panel{gap:8px !important;}
+  .field{min-height:40px !important;border-radius:13px !important;padding:0 10px !important;font-size:12px !important;}
+  .textarea{min-height:74px !important;padding-top:10px !important;}
+  .form-grid{gap:8px !important;margin-top:8px !important;}
+  .ai-answer{padding:12px !important;border-radius:18px !important;}
+  .reason-list{font-size:11px !important;line-height:1.45 !important;margin-top:7px !important;}
+
+  .scanner-grid{gap:8px !important;}
+  .opportunity-card{padding:12px !important;}
+  .opp-entry{font-size:16px !important;margin:4px 0 !important;}
+  .data-grid{gap:6px !important;margin-top:8px !important;}
+  .data-box{padding:8px !important;border-radius:13px !important;}
+  .data-box b{font-size:12px !important;}
+  .data-box span{font-size:9px !important;}
+
+  .price{font-size:30px !important;margin:7px 0 !important;}
+  .benefit-list{gap:7px !important;margin:9px 0 !important;}
+  .benefit{padding:9px !important;border-radius:14px !important;gap:8px !important;}
+  .benefit span{width:23px !important;height:23px !important;border-radius:8px !important;}
+  .benefit b{font-size:12px !important;}
+  .benefit small{font-size:10.2px !important;}
+
+  .floating-ai{width:50px !important;height:50px !important;border-radius:18px !important;right:12px !important;bottom:78px !important;font-size:14px !important;}
+  .floating-ai span{font-size:8.5px !important;}
+  .bottom-nav{padding:5px 7px calc(5px + var(--safe-bottom)) !important;}
+  .bottom-nav .nav-item{border-radius:14px !important;padding:5px 1px 6px !important;font-size:9px !important;}
+  .bottom-nav .nav-item span{font-size:18px !important;margin-bottom:1px !important;}
+
+  .splash-card{padding:22px 18px !important;border-radius:28px !important;}
+  .splash h1{font-size:27px !important;line-height:1.03 !important;}
+  .splash p{font-size:12.5px !important;margin-bottom:14px !important;}
+
+  .modal{width:min(440px,calc(100% - 18px)) !important;border-radius:22px !important;}
+  .modal-head{padding:13px !important;}
+  .modal-head h2{font-size:19px !important;}
+  .settings-grid,.quiz-step,.quiz-result{padding:12px !important;}
+}
+
+@media(max-width:380px){
+  .app{padding-left:9px !important;padding-right:9px !important;}
+  .hero h1{font-size:23px !important;}
+  .hero{min-height:168px !important;}
+  .btn{font-size:12px !important;padding-left:9px !important;padding-right:9px !important;}
+  .live-card,.tip-card,.opportunity-card{min-width:224px !important;}
+}
+
   </style>
 </head>
 <body>
@@ -156,7 +292,7 @@ button{cursor:pointer}
       <div class="search-row">
         <div class="search-box">
           <span>⌕</span>
-          <input id="globalSearch" type="search" placeholder="Buscar jogo, time ou liga" autocomplete="off" />
+          <input id="globalSearch" type="search" placeholder="Buscar jogo ou time" autocomplete="off" />
         </div>
         <button id="openSettings" class="icon-btn" aria-label="Configurações">⚙️</button>
       </div>
@@ -489,7 +625,7 @@ async function loadData(){
   }catch(err){
     state.matches = makeDemoMatches();
     state.source = 'demo';
-    dataStatus.textContent = 'Modo prévia visual · conecte a API para jogos reais';
+    dataStatus.textContent = 'Prévia visual · API depois';
   }
   state.predictions = computePredictions(state.matches);
   renderAll();
@@ -552,8 +688,8 @@ function renderHome(){
     <div class="hero">
       <div class="hero-content">
         <div class="eyebrow">Painel premium · futebol</div>
-        <h1>Tips prontas e scanner IA <span>para o dia.</span></h1>
-        <p>Escolha o risco, copie o bilhete e use a TIPS AI para pedir análise por jogo. Antes e durante a partida.</p>
+        <h1>Tips e Scanner IA <span>para hoje.</span></h1>
+        <p>Bilhetes por risco, análise por jogo e oportunidades ao vivo.</p>
         <div class="hero-actions">
           <button class="btn primary" onclick="goToPage('tips')">🎟️ Ver tips prontas</button>
           <button class="btn ghost" onclick="goToPage('scanner')">🔎 Scanner IA</button>
