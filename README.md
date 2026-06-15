@@ -1,14 +1,17 @@
-# Prado Sports AI — V16.5.1 IA Organizada
+# Prado Sports AI — V16.5.2 IA Modelo 1
 
 ## Escopo
 Somente a aba IA.
 
-## Melhorias
-- IA ficou mais organizada e mais moderna.
-- Layout mais limpo no iPhone.
-- Chips rápidos em grade.
-- Formulário mais bem separado e com rótulos.
-- Resposta da IA mais arrumada visualmente.
+## Base visual
+Modelo 1 escolhido pelo Carlos.
+
+## Alterado
+- Aba IA no estilo dashboard avançado.
+- Cards de métricas com tamanho padronizado.
+- Mercados rápidos com cards do mesmo tamanho.
+- Construtor de análise mais profissional.
+- Resposta da IA mais completa com recomendação, confiança, mercado, pressão, xG, tendência, entrada, plano B, cenário ao vivo e motivos.
 
 ## Não alterado
 - Home
@@ -20,4 +23,4 @@ Somente a aba IA.
 - Menu inferior
 
 ## Teste
-Use: ?v=16-5-1
+Use: ?v=16-5-2
