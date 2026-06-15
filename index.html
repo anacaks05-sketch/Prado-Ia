@@ -3013,6 +3013,354 @@ body[data-page="scanner"] .scanner-v166-day .target{
   body[data-page="scanner"] .scanner-v166-small h4{font-size:15px}
 }
 
+
+/* ===== V16.6.1 — SCANNER COMPACTO / CORREÇÃO DE TAMANHO ===== */
+body[data-page="scanner"] #page-scanner{padding-bottom:92px}
+body[data-page="scanner"] .scanner-v166c{display:grid;gap:9px}
+body[data-page="scanner"] .scanner-c-hero{
+  position:relative;
+  overflow:hidden;
+  min-height:122px;
+  border-radius:21px;
+  border:1px solid rgba(33,230,161,.22);
+  background:
+    radial-gradient(circle at 82% 48%, rgba(33,230,161,.16), transparent 35%),
+    linear-gradient(110deg, rgba(4,9,13,.98), rgba(7,18,18,.94), rgba(4,9,13,.98));
+  box-shadow:0 16px 34px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.04);
+}
+body[data-page="scanner"] .scanner-c-hero::before{
+  content:"";
+  position:absolute;
+  right:-26px;
+  top:-20px;
+  width:165px;
+  height:165px;
+  border-radius:50%;
+  background:
+    repeating-radial-gradient(circle, rgba(33,230,161,.18) 0 1px, transparent 2px 18px),
+    conic-gradient(from 270deg, rgba(33,230,161,0), rgba(33,230,161,.43), rgba(33,230,161,0) 30%);
+  filter:drop-shadow(0 0 16px rgba(33,230,161,.20));
+  animation:scannerRadarSpin 5s linear infinite;
+  opacity:.9;
+}
+body[data-page="scanner"] .scanner-c-hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:repeating-linear-gradient(90deg, transparent 0 30px, rgba(33,230,161,.045) 31px 32px);
+  pointer-events:none;
+}
+body[data-page="scanner"] .scanner-c-hero-content{
+  position:relative;
+  z-index:1;
+  min-height:122px;
+  padding:13px 15px;
+  display:grid;
+  align-content:center;
+  max-width:66%;
+}
+body[data-page="scanner"] .scanner-c-badge{
+  width:max-content;
+  padding:5px 9px;
+  border-radius:999px;
+  border:1px solid rgba(33,230,161,.28);
+  color:#22f0a1;
+  background:rgba(33,230,161,.08);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+body[data-page="scanner"] .scanner-c-hero h2{
+  margin:7px 0 4px;
+  font-family:'Space Grotesk';
+  font-size:29px;
+  line-height:.98;
+  color:#fff;
+}
+body[data-page="scanner"] .scanner-c-hero h2 span{color:var(--green)}
+body[data-page="scanner"] .scanner-c-hero p{
+  margin:0;
+  color:#c7d1dc;
+  font-size:11px;
+  line-height:1.3;
+}
+body[data-page="scanner"] .scanner-c-live{
+  display:inline-flex;
+  width:max-content;
+  margin-top:9px;
+  align-items:center;
+  gap:6px;
+  color:#23f0a3;
+  font-size:8.6px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+body[data-page="scanner"] .scanner-c-live i{
+  width:7px;height:7px;border-radius:50%;background:var(--green);
+  box-shadow:0 0 0 4px rgba(33,230,161,.14);
+}
+body[data-page="scanner"] .scanner-c-kpis{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:6px;
+}
+body[data-page="scanner"] .scanner-c-kpi{
+  min-height:58px;
+  padding:8px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.09);
+  background:linear-gradient(145deg,rgba(15,24,36,.94),rgba(7,11,17,.99));
+}
+body[data-page="scanner"] .scanner-c-kpi.gold{border-color:rgba(255,224,110,.22)}
+body[data-page="scanner"] .scanner-c-kpi small{
+  display:block;
+  font-size:7.5px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:#aeb8c4;
+  font-weight:900;
+  line-height:1.1;
+}
+body[data-page="scanner"] .scanner-c-kpi b{
+  display:block;
+  margin-top:5px;
+  font-family:'JetBrains Mono';
+  font-size:18px;
+  line-height:1;
+  color:var(--green);
+}
+body[data-page="scanner"] .scanner-c-kpi.gold b{color:var(--gold)}
+body[data-page="scanner"] .scanner-c-kpi span{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:8px;
+  line-height:1.1;
+}
+body[data-page="scanner"] .scanner-c-filters{
+  display:flex;
+  gap:7px;
+  overflow:auto;
+  padding:1px 0 2px;
+}
+body[data-page="scanner"] .scanner-c-filters::-webkit-scrollbar{display:none}
+body[data-page="scanner"] .scanner-c-filter{
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.035);
+  color:#eaf0f8;
+  border-radius:999px;
+  min-height:35px;
+  padding:0 11px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  white-space:nowrap;
+  font-size:10.5px;
+  font-weight:900;
+}
+body[data-page="scanner"] .scanner-c-filter.active{
+  color:#07140f;
+  background:linear-gradient(135deg,#21e6a1,#70ffd0);
+  border-color:transparent;
+  box-shadow:0 0 18px rgba(33,230,161,.18);
+}
+body[data-page="scanner"] .scanner-c-list{display:grid;gap:8px}
+body[data-page="scanner"] .scanner-c-card{
+  position:relative;
+  overflow:hidden;
+  min-height:112px;
+  padding:10px;
+  border-radius:19px;
+  border:1px solid rgba(33,230,161,.15);
+  background:linear-gradient(145deg,rgba(9,22,21,.96),rgba(7,11,17,.99));
+  box-shadow:0 12px 26px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.035);
+}
+body[data-page="scanner"] .scanner-c-card.gold{
+  border-color:rgba(255,224,110,.23);
+  background:linear-gradient(145deg,rgba(24,20,12,.96),rgba(7,11,17,.99));
+}
+body[data-page="scanner"] .scanner-c-row{
+  display:grid;
+  grid-template-columns:48px 1fr 72px;
+  gap:9px;
+  align-items:center;
+}
+body[data-page="scanner"] .scanner-c-orb{
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  background:rgba(33,230,161,.08);
+  border:1px solid rgba(33,230,161,.16);
+  box-shadow:0 0 20px rgba(33,230,161,.09);
+  font-size:22px;
+}
+body[data-page="scanner"] .scanner-c-card.gold .scanner-c-orb{
+  color:var(--gold);
+  background:rgba(255,224,110,.08);
+  border-color:rgba(255,224,110,.16);
+}
+body[data-page="scanner"] .scanner-c-market{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  max-width:100%;
+  padding:4px 8px;
+  border-radius:999px;
+  border:1px solid rgba(33,230,161,.20);
+  color:var(--green);
+  background:rgba(33,230,161,.08);
+  font-size:8px;
+  letter-spacing:.11em;
+  text-transform:uppercase;
+  font-weight:900;
+}
+body[data-page="scanner"] .scanner-c-card.gold .scanner-c-market{
+  color:var(--gold);
+  border-color:rgba(255,224,110,.22);
+  background:rgba(255,224,110,.08);
+}
+body[data-page="scanner"] .scanner-c-info h3{
+  margin:6px 0 3px;
+  color:#fff;
+  font-family:'Space Grotesk';
+  font-size:19px;
+  line-height:1;
+}
+body[data-page="scanner"] .scanner-c-info p{
+  margin:0;
+  color:#cbd4df;
+  font-size:10.5px;
+  line-height:1.25;
+}
+body[data-page="scanner"] .scanner-c-bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:7px;
+  margin-top:9px;
+}
+body[data-page="scanner"] .scanner-c-tags{
+  display:flex;
+  gap:6px;
+  min-width:0;
+  flex-wrap:wrap;
+}
+body[data-page="scanner"] .scanner-c-tag{
+  display:inline-flex;
+  padding:5px 8px;
+  border-radius:999px;
+  background:rgba(33,230,161,.08);
+  border:1px solid rgba(33,230,161,.14);
+  color:var(--green);
+  font-size:8.2px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+body[data-page="scanner"] .scanner-c-tag.gold{
+  color:var(--gold);
+  background:rgba(255,224,110,.08);
+  border-color:rgba(255,224,110,.16);
+}
+body[data-page="scanner"] .scanner-c-side{
+  text-align:right;
+  display:grid;
+  justify-items:end;
+  gap:5px;
+}
+body[data-page="scanner"] .scanner-c-conf{
+  font-family:'JetBrains Mono';
+  color:var(--green);
+  font-size:20px;
+  line-height:1;
+  font-weight:900;
+}
+body[data-page="scanner"] .scanner-c-conf small{
+  display:block;
+  font-family:inherit;
+  font-size:7px;
+  color:var(--muted);
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+body[data-page="scanner"] .scanner-c-odd{
+  font-family:'JetBrains Mono';
+  color:var(--gold);
+  font-size:17px;
+  font-weight:900;
+  line-height:1;
+}
+body[data-page="scanner"] .scanner-c-read{
+  min-height:30px;
+  padding:0 10px;
+  border:0;
+  border-radius:999px;
+  color:#06120d;
+  background:linear-gradient(135deg,#20e698,#70ffd0);
+  font-size:9.5px;
+  font-weight:900;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+body[data-page="scanner"] .scanner-c-card.gold .scanner-c-read{
+  color:#170f02;
+  background:linear-gradient(135deg,#ffe06e,#d49b27);
+}
+body[data-page="scanner"] .scanner-c-day{
+  min-height:64px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px;
+  border-radius:18px;
+  border:1px solid rgba(255,224,110,.22);
+  background:linear-gradient(145deg,rgba(12,22,20,.96),rgba(7,11,17,.99));
+}
+body[data-page="scanner"] .scanner-c-day b{
+  display:block;
+  color:var(--gold);
+  font-size:10px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+body[data-page="scanner"] .scanner-c-day p{
+  margin:3px 0 0;
+  color:#eef4f8;
+  font-size:11px;
+  line-height:1.3;
+}
+body[data-page="scanner"] .scanner-c-day .target{
+  width:43px;height:43px;flex:0 0 43px;border-radius:50%;
+  display:grid;place-items:center;color:var(--green);font-size:22px;
+  background:rgba(33,230,161,.10);border:1px solid rgba(33,230,161,.16);
+}
+@media(max-width:430px){
+  body[data-page="scanner"] .scanner-c-hero{min-height:116px}
+  body[data-page="scanner"] .scanner-c-hero::before{width:150px;height:150px;right:-28px;top:-14px}
+  body[data-page="scanner"] .scanner-c-hero-content{min-height:116px;padding:12px;max-width:70%}
+  body[data-page="scanner"] .scanner-c-hero h2{font-size:27px}
+  body[data-page="scanner"] .scanner-c-hero p{font-size:10.5px}
+  body[data-page="scanner"] .scanner-c-live{font-size:8px;margin-top:7px}
+  body[data-page="scanner"] .scanner-c-kpis{gap:6px}
+  body[data-page="scanner"] .scanner-c-kpi{min-height:54px;padding:7px}
+  body[data-page="scanner"] .scanner-c-kpi b{font-size:16px}
+  body[data-page="scanner"] .scanner-c-kpi span{font-size:7.4px}
+  body[data-page="scanner"] .scanner-c-row{grid-template-columns:42px 1fr 64px;gap:8px}
+  body[data-page="scanner"] .scanner-c-orb{width:40px;height:40px;font-size:20px}
+  body[data-page="scanner"] .scanner-c-card{min-height:104px;padding:9px;border-radius:17px}
+  body[data-page="scanner"] .scanner-c-info h3{font-size:17px}
+  body[data-page="scanner"] .scanner-c-info p{font-size:9.5px}
+  body[data-page="scanner"] .scanner-c-conf{font-size:18px}
+  body[data-page="scanner"] .scanner-c-odd{font-size:15px}
+  body[data-page="scanner"] .scanner-c-read{font-size:8.5px;min-height:28px;padding:0 9px}
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -4169,8 +4517,7 @@ function renderScanner(){
     ['all','▦','Todos'],
     ['live','⌁','Ao vivo'],
     ['confidence','☆','Top confiança'],
-    ['value','◈','Valor'],
-    ['best','⚑','Melhor do dia']
+    ['value','◈','Valor']
   ];
   let rows = filteredPredictions();
   if(state.scannerFilter === 'best') rows = rows.slice(0,1);
@@ -4184,84 +4531,72 @@ function renderScanner(){
   const topConfidence = allRows.length ? Math.max(...allRows.map(p=>p.confidence)) : 0;
   const bestOdd = allRows.length ? Math.min(...allRows.map(p=>p.oddMin)).toFixed(2) : '--';
   const markets = new Set(allRows.map(p=>p.marketType)).size || 0;
-  const featured = rows.slice(0,2);
-  const compact = rows.slice(2,6);
 
   $('#page-scanner').innerHTML = `
-    <div class="scanner-v166">
-      <section class="scanner-v166-hero">
-        <div class="scanner-v166-hero-content">
-          <div class="scanner-v166-badge">Scanner Pro</div>
+    <div class="scanner-v166c">
+      <section class="scanner-c-hero">
+        <div class="scanner-c-hero-content">
+          <div class="scanner-c-badge">Scanner Pro</div>
           <h2>Scanner <span>Radar</span></h2>
           <p>Leitura rápida das melhores oportunidades do dia.</p>
-          <div class="scanner-v166-live"><i></i> IA Prado · análise em tempo real</div>
+          <div class="scanner-c-live"><i></i> IA Prado · análise em tempo real</div>
         </div>
       </section>
 
-      <div class="scanner-v166-kpis">
-        <div class="scanner-v166-kpi"><div class="ico">⌁</div><div><small>Ao vivo</small><b>${liveCount}</b><span>Jogos ao vivo</span></div></div>
-        <div class="scanner-v166-kpi gold"><div class="ico">☆</div><div><small>Top confiança</small><b>${topConfidence || '--'}%</b><span>Confiança média</span></div></div>
-        <div class="scanner-v166-kpi"><div class="ico">◇</div><div><small>Melhor valor</small><b>${bestOdd}+</b><span>Odd mínima</span></div></div>
-        <div class="scanner-v166-kpi"><div class="ico">◎</div><div><small>Mercados ativos</small><b>${markets}</b><span>Mercados monitorados</span></div></div>
+      <div class="scanner-c-kpis">
+        <div class="scanner-c-kpi"><small>Ao vivo</small><b>${liveCount}</b><span>jogos</span></div>
+        <div class="scanner-c-kpi gold"><small>Top confiança</small><b>${topConfidence || '--'}%</b><span>média</span></div>
+        <div class="scanner-c-kpi"><small>Valor</small><b>${bestOdd}+</b><span>odd mín.</span></div>
+        <div class="scanner-c-kpi"><small>Mercados</small><b>${markets}</b><span>ativos</span></div>
       </div>
 
-      <div class="scanner-v166-filters">
-        ${filters.map(f=>`<button class="scanner-v166-filter ${state.scannerFilter===f[0]?'active':''}" onclick="setScannerFilter('${f[0]}')"><span>${f[1]}</span>${f[2]}</button>`).join('')}
+      <div class="scanner-c-filters">
+        ${filters.map(f=>`<button class="scanner-c-filter ${state.scannerFilter===f[0]?'active':''}" onclick="setScannerFilter('${f[0]}')"><span>${f[1]}</span>${f[2]}</button>`).join('')}
       </div>
 
       ${rows.length ? `
-        <div class="scanner-v166-list">
-          ${featured.map(scannerOpportunityCard).join('')}
+        <div class="scanner-c-list">
+          ${rows.slice(0,7).map(scannerCompactCard).join('')}
         </div>
-        ${compact.length ? `<div class="scanner-v166-small-grid">${compact.map(scannerSmallOpportunityCard).join('')}</div>` : ''}
-        ${best ? `<div class="scanner-v166-day" onclick="openMatchDetail('${best.match.id}')">
+        ${best ? `<div class="scanner-c-day" onclick="openMatchDetail('${best.match.id}')">
           <div class="target">◎</div>
-          <div><b>Radar do dia</b><p>${safe(best.entry)} com ${best.confidence}% de confiança e odd mínima ${best.oddMin.toFixed(2)}.</p></div>
-          <span class="tag gold">Top leitura</span>
+          <div><b>Radar do dia</b><p>${safe(best.entry)} · ${best.confidence}% IA · odd ${best.oddMin.toFixed(2)}.</p></div>
+          <span class="tag gold">Top</span>
         </div>` : ''}
       ` : '<div class="card empty">Nenhuma oportunidade encontrada nesse filtro.</div>'}
     </div>
   `;
 }
 
-function scannerOpportunityCard(p){
+function scannerCompactCard(p){
   const m = p.match;
   const isGold = p.valueScore >= 84 || p.risk === 'agressivo';
   const live = m.status === 'live';
-  return `<article class="scanner-v166-card ${isGold?'gold':''}">
-    <div class="scanner-v166-card-main">
-      <div class="scanner-v166-orb">${scannerMarketIcon(p.marketType)}</div>
-      <div class="scanner-v166-entry">
-        <div class="market">${safe(scannerMarketName(p.marketType))}</div>
+  return `<article class="scanner-c-card ${isGold?'gold':''}">
+    <div class="scanner-c-row">
+      <div class="scanner-c-orb">${scannerMarketIcon(p.marketType)}</div>
+      <div class="scanner-c-info">
+        <div class="scanner-c-market">${safe(scannerMarketName(p.marketType))}</div>
         <h3>${safe(p.entry)}</h3>
         <p>${safe(m.home.name)} x ${safe(m.away.name)}<br>${safe(m.league)}${live ? ` · ${m.minute || 0}'` : ''}</p>
-        <div class="scanner-v166-tags">
-          <span class="scanner-v166-mini-tag">${live ? '● Ao vivo' : 'Pré-jogo'}</span>
-          <span class="scanner-v166-mini-tag gold">⚡ ${safe(riskLabel(p.risk))}</span>
-        </div>
       </div>
-      <div class="scanner-v166-side">
-        <div class="scanner-v166-ring"><span>${p.confidence}%<small>Confiança</small></span></div>
-        <div class="scanner-v166-odd"><small>Odd</small><b>${p.oddMin.toFixed(2)}</b></div>
-        <button class="scanner-v166-read" onclick="openMatchDetail('${m.id}')">Ver leitura →</button>
+      <div class="scanner-c-side">
+        <div class="scanner-c-conf">${p.confidence}%<small>confiança</small></div>
+        <div class="scanner-c-odd">${p.oddMin.toFixed(2)}</div>
+        <button class="scanner-c-read" onclick="openMatchDetail('${m.id}')">Ver →</button>
+      </div>
+    </div>
+    <div class="scanner-c-bottom">
+      <div class="scanner-c-tags">
+        <span class="scanner-c-tag">${live ? '● Ao vivo' : 'Pré-jogo'}</span>
+        <span class="scanner-c-tag gold">${safe(riskLabel(p.risk))}</span>
       </div>
     </div>
   </article>`;
 }
 
-function scannerSmallOpportunityCard(p){
-  const m = p.match;
-  const isGold = p.valueScore >= 84 || p.risk === 'agressivo';
-  return `<article class="scanner-v166-small ${isGold?'gold':''}" onclick="openMatchDetail('${m.id}')">
-    <span class="market">${safe(scannerMarketName(p.marketType))}</span>
-    <h4>${safe(p.entry)}</h4>
-    <p>${safe(m.home.name)} x ${safe(m.away.name)}<br>${safe(m.league)}</p>
-    <div class="scanner-v166-small-bottom"><b>${p.confidence}% · ${p.oddMin.toFixed(2)}</b><span>${safe(riskLabel(p.risk))}</span></div>
-  </article>`;
-}
-
 function opportunityCard(p){
-  return scannerOpportunityCard(p);
+  return scannerCompactCard(p);
 }
 
 function setScannerFilter(f){ state.scannerFilter = f; renderScanner(); }

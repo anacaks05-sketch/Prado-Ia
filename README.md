@@ -1,17 +1,16 @@
-# Prado Sports AI — V16.6 Scanner Radar
+# Prado Sports AI — V16.6.1 Scanner Compacto
 
-## Escopo
-Somente a aba Scanner.
+## Correção
+A aba Scanner estava grande demais no iPhone. Esta versão deixa tudo menor e mais organizado.
 
 ## Alterado
-- Scanner no modelo escolhido pelo Carlos.
-- Topo premium Scanner Radar.
-- KPIs organizados.
-- Filtros modernos.
-- Cards de oportunidades mais bonitos e compactos.
-- Cards menores no final.
-- Radar do dia.
-- Visual mobile-first para iPhone.
+- Somente a aba Scanner.
+- Topo menor.
+- KPIs menores.
+- Filtros menores.
+- Cards de oportunidades compactos.
+- Removidos cards pequenos em grade que embolavam texto.
+- Botões e números reduzidos para caber melhor no celular.
 
 ## Não alterado
 - Home
@@ -23,4 +22,4 @@ Somente a aba Scanner.
 - Menu inferior
 
 ## Teste
-Use: ?v=16-6
+Use: ?v=16-6-1
