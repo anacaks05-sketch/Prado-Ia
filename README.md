@@ -1,23 +1,6 @@
-# Prado Sports AI — V16.3 Chat flutuante da IA
+# V16.3.1 — Ajuste simples
 
-## Escopo desta etapa
-Nesta versão, foi alterado somente o comportamento do botão flutuante da IA.
+- Alterado somente o nome do botão inferior de **Jogos** para **Home**.
+- Nenhuma outra parte foi modificada.
 
-## O que mudou
-- O botão flutuante não abre mais a aba IA direto.
-- Agora ele abre uma conversa premium da IA em formato de chat.
-- O chat tem mensagem inicial, campo para digitar e botão de enviar.
-- A IA responde com leitura do jogo, confiança, odd mínima, plano B e gatilho ao vivo.
-- O botão continua flutuante e arrastável.
-
-## O que não foi mexido
-- Home
-- Bilhetes
-- Scanner
-- Aba Ao vivo
-- Configurações
-- Estrutura principal das páginas
-
-## Teste
-Subir e abrir com:
-https://prado-ia.vercel.app/?v=16-3
+Teste: `?v=16-3-1`
