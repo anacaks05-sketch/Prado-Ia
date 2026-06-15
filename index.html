@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Prado Sports AI" />
-  <title>Prado AI V14 Ultra Premium</title>
+  <title>Prado AI V15 Luxe Premium</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="icon-192.png" />
@@ -1524,6 +1524,106 @@ body[data-page="match"] #floatingAI{display:none !important}
   .ai-copy-row,.pro-builder .actions{grid-template-columns:1fr}
 }
 
+
+/* ===== V15 luxe home / tickets / AI ===== */
+.hero-v15{min-height:312px !important;padding:18px !important;background:
+  linear-gradient(100deg,rgba(4,9,16,.96) 10%,rgba(4,9,16,.72) 54%,rgba(4,9,16,.24)),
+  radial-gradient(circle at 88% 16%,rgba(255,224,110,.22),transparent 34%),
+  radial-gradient(circle at 12% 88%,rgba(33,230,161,.16),transparent 35%),
+  url('https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat !important;
+  border-radius:34px !important; overflow:hidden; position:relative; border:1px solid rgba(255,255,255,.09); box-shadow:0 26px 58px rgba(0,0,0,.28)}
+.hero-v15::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(7,11,17,.55) 100%);pointer-events:none}
+.hero-v15 .hero-content{position:relative;z-index:1;max-width:none !important;height:100%}
+.hero-v15-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px;align-items:stretch;min-height:100%}
+.hero-kicker{display:inline-flex;align-items:center;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);font-size:11px;font-weight:900;color:var(--gold);letter-spacing:.13em;text-transform:uppercase;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);margin-bottom:14px}
+.hero-v15-copy h1{font-size:30px !important;line-height:1.02 !important;max-width:360px;margin:0 0 10px !important}
+.hero-v15-copy p{max-width:370px;font-size:14px;line-height:1.45;color:#d3dce6;margin:0 0 14px}
+.hero-cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:380px}
+.hero-cta-row .btn{min-height:58px;font-size:18px}
+.hero-cta-row .btn.ghost{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.13)}
+.hero-label-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.hero-label{padding:7px 11px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);font-size:10px;font-weight:800;color:#d7e0ea}
+.hero-v15-side{display:grid;grid-template-columns:1fr;gap:10px;align-content:start}
+.hero-v15-stat{padding:14px 14px 13px;border-radius:24px;background:linear-gradient(180deg,rgba(10,17,27,.86),rgba(7,11,17,.96));border:1px solid rgba(255,255,255,.08);box-shadow:0 16px 34px rgba(0,0,0,.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.hero-v15-stat b{display:block;font-family:'Space Grotesk';font-size:28px;line-height:1;color:#fff;margin-bottom:4px}.hero-v15-stat span{display:block;font-size:12px;color:#eef5ff;font-weight:800}.hero-v15-stat small{display:block;margin-top:5px;color:#aeb9c6;font-size:10px;line-height:1.35}
+.hero-v15-stat.gold{background:linear-gradient(180deg,rgba(255,224,110,.12),rgba(11,18,28,.96));border-color:rgba(255,224,110,.16)}
+.hero-v15-stat.green{background:linear-gradient(180deg,rgba(33,230,161,.12),rgba(11,18,28,.96));border-color:rgba(33,230,161,.16)}
+.luxe-card-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:10px 0}
+.luxe-quick-card{padding:14px;border-radius:24px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(145deg,rgba(15,22,34,.97),rgba(8,12,18,.98));box-shadow:0 16px 32px rgba(0,0,0,.2);display:flex;gap:12px;align-items:flex-start;text-align:left}
+.luxe-quick-card .icon{width:42px;height:42px;border-radius:16px;display:grid;place-items:center;font-size:18px;font-weight:900;color:var(--green);background:rgba(33,230,161,.1);border:1px solid rgba(33,230,161,.14);flex:0 0 auto}
+.luxe-quick-card b{display:block;font-size:15px;line-height:1.1;color:#fff}.luxe-quick-card small{display:block;margin-top:5px;font-size:11px;line-height:1.42;color:var(--muted)}
+.home-premium-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:10px;margin:10px 0}
+.home-premium-card{padding:16px;border-radius:28px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(155deg,rgba(9,16,24,.98),rgba(8,12,18,.99));box-shadow:0 18px 40px rgba(0,0,0,.22)}
+.home-premium-card h3{margin:0 0 8px;font-family:'Space Grotesk';font-size:24px;line-height:1;color:#fff}.home-premium-card p{margin:0 0 12px;font-size:13px;line-height:1.48;color:var(--muted)}
+.home-premium-card.primary{background:linear-gradient(165deg,rgba(8,32,24,.95),rgba(7,11,18,.98));border-color:rgba(33,230,161,.18)}
+.home-premium-card.gold{background:linear-gradient(165deg,rgba(36,29,9,.72),rgba(7,11,18,.98));border-color:rgba(255,224,110,.2)}
+.entry-big{font-family:'Space Grotesk';font-size:28px;line-height:1.02;color:var(--green);margin-bottom:6px}
+.support-strip{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 0}
+.support-strip .tag{font-size:10px}
+.pro-billet-preview{display:grid;gap:8px;margin-top:8px}
+.pro-billet-preview .row{display:flex;justify-content:space-between;gap:8px;padding:10px 12px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.05)}
+.pro-billet-preview .row b{display:block;font-size:14px;line-height:1.2;color:#fff}.pro-billet-preview .row span{display:block;font-size:10px;color:var(--muted);margin-top:3px}.pro-billet-preview .odd{font-size:18px;color:#ffe58a;font-weight:900;white-space:nowrap}
+
+.ticket-luxe-shell{display:grid;gap:12px}
+.ticket-top-banner{padding:18px;border-radius:30px;border:1px solid rgba(255,255,255,.08);background:
+ linear-gradient(120deg,rgba(8,16,25,.98) 10%,rgba(10,33,24,.95) 48%,rgba(12,17,25,.98) 100%);box-shadow:0 22px 48px rgba(0,0,0,.24)}
+.ticket-top-banner .title{font-family:'Space Grotesk';font-size:26px;line-height:1;color:#fff;margin-bottom:8px}
+.ticket-top-banner .sub{font-size:13px;color:var(--muted);line-height:1.5;max-width:540px}
+.risk-grid.luxe{margin-top:12px}
+.risk-grid.luxe .risk-btn{padding:16px 14px;border-radius:22px}.risk-grid.luxe .risk-btn span{font-size:22px}.risk-grid.luxe .risk-btn small{margin-top:6px}
+.ticket-dual-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:10px}
+.ticket-main-card{padding:16px !important;border-radius:28px !important;background:linear-gradient(160deg,rgba(10,18,28,.99),rgba(7,11,17,.99)) !important;box-shadow:0 18px 42px rgba(0,0,0,.22)}
+.ticket-main-card .topline{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:10px}
+.ticket-main-card .topline h3{margin:0;font-family:'Space Grotesk';font-size:25px;line-height:1}.ticket-main-card .topline p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.42}
+.ticket-meter{padding:10px 12px;border-radius:18px;background:rgba(33,230,161,.14);border:1px solid rgba(33,230,161,.18);text-align:center;min-width:76px}.ticket-meter b{display:block;font-size:21px;color:var(--green)}.ticket-meter span{display:block;font-size:10px;color:#d8e3ec;font-weight:700}
+.ticket-pro-pick{padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)}.ticket-pro-pick:last-of-type{border-bottom:0}
+.ticket-pro-pick .game{display:flex;justify-content:space-between;gap:10px}.ticket-pro-pick .game b{display:block;font-size:18px;line-height:1.15}.ticket-pro-pick .game span{display:block;font-size:11px;color:#ffe58a;white-space:nowrap;font-weight:900}.ticket-pro-pick .meta{margin-top:5px;font-size:11px;color:var(--muted)}
+.ticket-stats-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:10px 0}.ticket-stats-mini .mini{padding:10px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}.ticket-stats-mini .mini b{display:block;font-size:15px}.ticket-stats-mini .mini small{display:block;color:var(--muted);font-size:9px;margin-top:3px}
+.ticket-custom-card{padding:16px;border-radius:28px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(160deg,rgba(15,22,34,.98),rgba(8,12,19,.99));box-shadow:0 18px 40px rgba(0,0,0,.2)}
+.ticket-custom-card .head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:10px}.ticket-custom-card .head h3{margin:0;font-family:'Space Grotesk';font-size:23px;line-height:1}.ticket-custom-card .head p{margin:6px 0 0;color:var(--muted);font-size:12px;line-height:1.42}
+.builder-tile-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.builder-tile{padding:12px;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);text-align:left}.builder-tile.active{background:linear-gradient(145deg,rgba(33,230,161,.16),rgba(19,29,39,.98));border-color:rgba(33,230,161,.22)}.builder-tile b{display:block;font-size:14px}.builder-tile small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+.builder-inline-selects{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
+.builder-footer{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;margin-top:12px}.builder-footer .hint{font-size:10px;color:var(--muted)}
+.custom-results-card{padding:16px !important;border-radius:28px !important;background:linear-gradient(160deg,rgba(8,32,24,.96),rgba(8,12,19,.99)) !important;border-color:rgba(33,230,161,.18) !important}
+.custom-results-card .topline{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:10px}
+
+.ai-luxe-shell{display:grid;gap:12px}
+.ai-luxe-top{padding:18px;border-radius:30px;border:1px solid rgba(255,255,255,.08);background:
+ linear-gradient(120deg,rgba(8,16,25,.98) 10%,rgba(6,28,26,.96) 48%,rgba(8,16,25,.98) 100%);box-shadow:0 24px 52px rgba(0,0,0,.26);position:relative;overflow:hidden}
+.ai-luxe-top::after{content:'';position:absolute;right:-40px;top:-30px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle, rgba(33,230,161,.15), transparent 62%);pointer-events:none}
+.ai-luxe-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;margin-bottom:12px;position:relative;z-index:1}
+.ai-luxe-head h2{margin:0;font-family:'Space Grotesk';font-size:28px;line-height:1.02}.ai-luxe-head p{margin:8px 0 0;color:var(--muted);font-size:13px;line-height:1.48;max-width:520px}
+.ai-luxe-badge{padding:11px 14px;border-radius:18px;background:rgba(33,230,161,.14);border:1px solid rgba(33,230,161,.18);font-size:13px;font-weight:900;color:var(--green)}
+.ai-luxe-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;position:relative;z-index:1}
+.ai-luxe-kpi{padding:11px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}.ai-luxe-kpi b{display:block;font-size:16px}.ai-luxe-kpi small{display:block;font-size:9px;color:var(--muted);margin-top:4px}
+.ai-scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 10px;position:relative;z-index:1}
+.ai-scenario{padding:12px;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04);text-align:left}.ai-scenario:hover,.ai-scenario.active{background:linear-gradient(145deg,rgba(33,230,161,.16),rgba(17,27,37,.98));border-color:rgba(33,230,161,.22)}.ai-scenario b{display:block;font-size:13px}.ai-scenario small{display:block;font-size:10px;color:var(--muted);margin-top:4px}
+.ai-luxe-top .form-grid{position:relative;z-index:1}
+.ai-luxe-answer{padding:16px !important;border-radius:28px !important;margin-top:12px;background:linear-gradient(160deg,rgba(10,18,28,.99),rgba(8,12,18,.99)) !important;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
+.ai-luxe-answer .hero{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}.ai-luxe-answer .hero .entry{font-family:'Space Grotesk';font-size:28px;line-height:1.02;margin:4px 0}.ai-luxe-answer .hero p{margin:0;color:var(--muted);font-size:12px;line-height:1.4}.ai-luxe-answer .score{padding:10px 12px;border-radius:18px;background:rgba(33,230,161,.14);border:1px solid rgba(33,230,161,.18);text-align:center;min-width:76px}.ai-luxe-answer .score b{display:block;font-size:22px;color:var(--green)}.ai-luxe-answer .score span{display:block;font-size:10px;color:#dbe4ec}
+.ai-luxe-pills{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.ai-luxe-pills .pill{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.07);font-size:10px;font-weight:800}
+.ai-luxe-plan{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}.ai-luxe-plan .plan{padding:11px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)}.ai-luxe-plan .plan b{display:block;font-size:11px;color:#ffe58a;text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}.ai-luxe-plan .plan span{display:block;font-size:12px;font-weight:800;line-height:1.35}.ai-luxe-plan .plan small{display:block;font-size:9px;color:var(--muted);margin-top:4px}
+.ai-luxe-reasons{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}.ai-luxe-reason{padding:10px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);font-size:10px;line-height:1.5;color:#dbe3ec}.ai-luxe-reason b{color:#fff}
+.ai-luxe-bottom{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#floatingAI{z-index:999 !important;right:16px !important;bottom:92px !important;box-shadow:0 16px 38px rgba(0,0,0,.32), 0 0 0 1px rgba(255,255,255,.06) inset;background:linear-gradient(165deg,rgba(9,58,42,.96),rgba(13,28,36,.98)) !important;border:1px solid rgba(33,230,161,.22) !important;display:flex !important}
+body[data-page="ai"] #floatingAI{opacity:.45 !important;transform:scale(.92)}
+body[data-page="match"] #floatingAI{display:none !important}
+
+@media(max-width:430px){
+  .hero-v15{min-height:248px !important;padding:14px !important}
+  .hero-v15-grid,.home-premium-grid,.ticket-dual-grid,.ai-luxe-bottom{grid-template-columns:1fr !important}
+  .hero-v15-copy h1{font-size:26px !important;max-width:260px}
+  .hero-cta-row{grid-template-columns:1fr 1fr;max-width:none}.hero-cta-row .btn{min-height:54px;font-size:16px}
+  .hero-v15-side{grid-template-columns:1fr 1fr}
+  .luxe-card-grid,.ai-scenario-grid,.builder-tile-grid{grid-template-columns:1fr 1fr}
+  .home-premium-card h3{font-size:20px}
+  .entry-big{font-size:24px}
+  .ai-luxe-kpis,.ai-luxe-plan,.ticket-stats-mini,.ai-luxe-reasons{grid-template-columns:1fr 1fr}
+  .builder-inline-selects{grid-template-columns:1fr}
+  .builder-footer{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -2190,48 +2290,53 @@ function renderHome(){
   const autoTicket = ticketFor(state.selectedRisk || 'moderado');
   const autoOdd = autoTicket.reduce((acc,p)=>acc*p.oddMin,1);
   const autoAvg = autoTicket.length ? Math.round(autoTicket.reduce((a,p)=>a+p.confidence,0)/autoTicket.length) : 0;
+  const scannerCount = predictions.slice(0,4).length;
   $('#page-home').innerHTML = `
-    <div class="hero hero-v14 premium-home">
-      <div class="hero-content hero-v14-grid">
-        <div class="hero-v14-copy">
-          <h1>IA, scanner e bilhetes do jeito premium.</h1>
-          <p>Home mais forte para iPhone, menos poluição visual e leitura rápida para abrir ao vivo, IA ou bilhetes.</p>
-          <div class="hero-actions compact">
-            <button class="btn primary" onclick="goToPage('live')">Ao vivo agora</button>
-            <button class="btn ghost" onclick="goToPage('scanner')">Abrir scanner</button>
+    <div class="hero hero-v15 premium-home">
+      <div class="hero-content hero-v15-grid">
+        <div class="hero-v15-copy">
+          <div class="hero-kicker">PAINEL PRADO · FUTEBOL</div>
+          <h1>Scanner IA para hoje.</h1>
+          <p>Jogos ao vivo, bilhetes por risco e análises prontas em uma tela, com leitura forte e visual premium.</p>
+          <div class="hero-cta-row">
+            <button class="btn primary" onclick="goToPage('live')">Ao vivo</button>
+            <button class="btn ghost" onclick="goToPage('scanner')">Scanner IA</button>
           </div>
-          <div class="hero-mini-row">
-            <span class="hero-mini-chip">${live.length} jogos ao vivo</span>
-            <span class="hero-mini-chip">${predictions.length} leituras da IA</span>
-            <span class="hero-mini-chip">Bilhete personalizado</span>
+          <div class="hero-label-row">
+            <span class="hero-label">${matches.length} jogos lidos</span>
+            <span class="hero-label">${autoAvg}% confiança média</span>
+            <span class="hero-label">Bilhetes pro</span>
           </div>
         </div>
-        <div class="hero-side-board">
-          <div class="hero-side-stat"><b>${live.length}</b><span>Ao vivo agora</span><small>Monitore jogos e abra resumo, stats e melhor entrada.</small></div>
-          <div class="hero-side-stat"><b>${predictions.slice(0,3).length}</b><span>Top IA</span><small>Entradas mais fortes do dia prontas para abrir.</small></div>
-          ${best ? `<div class="hero-side-stat gold"><b>${best.confidence}%</b><span>Entrada destaque</span><small>${safe(best.entry)} em ${safe(best.match.home.name)} x ${safe(best.match.away.name)}</small></div>` : ''}
+        <div class="hero-v15-side">
+          <div class="hero-v15-stat green"><b>${live.length}</b><span>Ao vivo agora</span><small>Abra o bloco ao vivo para resumo, stats, H2H e leitura da IA.</small></div>
+          <div class="hero-v15-stat"><b>${scannerCount}</b><span>Scanner em alta</span><small>Leituras quentes prontas para filtro rápido e análise.</small></div>
+          ${best ? `<div class="hero-v15-stat gold"><b>${best.confidence}%</b><span>Melhor do dia</span><small>${safe(best.entry)} · ${safe(best.match.home.name)} x ${safe(best.match.away.name)}</small></div>` : ''}
         </div>
       </div>
     </div>
 
-    <div class="home-action-grid">
-      <button class="home-action-card" onclick="goToPage('live')"><span class="icon">●</span><div><b>Ao vivo</b><small>${live.length} jogos monitorados agora</small></div></button>
-      <button class="home-action-card" onclick="goToPage('scanner')"><span class="icon">IA</span><div><b>Scanner</b><small>${predictions.slice(0,4).length} leituras mais quentes</small></div></button>
-      <button class="home-action-card" onclick="goToPage('tips')"><span class="icon">🎟</span><div><b>Bilhetes Pro</b><small>Modo automático e personalizado</small></div></button>
-      <button class="home-action-card" onclick="goToPage('ai')"><span class="icon">↗</span><div><b>IA Prado</b><small>Plano A, B e gatilho ao vivo</small></div></button>
+    <div class="luxe-card-grid">
+      <button class="luxe-quick-card" onclick="goToPage('live')"><span class="icon">●</span><div><b>Ao vivo</b><small>${live.length} jogos monitorados com leitura rápida e detalhes por partida.</small></div></button>
+      <button class="luxe-quick-card" onclick="goToPage('scanner')"><span class="icon">IA</span><div><b>Radar IA</b><small>${scannerCount} entradas fortes filtradas por valor, confiança e live.</small></div></button>
+      <button class="luxe-quick-card" onclick="goToPage('tips')"><span class="icon">🎟</span><div><b>Bilhetes</b><small>Modo automático por risco + gerador personalizado para o cliente.</small></div></button>
+      <button class="luxe-quick-card" onclick="goToPage('ai')"><span class="icon">↗</span><div><b>Analisar</b><small>Entrada principal, motivo, plano B e gatilho ao vivo.</small></div></button>
     </div>
 
-    <div class="home-focus-grid">
-      ${best ? `<article class="focus-card primary">
-        <b>Entrada forte do dia</b>
-        <p>${safe(best.match.home.name)} x ${safe(best.match.away.name)} com ${best.confidence}% de confiança pela IA.</p>
-        <div class="market-tags"><span class="tag green">${safe(best.entry)}</span><span class="tag gold">Odd ${best.oddMin.toFixed(2)}</span></div>
+    <div class="home-premium-grid">
+      ${best ? `<article class="home-premium-card primary">
+        <h3>Radar da IA</h3>
+        <div class="entry-big">${safe(best.entry)}</div>
+        <p>${safe(best.match.home.name)} x ${safe(best.match.away.name)} · ${safe(best.match.league)} · ${best.confidence}% de confiança IA.</p>
+        <div class="confidence"><div class="bar"><i style="width:${best.confidence}%"></i></div><small>${best.confidence}% leitura principal</small></div>
+        <div class="support-strip"><span class="tag green">Odd ${best.oddMin.toFixed(2)}</span><span class="tag gold">${safe(best.risk)}</span><span class="tag">Plano B na IA</span></div>
         <button class="btn primary wide" onclick="openMatchDetail('${best.match.id}')">Ver leitura completa</button>
       </article>` : ''}
-      <article class="focus-card gold">
-        <b>Bilhete premium</b>
-        <p>Seu modo ${riskLabel(state.selectedRisk || 'moderado').toLowerCase()} está pronto com ${autoTicket.length} seleções e odd estimada ${autoOdd.toFixed(2)}.</p>
-        <div class="market-tags"><span class="tag green">${riskLabel(state.selectedRisk || 'moderado')}</span><span class="tag">${autoAvg}% média IA</span></div>
+      <article class="home-premium-card gold">
+        <h3>Bilhete automático</h3>
+        <p>A IA separou o dia em risco ${riskLabel(state.selectedRisk || 'moderado').toLowerCase()} com odd estimada ${autoOdd.toFixed(2)} e média de ${autoAvg}%.</p>
+        <div class="pro-billet-preview">${autoTicket.slice(0,3).map(p=>`<div class="row"><div><b>${safe(p.entry)}</b><span>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</span></div><div class="odd">${p.oddMin.toFixed(2)}</div></div>`).join('')}</div>
+        <div class="support-strip"><span class="tag green">${riskLabel(state.selectedRisk || 'moderado')}</span><span class="tag">${autoTicket.length} seleções</span><span class="tag gold">${autoAvg}% média</span></div>
         <button class="btn gold wide" onclick="goToPage('tips')">Abrir bilhetes</button>
       </article>
     </div>
@@ -2241,8 +2346,6 @@ function renderHome(){
       <div class="stat-pill"><b>${live.length}</b><span>Ao vivo</span></div>
       <div class="stat-pill"><b>${predictions.slice(0,3).length}</b><span>Top IA</span></div>
     </div>
-
-    <div class="home-pro-callout"><div class="txt"><b>Modo premium do app</b><span>IA forte, scanner live, bilhete auto e gerador do cliente.</span></div><button class="btn gold" onclick="goToPage('ai')">Abrir IA</button></div>
 
     ${sectionHead('Ao vivo agora', 'Ver todos', "goToPage('live')")}
     ${live.length ? `<div class="hscroll">${live.slice(0,6).map(matchCard).join('')}</div>` : `<div class="card empty">Nenhum jogo ao vivo neste momento.</div>`}
@@ -2361,50 +2464,48 @@ function renderTips(){
   const lineOptions = getCustomLineOptions(state.customMarket);
   const custom = state.customTicket;
   $('#page-tips').innerHTML = `
-    <div class="card compact ticket-mode-card">
-      <div class="card-title">Bilhetes automáticos da IA</div>
-      <p class="muted">A IA monta os níveis do dia sozinha e destaca o que está com mais confiança.</p>
-    </div>
-    <div class="risk-grid">
-      ${['conservador','moderado','agressivo'].map(r=>`<button class="risk-btn ${risk===r?'active':''}" onclick="setRisk('${r}')"><span>${riskIcon(r)}</span>${riskLabel(r)}<small>${r==='conservador'?'Mais proteção':r==='moderado'?'Equilíbrio':'Mais retorno'}</small></button>`).join('')}
-    </div>
-    <div class="tip-layout">
-      <article class="card tip-card">
-        <div class="ticket-header">
-          <div><span class="risk-badge">${riskIcon(risk)} ${riskLabel(risk)}</span><div class="card-title" style="margin-top:6px">Bilhete IA do dia</div><p class="muted">${ticket.length} seleções · odd estimada ${oddTotal.toFixed(2)}</p></div>
-          <div class="opp-score">${avgConf}%</div>
+    <div class="ticket-luxe-shell">
+      <div class="ticket-top-banner">
+        <div class="title">Bilhetes profissionais da IA</div>
+        <div class="sub">Modo automático por risco para quem quer rapidez, e gerador personalizado para o cliente montar o mercado que preferir.</div>
+        <div class="risk-grid luxe">
+          ${['conservador','moderado','agressivo'].map(r=>`<button class="risk-btn ${risk===r?'active':''}" onclick="setRisk('${r}')"><span>${riskIcon(r)}</span>${riskLabel(r)}<small>${r==='conservador'?'Entrada protegida':r==='moderado'?'Equilíbrio premium':'Retorno mais alto'}</small></button>`).join('')}
         </div>
-        ${ticket.map(p=>`<div class="ticket-pick"><div class="pick-main"><span>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</span><b>${safe(p.entry)}</b></div><div class="pick-sub">${safe(p.match.league)} · Odd mín. ${p.oddMin.toFixed(2)} · ${p.confidence}% IA</div></div>`).join('')}
-        <div class="confidence"><div class="bar"><i style="width:${avgConf}%"></i></div><small>${avgConf}% média</small></div>
-        <div class="ticket-mini-grid">
-          <div class="ticket-mini"><b>${ticket.length}</b><small>Seleções</small></div>
-          <div class="ticket-mini"><b>${oddTotal.toFixed(2)}</b><small>Odd total</small></div>
-          <div class="ticket-mini"><b>${avgConf}%</b><small>Confiança</small></div>
-        </div>
-        <button class="btn primary wide" onclick="copyTicket('${risk}')">📋 Copiar Bilhete</button>
-      </article>
+      </div>
 
-      <article class="card compact">
-        <div class="generator-header"><div><div class="card-title">Gerador de bilhete do cliente</div><p class="muted">Escolha mercado, linha e quantidade. A IA seleciona os jogos mais compatíveis.</p></div><span class="tag gold">IA personalizada</span></div>
-        <div class="market-panel modern">
-          <div class="market-chips">
-            ${Object.entries(CUSTOM_MARKETS).map(([k,v])=>`<button class="market-chip ${state.customMarket===k?'active':''}" onclick="setCustomMarket('${k}')">${v.label}<small>${v.hint || 'Mercado IA'}</small></button>`).join('')}
+      <div class="ticket-dual-grid">
+        <article class="card ticket-main-card">
+          <div class="topline">
+            <div><h3>Bilhete automático</h3><p>A IA puxou as melhores combinações do dia para o perfil ${riskLabel(risk).toLowerCase()}.</p></div>
+            <div class="ticket-meter"><b>${avgConf}%</b><span>média IA</span></div>
           </div>
-          <div class="market-select-row">
+          ${ticket.map((p,i)=>`<div class="ticket-pro-pick"><div class="game"><div><b>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</b><div class="meta">${safe(p.match.league)} · ${p.confidence}% confiança</div></div><span>${safe(p.entry)}</span></div><div class="meta">Seleção ${i+1} · odd mínima ${p.oddMin.toFixed(2)} · uso ideal para bilhete ${riskLabel(risk).toLowerCase()}</div></div>`).join('')}
+          <div class="confidence"><div class="bar"><i style="width:${avgConf}%"></i></div><small>${avgConf}% média de confiança · odd total estimada ${oddTotal.toFixed(2)}</small></div>
+          <div class="ticket-stats-mini"><div class="mini"><b>${ticket.length}</b><small>seleções</small></div><div class="mini"><b>${oddTotal.toFixed(2)}</b><small>odd total</small></div><div class="mini"><b>${riskLabel(risk)}</b><small>perfil atual</small></div></div>
+          <button class="btn primary wide" onclick="copyTicket('${risk}')">📋 Copiar bilhete automático</button>
+        </article>
+
+        <article class="ticket-custom-card">
+          <div class="head"><div><h3>Gerador personalizado</h3><p>Escolha o mercado, a linha e a quantidade. A IA encontra os jogos mais compatíveis.</p></div><span class="tag gold">Modo cliente</span></div>
+          <div class="builder-tile-grid">
+            ${Object.entries(CUSTOM_MARKETS).map(([k,v])=>`<button class="builder-tile ${state.customMarket===k?'active':''}" onclick="setCustomMarket('${k}')"><b>${v.label}</b><small>${v.hint || 'Mercado IA'}</small></button>`).join('')}
+          </div>
+          <div class="builder-inline-selects">
             <select class="mini-select" onchange="setCustomLine(this.value)">${lineOptions.map(v=>`<option value="${v}" ${state.customLine===v?'selected':''}>${state.customMarket==='ambos_marcam' ? 'Sim' : 'Linha ' + v}</option>`).join('')}</select>
             <select class="mini-select" onchange="setCustomGames(this.value)">${[2,3,4,5,6].map(v=>`<option value="${v}" ${Number(state.customGames)===v?'selected':''}>${v} jogos</option>`).join('')}</select>
             <select class="mini-select" onchange="setRisk(this.value)">${['conservador','moderado','agressivo'].map(v=>`<option value="${v}" ${risk===v?'selected':''}>${riskLabel(v)}</option>`).join('')}</select>
           </div>
-          <div class="personal-actions"><div class="hint-mini">Mercado escolhido: ${marketLabelByKey(state.customMarket)} · linha ${state.customLine}</div><button class="btn gold" onclick="generateCustomTicket()">Gerar Bilhete</button></div>
-        </div>
-      </article>
+          <div class="builder-footer"><div class="hint">Mercado ${marketLabelByKey(state.customMarket)} · linha ${state.customLine} · ${state.customGames} jogos</div><button class="btn gold" onclick="generateCustomTicket()">Gerar Bilhete</button></div>
+        </article>
+      </div>
 
-      ${custom && custom.picks?.length ? `<article class="card tip-card"><div class="ticket-header"><div><span class="risk-badge">🎯 Personalizado</span><div class="card-title" style="margin-top:6px">Bilhete do cliente</div><p class="muted">${marketLabelByKey(custom.market)} · ${custom.games} jogos · ${custom.line}</p></div><div class="opp-score">${Math.round(custom.picks.reduce((a,p)=>a+p.confidence,0)/custom.picks.length)}%</div></div>${custom.picks.map(p=>`<div class="ticket-pick"><div class="pick-main"><span>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</span><b>${safe(p.entry)}</b></div><div class="pick-sub">${safe(p.match.league)} · Odd mín. ${p.oddMin.toFixed(2)} · ${p.confidence}% IA</div></div>`).join('')}<button class="btn primary wide" onclick="copyCustomTicket()">📋 Copiar Personalizado</button></article>` : ''}
+      ${custom && custom.picks?.length ? `<article class="card custom-results-card"><div class="topline"><div><h3>Bilhete do cliente</h3><p>${marketLabelByKey(custom.market)} · ${custom.games} jogos · linha ${custom.line}</p></div><div class="ticket-meter"><b>${Math.round(custom.picks.reduce((a,p)=>a+p.confidence,0)/custom.picks.length)}%</b><span>média IA</span></div></div>${custom.picks.map((p,i)=>`<div class="ticket-pro-pick"><div class="game"><div><b>${safe(p.match.home.name)} x ${safe(p.match.away.name)}</b><div class="meta">${safe(p.match.league)} · ${p.confidence}% confiança</div></div><span>${safe(p.entry)}</span></div><div class="meta">Seleção ${i+1} · odd mínima ${p.oddMin.toFixed(2)} · leitura do mercado ${marketLabelByKey(custom.market).toLowerCase()}</div></div>`).join('')}<button class="btn primary wide" onclick="copyCustomTicket()">📋 Copiar bilhete personalizado</button></article>` : ''}
     </div>
 
-    <div class="notice">No grátis, deixe 1 bilhete aberto. No Premium, libere níveis, scanner ao vivo e IA Prado ilimitada.</div>
+    <div class="notice">No grátis, deixe 1 tipo aberto. No Premium, libere todos os níveis, scanner ao vivo e IA Prado ilimitada.</div>
   `;
 }
+
 
 function setRisk(risk){ state.selectedRisk = risk; localStorage.setItem('prado_risk', risk); renderTips(); toast(`Risco ${riskLabel(risk)} selecionado`, riskIcon(risk)); }
 function copyTicket(risk){
@@ -2425,60 +2526,53 @@ function renderAI(){
   const options = filteredMatches().map(m=>`<option value="${m.id}">${safe(m.home.name)} x ${safe(m.away.name)} · ${safe(m.league)}</option>`).join('');
   const best = filteredPredictions()[0];
   $('#page-ai').innerHTML = `
-    <div class="card ai-hero-card pro">
-      <div class="ai-hero-head">
-        <div>
-          <div class="eyebrow">IA Prado Pro</div>
-          <div class="card-title">Central forte de análise</div>
-          <div class="ai-hero-sub">Peça o jogo e o tipo de retorno. A IA cruza forma, pressão, gols, escanteios, cartões, status, lineup e valor da odd para devolver entrada principal, plano B e gatilho ao vivo.</div>
+    <div class="ai-luxe-shell">
+      <article class="ai-luxe-top">
+        <div class="ai-luxe-head">
+          <div>
+            <h2>IA Prado avançada</h2>
+            <p>Uma leitura visual de app pago: entrada principal, cenário ideal, plano B e gatilho ao vivo para o jogo escolhido.</p>
+          </div>
+          <div class="ai-luxe-badge">Motor Pro</div>
         </div>
-        <div class="ai-orb">🤖</div>
-      </div>
-      <div class="ai-metrics">
-        <div class="ai-metric"><b>${filteredPredictions().length}</b><small>leituras no motor</small></div>
-        <div class="ai-metric"><b>${best ? best.confidence+'%' : '0%'}</b><small>top confiança</small></div>
-        <div class="ai-metric"><b>${filteredMatches().filter(m=>m.status==='live').length}</b><small>jogos ao vivo</small></div>
-      </div>
-      <div class="ai-command-grid rich">
-        <button class="ai-command" onclick="setAIIntent('segura')"><span>🛡️</span>Entrada segura<small>Proteção</small></button>
-        <button class="ai-command" onclick="setAIIntent('valor')"><span>🎯</span>Top valor<small>Odd boa</small></button>
-        <button class="ai-command" onclick="setAIIntent('agressiva')"><span>🔥</span>Agressiva<small>Mais retorno</small></button>
-        <button class="ai-command" onclick="setAIIntent('gols')"><span>⚽</span>Mercado gols<small>Over/BTTS</small></button>
-        <button class="ai-command" onclick="setAIIntent('escanteios')"><span>📐</span>Escanteios<small>Volume</small></button>
-        <button class="ai-command" onclick="setAIIntent('cartoes')"><span>🟨</span>Cartões<small>Disciplina</small></button>
-      </div>
-      <div class="form-grid">
-        <select id="aiMatch" class="field">${options}</select>
-        <select id="aiReturn" class="field">
-          <option value="segura">Entrada mais segura</option>
-          <option value="valor">Melhor valor da odd</option>
-          <option value="agressiva">Entrada agressiva</option>
-          <option value="gols">Mercado de gols</option>
-          <option value="escanteios">Mercado de escanteios</option>
-          <option value="cartoes">Mercado de cartões</option>
-        </select>
-        <textarea id="aiPrompt" class="field textarea" placeholder="Ex: Quero uma entrada segura, odd mínima 1.40, para usar em bilhete"></textarea>
-        <button class="btn primary wide" onclick="generateAIAnswer()">Gerar análise IA</button>
-      </div>
-      <div id="aiAnswer" class="ai-answer pro hidden"></div>
-    </div>
+        <div class="ai-luxe-kpis">
+          <div class="ai-luxe-kpi"><b>${filteredPredictions().length}</b><small>leituras no motor</small></div>
+          <div class="ai-luxe-kpi"><b>${best ? best.confidence+'%' : '0%'}</b><small>top confiança</small></div>
+          <div class="ai-luxe-kpi"><b>${filteredMatches().filter(m=>m.status==='live').length}</b><small>jogos ao vivo</small></div>
+          <div class="ai-luxe-kpi"><b>Plano B</b><small>incluído na resposta</small></div>
+        </div>
+        <div class="ai-scenario-grid">
+          <button class="ai-scenario" onclick="setAIIntent('segura')"><b>Entrada segura</b><small>Mais proteção</small></button>
+          <button class="ai-scenario" onclick="setAIIntent('valor')"><b>Top valor</b><small>Odd interessante</small></button>
+          <button class="ai-scenario" onclick="setAIIntent('agressiva')"><b>Modo agressivo</b><small>Mais retorno</small></button>
+          <button class="ai-scenario" onclick="setAIIntent('gols')"><b>Mercado de gols</b><small>Over e BTTS</small></button>
+          <button class="ai-scenario" onclick="setAIIntent('escanteios')"><b>Escanteios</b><small>Volume e pressão</small></button>
+          <button class="ai-scenario" onclick="setAIIntent('cartoes')"><b>Cartões</b><small>Disciplina e ritmo</small></button>
+        </div>
+        <div class="form-grid">
+          <select id="aiMatch" class="field">${options}</select>
+          <select id="aiReturn" class="field">
+            <option value="segura">Entrada mais segura</option>
+            <option value="valor">Melhor valor da odd</option>
+            <option value="agressiva">Entrada agressiva</option>
+            <option value="gols">Mercado de gols</option>
+            <option value="escanteios">Mercado de escanteios</option>
+            <option value="cartoes">Mercado de cartões</option>
+          </select>
+          <textarea id="aiPrompt" class="field textarea" placeholder="Ex: Quero uma entrada para bilhete com odd mínima 1.45 e plano B caso a odd caia."></textarea>
+          <button class="btn primary wide" onclick="generateAIAnswer()">Gerar análise IA</button>
+        </div>
+        <div id="aiAnswer" class="ai-luxe-answer hidden"></div>
+      </article>
 
-    ${best ? `<div class="card compact mini-note" style="margin-top:10px"><div class="card-title">Sugestão rápida</div><p class="muted">${safe(best.match.home.name)} x ${safe(best.match.away.name)} · ${safe(best.entry)} · ${best.confidence}% confiança</p><button class="btn secondary wide" onclick="openMatchAI('${best.match.id}')">Usar esse jogo na IA</button></div>` : ''}
-
-    <div class="card compact" style="margin-top:10px">
-      <div class="card-title">Motor de dados inteligente</div>
-      <div class="ai-signal-grid">
-        <div class="ai-signal"><b>Forma</b><small>Casa/fora</small></div>
-        <div class="ai-signal"><b>Pressão</b><small>Ao vivo</small></div>
-        <div class="ai-signal"><b>Odd</b><small>Valor</small></div>
-        <div class="ai-signal"><b>Gols</b><small>xG/médias</small></div>
-        <div class="ai-signal"><b>Cantos</b><small>Volume</small></div>
-        <div class="ai-signal"><b>Cards</b><small>Risco</small></div>
+      <div class="ai-luxe-bottom">
+        ${best ? `<article class="card compact"><div class="card-title">Radar rápido</div><p class="muted">${safe(best.match.home.name)} x ${safe(best.match.away.name)} · ${safe(best.entry)} · ${best.confidence}% de confiança.</p><button class="btn secondary wide" onclick="openMatchAI('${best.match.id}')">Usar esse jogo</button></article>` : ''}
+        <article class="card compact"><div class="card-title">Motor da IA</div><div class="ai-signal-grid"><div class="ai-signal"><b>Forma</b><small>Casa/fora</small></div><div class="ai-signal"><b>Pressão</b><small>Ao vivo</small></div><div class="ai-signal"><b>Gols</b><small>xG e médias</small></div><div class="ai-signal"><b>Cantos</b><small>Volume</small></div><div class="ai-signal"><b>Cards</b><small>Risco</small></div><div class="ai-signal"><b>Lineup</b><small>Status</small></div></div><div class="source-row"><span class="tag green">Pré-jogo</span><span class="tag green">Ao vivo</span><span class="tag gold">Plano B</span><span class="tag">Gestão</span></div></article>
       </div>
-      <div class="source-row"><span class="tag green">Pré-jogo</span><span class="tag green">Ao vivo</span><span class="tag gold">Principais ligas</span><span class="tag">50+ fontes preparado</span></div>
     </div>
   `;
 }
+
 
 function pickForIntent(pred, intent){
   const m = pred.match; const s = m.stats || {};
@@ -2502,43 +2596,37 @@ function generateAIAnswer(){
   if(!pred) return;
   const playbook = buildAIPlaybook(pred, intent);
   const chosen = playbook.primary;
-  const conf = clamp(Math.round(pred.confidence + (intent==='segura'?4:intent==='agressiva'?-8:0)), 52, 94);
+  const conf = clamp(Math.round(pred.confidence + (intent==='segura'?4:intent==='agressiva'?-6:0)), 52, 94);
   const m = pred.match;
+  const s = m.stats || {};
   const answer = $('#aiAnswer');
   answer.classList.remove('hidden');
   answer.innerHTML = `
-    <div class="eyebrow">Leitura premium da IA</div>
-    <div class="ai-primary-line"><div><div class="answer-entry">${safe(chosen.entry)}</div><div class="pick-sub">${safe(m.home.name)} x ${safe(m.away.name)} · ${safe(m.league)} · Odd mínima ${chosen.odd.toFixed(2)}</div></div><div class="ai-badge-score">${conf}%</div></div>
-    <div class="ai-signal-grid">
-      <div class="ai-signal"><b>${conf}%</b><small>Confiança</small></div>
-      <div class="ai-signal"><b>${chosen.odd.toFixed(2)}</b><small>Odd mín.</small></div>
-      <div class="ai-signal"><b>${(m.stats||{}).pressure || 70}%</b><small>Pressão</small></div>
-      <div class="ai-signal"><b>${(m.stats||{}).cornersAvg || '-'}</b><small>Escanteios</small></div>
-    </div>
-    <div class="ai-plan-grid">
-      <div class="ai-plan"><b>Entrada principal</b><span>${safe(playbook.primary.entry)}</span><small>Mais alinhada com o objetivo escolhido.</small></div>
-      <div class="ai-plan"><b>Plano B</b><span>${safe(playbook.backup.entry)}</span><small>Alternativa caso a odd principal caia.</small></div>
-      <div class="ai-plan"><b>Gatilho ao vivo</b><span>${safe(playbook.live.entry)}</span><small>Boa opção para usar durante a partida.</small></div>
-    </div>
-    <div class="confidence"><div class="bar"><i style="width:${conf}%"></i></div><small>${conf}% IA</small></div>
-    <ul class="reason-list">
-      <li><b>Motivo principal:</b> ${safe(pred.reasons[0])}</li>
-      <li><b>Leitura do jogo:</b> ${safe(pred.reasons[1])}</li>
-      <li><b>Status:</b> ${m.status === 'live' ? `ao vivo aos ${m.minute || 0} minutos, leitura prioriza pressão atual.` : 'pré-jogo com foco em forma, mando e tendência.'}</li>
-      <li><b>Escalação:</b> ${(m.stats || {}).lineupReady ? 'confirmada e entrando no cálculo.' : 'ainda não confirmada; revisar perto do jogo.'}</li>
-    </ul>
-    <div class="ai-compact-box">
-      <div class="card-title">Gatilhos para entrar</div>
-      <div class="ai-trigger-list">
-        <div class="ai-trigger"><span>Se a pressão passar de <b>75%</b></span><span>melhora o cenário</span></div>
-        <div class="ai-trigger"><span>Se a odd ficar acima de <b>${chosen.odd.toFixed(2)}</b></span><span>valor mais interessante</span></div>
-        <div class="ai-trigger"><span>Se o jogo abrir com volume ofensivo</span><span>entrada ganha força</span></div>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Leitura premium da IA</div>
+        <div class="entry">${safe(chosen.entry)}</div>
+        <p>${safe(m.home.name)} x ${safe(m.away.name)} · ${safe(m.league)} · odd mínima ${chosen.odd.toFixed(2)}</p>
       </div>
+      <div class="score"><b>${conf}%</b><span>confiança</span></div>
     </div>
-    <div class="market-tags"><span class="tag green">${safe(intent)}</span><span class="tag gold">${safe(pred.source)}</span><span class="tag">Sem garantia</span></div>
+    <div class="ai-luxe-pills"><span class="pill">${safe(intent)}</span><span class="pill">${safe(pred.source)}</span><span class="pill">Pressão ${(s.pressure || 70)}%</span><span class="pill">xG ${s.xg || '1.20'}</span></div>
+    <div class="confidence"><div class="bar"><i style="width:${conf}%"></i></div><small>${conf}% IA · leitura principal do cenário atual</small></div>
+    <div class="ai-luxe-plan">
+      <div class="plan"><b>Entrada principal</b><span>${safe(playbook.primary.entry)}</span><small>Mais alinhada ao objetivo escolhido.</small></div>
+      <div class="plan"><b>Plano B</b><span>${safe(playbook.backup.entry)}</span><small>Alternativa se a odd principal não compensar.</small></div>
+      <div class="plan"><b>Gatilho ao vivo</b><span>${safe(playbook.live.entry)}</span><small>Boa ativação quando o jogo ganhar volume.</small></div>
+    </div>
+    <div class="ai-luxe-reasons">
+      <div class="ai-luxe-reason"><b>Motivo principal:</b> ${safe(pred.reasons[0])}</div>
+      <div class="ai-luxe-reason"><b>Leitura do confronto:</b> ${safe(pred.reasons[1])}</div>
+      <div class="ai-luxe-reason"><b>Status do jogo:</b> ${m.status === 'live' ? `ao vivo aos ${m.minute || 0} minutos, priorizando momento e pressão atual.` : 'pré-jogo com foco em forma, mando, tendência estatística e confirmação de escalação.'}</div>
+      <div class="ai-luxe-reason"><b>Gestão sugerida:</b> ${intent==='agressiva' ? 'stake menor, porque a escolha busca mais retorno.' : 'entrada útil para compor bilhete com gestão moderada.'}</div>
+    </div>
     <button class="btn secondary wide" onclick="copyAIEntry('${safe(chosen.entry)}','${safe(m.home.name)} x ${safe(m.away.name)}',${conf},${chosen.odd})">📋 Copiar análise</button>
   `;
 }
+
 
 function copyAIEntry(entry, game, conf, odd){
   const text = `IA Prado — ${game}
