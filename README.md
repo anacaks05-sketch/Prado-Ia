@@ -1,25 +1,24 @@
-# Prado Sports AI — V16.6.1 Scanner Compacto
+# Prado Sports AI — V16.6.2 Scanner Ultra Compacto
 
 ## Correção
-A aba Scanner estava grande demais no iPhone. Esta versão deixa tudo menor e mais organizado.
+A V16.6.1 ainda ficou parecida e grande. Esta versão foi refeita a partir da base aprovada anterior, sem herdar o Scanner grande.
 
 ## Alterado
 - Somente a aba Scanner.
-- Topo menor.
+- Hero muito menor.
 - KPIs menores.
-- Filtros menores.
-- Cards de oportunidades compactos.
-- Removidos cards pequenos em grade que embolavam texto.
-- Botões e números reduzidos para caber melhor no celular.
+- Cards bem mais baixos.
+- Removido círculo grande de confiança.
+- Removidos cards pequenos que embolavam.
+- Texto e botões reduzidos para iPhone.
 
 ## Não alterado
 - Home
 - Ao vivo
 - IA
 - Bilhetes
-- Configurações
 - Botão flutuante
 - Menu inferior
 
 ## Teste
-Use: ?v=16-6-1
+Use: ?v=16-6-2
