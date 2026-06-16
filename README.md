@@ -1,23 +1,20 @@
-# Prado Sports AI — V16.13 WhatsApp com Mensagem
+# Prado Sports AI — V16.14 Escudos Premium
 
 ## Alterado
-- Botão de WhatsApp agora abre conversa com mensagem pronta.
-- Mensagem configurada:
-  "Olá, vim pelo Prado Sports AI e quero liberar meu acesso premium. Pode me ajudar?"
-
-## Dados mantidos
-- Link de pagamento: https://mpago.la/1SzQVkr
-- WhatsApp: 5598982356674
+- Corrigidos escudos/ícones dos times.
+- Quando o escudo real não carregar, aparece um brasão premium com iniciais do time.
+- Remove visual de ícone quebrado com "?".
 
 ## Não alterado
-- Visual aprovado.
-- Splash.
-- Home.
-- Ao vivo.
-- IA.
-- Favoritos.
-- Bilhetes.
-- Validação premium por CSV.
+- Splash
+- Home
+- Ao vivo
+- IA
+- Favoritos
+- Bilhetes
+- Configurações
+- Link de pagamento
+- WhatsApp com mensagem
 
 ## Teste
-Use: ?v=16-13
+Use: ?v=16-14

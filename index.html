@@ -4349,6 +4349,63 @@ body[data-page="favorites"] #page-favorites{padding-bottom:96px}
   }
 }
 
+
+/* ===== V16.14 — ESCUDOS PREMIUM / SEM ÍCONE QUEBRADO ===== */
+.crest.crest-pro{
+  display:inline-grid !important;
+  place-items:center !important;
+  position:relative !important;
+  overflow:hidden !important;
+  padding:0 !important;
+  border-radius:11px !important;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,224,110,.18), transparent 34%),
+    radial-gradient(circle at 80% 100%, rgba(33,230,161,.14), transparent 38%),
+    linear-gradient(145deg, rgba(25,35,48,.96), rgba(10,16,24,.99)) !important;
+  border:1px solid rgba(255,255,255,.12) !important;
+  box-shadow:0 8px 16px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.14) !important;
+  color:var(--gold) !important;
+  flex:0 0 auto !important;
+}
+.crest.crest-pro::after{
+  content:"";
+  position:absolute;
+  inset:3px;
+  border-radius:9px;
+  border:1px solid rgba(255,255,255,.055);
+  pointer-events:none;
+}
+.crest.crest-pro img{
+  grid-area:1/1;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  padding:4px;
+  position:relative;
+  z-index:2;
+  background:rgba(255,255,255,.025);
+}
+.crest.crest-pro b{
+  grid-area:1/1;
+  position:relative;
+  z-index:1;
+  font-family:'Space Grotesk',Inter,sans-serif;
+  font-size:calc(var(--crest-size, 30px) * .36);
+  line-height:1;
+  letter-spacing:-.04em;
+  font-weight:900;
+  color:var(--gold);
+  text-shadow:0 0 14px rgba(255,224,110,.22);
+}
+.crest.crest-pro.no-img{
+  background:
+    radial-gradient(circle at 35% 20%, rgba(255,224,110,.22), transparent 34%),
+    linear-gradient(145deg, rgba(30,37,47,.96), rgba(8,13,20,.99)) !important;
+}
+.tickets-v167-teams .crest.crest-pro{
+  border-radius:10px !important;
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -5067,9 +5124,22 @@ function filteredPredictions(){
   return state.predictions.filter(p=>ids.has(p.matchId));
 }
 
+function teamInitials(name){
+  const text = String(name || '').replace(/[^A-Za-zÀ-ÿ0-9\s-]/g,'').trim();
+  if(!text) return 'P';
+  const parts = text.split(/[\s-]+/).filter(Boolean);
+  if(parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+  return text.slice(0,2).toUpperCase();
+}
 function crestHTML(team, size=30){
-  const l = logo(team);
-  return l ? `<img class="crest" style="width:${size}px;height:${size}px" src="${safe(l)}" alt="${safe(team.name)}">` : `<span class="crest" style="width:${size}px;height:${size}px;display:grid;place-items:center">⚽</span>`;
+  const name = team?.name || 'Time';
+  const initials = safe(teamInitials(name));
+  const src = logo(team);
+  const baseStyle = `--crest-size:${size}px;width:${size}px;height:${size}px`;
+  if(src){
+    return `<span class="crest crest-pro" style="${baseStyle}"><img src="${safe(src)}" alt="${safe(name)}" onerror="this.remove();this.parentElement.classList.add('no-img')"><b>${initials}</b></span>`;
+  }
+  return `<span class="crest crest-pro no-img" style="${baseStyle}" aria-label="${safe(name)}"><b>${initials}</b></span>`;
 }
 function sectionHead(title, link='', onclick=''){
   return `<div class="section-head"><div class="section-title">${title}</div>${link ? `<button class="section-link" onclick="${onclick}">${link}</button>` : ''}</div>`;
