@@ -4874,6 +4874,199 @@ body[data-page="live"] .live-v1617-groups{
   .premium-v1618-price b{font-size:31px}
 }
 
+
+/* ===== V16.19 — CONFIGURAÇÕES FULL + TEMA CLARO/ESCURO ===== */
+#settingsModal.settings-premium-modal{
+  width:min(520px,calc(100vw - 14px)) !important;
+  height:calc(100dvh - 18px) !important;
+  max-height:none !important;
+  margin:auto !important;
+  border-radius:28px !important;
+  overflow:hidden !important;
+}
+#settingsModal.settings-premium-modal[open]{
+  display:flex !important;
+  flex-direction:column !important;
+}
+#settingsModal.settings-premium-modal .modal-head{
+  flex:0 0 auto !important;
+  padding:20px 20px 18px !important;
+}
+#settingsModal.settings-premium-modal .settings-pro{
+  flex:1 1 auto !important;
+  overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch !important;
+  padding:14px 14px calc(22px + var(--safe-bottom)) !important;
+}
+#settingsModal.settings-premium-modal .settings-pro::-webkit-scrollbar{
+  width:0;
+  height:0;
+}
+.theme-v1619-card{
+  border-color:rgba(33,230,161,.18) !important;
+}
+.theme-v1619-options{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:9px;
+}
+.theme-v1619-option{
+  min-height:58px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.045);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  font-weight:900;
+  font-size:13px;
+}
+.theme-v1619-option .ico{
+  font-size:20px;
+}
+.theme-v1619-option .check{
+  display:none;
+  color:var(--green);
+  font-size:17px;
+}
+.theme-v1619-option.active{
+  border-color:rgba(33,230,161,.75);
+  background:linear-gradient(145deg,rgba(33,230,161,.16),rgba(255,255,255,.04));
+  box-shadow:0 0 0 1px rgba(33,230,161,.18), 0 12px 30px rgba(33,230,161,.08);
+}
+.theme-v1619-option.active .check{
+  display:inline;
+}
+.premium-v1618-benefits{
+  grid-template-columns:1fr !important;
+}
+
+/* Tema claro global — primeira versão */
+body[data-theme="light"]{
+  --bg:#F6F8FC;
+  --bg2:#FFFFFF;
+  --surface:#FFFFFF;
+  --surface2:#F2F5FA;
+  --surface3:#E8EDF5;
+  --line:rgba(15,23,42,.12);
+  --line2:rgba(15,23,42,.18);
+  --text:#0D1724;
+  --muted:#5E6B7A;
+  --faint:#7A8795;
+  color-scheme:light;
+  background:
+    radial-gradient(circle at 8% 0%,rgba(255,224,110,.18),transparent 28%),
+    radial-gradient(circle at 92% 0%,rgba(33,230,161,.12),transparent 30%),
+    linear-gradient(180deg,#F7F9FD,#EEF3F8 52%,#F7F9FD) !important;
+  color:var(--text) !important;
+}
+body[data-theme="light"] .topbar,
+body[data-theme="light"] .bottom-nav{
+  background:rgba(255,255,255,.92) !important;
+  border-color:rgba(15,23,42,.10) !important;
+  color:#0D1724 !important;
+}
+body[data-theme="light"] .bottom-nav:before{
+  background:radial-gradient(circle at 50% 0%,rgba(255,224,110,.18),transparent 55%) !important;
+}
+body[data-theme="light"] .card,
+body[data-theme="light"] .compact,
+body[data-theme="light"] .match-row,
+body[data-theme="light"] .live-v1617-group,
+body[data-theme="light"] .live-v153-card,
+body[data-theme="light"] .live-v153-up-row,
+body[data-theme="light"] .settings-pro-card,
+body[data-theme="light"] .modal{
+  background:linear-gradient(145deg,rgba(255,255,255,.98),rgba(239,244,250,.98)) !important;
+  border-color:rgba(15,23,42,.12) !important;
+  box-shadow:0 16px 38px rgba(15,23,42,.08), inset 0 1px 0 rgba(255,255,255,.75) !important;
+}
+body[data-theme="light"] #settingsModal.settings-premium-modal{
+  background:
+    radial-gradient(circle at 8% 4%,rgba(33,230,161,.10),transparent 28%),
+    linear-gradient(145deg,rgba(255,255,255,.99),rgba(239,244,250,.99)) !important;
+}
+body[data-theme="light"] #settingsModal.settings-premium-modal .modal-head{
+  background:linear-gradient(145deg,#FFFFFF,#EEF3F9) !important;
+  border-bottom:1px solid rgba(15,23,42,.10) !important;
+}
+body[data-theme="light"] .premium-v1618{
+  background:
+    radial-gradient(circle at 88% 8%,rgba(255,224,110,.30),transparent 30%),
+    radial-gradient(circle at 8% 96%,rgba(33,230,161,.16),transparent 36%),
+    linear-gradient(150deg,rgba(255,247,208,.96),rgba(255,255,255,.99)) !important;
+  border-color:rgba(201,148,47,.28) !important;
+}
+body[data-theme="light"] .premium-v1618-code,
+body[data-theme="light"] .premium-v1618-benefit,
+body[data-theme="light"] .settings-pro-line,
+body[data-theme="light"] .switch-row,
+body[data-theme="light"] .support-row,
+body[data-theme="light"] .theme-v1619-option{
+  background:rgba(15,23,42,.035) !important;
+  border-color:rgba(15,23,42,.10) !important;
+}
+body[data-theme="light"] h1,
+body[data-theme="light"] h2,
+body[data-theme="light"] h3,
+body[data-theme="light"] .card-title,
+body[data-theme="light"] .section-title,
+body[data-theme="light"] .team-name,
+body[data-theme="light"] .live-v1617-league,
+body[data-theme="light"] .premium-v1618 h3,
+body[data-theme="light"] .premium-v1618-benefit b,
+body[data-theme="light"] .premium-v1618-code-title,
+body[data-theme="light"] .settings-pro-title h3,
+body[data-theme="light"] .brand-line strong{
+  color:#0D1724 !important;
+}
+body[data-theme="light"] .muted,
+body[data-theme="light"] .premium-v1618-sub,
+body[data-theme="light"] .premium-v1618-mini,
+body[data-theme="light"] .premium-v1618-benefit small,
+body[data-theme="light"] .settings-pro-title p,
+body[data-theme="light"] .live-v1617-country,
+body[data-theme="light"] .responsible-text{
+  color:#5E6B7A !important;
+}
+body[data-theme="light"] input,
+body[data-theme="light"] select,
+body[data-theme="light"] textarea,
+body[data-theme="light"] .field{
+  background:#FFFFFF !important;
+  color:#0D1724 !important;
+  border-color:rgba(15,23,42,.16) !important;
+}
+body[data-theme="light"] input::placeholder{
+  color:#8995A3 !important;
+}
+body[data-theme="light"] .modal::backdrop{
+  background:rgba(15,23,42,.22) !important;
+  backdrop-filter:blur(8px);
+}
+body[data-theme="light"] .theme-v1619-option{
+  color:#0D1724 !important;
+}
+body[data-theme="light"] .theme-v1619-option.active{
+  background:linear-gradient(145deg,rgba(33,230,161,.14),rgba(255,255,255,.85)) !important;
+  border-color:rgba(33,230,161,.55) !important;
+}
+@media(max-width:430px){
+  #settingsModal.settings-premium-modal{
+    width:calc(100vw - 10px) !important;
+    height:calc(100dvh - 10px) !important;
+    border-radius:24px !important;
+  }
+  #settingsModal.settings-premium-modal .modal-head{
+    padding:18px 16px 15px !important;
+  }
+  #settingsModal.settings-premium-modal .settings-pro{
+    padding:12px 10px calc(18px + var(--safe-bottom)) !important;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -4990,6 +5183,20 @@ body[data-page="live"] .live-v1617-groups{
     </div>
 
     <div class="settings-grid settings-pro">
+      <section class="settings-pro-card theme-v1619-card">
+        <div class="settings-pro-title">
+          <div class="settings-pro-icon">🎨</div>
+          <div>
+            <h3>Tema do app</h3>
+            <p>Escolha o visual que combina melhor com você.</p>
+          </div>
+        </div>
+        <div class="theme-v1619-options">
+          <button class="theme-v1619-option" data-theme="dark" onclick="setAppTheme('dark')"><span class="ico">🌙</span><span>Tema escuro</span><span class="check">✓</span></button>
+          <button class="theme-v1619-option" data-theme="light" onclick="setAppTheme('light')"><span class="ico">☀️</span><span>Tema claro</span><span class="check">✓</span></button>
+        </div>
+      </section>
+
       <section class="settings-pro-card notifications-card">
         <div class="settings-pro-title">
           <div class="settings-pro-icon">🔔</div>
@@ -5016,7 +5223,7 @@ body[data-page="live"] .live-v1617-groups{
             <h3>Desbloqueie a IA completa</h3>
           </div>
         </div>
-        <p class="premium-v1618-sub">Tenha bilhetes automáticos, leitura ao vivo, favoritos organizados e análises avançadas por apenas:</p>
+        <p class="premium-v1618-sub">Tenha bilhetes automáticos, leitura ao vivo e análises avançadas por apenas:</p>
         <div class="premium-v1618-price">
           <b>R$ 19,90</b><span>/ mês</span>
         </div>
@@ -5024,7 +5231,6 @@ body[data-page="live"] .live-v1617-groups{
           <div class="premium-v1618-benefit"><i>🎟️</i><div><b>Bilhetes IA</b><small>Conservador, moderado e agressivo</small></div></div>
           <div class="premium-v1618-benefit"><i>🤖</i><div><b>IA Prado</b><small>Análise pronta por jogo</small></div></div>
           <div class="premium-v1618-benefit"><i>📡</i><div><b>Ao vivo Pro</b><small>Oportunidades em tempo real</small></div></div>
-          <div class="premium-v1618-benefit"><i>⭐</i><div><b>Favoritos</b><small>Times e ligas organizados</small></div></div>
         </div>
         <div class="premium-v1618-actions">
           <button class="btn gold wide" onclick="openPayment()">👑 Liberar Premium agora</button>
@@ -6778,6 +6984,25 @@ function initFavoritesSettings(){
   if(state.page === 'favorites') renderFavorites();
 }
 
+
+function getAppTheme(){
+  return localStorage.getItem('prado_theme') || 'dark';
+}
+function updateThemeButtons(){
+  const current = document.body.dataset.theme || getAppTheme();
+  $$('.theme-v1619-option').forEach(btn=>btn.classList.toggle('active', btn.dataset.theme === current));
+}
+function applyAppTheme(theme){
+  const next = theme === 'light' ? 'light' : 'dark';
+  document.body.dataset.theme = next;
+  localStorage.setItem('prado_theme', next);
+  updateThemeButtons();
+}
+function setAppTheme(theme){
+  applyAppTheme(theme);
+  toast(theme === 'light' ? 'Tema claro ativado' : 'Tema escuro ativado', theme === 'light' ? '☀️' : '🌙');
+}
+
 function bindEvents(){
   $('#enterApp')?.addEventListener('click', () => { showAppIntro(); });
   $('#startQuiz')?.addEventListener('click', () => { showAppIntro(openQuiz); });
@@ -6814,7 +7039,7 @@ function bindEvents(){
   const settings = $('#settingsModal');
   const notificationsModal = $('#notificationsModal');
   const quizModal = $('#quizModal');
-  const openModal = (dlg)=>{ if(!dlg) return; document.body.classList.add('modal-open'); dlg.showModal(); };
+  const openModal = (dlg)=>{ if(!dlg) return; document.body.classList.add('modal-open'); dlg.showModal(); updateThemeButtons(); };
   const closeModal = (dlg)=>{ if(!dlg) return; dlg.close(); document.body.classList.remove('modal-open'); };
   $('#openSettingsMini')?.addEventListener('click',()=>openModal(settings));
   window.openNotifications = ()=>openModal(notificationsModal);
@@ -7135,6 +7360,7 @@ window.setScannerFilter = setScannerFilter;
 window.unlockPremium = unlockPremium;
 window.openPayment = openPayment;
 window.openSupportWhatsApp = openSupportWhatsApp;
+window.setAppTheme = setAppTheme;
 window.toggleLiveGroup = toggleLiveGroup;
 window.answerQuiz = answerQuiz;
 window.openFloatingAIChat = openFloatingAIChat;
@@ -7142,6 +7368,7 @@ window.closeFloatingAIChat = closeFloatingAIChat;
 window.sendFloatingAIQuick = sendFloatingAIQuick;
 window.sendFloatingAIMessage = sendFloatingAIMessage;
 
+applyAppTheme(getAppTheme());
 initFloatingAIChat();
 makeFloatingDraggable($('#floatingAI'));
 bindEvents();
