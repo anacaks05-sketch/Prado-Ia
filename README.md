@@ -1,11 +1,11 @@
-# Prado Sports AI — V16.19 Config Full + Tema
+# Prado Sports AI — V16.19.1 Config Full Corrigido
 
 ## Alterado
-- Configurações agora abre maior, ocupando praticamente a tela inteira do celular.
-- Adicionado seletor de Tema Escuro / Tema Claro.
-- O tema escolhido fica salvo no aparelho.
-- Removido o card Favoritos do bloco Premium.
-- Premium manteve foco em Bilhetes IA, IA Prado e Ao vivo Pro.
+- Corrigido o problema dos cards de Configurações ficando cortados.
+- Configurações continua em tela quase inteira.
+- Cards agora abrem com altura correta.
+- Tema do app aparece completo.
+- Premium aparece completo sem cortar conteúdo.
 
 ## Não alterado
 - Splash
@@ -18,8 +18,5 @@
 - Pagamento
 - WhatsApp com mensagem
 
-## Observação
-Esta é a primeira etapa do tema claro. Depois podemos revisar cada aba no tema branco, uma por vez.
-
 ## Teste
-Use: ?v=16-19
+Use: ?v=16-19-1

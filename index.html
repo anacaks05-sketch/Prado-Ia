@@ -5067,6 +5067,105 @@ body[data-theme="light"] .theme-v1619-option.active{
   }
 }
 
+
+/* ===== V16.19.1 — CORREÇÃO CONFIG FULL / CARDS SEM CORTAR ===== */
+#settingsModal.settings-premium-modal{
+  width:min(540px,calc(100vw - 8px)) !important;
+  height:calc(100dvh - 8px) !important;
+  max-height:none !important;
+  border-radius:24px !important;
+}
+#settingsModal.settings-premium-modal[open]{
+  display:flex !important;
+  flex-direction:column !important;
+}
+#settingsModal.settings-premium-modal .modal-head{
+  flex:0 0 auto !important;
+  padding:18px 18px 16px !important;
+}
+#settingsModal.settings-premium-modal .settings-pro{
+  flex:1 1 auto !important;
+  min-height:0 !important;
+  overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:stretch !important;
+  gap:12px !important;
+  padding:14px 14px calc(24px + var(--safe-bottom)) !important;
+}
+#settingsModal.settings-premium-modal .settings-pro > .settings-pro-card{
+  flex:0 0 auto !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:unset !important;
+  max-height:none !important;
+  overflow:hidden !important;
+  padding:14px !important;
+}
+#settingsModal.settings-premium-modal .theme-v1619-card{
+  min-height:154px !important;
+}
+#settingsModal.settings-premium-modal .theme-v1619-options{
+  margin-top:10px !important;
+}
+#settingsModal.settings-premium-modal .premium-v1618{
+  min-height:auto !important;
+  padding:16px !important;
+}
+#settingsModal.settings-premium-modal .premium-v1618-head{
+  margin-bottom:10px !important;
+}
+#settingsModal.settings-premium-modal .premium-v1618-sub{
+  margin-bottom:10px !important;
+}
+#settingsModal.settings-premium-modal .premium-v1618-price{
+  margin-bottom:10px !important;
+}
+#settingsModal.settings-premium-modal .premium-v1618-benefits{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:8px !important;
+  margin-bottom:11px !important;
+}
+#settingsModal.settings-premium-modal .premium-v1618-benefit{
+  min-height:52px !important;
+}
+#settingsModal.settings-premium-modal .premium-v1618-actions .btn{
+  min-height:46px !important;
+}
+#settingsModal.settings-premium-modal .premium-v1618-code{
+  margin-top:9px !important;
+}
+#settingsModal.settings-premium-modal .support-list,
+#settingsModal.settings-premium-modal .settings-switch-list{
+  display:grid !important;
+  gap:0 !important;
+}
+@media(max-width:430px){
+  #settingsModal.settings-premium-modal{
+    width:calc(100vw - 8px) !important;
+    height:calc(100dvh - 8px) !important;
+    border-radius:22px !important;
+  }
+  #settingsModal.settings-premium-modal .modal-head{
+    padding:17px 16px 15px !important;
+  }
+  #settingsModal.settings-premium-modal .settings-pro{
+    padding:12px 10px calc(22px + var(--safe-bottom)) !important;
+    gap:11px !important;
+  }
+  #settingsModal.settings-premium-modal .settings-pro > .settings-pro-card{
+    padding:13px !important;
+  }
+  #settingsModal.settings-premium-modal .premium-v1618 h3{
+    font-size:21px !important;
+  }
+  #settingsModal.settings-premium-modal .premium-v1618-price b{
+    font-size:30px !important;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
