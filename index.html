@@ -3615,6 +3615,169 @@ body[data-page="tips"] .tickets-v167-ready .ready-badge{
   line-height:1.35;
 }
 
+
+/* ===== V16.8.2 — CONFIGURAÇÕES / FAVORITOS ===== */
+#settingsModal.settings-premium-modal .favorites-card{
+  border-color:rgba(33,230,161,.20);
+}
+#settingsModal.settings-premium-modal .fav-team-row{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:8px;
+  align-items:center;
+  margin-top:8px;
+}
+#settingsModal.settings-premium-modal .fav-team-row .field{
+  min-height:42px !important;
+  border-radius:14px !important;
+  font-size:16px !important;
+}
+#settingsModal.settings-premium-modal .fav-save{
+  min-height:42px;
+  padding:0 13px;
+  border:0;
+  border-radius:14px;
+  color:#06120d;
+  background:linear-gradient(135deg,#20e698,#7affcc);
+  font-weight:900;
+  font-size:11px;
+}
+#settingsModal.settings-premium-modal .fav-label{
+  margin:11px 0 7px;
+  color:#dfe7ef;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+#settingsModal.settings-premium-modal .fav-chips{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+}
+#settingsModal.settings-premium-modal .fav-chip{
+  min-height:32px;
+  border-radius:999px;
+  padding:0 10px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  color:#eaf0f8;
+  font-size:10px;
+  font-weight:900;
+}
+#settingsModal.settings-premium-modal .fav-chip.active{
+  background:rgba(33,230,161,.13);
+  color:var(--green);
+  border-color:rgba(33,230,161,.55);
+  box-shadow:0 0 14px rgba(33,230,161,.12);
+}
+#settingsModal.settings-premium-modal .fav-note{
+  margin:9px 0 0;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.35;
+}
+@media(max-width:390px){
+  #settingsModal.settings-premium-modal .fav-team-row{
+    grid-template-columns:1fr;
+  }
+  #settingsModal.settings-premium-modal .fav-save{
+    width:100%;
+  }
+  #settingsModal.settings-premium-modal .fav-chip{
+    font-size:9px;
+    min-height:30px;
+    padding:0 9px;
+  }
+}
+
+
+#settingsModal.settings-premium-modal .fav-fixtures{
+  margin-top:14px;
+  padding:14px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:20px;
+  background:linear-gradient(180deg, rgba(8,16,27,.92), rgba(7,13,23,.96));
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+}
+#settingsModal.settings-premium-modal .fav-fixtures-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+#settingsModal.settings-premium-modal .fav-fixtures-head h4{
+  margin:0;
+  color:#f4f8ff;
+  font-size:15px;
+  font-weight:900;
+}
+#settingsModal.settings-premium-modal .fav-fixtures-head p{
+  margin:4px 0 0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.35;
+}
+#settingsModal.settings-premium-modal .fav-badge{
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid rgba(33,230,161,.32);
+  background:rgba(33,230,161,.09);
+  color:var(--green);
+  font-size:10px;
+  font-weight:900;
+  white-space:nowrap;
+}
+#settingsModal.settings-premium-modal .fav-fixture-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+#settingsModal.settings-premium-modal .fav-fixture-item{
+  padding:10px 12px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.07);
+  background:rgba(255,255,255,.03);
+}
+#settingsModal.settings-premium-modal .fav-fixture-date{
+  color:#eef6ff;
+  font-size:13px;
+  font-weight:900;
+  margin-bottom:4px;
+}
+#settingsModal.settings-premium-modal .fav-fixture-meta{
+  color:#98a5b7;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  margin-bottom:7px;
+}
+#settingsModal.settings-premium-modal .fav-fixture-main{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+#settingsModal.settings-premium-modal .fav-fixture-match{
+  color:#f7fbff;
+  font-size:14px;
+  font-weight:800;
+  line-height:1.25;
+}
+#settingsModal.settings-premium-modal .fav-fixture-time{
+  color:#dbe3ef;
+  font-size:12px;
+  font-weight:900;
+  white-space:nowrap;
+}
+#settingsModal.settings-premium-modal .fav-empty{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+  padding:6px 2px 2px;
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -3746,6 +3909,45 @@ body[data-page="tips"] .tickets-v167-ready .ready-badge{
           </div>
           <button class="btn secondary" onclick="openNotifications()">Abrir</button>
         </div>
+      </section>
+
+      <section class="settings-pro-card favorites-card green-line">
+        <div class="settings-pro-title">
+          <div class="settings-pro-icon">⭐</div>
+          <div>
+            <h3>Favoritos</h3>
+            <p>Defina o time e os campeonatos que o app deve priorizar nas leituras da IA.</p>
+          </div>
+        </div>
+
+        <div class="fav-label">Time favorito</div>
+        <div class="fav-team-row">
+          <input id="favoriteTeamInput" class="field" placeholder="Ex.: Flamengo, Palmeiras, Corinthians" />
+          <button class="fav-save" onclick="saveFavoriteTeam()">Salvar</button>
+        </div>
+
+        <div class="fav-label">Campeonatos favoritos</div>
+        <div class="fav-chips">
+          <button class="fav-chip" data-league="Brasileirão" onclick="toggleFavLeague('Brasileirão')">Brasileirão</button>
+          <button class="fav-chip" data-league="Copa do Brasil" onclick="toggleFavLeague('Copa do Brasil')">Copa do Brasil</button>
+          <button class="fav-chip" data-league="Premier League" onclick="toggleFavLeague('Premier League')">Premier League</button>
+          <button class="fav-chip" data-league="Champions" onclick="toggleFavLeague('Champions')">Champions</button>
+          <button class="fav-chip" data-league="La Liga" onclick="toggleFavLeague('La Liga')">La Liga</button>
+          <button class="fav-chip" data-league="Libertadores" onclick="toggleFavLeague('Libertadores')">Libertadores</button>
+        </div>
+
+        <div class="fav-fixtures">
+          <div class="fav-fixtures-head">
+            <div>
+              <h4>Jogos do time favorito</h4>
+              <p>Mostra 2 a 3 partidas do time salvo, nesse visual mais organizado.</p>
+            </div>
+            <span class="fav-badge">Preview</span>
+          </div>
+          <div id="favoriteFixtures" class="fav-fixture-list"></div>
+        </div>
+
+        <p class="fav-note">Esses favoritos ficam salvos no navegador e depois podem ser ligados à API real.</p>
       </section>
 
       <section class="settings-pro-card gold-line">
@@ -5051,6 +5253,102 @@ function startSplashSequence(){
   clearTimeout(window.__pradoSplashTimer);
   window.__pradoSplashTimer = setTimeout(()=>showAppIntro(), 1850);
 }
+
+
+function getFavoriteFixturesData(team, leagues){
+  const map = {
+    'Flamengo':['Palmeiras','Botafogo','São Paulo'],
+    'Palmeiras':['Flamengo','Corinthians','Atlético-MG'],
+    'Corinthians':['Atlético-MG','São Paulo','Palmeiras'],
+    'São Paulo':['Botafogo','Corinthians','Flamengo'],
+    'Botafogo':['São Paulo','Palmeiras','Flamengo'],
+    'Atlético-MG':['Corinthians','Cruzeiro','Flamengo'],
+    'Liverpool':['Manchester City','Arsenal','Chelsea'],
+    'Manchester City':['Liverpool','Arsenal','Manchester United'],
+    'Arsenal':['Chelsea','Liverpool','Tottenham'],
+    'Real Madrid':['Barcelona','Atlético de Madrid','Sevilla'],
+    'Barcelona':['Real Madrid','Valencia','Atlético de Madrid'],
+    'PSG':['Marseille','Lyon','Monaco'],
+    'Argentina':['Argélia','Áustria','Brasil'],
+    'Brasil':['Haiti','Argentina','Uruguai']
+  };
+  const defaultOpponents = ['Palmeiras','Liverpool','Real Madrid','Boca Juniors','PSG','Atlético-MG'];
+  const chosen = (map[team] || defaultOpponents.filter(x=>x.toLowerCase() !== (team||'').toLowerCase())).slice(0,3);
+  const leaguePool = (leagues && leagues.length ? leagues : ['Brasileirão','Copa do Brasil','Premier League']);
+  const times = ['19:30','21:00','18:00'];
+  const offsets = [1,4,8];
+  const weekday = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+  return chosen.map((opp, i)=>{
+    const d = new Date();
+    d.setDate(d.getDate()+offsets[i]);
+    const label = i === 0 ? 'Amanhã' : weekday[d.getDay()];
+    const dd = String(d.getDate()).padStart(2,'0');
+    const mm = String(d.getMonth()+1).padStart(2,'0');
+    return {
+      label: `${label} ${dd}.${mm}`,
+      league: leaguePool[i % leaguePool.length],
+      match: `${team} x ${opp}`,
+      time: times[i % times.length]
+    };
+  });
+}
+function renderFavoriteFixtures(){
+  const wrap = $('#favoriteFixtures');
+  if(!wrap) return;
+  const team = (localStorage.getItem('prado_favorite_team') || '').trim();
+  const leagues = getFavoriteLeagues();
+  if(!team){
+    wrap.innerHTML = `<div class="fav-empty">Escolha um <strong>time favorito</strong> para mostrar aqui 2 ou 3 jogos dele, no modelo visual que você pediu.</div>`;
+    return;
+  }
+  const items = getFavoriteFixturesData(team, leagues).slice(0,3);
+  wrap.innerHTML = items.map(item=>`
+    <div class="fav-fixture-item">
+      <div class="fav-fixture-date">${item.label}</div>
+      <div class="fav-fixture-meta">${item.league}</div>
+      <div class="fav-fixture-main">
+        <div class="fav-fixture-match">${item.match}</div>
+        <div class="fav-fixture-time">${item.time}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function getFavoriteLeagues(){
+  try { return JSON.parse(localStorage.getItem('prado_favorite_leagues') || '[]'); }
+  catch(e){ return []; }
+}
+function setFavoriteLeagues(list){
+  localStorage.setItem('prado_favorite_leagues', JSON.stringify(list || []));
+}
+function refreshFavoriteLeagueChips(){
+  const selected = getFavoriteLeagues();
+  $$('.fav-chip').forEach(btn=>{
+    btn.classList.toggle('active', selected.includes(btn.dataset.league));
+  });
+}
+function saveFavoriteTeam(){
+  const input = $('#favoriteTeamInput');
+  const team = (input?.value || '').trim();
+  localStorage.setItem('prado_favorite_team', team);
+  renderFavoriteFixtures();
+  toast(team ? `Time favorito salvo: ${team}` : 'Time favorito removido.', '⭐');
+}
+function toggleFavLeague(league){
+  const selected = getFavoriteLeagues();
+  const next = selected.includes(league) ? selected.filter(x=>x!==league) : [...selected, league];
+  setFavoriteLeagues(next);
+  refreshFavoriteLeagueChips();
+  renderFavoriteFixtures();
+  toast(next.includes(league) ? `${league} adicionado aos favoritos` : `${league} removido dos favoritos`, '🏆');
+}
+function initFavoritesSettings(){
+  const input = $('#favoriteTeamInput');
+  if(input) input.value = localStorage.getItem('prado_favorite_team') || '';
+  refreshFavoriteLeagueChips();
+  renderFavoriteFixtures();
+}
+
 function bindEvents(){
   $('#enterApp')?.addEventListener('click', () => { showAppIntro(); });
   $('#startQuiz')?.addEventListener('click', () => { showAppIntro(openQuiz); });
@@ -5121,6 +5419,7 @@ function bindEvents(){
 
   $('#saveApiKey')?.addEventListener('click',()=>{ localStorage.setItem('prado_api_key', $('#apiKeyInput').value.trim()); toast('Chave salva para teste. Atualizando dados...','🔑'); loadData(); });
   if($('#apiKeyInput')) $('#apiKeyInput').value = localStorage.getItem('prado_api_key') || '';
+  initFavoritesSettings();
   if('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
 

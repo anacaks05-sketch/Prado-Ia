@@ -1,10 +1,13 @@
-# Prado Sports AI — V16.8.1 Configurações / Notificações simples
+# Prado Sports AI — V16.8.3 Configurações com Favoritos + Jogos
+
+## Escopo
+Somente Configurações.
 
 ## Alterado
-- Mantida somente a área de Configurações.
-- Card de notificações simplificado.
-- Título alterado de **Aba de notificações** para **Notificações**.
-- Tudo ficou em um bloco mais limpo e organizado.
+- Mantido bloco Favoritos.
+- Adicionado preview visual com 2 a 3 jogos do time favorito.
+- Visual inspirado no modelo de favoritos enviado pelo usuário.
+- Atualiza quando salvar time favorito ou trocar campeonatos favoritos.
 
 ## Não alterado
 - Home
@@ -12,7 +15,8 @@
 - IA
 - Scanner
 - Bilhetes
-- Restante das Configurações
+- Botão flutuante
+- Menu inferior
 
 ## Teste
-Use: ?v=16-8-1
+Use: ?v=16-8-3
