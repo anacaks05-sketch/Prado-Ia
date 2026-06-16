@@ -1,24 +1,27 @@
-# Prado Sports AI — V16.10 Splash Premium
+# Prado Sports AI — V16.11 Cliente Final
 
-## Escopo
-Somente tela inicial / abertura do aplicativo.
+## O que é esta versão
+Versão para publicar e passar o LINK ao cliente.
+
+## Importante
+- Cliente NÃO recebe o ZIP.
+- Cliente recebe apenas o link publicado do app.
+- Cliente recebe um código premium individual após pagar.
+- Você usa o mesmo app publicado, mas guarda o ZIP e o controle dos códigos.
 
 ## Alterado
-- Abertura no modelo aprovado.
-- Texto: Futebol inteligente premium.
-- Visual preto, dourado e verde premium.
-- Loader dourado animado.
-- Botões: IA Avançada, Favoritos Pro, Bilhetes Pro.
-- Removido texto antigo de Scanner na abertura.
+- Removidos códigos de teste: PRADO2026, CARLOSVIP, PRADO19.
+- Removido texto dizendo "troque antes de vender".
+- Removidas ações internas das Configurações.
+- Tela Premium ficou com texto de cliente.
+- Suporte e versão do app ajustados para cliente.
+- Validação premium pronta para usar CSV do Google Sheets.
 
-## Não alterado
-- Home
-- Ao vivo
-- IA
-- Favoritos
-- Bilhetes
-- Configurações
-- menu inferior
+## Para configurar antes de vender
+No arquivo `index.html`, procure `window.PRADO_CONFIG` e preencha:
+- `PAYMENT_LINK`: seu link de pagamento.
+- `SUPPORT_WHATSAPP`: seu WhatsApp com DDI/DDD.
+- `PREMIUM_CODES_CSV`: link CSV publicado da planilha com códigos ativos.
 
 ## Teste
-Use: ?v=16-10
+Use: ?v=16-11

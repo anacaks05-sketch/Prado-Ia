@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Prado Sports AI" />
-  <title>Prado AI V15 Luxe Premium</title>
+  <title>Prado Sports AI — Cliente</title>
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="icon-192.png" />
@@ -4497,7 +4497,7 @@ body[data-page="favorites"] #page-favorites{padding-bottom:96px}
           <input id="premiumCode" class="field" placeholder="Digite o código premium" />
           <button class="btn primary wide" onclick="unlockPremium()">Validar acesso</button>
         </div>
-        <div class="premium-sub">Use códigos reais antes de vender. O campo fica pronto para validação premium.</div>
+        <div class="premium-sub">Após o pagamento, digite o código recebido para liberar seu acesso premium.</div>
       </section>
 
       <section class="settings-pro-card green-line">
@@ -4537,23 +4537,9 @@ body[data-page="favorites"] #page-favorites{padding-bottom:96px}
         </div>
         <div class="support-list">
           <button class="support-row" onclick="window.open('https://wa.me/'+(window.PRADO_CONFIG?.SUPPORT_WHATSAPP||'5599999999999'),'_blank')"><span>🟢</span><span>Falar no WhatsApp</span><span>›</span></button>
-          <button class="support-row" onclick="toast('Central de ajuda em preparação.','❔')"><span>❔</span><span>Ajuda</span><span>›</span></button>
-          <button class="support-row" onclick="toast('Política e termos entram na versão publicada.','📄')"><span>📄</span><span>Política e termos</span><span>›</span></button>
-          <button class="support-row" onclick="toast('Prado Sports AI v16.8','ℹ️')"><span>ℹ️</span><span>Versão do app</span><small>v16.8</small></button>
-        </div>
-      </section>
-
-      <section class="settings-pro-card">
-        <div class="settings-pro-title">
-          <div class="settings-pro-icon">⚡</div>
-          <div>
-            <h3>Ações rápidas</h3>
-          </div>
-        </div>
-        <div class="actions-grid">
-          <button class="action-btn" onclick="toast('Alerta visual funcionando.','👁️')">👁️ Testar alerta</button>
-          <button class="action-btn" onclick="localStorage.removeItem('prado_api_key'); toast('Cache local limpo.','🗑️')">🗑️ Limpar cache</button>
-          <button class="action-btn" onclick="toast('App restaurado para visual padrão.','🔄')">🔄 Restaurar app</button>
+          <button class="support-row" onclick="toast('Para ajuda rápida, fale com o suporte pelo WhatsApp.','❔')"><span>❔</span><span>Ajuda</span><span>›</span></button>
+          <button class="support-row" onclick="toast('Termos e política disponíveis em breve.','📄')"><span>📄</span><span>Política e termos</span><span>›</span></button>
+          <button class="support-row" onclick="toast('Prado Sports AI — Cliente v16.11','ℹ️')"><span>ℹ️</span><span>Versão do app</span><small>v16.11</small></button>
         </div>
       </section>
 
@@ -4580,7 +4566,7 @@ body[data-page="favorites"] #page-favorites{padding-bottom:96px}
     <div class="settings-grid notifications-grid">
       <div class="card compact">
         <div class="card-title">🔔 Notificações do jogo</div>
-        <p class="muted">Escolha os alertas que o cliente vai receber quando a API e o push estiverem conectados.</p>
+        <p class="muted">Escolha os alertas que deseja acompanhar dentro do app.</p>
         <label class="switch-row"><span>Gols ao vivo</span><input type="checkbox" data-setting="goalAlerts" checked></label>
         <label class="switch-row"><span>Escanteios ao vivo</span><input type="checkbox" data-setting="cornerAlerts" checked></label>
         <label class="switch-row"><span>Cartão amarelo</span><input type="checkbox" data-setting="yellowCardAlerts" checked></label>
@@ -4589,7 +4575,7 @@ body[data-page="favorites"] #page-favorites{padding-bottom:96px}
         <label class="switch-row"><span>Escalação confirmada</span><input type="checkbox" data-setting="lineups" checked></label>
         <label class="switch-row"><span>Oportunidade da IA</span><input type="checkbox" data-setting="liveAlerts" checked></label>
         <label class="switch-row"><span>Bilhetes do dia</span><input type="checkbox" data-setting="dailyTickets" checked></label>
-        <button class="btn secondary wide" onclick="toast('Prévia de notificação ativada. Push real entra junto com a API.','🔔')">Testar alerta visual</button>
+        <button class="btn secondary wide" onclick="toast('Preferências de notificação salvas.','🔔')">Salvar preferências</button>
       </div>
     </div>
   </dialog>
@@ -4597,20 +4583,28 @@ body[data-page="favorites"] #page-favorites{padding-bottom:96px}
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <script>
 /* =====================================================
-   PRADO SPORTS AI — Configuração
-   - Para produção na Vercel, use variável de ambiente APISPORTS_KEY.
-   - Para teste local, cole a chave no painel ⚙️ ou em API_KEY abaixo.
+   PRADO SPORTS AI — CONFIGURAÇÃO DO DONO
+   Cliente recebe só o link publicado. Não envie o ZIP.
+   Configure pagamento, WhatsApp e CSV de códigos antes de vender.
 ===================================================== */
 window.PRADO_CONFIG = {
   API_KEY: '',
   API_BASE: 'https://v3.football.api-sports.io',
   TIMEZONE: 'America/Fortaleza',
+
+  // Cole aqui seu link real de pagamento.
   PAYMENT_LINK: 'https://SEU-LINK-DE-PAGAMENTO-AQUI.com',
+
+  // Coloque seu WhatsApp com DDI e DDD. Ex.: 5599999999999
   SUPPORT_WHATSAPP: '5599999999999',
+
   PREMIUM_PRICE: 'R$ 19,90/mês',
-  PREMIUM_CODES: ['PRADO2026', 'CARLOSVIP', 'PRADO19'],
-  // Use apenas se você conectar um CSV publicado do Google Sheets com códigos ativos.
+
+  // Versão cliente: sem códigos de teste visíveis.
+  // Use o CSV publicado do Google Sheets para liberar clientes.
+  PREMIUM_CODES: [],
   PREMIUM_CODES_CSV: '',
+
   BRAND: {
     name: 'Prado Sports AI',
     shortName: 'Prado AI'
@@ -5865,10 +5859,10 @@ function renderPremium(){
     <div class="benefit-list">
       ${benefit('🎟️','Bilhetes IA','Bilhetes conservador, moderado e agressivo para copiar.')}
       ${benefit('🤖','IA Prado','Você pede o jogo e a IA devolve entrada pronta com motivo.')}
-      ${benefit('🔎','Scanner IA','Melhor do dia, top confiança, top valor e oportunidades ao vivo.')}
+      ${benefit('☆','Favoritos Pro','Jogos, equipes, campeonatos e notícias organizados para o cliente.')}
       ${benefit('📊','Dados em tempo real','Pré-jogo e ao vivo quando a API estiver configurada.')}
       ${benefit('🌍','Principais campeonatos','Brasileirão, Premier League, La Liga, Champions, Libertadores e mais.')}
-      ${benefit('🔐','Validação premium','Liberação por código, link de pagamento ou planilha depois.')}
+      ${benefit('🔐','Validação premium','Liberação por código após confirmação do pagamento.')}
     </div>
     <div class="card">
       <div class="card-title">Já comprou? Liberar por código</div>
@@ -5876,14 +5870,19 @@ function renderPremium(){
         <input id="premiumCode" class="field" placeholder="Digite o código premium" />
         <button class="btn primary wide" onclick="unlockPremium()">Validar acesso</button>
       </div>
-      <p class="legal">Códigos de teste nesta versão: PRADO2026, CARLOSVIP, PRADO19. Troque isso antes de vender.</p>
+      <p class="legal">Acesso pessoal. Use o código recebido após a confirmação do pagamento.</p>
     </div>
   `;
 }
 function benefit(icon,title,desc){ return `<div class="benefit"><span>${icon}</span><div><b>${title}</b><small>${desc}</small></div></div>`; }
 async function unlockPremium(){
-  const code = ($('#premiumCode')?.value || '').trim().toUpperCase();
-  let codes = (PRADO_CONFIG.PREMIUM_CODES || []).map(c=>String(c).toUpperCase());
+  const input = $('#premiumCode');
+  const code = (input?.value || '').trim().toUpperCase();
+  if(!code){
+    toast('Digite seu código premium para liberar o acesso.', '🔐');
+    return;
+  }
+  let codes = (PRADO_CONFIG.PREMIUM_CODES || []).map(c=>String(c).trim().toUpperCase()).filter(Boolean);
   if(PRADO_CONFIG.PREMIUM_CODES_CSV){
     try{
       const res = await fetch(PRADO_CONFIG.PREMIUM_CODES_CSV, {cache:'no-store'});
@@ -5892,13 +5891,19 @@ async function unlockPremium(){
     }catch(_err){}
   }
   if(codes.includes(code)){
-    state.premium = true; localStorage.setItem('prado_premium','true'); toast('Premium liberado com sucesso 💎');
-  }else toast('Código inválido ou não encontrado', '⚠️');
+    state.premium = true;
+    localStorage.setItem('prado_premium','true');
+    if(input) input.value = '';
+    toast('Premium liberado com sucesso 💎');
+    renderAll();
+  }else{
+    toast('Código inválido. Confira com o suporte.', '⚠️');
+  }
 }
 function openPayment(){
   const link = PRADO_CONFIG.PAYMENT_LINK || '';
   if(link && !link.includes('SEU-LINK')) window.open(link, '_blank');
-  else toast('Coloque seu link de pagamento no configuração do app', '💳');
+  else toast('Pagamento indisponível no momento. Fale com o suporte.', '💳');
 }
 
 function goToPage(page){
