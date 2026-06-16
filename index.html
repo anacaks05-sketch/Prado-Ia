@@ -3985,6 +3985,36 @@ body[data-page="favorites"] #page-favorites{padding-bottom:96px}
   .fav-v169-teams{font-size:14px}
 }
 
+
+/* ===== V16.9.1 — FAVORITOS COM TABS FUNCIONANDO ===== */
+.fav-v169-tabs.top-inside{margin-bottom:12px;padding:0}
+.fav-v169-head .fav-v169-tabs{position:relative;z-index:2}
+.fav-v169-head::after{right:20px;top:20px;font-size:88px}
+.fav-v169-content{display:grid;gap:10px}
+.fav-v169-grid2{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.fav-v169-chip-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fav-v169-mini-card{padding:12px;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(145deg,rgba(15,24,36,.95),rgba(8,12,18,.98))}
+.fav-v169-mini-kicker{color:var(--muted);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+.fav-v169-mini-title{color:#fff;font-family:'Space Grotesk';font-size:18px;line-height:1.1;margin:0 0 4px}
+.fav-v169-mini-sub{color:var(--muted);font-size:11px;line-height:1.35}
+.fav-v169-team-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.fav-v169-pill{min-height:34px;padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.035);color:#eef4fb;font-size:11px;font-weight:800}
+.fav-v169-pill.active{background:rgba(33,230,161,.12);border-color:rgba(33,230,161,.45);color:var(--green)}
+.fav-v169-news{display:grid;gap:8px}
+.fav-v169-news-card{padding:13px;border-radius:18px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(145deg,rgba(14,22,33,.96),rgba(7,11,17,.99))}
+.fav-v169-news-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:7px}
+.fav-v169-news-badge{display:inline-flex;min-height:24px;align-items:center;padding:0 10px;border-radius:999px;background:rgba(33,230,161,.12);border:1px solid rgba(33,230,161,.35);color:var(--green);font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.fav-v169-news-time{color:var(--muted);font-size:10px;font-weight:800}
+.fav-v169-news-title{color:#fff;font-family:'Space Grotesk';font-size:18px;line-height:1.15;margin:0 0 6px}
+.fav-v169-news-text{color:#c2cfdb;font-size:12px;line-height:1.45}
+.fav-v169-selected-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.fav-v169-selected-item{padding:6px 10px;border-radius:999px;background:rgba(255,224,110,.10);border:1px solid rgba(255,224,110,.28);color:var(--gold);font-size:10px;font-weight:900}
+.fav-v169-helper{color:var(--muted);font-size:11px;line-height:1.45;margin-top:4px}
+@media(max-width:430px){
+  .fav-v169-grid2,.fav-v169-chip-grid{grid-template-columns:1fr}
+  .fav-v169-head::after{font-size:76px;right:16px;top:18px}
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -4386,7 +4416,8 @@ const state = {
   customMarket: 'gols_partida',
   customLine: '2.5',
   customGames: 3,
-  customTicket: null
+  customTicket: null,
+  favoriteTab: localStorage.getItem('prado_favorite_tab') || 'games'
 };
 
 const DEMO_LEAGUES = ['Brasileirão', 'Premier League', 'La Liga', 'Champions League', 'Libertadores', 'Copa do Brasil', 'Serie A', 'Bundesliga'];
@@ -4514,59 +4545,172 @@ async function loadData(){
 }
 
 
+
+function getFavoriteTab(){
+  return state.favoriteTab || localStorage.getItem('prado_favorite_tab') || 'games';
+}
+function setFavoriteTab(tab){
+  state.favoriteTab = tab;
+  localStorage.setItem('prado_favorite_tab', tab);
+  renderFavorites();
+}
+function selectFavoriteTeam(team){
+  localStorage.setItem('prado_favorite_team', team);
+  const input = $('#favoriteTeamInput');
+  if(input) input.value = team;
+  renderFavoriteFixtures();
+  renderFavorites();
+  toast(`Time favorito salvo: ${team}`, '⭐');
+}
+function getFavoriteNewsData(team, leagues){
+  const baseTeam = team || 'seu time favorito';
+  const leagueA = (leagues && leagues[0]) || 'Brasileirão';
+  const leagueB = (leagues && leagues[1]) || 'Copa do Brasil';
+  return [
+    { badge:'mercado', time:'Agora', title:`IA detecta valor em jogos de ${baseTeam}`, text:`A leitura do Prado AI encontrou cenários mais fortes envolvendo ${baseTeam}, com foco em gols, proteção e entradas ao vivo.`},
+    { badge:leagueA, time:'Hoje', title:`Agenda de ${baseTeam} ganha destaque em ${leagueA}`, text:`Os próximos confrontos do time favorito foram organizados para você acompanhar com mais clareza, menos ruído e leitura rápida.`},
+    { badge:leagueB, time:'Atualizado', title:`Notícias e contexto para decisões mais seguras`, text:`Além dos jogos, a área Favoritos agora reúne contexto do time, campeonatos e alertas importantes em um visual premium.`}
+  ];
+}
+function renderFavoriteGamesView(team, leagues){
+  const games = team ? getFavoriteFixturesData(team, leagues).slice(0,3) : [];
+  return `
+    <section class="fav-v169-team-card">
+      <div class="fav-v169-label">Time favorito</div>
+      <div class="fav-v169-input-row">
+        <input id="favoriteTeamPageInput" class="field" placeholder="Ex.: Flamengo, Brasil, Liverpool" value="${safe(team)}" />
+        <button class="fav-v169-save" onclick="saveFavoriteTeamFromPage()">Salvar</button>
+      </div>
+    </section>
+    <section class="fav-v169-team-card">
+      <div class="fav-v169-label">Campeonatos favoritos</div>
+      <div class="fav-v169-leagues">
+        ${['Brasileirão','Copa do Brasil','Premier League','Champions','La Liga','Libertadores'].map(l=>`<button class="fav-v169-league ${leagues.includes(l)?'active':''}" onclick="toggleFavLeague('${l}')">${l}</button>`).join('')}
+      </div>
+    </section>
+    <h3 class="fav-v169-section-title">${team ? `Jogos de ${safe(team)}` : 'Jogos do time favorito'}</h3>
+    ${team ? `<div class="fav-v169-list">
+      ${games.map(g=>`
+        <div>
+          <div class="fav-v169-date">${g.label}</div>
+          <article class="fav-v169-match">
+            <div>
+              <div class="fav-v169-league-title">${safe(g.league)}</div>
+              <div class="fav-v169-teams">${safe(g.match)}</div>
+              <div class="fav-v169-meta">Preview · favorito</div>
+            </div>
+            <div class="fav-v169-time">${safe(g.time)}<small>pré-jogo</small></div>
+          </article>
+        </div>
+      `).join('')}
+    </div>` : `<div class="fav-v169-empty">Digite e salve um time favorito para aparecerem aqui 2 ou 3 jogos dele.</div>`}
+  `;
+}
+function renderFavoriteTeamsView(team){
+  const suggestions = ['Flamengo','Palmeiras','Corinthians','São Paulo','Liverpool','Manchester City','Argentina','Brasil'];
+  return `
+    <section class="fav-v169-team-card">
+      <div class="fav-v169-label">Escolha sua equipe principal</div>
+      <div class="fav-v169-input-row">
+        <input id="favoriteTeamPageInput" class="field" placeholder="Ex.: Flamengo, Brasil, Liverpool" value="${safe(team)}" />
+        <button class="fav-v169-save" onclick="saveFavoriteTeamFromPage()">Salvar</button>
+      </div>
+      <div class="fav-v169-helper">Toque em uma equipe sugerida para preencher e salvar mais rápido.</div>
+      <div class="fav-v169-team-pills">
+        ${suggestions.map(item=>`<button class="fav-v169-pill ${team===item?'active':''}" onclick="selectFavoriteTeam('${item}')">${item}</button>`).join('')}
+      </div>
+    </section>
+    <div class="fav-v169-grid2">
+      <section class="fav-v169-mini-card">
+        <div class="fav-v169-mini-kicker">Equipe atual</div>
+        <h4 class="fav-v169-mini-title">${team || 'Nenhum time salvo'}</h4>
+        <div class="fav-v169-mini-sub">Esse é o time usado para organizar os próximos jogos, alertas e notícias na aba Favoritos.</div>
+      </section>
+      <section class="fav-v169-mini-card">
+        <div class="fav-v169-mini-kicker">Atalho rápido</div>
+        <h4 class="fav-v169-mini-title">2 ou 3 jogos organizados</h4>
+        <div class="fav-v169-mini-sub">Assim que salvar um time, o app prepara a visualização dos próximos confrontos em um formato mais limpo.</div>
+      </section>
+    </div>
+  `;
+}
+function renderFavoriteLeaguesView(leagues){
+  const all = ['Brasileirão','Copa do Brasil','Premier League','Champions','La Liga','Libertadores'];
+  return `
+    <section class="fav-v169-team-card">
+      <div class="fav-v169-label">Escolha os campeonatos</div>
+      <div class="fav-v169-leagues">
+        ${all.map(l=>`<button class="fav-v169-league ${leagues.includes(l)?'active':''}" onclick="toggleFavLeague('${l}')">${l}</button>`).join('')}
+      </div>
+      <div class="fav-v169-helper">Esses campeonatos ajudam a filtrar melhor os jogos e o conteúdo da área Favoritos.</div>
+      <div class="fav-v169-selected-list">
+        ${(leagues.length?leagues:['Nenhum selecionado']).map(item=>`<span class="fav-v169-selected-item">${item}</span>`).join('')}
+      </div>
+    </section>
+    <div class="fav-v169-chip-grid">
+      <section class="fav-v169-mini-card">
+        <div class="fav-v169-mini-kicker">Seleção ativa</div>
+        <h4 class="fav-v169-mini-title">${leagues.length}</h4>
+        <div class="fav-v169-mini-sub">campeonatos marcados como favoritos.</div>
+      </section>
+      <section class="fav-v169-mini-card">
+        <div class="fav-v169-mini-kicker">Organização</div>
+        <h4 class="fav-v169-mini-title">Mais foco</h4>
+        <div class="fav-v169-mini-sub">Você reduz excesso de informação e deixa só o que acompanha com mais frequência.</div>
+      </section>
+    </div>
+  `;
+}
+function renderFavoriteNewsView(team, leagues){
+  const news = getFavoriteNewsData(team, leagues);
+  return `
+    <section class="fav-v169-team-card">
+      <div class="fav-v169-label">Notícias favoritas</div>
+      <div class="fav-v169-helper">Resumo rápido com foco no seu time e nos campeonatos escolhidos.</div>
+    </section>
+    <div class="fav-v169-news">
+      ${news.map(item=>`
+        <article class="fav-v169-news-card">
+          <div class="fav-v169-news-head">
+            <span class="fav-v169-news-badge">${safe(item.badge)}</span>
+            <span class="fav-v169-news-time">${safe(item.time)}</span>
+          </div>
+          <h4 class="fav-v169-news-title">${safe(item.title)}</h4>
+          <div class="fav-v169-news-text">${safe(item.text)}</div>
+        </article>
+      `).join('')}
+    </div>
+  `;
+}
+
 function renderFavorites(){
   const page = $('#page-favorites');
   if(!page) return;
   const team = (localStorage.getItem('prado_favorite_team') || '').trim();
   const leagues = getFavoriteLeagues();
-  const games = team ? getFavoriteFixturesData(team, leagues).slice(0,3) : [];
+  const tab = getFavoriteTab();
+  const tabs = [
+    ['games','Jogos'],
+    ['teams','Equipes'],
+    ['leagues','Campeonatos'],
+    ['news','Notícias']
+  ];
+  let content = '';
+  if(tab === 'teams') content = renderFavoriteTeamsView(team);
+  else if(tab === 'leagues') content = renderFavoriteLeaguesView(leagues);
+  else if(tab === 'news') content = renderFavoriteNewsView(team, leagues);
+  else content = renderFavoriteGamesView(team, leagues);
+
   page.innerHTML = `
     <div class="fav-page-v169">
       <section class="fav-v169-head">
-        <div class="fav-v169-kicker">Central de favoritos</div>
+        <div class="fav-v169-tabs top-inside">
+          ${tabs.map(([key,label])=>`<button class="fav-v169-tab ${tab===key?'active':''}" onclick="setFavoriteTab('${key}')">${label}</button>`).join('')}
+        </div>
         <h2>Favoritos</h2>
-        <p>Escolha seu time e veja 2 ou 3 jogos dele organizados para acompanhar.</p>
+        <p>Escolha seu time e acompanhe jogos, equipes, campeonatos e notícias em um só lugar.</p>
       </section>
-
-      <section class="fav-v169-team-card">
-        <div class="fav-v169-label">Time favorito</div>
-        <div class="fav-v169-input-row">
-          <input id="favoriteTeamPageInput" class="field" placeholder="Ex.: Flamengo, Brasil, Liverpool" value="${safe(team)}" />
-          <button class="fav-v169-save" onclick="saveFavoriteTeamFromPage()">Salvar</button>
-        </div>
-      </section>
-
-      <div class="fav-v169-tabs">
-        <button class="fav-v169-tab active">Jogos</button>
-        <button class="fav-v169-tab">Equipes</button>
-        <button class="fav-v169-tab">Campeonatos</button>
-        <button class="fav-v169-tab">Notícias</button>
-      </div>
-
-      <section class="fav-v169-team-card">
-        <div class="fav-v169-label">Campeonatos favoritos</div>
-        <div class="fav-v169-leagues">
-          ${['Brasileirão','Copa do Brasil','Premier League','Champions','La Liga','Libertadores'].map(l=>`<button class="fav-v169-league ${leagues.includes(l)?'active':''}" onclick="toggleFavLeague('${l}')">${l}</button>`).join('')}
-        </div>
-      </section>
-
-      <h3 class="fav-v169-section-title">${team ? `Próximos jogos de ${safe(team)}` : 'Jogos do time favorito'}</h3>
-
-      ${team ? `<div class="fav-v169-list">
-        ${games.map(g=>`
-          <div>
-            <div class="fav-v169-date">${g.label}</div>
-            <article class="fav-v169-match">
-              <div>
-                <div class="fav-v169-league-title">${safe(g.league)}</div>
-                <div class="fav-v169-teams">${safe(g.match)}</div>
-                <div class="fav-v169-meta">Preview · favorito</div>
-              </div>
-              <div class="fav-v169-time">${safe(g.time)}<small>pré-jogo</small></div>
-            </article>
-          </div>
-        `).join('')}
-      </div>` : `<div class="fav-v169-empty">Digite e salve um time favorito para aparecerem aqui 2 ou 3 jogos dele.</div>`}
+      <div class="fav-v169-content">${content}</div>
     </div>
   `;
 }
