@@ -1,13 +1,9 @@
-# Prado Sports AI — V16.15 Stats Avançado
+# Prado Sports AI — V16.15.1 Stats Corrigido
 
 ## Alterado
-- Aba Stats dos detalhes do jogo ficou mais completa.
-- Adicionados blocos:
-  - Estatísticas principais
-  - Passes
-  - Defesa
-- Adicionadas métricas como passes, passes longos, terço final, cruzamentos, xA, laterais, desarmes, duelos, rebatidas e interceptações.
-- Visual mantido no padrão premium escuro do Prado AI.
+- Corrigido erro onde aparecia <small> escrito na tela.
+- Agora os dados entre parênteses aparecem pequeno e organizado.
+- Mantida a aba Stats avançada.
 
 ## Não alterado
 - Splash
@@ -21,4 +17,4 @@
 - WhatsApp com mensagem
 
 ## Teste
-Use: ?v=16-15
+Use: ?v=16-15-1

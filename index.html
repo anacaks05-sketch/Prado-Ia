@@ -4543,6 +4543,25 @@ body[data-page="live"] .live-v153-chip{
   }
 }
 
+
+/* ===== V16.15.1 — CORREÇÃO DOS <small> NA ABA STATS ===== */
+.stats-pro-v1615 .compare-value small{
+  display:block !important;
+  margin-top:3px;
+  font-size:10.5px !important;
+  line-height:1.05;
+  opacity:.92;
+  color:#9EACBC !important;
+  font-family:Inter,system-ui,sans-serif;
+  letter-spacing:0;
+}
+.stats-pro-v1615 .compare-value.left small{
+  color:rgba(33,230,161,.80) !important;
+}
+.stats-pro-v1615 .compare-value.right small{
+  color:rgba(92,168,255,.86) !important;
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -5399,11 +5418,12 @@ function statCompareRow(row){
   const total = Math.max(Number(row.lnum || 0) + Number(row.rnum || 0), 1);
   const left = Math.max(2, Math.round((Number(row.lnum || 0) / total) * 100));
   const right = Math.max(2, Math.round((Number(row.rnum || 0) / total) * 100));
+  const valueHTML = (v) => String(v ?? '');
   return `<div class="compare-row">
     <div class="compare-top">
-      <div class="compare-value left">${safe(row.left)}</div>
+      <div class="compare-value left">${valueHTML(row.left)}</div>
       <div class="compare-label">${safe(row.label)}</div>
-      <div class="compare-value right">${safe(row.right)}</div>
+      <div class="compare-value right">${valueHTML(row.right)}</div>
     </div>
     <div class="compare-bar" style="--left:${left}%;--right:${right}%"><span class="left-fill"></span><span class="right-fill"></span></div>
   </div>`;
