@@ -3344,6 +3344,246 @@ body[data-page="tips"] .tickets-v167-ready .ready-badge{
   }
 }
 
+
+/* ===== V16.8 — CONFIGURAÇÕES PREMIUM / SOMENTE CONFIGURAÇÕES ===== */
+#settingsModal.settings-premium-modal{
+  width:min(430px,calc(100% - 24px)) !important;
+  max-height:min(86vh,760px);
+  border-radius:28px !important;
+  border:1px solid rgba(148,163,184,.22) !important;
+  background:
+    radial-gradient(circle at 8% 4%,rgba(33,230,161,.07),transparent 28%),
+    linear-gradient(145deg,rgba(18,29,42,.98),rgba(7,11,17,.99)) !important;
+  box-shadow:0 26px 70px rgba(0,0,0,.52), inset 0 1px 0 rgba(255,255,255,.05) !important;
+}
+#settingsModal.settings-premium-modal .modal-head{
+  padding:18px 18px 16px !important;
+  border-bottom:1px solid rgba(255,255,255,.08) !important;
+}
+#settingsModal.settings-premium-modal .modal-head small{
+  font-size:10px !important;
+  letter-spacing:.14em !important;
+  color:var(--gold) !important;
+}
+#settingsModal.settings-premium-modal .modal-head h2{
+  font-size:23px !important;
+  line-height:1 !important;
+}
+#settingsModal.settings-premium-modal .modal-head .icon-btn{
+  width:58px !important;
+  height:58px !important;
+  border-radius:19px !important;
+  border:1px solid rgba(89,151,255,.28) !important;
+  box-shadow:0 0 0 4px rgba(30,120,255,.20), inset 0 1px 0 rgba(255,255,255,.06);
+}
+#settingsModal.settings-premium-modal .settings-pro{
+  display:grid;
+  gap:9px;
+  padding:12px !important;
+}
+#settingsModal.settings-premium-modal .settings-pro-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:21px;
+  border:1px solid rgba(255,255,255,.09);
+  background:
+    radial-gradient(circle at 4% 10%,rgba(255,255,255,.045),transparent 30%),
+    linear-gradient(145deg,rgba(17,27,39,.94),rgba(8,12,18,.99));
+  padding:12px;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+}
+#settingsModal.settings-premium-modal .settings-pro-card.gold-line{
+  border-color:rgba(255,224,110,.22);
+}
+#settingsModal.settings-premium-modal .settings-pro-card.green-line{
+  border-color:rgba(33,230,161,.18);
+}
+#settingsModal.settings-premium-modal .settings-pro-title{
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-bottom:9px;
+}
+#settingsModal.settings-premium-modal .settings-pro-icon{
+  width:34px;
+  height:34px;
+  flex:0 0 34px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.08);
+  font-size:18px;
+}
+#settingsModal.settings-premium-modal .settings-pro-title h3{
+  margin:0;
+  color:#fff;
+  font-size:16px;
+  line-height:1.1;
+}
+#settingsModal.settings-premium-modal .settings-pro-title p{
+  margin:5px 0 0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.35;
+}
+#settingsModal.settings-premium-modal .settings-pro-line{
+  display:grid;
+  grid-template-columns:34px 1fr auto;
+  gap:9px;
+  align-items:center;
+  min-height:52px;
+  padding:10px;
+  border-radius:15px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.07);
+}
+#settingsModal.settings-premium-modal .settings-pro-line .line-ico{
+  color:var(--green);
+  font-size:19px;
+}
+#settingsModal.settings-premium-modal .settings-pro-line span{
+  color:#dfe7ef;
+  font-size:11.5px;
+  line-height:1.35;
+}
+#settingsModal.settings-premium-modal .settings-pro .btn{
+  min-height:42px !important;
+  border-radius:14px !important;
+  font-size:12px !important;
+}
+#settingsModal.settings-premium-modal .premium-price{
+  font-family:'Space Grotesk';
+  font-size:31px;
+  color:#fff;
+  letter-spacing:-.05em;
+  margin:6px 0 10px;
+}
+#settingsModal.settings-premium-modal .premium-sub{
+  margin-top:9px;
+  color:var(--muted);
+  font-size:10.5px;
+  line-height:1.35;
+}
+#settingsModal.settings-premium-modal .premium-code{
+  display:grid;
+  gap:8px;
+  margin-top:10px;
+}
+#settingsModal.settings-premium-modal .premium-code .field{
+  min-height:42px !important;
+  border-radius:14px !important;
+  font-size:16px !important;
+}
+#settingsModal.settings-premium-modal .settings-switch-list{
+  display:grid;
+  gap:0;
+}
+#settingsModal.settings-premium-modal .settings-pro .switch-row{
+  padding:8px 0 !important;
+  border-top:0 !important;
+  font-size:11.8px !important;
+  font-weight:700 !important;
+  color:#f2f6fb;
+}
+#settingsModal.settings-premium-modal .settings-pro .switch-row input{
+  appearance:none;
+  -webkit-appearance:none;
+  width:42px !important;
+  height:23px !important;
+  border-radius:999px;
+  background:#151c28;
+  border:1px solid rgba(255,255,255,.20);
+  position:relative;
+  cursor:pointer;
+}
+#settingsModal.settings-premium-modal .settings-pro .switch-row input::after{
+  content:"";
+  position:absolute;
+  top:3px;
+  left:3px;
+  width:15px;
+  height:15px;
+  border-radius:50%;
+  background:#aeb7c4;
+  transition:.18s ease;
+}
+#settingsModal.settings-premium-modal .settings-pro .switch-row input:checked{
+  background:rgba(33,230,161,.14);
+  border-color:rgba(33,230,161,.72);
+}
+#settingsModal.settings-premium-modal .settings-pro .switch-row input:checked::after{
+  left:21px;
+  background:var(--green);
+  box-shadow:0 0 10px rgba(33,230,161,.38);
+}
+#settingsModal.settings-premium-modal .support-list{
+  display:grid;
+  gap:5px;
+}
+#settingsModal.settings-premium-modal .support-row{
+  min-height:35px;
+  display:grid;
+  grid-template-columns:24px 1fr auto;
+  align-items:center;
+  gap:8px;
+  padding:7px 10px;
+  border-radius:12px;
+  color:#f3f7fb;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.07);
+  font-size:11.5px;
+  font-weight:700;
+}
+#settingsModal.settings-premium-modal .support-row small{
+  color:var(--muted);
+  font-size:10px;
+}
+#settingsModal.settings-premium-modal .actions-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:7px;
+}
+#settingsModal.settings-premium-modal .action-btn{
+  min-height:38px;
+  padding:0 6px;
+  border-radius:13px;
+  border:1px solid rgba(255,255,255,.09);
+  background:rgba(255,255,255,.04);
+  color:#f3f7fb;
+  font-size:10px;
+  font-weight:800;
+}
+#settingsModal.settings-premium-modal .responsible-text{
+  margin:0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.4;
+}
+@media(max-width:390px){
+  #settingsModal.settings-premium-modal{
+    width:calc(100% - 18px) !important;
+  }
+  #settingsModal.settings-premium-modal .settings-pro{
+    padding:10px !important;
+    gap:8px;
+  }
+  #settingsModal.settings-premium-modal .settings-pro-card{
+    padding:10px;
+    border-radius:19px;
+  }
+  #settingsModal.settings-premium-modal .settings-pro-title h3{
+    font-size:15px;
+  }
+  #settingsModal.settings-premium-modal .settings-pro-title p,
+  #settingsModal.settings-premium-modal .responsible-text{
+    font-size:10px;
+  }
+  #settingsModal.settings-premium-modal .premium-price{
+    font-size:28px;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -3449,7 +3689,7 @@ body[data-page="tips"] .tickets-v167-ready .ready-badge{
     <div id="quizBody"></div>
   </dialog>
 
-  <dialog id="settingsModal" class="modal">
+  <dialog id="settingsModal" class="modal settings-premium-modal">
     <div class="modal-head">
       <div>
         <small>Central do app</small>
@@ -3457,47 +3697,107 @@ body[data-page="tips"] .tickets-v167-ready .ready-badge{
       </div>
       <button class="icon-btn" data-close="settingsModal">✕</button>
     </div>
-    <div class="settings-grid">
-      <div class="card compact settings-nav-card">
-        <div class="card-title">🔔 Aba de notificações</div>
-        <p class="muted">Alertas de jogo, IA e bilhetes ficam organizados em uma aba separada.</p>
-        <div class="settings-link-row">
-          <span>Gols, escanteios, cartões e IA</span>
+
+    <div class="settings-grid settings-pro">
+      <section class="settings-pro-card">
+        <div class="settings-pro-title">
+          <div class="settings-pro-icon">🔔</div>
+          <div>
+            <h3>Aba de notificações</h3>
+            <p>Alertas de jogo, IA e bilhetes ficam organizados em uma aba separada.</p>
+          </div>
+        </div>
+        <div class="settings-pro-line">
+          <div class="line-ico">☷</div>
+          <span>Gols, escanteios, cartão amarelo, cartão vermelho, escalação confirmada, oportunidade da IA e bilhetes do dia.</span>
           <button class="btn secondary" onclick="openNotifications()">Abrir</button>
         </div>
-      </div>
+      </section>
 
-      <div class="card compact">
-        <div class="card-title">💎 Premium e liberação</div>
-        <p class="muted">Plano premium com Bilhetes IA, Scanner IA, IA Prado e oportunidades ao vivo.</p>
-        <div class="price">R$ 19,90/mês</div>
-        <button class="btn gold wide" onclick="openPayment()">Liberar Meu Acesso Premium</button>
-        <div class="unlock-box">
+      <section class="settings-pro-card gold-line">
+        <div class="settings-pro-title">
+          <div class="settings-pro-icon">💎</div>
+          <div>
+            <h3>Premium e liberação</h3>
+            <p>Bilhetes IA, Scanner IA, IA Prado e oportunidades ao vivo.</p>
+          </div>
+        </div>
+        <div class="premium-price">R$ 19,90/mês</div>
+        <button class="btn gold wide" onclick="openPayment()">👑 Liberar Meu Acesso Premium</button>
+        <div class="premium-code">
           <input id="premiumCode" class="field" placeholder="Digite o código premium" />
           <button class="btn primary wide" onclick="unlockPremium()">Validar acesso</button>
         </div>
-        <p class="legal">Códigos de teste: PRADO2026, CARLOSVIP, PRADO19. Troque antes de vender.</p>
-      </div>
+        <div class="premium-sub">Use códigos reais antes de vender. O campo fica pronto para validação premium.</div>
+      </section>
 
-      <div class="card compact">
-        <div class="card-title">⚙️ Preferências da IA</div>
-        <label class="switch-row"><span>Priorizar entradas conservadoras</span><input type="checkbox" data-setting="safeMode"></label>
-        <label class="switch-row"><span>Mostrar odds mínimas recomendadas</span><input type="checkbox" data-setting="showOdds" checked></label>
-        <label class="switch-row"><span>Exibir motivo da escolha</span><input type="checkbox" data-setting="showReason" checked></label>
-        <label class="switch-row"><span>Modo prévia visual sem API</span><input type="checkbox" data-setting="demoMode" checked></label>
-      </div>
+      <section class="settings-pro-card green-line">
+        <div class="settings-pro-title">
+          <div class="settings-pro-icon">⚙️</div>
+          <div>
+            <h3>Preferências da IA</h3>
+          </div>
+        </div>
+        <div class="settings-switch-list">
+          <label class="switch-row"><span>Priorizar entradas conservadoras</span><input type="checkbox" data-setting="safeMode"></label>
+          <label class="switch-row"><span>Mostrar odds mínimas recomendadas</span><input type="checkbox" data-setting="showOdds" checked></label>
+          <label class="switch-row"><span>Exibir motivo da escolha</span><input type="checkbox" data-setting="showReason" checked></label>
+        </div>
+      </section>
 
-      <div class="card compact">
-        <div class="card-title">🔑 API de dados</div>
-        <p class="muted">Agora vamos testar sem API. Depois use a variável <b>APISPORTS_KEY</b> na Vercel ou cole uma chave temporária abaixo.</p>
-        <input id="apiKeyInput" class="field" type="password" placeholder="Cole sua chave API-Football depois" />
-        <button id="saveApiKey" class="btn secondary wide">Salvar chave neste navegador</button>
-      </div>
+      <section class="settings-pro-card">
+        <div class="settings-pro-title">
+          <div class="settings-pro-icon">📱</div>
+          <div>
+            <h3>Preferências do app</h3>
+          </div>
+        </div>
+        <div class="settings-switch-list">
+          <label class="switch-row"><span>Tema escuro</span><input type="checkbox" data-setting="darkTheme" checked></label>
+          <label class="switch-row"><span>Sons de alerta</span><input type="checkbox" data-setting="soundAlerts" checked></label>
+          <label class="switch-row"><span>Vibração</span><input type="checkbox" data-setting="vibration" checked></label>
+          <label class="switch-row"><span>Modo compacto iPhone</span><input type="checkbox" data-setting="compactIphone"></label>
+        </div>
+      </section>
 
-      <div class="card compact">
-        <div class="card-title">🛡️ Aviso responsável</div>
-        <p class="muted">As análises são informativas e não garantem resultado. Use gestão de banca e evite promessas de lucro na divulgação.</p>
-      </div>
+      <section class="settings-pro-card">
+        <div class="settings-pro-title">
+          <div class="settings-pro-icon">🎧</div>
+          <div>
+            <h3>Conta e suporte</h3>
+          </div>
+        </div>
+        <div class="support-list">
+          <button class="support-row" onclick="window.open('https://wa.me/'+(window.PRADO_CONFIG?.SUPPORT_WHATSAPP||'5599999999999'),'_blank')"><span>🟢</span><span>Falar no WhatsApp</span><span>›</span></button>
+          <button class="support-row" onclick="toast('Central de ajuda em preparação.','❔')"><span>❔</span><span>Ajuda</span><span>›</span></button>
+          <button class="support-row" onclick="toast('Política e termos entram na versão publicada.','📄')"><span>📄</span><span>Política e termos</span><span>›</span></button>
+          <button class="support-row" onclick="toast('Prado Sports AI v16.8','ℹ️')"><span>ℹ️</span><span>Versão do app</span><small>v16.8</small></button>
+        </div>
+      </section>
+
+      <section class="settings-pro-card">
+        <div class="settings-pro-title">
+          <div class="settings-pro-icon">⚡</div>
+          <div>
+            <h3>Ações rápidas</h3>
+          </div>
+        </div>
+        <div class="actions-grid">
+          <button class="action-btn" onclick="toast('Alerta visual funcionando.','👁️')">👁️ Testar alerta</button>
+          <button class="action-btn" onclick="localStorage.removeItem('prado_api_key'); toast('Cache local limpo.','🗑️')">🗑️ Limpar cache</button>
+          <button class="action-btn" onclick="toast('App restaurado para visual padrão.','🔄')">🔄 Restaurar app</button>
+        </div>
+      </section>
+
+      <section class="settings-pro-card">
+        <div class="settings-pro-title">
+          <div class="settings-pro-icon">🛡️</div>
+          <div>
+            <h3>Aviso responsável</h3>
+            <p class="responsible-text">As análises são informativas e não garantem resultado. Use gestão de banca e evite promessas de lucro na divulgação.</p>
+          </div>
+        </div>
+      </section>
     </div>
   </dialog>
 

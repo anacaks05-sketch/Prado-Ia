@@ -1,22 +1,27 @@
-# Prado Sports AI — V16.7.2 Bilhetes limpo
+# Prado Sports AI — V16.8 Configurações Premium
 
 ## Escopo
-Somente a aba Bilhetes.
+Somente a aba/modal Configurações.
 
 ## Alterado
-- Removido texto "Mais opções e ferramentas".
-- Ajustado texto do bloco final para não falar 4 seleções.
-- Mantido visual premium aprovado.
-- Mantido foco em Conservador, Moderado e Agressivo.
+- Configurações reorganizadas no modelo aprovado.
+- Notificações no topo.
+- Premium e liberação organizado.
+- Preferências da IA organizadas.
+- Removida a opção marcada: "Modo prévia visual sem API".
+- Preferências do app adicionadas.
+- Conta e suporte adicionados.
+- Ações rápidas adicionadas.
+- Aviso responsável mantido.
 
 ## Não alterado
 - Home
 - Ao vivo
 - IA
 - Scanner
-- Configurações
+- Bilhetes
 - Botão flutuante
 - Menu inferior
 
 ## Teste
-Use: ?v=16-7-2
+Use: ?v=16-8
