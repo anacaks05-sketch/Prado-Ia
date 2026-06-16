@@ -1,10 +1,23 @@
-# Prado Sports AI — V16.9.1 Favoritos com tabs funcionando
+# Prado Sports AI — V16.9.2 Favoritos organizado
+
+## Escopo
+Somente aba Favoritos.
 
 ## Alterado
-- Removido o texto "Central de favoritos".
-- Os botões Jogos / Equipes / Campeonatos / Notícias foram movidos para o topo.
-- Agora os 4 botões funcionam de verdade dentro da aba Favoritos.
-- Mantido o menu inferior com Favoritos no lugar de Scanner.
+- Aba Favoritos ficou mais organizada.
+- Jogos não mistura mais campo de time e campeonatos.
+- Equipes ficou só para escolher/salvar time.
+- Campeonatos ficou só para escolher ligas.
+- Notícias mantida separada.
+- Topo menor e tabs mais alinhadas.
+
+## Não alterado
+- Home
+- Ao vivo
+- IA
+- Bilhetes
+- Configurações
+- menu inferior
 
 ## Teste
-Use: ?v=16-9-1
+Use: ?v=16-9-2

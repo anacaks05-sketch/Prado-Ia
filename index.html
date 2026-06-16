@@ -4015,6 +4015,133 @@ body[data-page="favorites"] #page-favorites{padding-bottom:96px}
   .fav-v169-head::after{font-size:76px;right:16px;top:18px}
 }
 
+
+/* ===== V16.9.2 — FAVORITOS MAIS ORGANIZADO ===== */
+.fav-v169-head{
+  padding:13px !important;
+}
+.fav-v169-head h2{
+  margin-top:8px !important;
+  font-size:29px !important;
+}
+.fav-v169-head p{
+  max-width:330px !important;
+  font-size:11px !important;
+}
+.fav-v169-tabs.top-inside{
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:7px !important;
+  margin-bottom:8px !important;
+}
+.fav-v169-tabs.top-inside .fav-v169-tab{
+  min-height:36px !important;
+  padding:0 6px !important;
+  justify-content:center;
+  font-size:10px !important;
+}
+.fav-v169-status{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+.fav-v169-status-box{
+  min-height:58px;
+  padding:10px;
+  border-radius:17px;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(145deg,rgba(15,24,36,.94),rgba(7,11,17,.99));
+}
+.fav-v169-status-box small{
+  display:block;
+  color:var(--muted);
+  font-size:9px;
+  text-transform:uppercase;
+  font-weight:900;
+  letter-spacing:.07em;
+}
+.fav-v169-status-box b{
+  display:block;
+  margin-top:6px;
+  color:#fff;
+  font-size:14px;
+  line-height:1.15;
+}
+.fav-v169-status-box.green b{color:var(--green)}
+.fav-v169-panel-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin:2px 0 0;
+}
+.fav-v169-panel-title h3{
+  margin:0;
+  color:#fff;
+  font-family:'Space Grotesk';
+  font-size:21px;
+  line-height:1;
+}
+.fav-v169-panel-title span{
+  color:var(--gold);
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.fav-v169-cta{
+  display:grid;
+  gap:9px;
+  padding:14px;
+  border-radius:20px;
+  border:1px solid rgba(255,224,110,.22);
+  background:linear-gradient(145deg,rgba(27,22,12,.94),rgba(7,11,17,.99));
+  color:#ffe8a6;
+}
+.fav-v169-cta b{
+  color:#fff;
+  font-size:16px;
+}
+.fav-v169-cta p{
+  margin:0;
+  color:#dccda4;
+  font-size:12px;
+  line-height:1.4;
+}
+.fav-v169-cta button{
+  min-height:40px;
+  border:0;
+  border-radius:14px;
+  color:#06120d;
+  background:linear-gradient(135deg,#20e698,#7affcc);
+  font-weight:900;
+}
+.fav-v169-match{
+  grid-template-columns:1fr 70px !important;
+}
+.fav-v169-date{
+  margin-top:6px !important;
+  padding-left:2px;
+}
+.fav-v169-team-card.compact{
+  padding:11px !important;
+}
+.fav-v169-leagues{
+  gap:6px !important;
+}
+.fav-v169-league{
+  min-height:30px !important;
+  font-size:9px !important;
+}
+@media(max-width:380px){
+  .fav-v169-tabs.top-inside .fav-v169-tab{
+    font-size:9px !important;
+  }
+  .fav-v169-status{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -4575,20 +4702,22 @@ function getFavoriteNewsData(team, leagues){
 function renderFavoriteGamesView(team, leagues){
   const games = team ? getFavoriteFixturesData(team, leagues).slice(0,3) : [];
   return `
-    <section class="fav-v169-team-card">
-      <div class="fav-v169-label">Time favorito</div>
-      <div class="fav-v169-input-row">
-        <input id="favoriteTeamPageInput" class="field" placeholder="Ex.: Flamengo, Brasil, Liverpool" value="${safe(team)}" />
-        <button class="fav-v169-save" onclick="saveFavoriteTeamFromPage()">Salvar</button>
+    <div class="fav-v169-status">
+      <div class="fav-v169-status-box green">
+        <small>Time salvo</small>
+        <b>${team || 'Nenhum ainda'}</b>
       </div>
-    </section>
-    <section class="fav-v169-team-card">
-      <div class="fav-v169-label">Campeonatos favoritos</div>
-      <div class="fav-v169-leagues">
-        ${['Brasileirão','Copa do Brasil','Premier League','Champions','La Liga','Libertadores'].map(l=>`<button class="fav-v169-league ${leagues.includes(l)?'active':''}" onclick="toggleFavLeague('${l}')">${l}</button>`).join('')}
+      <div class="fav-v169-status-box">
+        <small>Campeonatos</small>
+        <b>${leagues.length ? leagues.length + ' selecionados' : 'Padrão ativo'}</b>
       </div>
-    </section>
-    <h3 class="fav-v169-section-title">${team ? `Jogos de ${safe(team)}` : 'Jogos do time favorito'}</h3>
+    </div>
+
+    <div class="fav-v169-panel-title">
+      <h3>${team ? `Jogos de ${safe(team)}` : 'Jogos favoritos'}</h3>
+      <span>${games.length || 0} jogos</span>
+    </div>
+
     ${team ? `<div class="fav-v169-list">
       ${games.map(g=>`
         <div>
@@ -4603,62 +4732,56 @@ function renderFavoriteGamesView(team, leagues){
           </article>
         </div>
       `).join('')}
-    </div>` : `<div class="fav-v169-empty">Digite e salve um time favorito para aparecerem aqui 2 ou 3 jogos dele.</div>`}
+    </div>` : `<div class="fav-v169-cta">
+      <b>Escolha seu time favorito</b>
+      <p>Salve uma equipe na aba Equipes para aparecerem aqui 2 ou 3 jogos no modelo organizado.</p>
+      <button onclick="setFavoriteTab('teams')">Escolher equipe</button>
+    </div>`}
   `;
 }
 function renderFavoriteTeamsView(team){
   const suggestions = ['Flamengo','Palmeiras','Corinthians','São Paulo','Liverpool','Manchester City','Argentina','Brasil'];
   return `
-    <section class="fav-v169-team-card">
-      <div class="fav-v169-label">Escolha sua equipe principal</div>
-      <div class="fav-v169-input-row">
+    <section class="fav-v169-team-card compact">
+      <div class="fav-v169-panel-title">
+        <h3>Equipe favorita</h3>
+        <span>${team ? 'salvo' : 'pendente'}</span>
+      </div>
+      <div class="fav-v169-input-row" style="margin-top:10px">
         <input id="favoriteTeamPageInput" class="field" placeholder="Ex.: Flamengo, Brasil, Liverpool" value="${safe(team)}" />
         <button class="fav-v169-save" onclick="saveFavoriteTeamFromPage()">Salvar</button>
       </div>
-      <div class="fav-v169-helper">Toque em uma equipe sugerida para preencher e salvar mais rápido.</div>
+      <div class="fav-v169-helper">Esse time será usado para jogos, notícias e organização da IA.</div>
+    </section>
+
+    <section class="fav-v169-team-card compact">
+      <div class="fav-v169-label">Sugestões rápidas</div>
       <div class="fav-v169-team-pills">
         ${suggestions.map(item=>`<button class="fav-v169-pill ${team===item?'active':''}" onclick="selectFavoriteTeam('${item}')">${item}</button>`).join('')}
       </div>
     </section>
-    <div class="fav-v169-grid2">
-      <section class="fav-v169-mini-card">
-        <div class="fav-v169-mini-kicker">Equipe atual</div>
-        <h4 class="fav-v169-mini-title">${team || 'Nenhum time salvo'}</h4>
-        <div class="fav-v169-mini-sub">Esse é o time usado para organizar os próximos jogos, alertas e notícias na aba Favoritos.</div>
-      </section>
-      <section class="fav-v169-mini-card">
-        <div class="fav-v169-mini-kicker">Atalho rápido</div>
-        <h4 class="fav-v169-mini-title">2 ou 3 jogos organizados</h4>
-        <div class="fav-v169-mini-sub">Assim que salvar um time, o app prepara a visualização dos próximos confrontos em um formato mais limpo.</div>
-      </section>
-    </div>
   `;
 }
 function renderFavoriteLeaguesView(leagues){
   const all = ['Brasileirão','Copa do Brasil','Premier League','Champions','La Liga','Libertadores'];
   return `
-    <section class="fav-v169-team-card">
-      <div class="fav-v169-label">Escolha os campeonatos</div>
-      <div class="fav-v169-leagues">
+    <section class="fav-v169-team-card compact">
+      <div class="fav-v169-panel-title">
+        <h3>Campeonatos</h3>
+        <span>${leagues.length} ativos</span>
+      </div>
+      <div class="fav-v169-helper">Escolha as ligas que devem aparecer primeiro na área Favoritos.</div>
+      <div class="fav-v169-leagues" style="margin-top:10px">
         ${all.map(l=>`<button class="fav-v169-league ${leagues.includes(l)?'active':''}" onclick="toggleFavLeague('${l}')">${l}</button>`).join('')}
       </div>
-      <div class="fav-v169-helper">Esses campeonatos ajudam a filtrar melhor os jogos e o conteúdo da área Favoritos.</div>
+    </section>
+
+    <section class="fav-v169-mini-card">
+      <div class="fav-v169-mini-kicker">Selecionados</div>
       <div class="fav-v169-selected-list">
         ${(leagues.length?leagues:['Nenhum selecionado']).map(item=>`<span class="fav-v169-selected-item">${item}</span>`).join('')}
       </div>
     </section>
-    <div class="fav-v169-chip-grid">
-      <section class="fav-v169-mini-card">
-        <div class="fav-v169-mini-kicker">Seleção ativa</div>
-        <h4 class="fav-v169-mini-title">${leagues.length}</h4>
-        <div class="fav-v169-mini-sub">campeonatos marcados como favoritos.</div>
-      </section>
-      <section class="fav-v169-mini-card">
-        <div class="fav-v169-mini-kicker">Organização</div>
-        <h4 class="fav-v169-mini-title">Mais foco</h4>
-        <div class="fav-v169-mini-sub">Você reduz excesso de informação e deixa só o que acompanha com mais frequência.</div>
-      </section>
-    </div>
   `;
 }
 function renderFavoriteNewsView(team, leagues){
@@ -4708,7 +4831,7 @@ function renderFavorites(){
           ${tabs.map(([key,label])=>`<button class="fav-v169-tab ${tab===key?'active':''}" onclick="setFavoriteTab('${key}')">${label}</button>`).join('')}
         </div>
         <h2>Favoritos</h2>
-        <p>Escolha seu time e acompanhe jogos, equipes, campeonatos e notícias em um só lugar.</p>
+        <p>Jogos, equipes, campeonatos e notícias do que você acompanha.</p>
       </section>
       <div class="fav-v169-content">${content}</div>
     </div>
