@@ -1,21 +1,23 @@
-# Prado Sports AI — V16.17.1 Ao Vivo Limpo
+# Prado Sports AI — V16.18 Premium Vendedor
 
 ## Alterado
-- Removido o bloco "Central ao vivo compacta".
-- Removido o texto explicativo "Campeonatos agrupados...".
-- Os campeonatos agora aparecem direto abaixo dos indicadores.
+- Somente o bloco Premium nas Configurações.
+- Tela de liberação ficou mais vendedora.
+- Adicionado destaque de R$ 19,90/mês.
+- Adicionados benefícios: Bilhetes IA, IA Prado, Ao vivo Pro e Favoritos.
+- Botões: Liberar Premium agora e Falar no WhatsApp.
+- Campo de código premium mantido.
 
 ## Não alterado
-- Agrupamento por campeonatos.
-- Splash.
-- Home.
-- IA.
-- Favoritos.
-- Bilhetes.
-- Configurações.
-- Pagamento.
-- WhatsApp com mensagem.
-- Stats avançado.
+- Splash
+- Home
+- Ao vivo
+- IA
+- Favoritos
+- Bilhetes
+- Stats
+- Pagamento
+- WhatsApp com mensagem
 
 ## Teste
-Use: ?v=16-17-1
+Use: ?v=16-18

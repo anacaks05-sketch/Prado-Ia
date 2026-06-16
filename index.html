@@ -4702,6 +4702,178 @@ body[data-page="live"] .live-v1617-groups{
   margin-top:0 !important;
 }
 
+
+/* ===== V16.18 — PREMIUM MAIS VENDEDOR / SOMENTE CONFIGURAÇÕES ===== */
+.premium-v1618{
+  position:relative;
+  overflow:hidden;
+  border-color:rgba(255,224,110,.32) !important;
+  background:
+    radial-gradient(circle at 86% 10%, rgba(255,224,110,.22), transparent 30%),
+    radial-gradient(circle at 8% 95%, rgba(33,230,161,.14), transparent 35%),
+    linear-gradient(150deg,rgba(37,28,9,.82),rgba(9,15,23,.98)) !important;
+  box-shadow:0 20px 48px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.05);
+}
+.premium-v1618::after{
+  content:"";
+  position:absolute;
+  right:-42px;
+  top:-52px;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:1px solid rgba(255,224,110,.20);
+  box-shadow:0 0 46px rgba(255,224,110,.10);
+  pointer-events:none;
+}
+.premium-v1618-head{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:58px 1fr;
+  gap:12px;
+  align-items:center;
+  margin-bottom:13px;
+}
+.premium-v1618-icon{
+  width:58px;
+  height:58px;
+  border-radius:20px;
+  display:grid;
+  place-items:center;
+  font-size:28px;
+  color:#171005;
+  background:linear-gradient(145deg,#FFF2A7,#D79722);
+  box-shadow:0 18px 34px rgba(255,224,110,.18), inset 0 1px 0 rgba(255,255,255,.45);
+}
+.premium-v1618-kicker{
+  display:block;
+  color:var(--gold);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+.premium-v1618 h3{
+  margin:0;
+  color:#fff;
+  font-family:'Space Grotesk',Inter,sans-serif;
+  font-size:24px;
+  line-height:1.02;
+  letter-spacing:-.045em;
+}
+.premium-v1618-sub{
+  position:relative;
+  z-index:1;
+  color:#c8d3df;
+  font-size:12px;
+  line-height:1.42;
+  margin:0 0 13px;
+}
+.premium-v1618-price{
+  position:relative;
+  z-index:1;
+  display:flex;
+  align-items:flex-end;
+  gap:7px;
+  margin-bottom:12px;
+}
+.premium-v1618-price b{
+  font-family:'Space Grotesk',Inter,sans-serif;
+  font-size:34px;
+  line-height:.9;
+  letter-spacing:-.06em;
+  color:var(--gold);
+  text-shadow:0 0 18px rgba(255,224,110,.18);
+}
+.premium-v1618-price span{
+  color:#9eaaba;
+  font-size:11px;
+  font-weight:800;
+}
+.premium-v1618-benefits{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:7px;
+  margin-bottom:12px;
+}
+.premium-v1618-benefit{
+  min-height:54px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.045);
+  padding:9px;
+  display:flex;
+  gap:8px;
+  align-items:flex-start;
+}
+.premium-v1618-benefit i{
+  width:24px;
+  height:24px;
+  border-radius:9px;
+  display:grid;
+  place-items:center;
+  font-style:normal;
+  flex:0 0 auto;
+  color:var(--green);
+  background:rgba(33,230,161,.10);
+  border:1px solid rgba(33,230,161,.18);
+}
+.premium-v1618-benefit b{
+  display:block;
+  color:#fff;
+  font-size:11.5px;
+  line-height:1.1;
+}
+.premium-v1618-benefit small{
+  display:block;
+  color:#9ba8b8;
+  font-size:9.2px;
+  line-height:1.25;
+  margin-top:3px;
+}
+.premium-v1618-actions{
+  position:relative;
+  z-index:1;
+  display:grid;
+  gap:8px;
+}
+.premium-v1618-actions .btn{
+  min-height:48px;
+  border-radius:17px;
+  font-weight:900;
+}
+.premium-v1618-code{
+  position:relative;
+  z-index:1;
+  display:grid;
+  gap:8px;
+  margin-top:10px;
+  padding:10px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(0,0,0,.13);
+}
+.premium-v1618-code-title{
+  color:#fff;
+  font-size:12px;
+  font-weight:900;
+}
+.premium-v1618-mini{
+  color:#9eabbc;
+  font-size:10.5px;
+  line-height:1.35;
+  margin-top:2px;
+}
+@media(max-width:390px){
+  .premium-v1618-benefits{grid-template-columns:1fr}
+  .premium-v1618 h3{font-size:22px}
+  .premium-v1618-price b{font-size:31px}
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -4836,21 +5008,34 @@ body[data-page="live"] .live-v1617-groups{
         </div>
       </section>
 
-      <section class="settings-pro-card gold-line">
-        <div class="settings-pro-title">
-          <div class="settings-pro-icon">💎</div>
+      <section class="settings-pro-card premium-v1618">
+        <div class="premium-v1618-head">
+          <div class="premium-v1618-icon">💎</div>
           <div>
-            <h3>Premium e liberação</h3>
-            <p>Bilhetes IA, Favoritos, IA Prado e oportunidades ao vivo.</p>
+            <span class="premium-v1618-kicker">Prado Premium</span>
+            <h3>Desbloqueie a IA completa</h3>
           </div>
         </div>
-        <div class="premium-price">R$ 19,90/mês</div>
-        <button class="btn gold wide" onclick="openPayment()">👑 Liberar Meu Acesso Premium</button>
-        <div class="premium-code">
+        <p class="premium-v1618-sub">Tenha bilhetes automáticos, leitura ao vivo, favoritos organizados e análises avançadas por apenas:</p>
+        <div class="premium-v1618-price">
+          <b>R$ 19,90</b><span>/ mês</span>
+        </div>
+        <div class="premium-v1618-benefits">
+          <div class="premium-v1618-benefit"><i>🎟️</i><div><b>Bilhetes IA</b><small>Conservador, moderado e agressivo</small></div></div>
+          <div class="premium-v1618-benefit"><i>🤖</i><div><b>IA Prado</b><small>Análise pronta por jogo</small></div></div>
+          <div class="premium-v1618-benefit"><i>📡</i><div><b>Ao vivo Pro</b><small>Oportunidades em tempo real</small></div></div>
+          <div class="premium-v1618-benefit"><i>⭐</i><div><b>Favoritos</b><small>Times e ligas organizados</small></div></div>
+        </div>
+        <div class="premium-v1618-actions">
+          <button class="btn gold wide" onclick="openPayment()">👑 Liberar Premium agora</button>
+          <button class="btn secondary wide" onclick="openSupportWhatsApp()">💬 Falar no WhatsApp</button>
+        </div>
+        <div class="premium-v1618-code">
+          <div class="premium-v1618-code-title">Já comprou? Digite seu código</div>
           <input id="premiumCode" class="field" placeholder="Digite o código premium" />
           <button class="btn primary wide" onclick="unlockPremium()">Validar acesso</button>
+          <div class="premium-v1618-mini">Após o pagamento, você recebe um código individual para liberar o app.</div>
         </div>
-        <div class="premium-sub">Após o pagamento, digite o código recebido para liberar seu acesso premium.</div>
       </section>
 
       <section class="settings-pro-card green-line">
