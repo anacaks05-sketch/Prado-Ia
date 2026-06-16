@@ -4142,21 +4142,229 @@ body[data-page="favorites"] #page-favorites{padding-bottom:96px}
   }
 }
 
+
+/* ===== V16.10 — ABERTURA PREMIUM / SOMENTE SPLASH ===== */
+.splash-v1610{
+  padding:20px !important;
+  place-items:center !important;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,190,54,.30), transparent 22%),
+    radial-gradient(circle at 78% 86%, rgba(33,230,161,.18), transparent 30%),
+    linear-gradient(180deg, rgba(0,0,0,.08), rgba(0,0,0,.74)),
+    #060A0F !important;
+}
+.splash-v1610::before{
+  content:"";
+  position:absolute;
+  inset:-10%;
+  background:
+    linear-gradient(rgba(255,224,110,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,224,110,.028) 1px, transparent 1px),
+    radial-gradient(ellipse at 52% 104%, transparent 0 18%, rgba(255,224,110,.16) 18.2% 18.6%, transparent 18.8%),
+    radial-gradient(ellipse at 26% 22%, transparent 0 31%, rgba(255,224,110,.16) 31.2% 31.5%, transparent 31.7%),
+    radial-gradient(ellipse at 80% 16%, transparent 0 36%, rgba(255,224,110,.10) 36.1% 36.4%, transparent 36.6%);
+  background-size:86px 86px,86px 86px,100% 100%,100% 100%,100% 100%;
+  opacity:.62;
+  pointer-events:none;
+}
+.splash-v1610::after{
+  content:"";
+  position:absolute;
+  left:-20%;
+  right:-20%;
+  bottom:-10%;
+  height:48%;
+  background:
+    radial-gradient(ellipse at 50% 74%, rgba(255,224,110,.22) 0 1px, transparent 2px 100%),
+    linear-gradient(to top, rgba(33,230,161,.08), transparent 58%);
+  clip-path:polygon(36% 100%, 45% 22%, 55% 22%, 64% 100%);
+  opacity:.55;
+  pointer-events:none;
+}
+.splash-v1610 .orb-a{
+  width:270px !important;
+  height:270px !important;
+  left:-85px !important;
+  top:4% !important;
+  background:rgba(255,185,42,.24) !important;
+  filter:blur(28px) !important;
+}
+.splash-v1610 .orb-b{
+  width:330px !important;
+  height:330px !important;
+  right:-115px !important;
+  bottom:4% !important;
+  background:rgba(33,230,161,.16) !important;
+  filter:blur(32px) !important;
+}
+.splash-v1610 .intro-ring{
+  position:absolute !important;
+  border-color:rgba(255,224,110,.15) !important;
+  opacity:.78 !important;
+}
+.splash-v1610-card{
+  width:min(430px,92vw) !important;
+  min-height:535px !important;
+  padding:42px 22px 31px !important;
+  border-radius:36px !important;
+  border:1px solid rgba(255,224,110,.38) !important;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(255,224,110,.13), transparent 20%),
+    radial-gradient(circle at 100% 100%, rgba(33,230,161,.16), transparent 27%),
+    linear-gradient(160deg, rgba(20,23,24,.98), rgba(3,8,12,.99)) !important;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.54),
+    0 0 0 1px rgba(255,255,255,.025) inset,
+    0 0 44px rgba(255,224,110,.12),
+    0 0 34px rgba(33,230,161,.10) !important;
+  overflow:hidden !important;
+}
+.splash-v1610-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255,224,110,.16), transparent 26%),
+    linear-gradient(90deg, transparent 0, rgba(255,224,110,.20) 50%, transparent 100%);
+  height:1px;
+  top:0;
+  opacity:.95;
+}
+.splash-v1610-logo{
+  width:104px !important;
+  height:104px !important;
+  border-radius:31px !important;
+  margin-bottom:22px !important;
+  font-size:48px !important;
+  background:
+    linear-gradient(145deg,#FFECA8 0%,#E0A52F 46%,#9C6412 100%) !important;
+  box-shadow:
+    0 0 34px rgba(255,224,110,.42),
+    0 20px 42px rgba(201,148,47,.28),
+    inset 0 1px 0 rgba(255,255,255,.55) !important;
+}
+.splash-v1610 .splash-kicker{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  color:#F5CC62 !important;
+  letter-spacing:.42em !important;
+  font-size:14px !important;
+  margin-bottom:14px !important;
+  text-shadow:0 0 16px rgba(255,224,110,.24);
+}
+.splash-v1610 h1{
+  max-width:330px !important;
+  margin:0 auto 18px !important;
+  font-size:46px !important;
+  line-height:.95 !important;
+  letter-spacing:-.065em !important;
+  color:#fff !important;
+  text-shadow:0 18px 40px rgba(0,0,0,.45);
+}
+.splash-v1610 h1 span{
+  color:var(--gold);
+  background:linear-gradient(180deg,#FFF4B6,#C98720);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.splash-v1610 p{
+  max-width:330px !important;
+  margin:0 auto 28px !important;
+  color:#B9C2CF !important;
+  font-size:17px !important;
+  line-height:1.42 !important;
+}
+.splash-v1610 .intro-loader{
+  height:12px !important;
+  max-width:340px !important;
+  margin:0 auto 16px !important;
+  border-radius:999px !important;
+  background:rgba(255,255,255,.045) !important;
+  border:1px solid rgba(255,224,110,.22) !important;
+  box-shadow:inset 0 0 12px rgba(0,0,0,.45);
+  overflow:hidden !important;
+}
+.splash-v1610 .intro-loader i{
+  width:86% !important;
+  background:linear-gradient(90deg,#FFE58B,#D89922,#FFE58B) !important;
+  box-shadow:0 0 18px rgba(255,224,110,.50) !important;
+  animation:introLoadPremium 2.05s ease-in-out infinite !important;
+}
+@keyframes introLoadPremium{
+  0%{transform:translateX(-72%)}
+  55%{transform:translateX(4%)}
+  100%{transform:translateX(18%)}
+}
+.splash-v1610-loading{
+  color:#AEB7C3;
+  font-size:13px;
+  margin:0 auto 23px;
+}
+.splash-v1610 .intro-meta{
+  gap:10px !important;
+}
+.splash-v1610 .intro-meta span{
+  min-height:40px !important;
+  padding:0 14px !important;
+  border-radius:999px !important;
+  color:#DAFDEB !important;
+  background:rgba(33,230,161,.055) !important;
+  border:1px solid rgba(33,230,161,.28) !important;
+  font-size:12px !important;
+  font-weight:800 !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+}
+.splash-v1610 .intro-meta span:nth-child(2){
+  color:#FFE18A !important;
+  background:rgba(255,224,110,.055) !important;
+  border-color:rgba(255,224,110,.34) !important;
+}
+@media(max-width:430px){
+  .splash-v1610-card{
+    min-height:500px !important;
+    padding:36px 18px 26px !important;
+    border-radius:32px !important;
+  }
+  .splash-v1610-logo{
+    width:92px !important;
+    height:92px !important;
+    font-size:44px !important;
+  }
+  .splash-v1610 h1{
+    font-size:40px !important;
+  }
+  .splash-v1610 p{
+    font-size:15px !important;
+    margin-bottom:24px !important;
+  }
+  .splash-v1610 .intro-meta{
+    gap:7px !important;
+  }
+  .splash-v1610 .intro-meta span{
+    min-height:36px !important;
+    padding:0 10px !important;
+    font-size:10.5px !important;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
-  <div id="splash" class="splash intro-splash" aria-label="Abertura do app">
+  <div id="splash" class="splash intro-splash splash-v1610" aria-label="Abertura do app">
     <div class="splash-orb orb-a"></div>
     <div class="splash-orb orb-b"></div>
     <div class="intro-ring ring-a"></div>
     <div class="intro-ring ring-b"></div>
-    <div class="splash-card intro-card">
-      <div class="brand-mark big pulse-brand"><span>P</span></div>
-      <div class="splash-kicker">PRADO AI</div>
-      <h1>Central premium de futebol.</h1>
-      <p>Scanner ao vivo, IA avançada e bilhetes profissionais carregando para você.</p>
+    <div class="splash-card intro-card splash-v1610-card">
+      <div class="brand-mark big pulse-brand splash-v1610-logo"><span>P</span></div>
+      <div class="splash-kicker">— PRADO AI —</div>
+      <h1>Futebol inteligente <span>premium.</span></h1>
+      <p>IA avançada, favoritos e bilhetes profissionais para você vencer mais.</p>
       <div class="intro-loader"><i></i></div>
-      <div class="intro-meta"><span>IA Forte</span><span>Scanner Live</span><span>Bilhetes Pro</span></div>
+      <div class="splash-v1610-loading">Carregando inteligência...</div>
+      <div class="intro-meta"><span>🧠 IA Avançada</span><span>☆ Favoritos Pro</span><span>🎟️ Bilhetes Pro</span></div>
     </div>
   </div>
 

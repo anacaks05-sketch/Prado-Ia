@@ -1,23 +1,24 @@
-# Prado Sports AI — V16.9.2 Favoritos organizado
+# Prado Sports AI — V16.10 Splash Premium
 
 ## Escopo
-Somente aba Favoritos.
+Somente tela inicial / abertura do aplicativo.
 
 ## Alterado
-- Aba Favoritos ficou mais organizada.
-- Jogos não mistura mais campo de time e campeonatos.
-- Equipes ficou só para escolher/salvar time.
-- Campeonatos ficou só para escolher ligas.
-- Notícias mantida separada.
-- Topo menor e tabs mais alinhadas.
+- Abertura no modelo aprovado.
+- Texto: Futebol inteligente premium.
+- Visual preto, dourado e verde premium.
+- Loader dourado animado.
+- Botões: IA Avançada, Favoritos Pro, Bilhetes Pro.
+- Removido texto antigo de Scanner na abertura.
 
 ## Não alterado
 - Home
 - Ao vivo
 - IA
+- Favoritos
 - Bilhetes
 - Configurações
 - menu inferior
 
 ## Teste
-Use: ?v=16-9-2
+Use: ?v=16-10
