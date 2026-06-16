@@ -3584,6 +3584,37 @@ body[data-page="tips"] .tickets-v167-ready .ready-badge{
   }
 }
 
+
+/* ===== V16.8.1 — CONFIG / NOTIFICAÇÕES MAIS LIMPO ===== */
+#settingsModal .settings-pro-card.notifications-card .settings-pro-title{
+  margin-bottom:10px;
+}
+#settingsModal .settings-pro-card.notifications-card .settings-pro-title h3{
+  font-size:17px;
+}
+#settingsModal .settings-pro-card.notifications-card .settings-pro-line{
+  grid-template-columns:26px 1fr auto;
+  min-height:58px;
+  border-radius:16px;
+  padding:12px;
+}
+#settingsModal .settings-pro-card.notifications-card .line-ico{
+  font-size:18px;
+}
+#settingsModal .settings-pro-card.notifications-card .notif-label{
+  display:block;
+  color:#f3f7fb;
+  font-weight:800;
+  font-size:12px;
+  margin-bottom:3px;
+}
+#settingsModal .settings-pro-card.notifications-card .notif-text{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.35;
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -3699,17 +3730,20 @@ body[data-page="tips"] .tickets-v167-ready .ready-badge{
     </div>
 
     <div class="settings-grid settings-pro">
-      <section class="settings-pro-card">
+      <section class="settings-pro-card notifications-card">
         <div class="settings-pro-title">
           <div class="settings-pro-icon">🔔</div>
           <div>
-            <h3>Aba de notificações</h3>
-            <p>Alertas de jogo, IA e bilhetes ficam organizados em uma aba separada.</p>
+            <h3>Notificações</h3>
+            <p>Alertas de jogo, IA e bilhetes ficam organizados em um só lugar.</p>
           </div>
         </div>
         <div class="settings-pro-line">
           <div class="line-ico">☷</div>
-          <span>Gols, escanteios, cartão amarelo, cartão vermelho, escalação confirmada, oportunidade da IA e bilhetes do dia.</span>
+          <div>
+            <span class="notif-label">Notificações</span>
+            <span class="notif-text">Gols, escanteios, cartão amarelo, cartão vermelho, escalação confirmada, oportunidade da IA e bilhetes do dia.</span>
+          </div>
           <button class="btn secondary" onclick="openNotifications()">Abrir</button>
         </div>
       </section>

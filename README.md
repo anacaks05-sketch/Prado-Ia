@@ -1,18 +1,10 @@
-# Prado Sports AI — V16.8 Configurações Premium
-
-## Escopo
-Somente a aba/modal Configurações.
+# Prado Sports AI — V16.8.1 Configurações / Notificações simples
 
 ## Alterado
-- Configurações reorganizadas no modelo aprovado.
-- Notificações no topo.
-- Premium e liberação organizado.
-- Preferências da IA organizadas.
-- Removida a opção marcada: "Modo prévia visual sem API".
-- Preferências do app adicionadas.
-- Conta e suporte adicionados.
-- Ações rápidas adicionadas.
-- Aviso responsável mantido.
+- Mantida somente a área de Configurações.
+- Card de notificações simplificado.
+- Título alterado de **Aba de notificações** para **Notificações**.
+- Tudo ficou em um bloco mais limpo e organizado.
 
 ## Não alterado
 - Home
@@ -20,8 +12,7 @@ Somente a aba/modal Configurações.
 - IA
 - Scanner
 - Bilhetes
-- Botão flutuante
-- Menu inferior
+- Restante das Configurações
 
 ## Teste
-Use: ?v=16-8
+Use: ?v=16-8-1
