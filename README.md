@@ -1,22 +1,21 @@
-# Prado Sports AI — V16.19.1 Config Full Corrigido
+# Prado Sports AI — V16.20 Tema Claro Geral + Config
 
 ## Alterado
-- Corrigido o problema dos cards de Configurações ficando cortados.
-- Configurações continua em tela quase inteira.
-- Cards agora abrem com altura correta.
-- Tema do app aparece completo.
-- Premium aparece completo sem cortar conteúdo.
+- Tema claro agora fica branco em todas as abas.
+- Configurações continua igual em todas as telas.
+- Bloco Premium dentro de Configurações ficou compacto e não fica cortado.
+- Mantido seletor Tema escuro / Tema claro.
+- Configurações abre em tela grande no celular.
 
 ## Não alterado
 - Splash
-- Home
-- Ao vivo
+- Pagamento
+- WhatsApp com mensagem
 - IA
 - Favoritos
 - Bilhetes
 - Stats
-- Pagamento
-- WhatsApp com mensagem
+- Ao vivo agrupado
 
 ## Teste
-Use: ?v=16-19-1
+Use: ?v=16-20

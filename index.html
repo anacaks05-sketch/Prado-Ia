@@ -5166,6 +5166,392 @@ body[data-theme="light"] .theme-v1619-option.active{
   }
 }
 
+
+/* ===== V16.20 — TEMA CLARO GERAL + CONFIG PADRÃO EM TODAS AS ABAS ===== */
+
+/* Configurações grande, com card premium compacto e sem corte */
+#settingsModal.settings-premium-modal{
+  width:min(560px,calc(100vw - 8px)) !important;
+  height:calc(100dvh - 8px) !important;
+  max-height:none !important;
+  border-radius:23px !important;
+  overflow:hidden !important;
+}
+#settingsModal.settings-premium-modal[open]{
+  display:flex !important;
+  flex-direction:column !important;
+}
+#settingsModal.settings-premium-modal .modal-head{
+  flex:0 0 auto !important;
+  padding:18px 18px 15px !important;
+}
+#settingsModal.settings-premium-modal .settings-pro{
+  flex:1 1 auto !important;
+  min-height:0 !important;
+  overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch !important;
+  display:flex !important;
+  flex-direction:column !important;
+  gap:11px !important;
+  padding:12px 12px calc(22px + var(--safe-bottom)) !important;
+}
+#settingsModal.settings-premium-modal .settings-pro > .settings-pro-card{
+  flex:0 0 auto !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:auto !important;
+  max-height:none !important;
+  overflow:visible !important;
+  padding:13px !important;
+}
+#settingsModal.settings-premium-modal .theme-v1619-card{
+  min-height:auto !important;
+}
+#settingsModal.settings-premium-modal .theme-v1619-options{
+  margin-top:9px !important;
+}
+.premium-v1620{
+  position:relative;
+  overflow:hidden !important;
+  border-color:rgba(255,224,110,.30) !important;
+  background:
+    radial-gradient(circle at 88% 6%,rgba(255,224,110,.18),transparent 34%),
+    linear-gradient(150deg,rgba(38,29,8,.78),rgba(10,15,22,.98)) !important;
+}
+.premium-v1620-head{
+  display:grid;
+  grid-template-columns:54px 1fr;
+  align-items:center;
+  gap:11px;
+  margin-bottom:9px;
+}
+.premium-v1620-icon{
+  width:54px;
+  height:54px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  font-size:26px;
+  background:linear-gradient(145deg,#FFF2A6,#D99825);
+  box-shadow:0 14px 28px rgba(255,224,110,.16);
+}
+.premium-v1620-head span{
+  display:block;
+  color:var(--gold);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+.premium-v1620-head h3{
+  margin:0;
+  font-family:'Space Grotesk',Inter,sans-serif;
+  font-size:23px;
+  line-height:1.02;
+  color:#fff;
+  letter-spacing:-.04em;
+}
+.premium-v1620-sub{
+  margin:0 0 8px;
+  color:#c8d3df;
+  font-size:12px;
+  line-height:1.4;
+}
+.premium-v1620-price{
+  display:flex;
+  align-items:flex-end;
+  gap:8px;
+  margin-bottom:9px;
+}
+.premium-v1620-price b{
+  font-family:'Space Grotesk',Inter,sans-serif;
+  font-size:32px;
+  line-height:.9;
+  color:var(--gold);
+  letter-spacing:-.06em;
+}
+.premium-v1620-price small{
+  color:#a6b1bf;
+  font-size:13px;
+  font-weight:900;
+}
+.premium-v1620-mini-benefits{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:7px;
+  margin-bottom:10px;
+}
+.premium-v1620-mini-benefits span{
+  min-height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:13px;
+  padding:0 8px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.08);
+  color:#e8eef8;
+  font-size:10px;
+  font-weight:900;
+  text-align:center;
+}
+.premium-v1620-actions,
+.premium-v1620-code{
+  display:grid;
+  gap:8px;
+}
+.premium-v1620-code{
+  margin-top:8px;
+}
+.premium-v1620-actions .btn,
+.premium-v1620-code .btn{
+  min-height:43px !important;
+  border-radius:15px !important;
+}
+
+/* Garante configurações em todas as abas */
+#openSettingsMini{
+  display:grid !important;
+}
+.top-actions{
+  display:flex !important;
+}
+body[data-page="home"] #openSettingsMini,
+body:not([data-page="home"]) #openSettingsMini{
+  display:grid !important;
+}
+
+/* Tema claro real, aplicado em todas as abas */
+html:has(body[data-theme="light"]),
+body[data-theme="light"]{
+  background:#F7F8FB !important;
+  color-scheme:light !important;
+}
+body[data-theme="light"]{
+  --bg:#F7F8FB;
+  --bg2:#FFFFFF;
+  --surface:#FFFFFF;
+  --surface2:#F4F6FA;
+  --surface3:#E9EDF5;
+  --line:rgba(15,23,42,.11);
+  --line2:rgba(15,23,42,.16);
+  --text:#0B1522;
+  --muted:#5F6B7A;
+  --faint:#8792A0;
+  color:#0B1522 !important;
+  background:#F7F8FB !important;
+}
+body[data-theme="light"]::before{
+  display:none !important;
+}
+body[data-theme="light"] .app,
+body[data-theme="light"] .page,
+body[data-theme="light"] main{
+  background:#F7F8FB !important;
+}
+body[data-theme="light"] .topbar{
+  background:#FFFFFF !important;
+  border-bottom:1px solid rgba(15,23,42,.10) !important;
+  box-shadow:0 10px 28px rgba(15,23,42,.06) !important;
+  color:#0B1522 !important;
+}
+body[data-theme="light"] .brand-line strong,
+body[data-theme="light"] .brand-line small{
+  color:#0B1522 !important;
+}
+body[data-theme="light"] .top-action-btn,
+body[data-theme="light"] .icon-btn{
+  background:#FFFFFF !important;
+  color:#0B1522 !important;
+  border-color:rgba(15,23,42,.12) !important;
+  box-shadow:0 10px 25px rgba(15,23,42,.08), inset 0 1px 0 rgba(255,255,255,.85) !important;
+}
+body[data-theme="light"] .bottom-nav{
+  background:rgba(255,255,255,.96) !important;
+  border-top:1px solid rgba(15,23,42,.10) !important;
+  color:#6A7584 !important;
+}
+body[data-theme="light"] .bottom-nav:before{
+  background:radial-gradient(circle at 50% 0%,rgba(255,224,110,.18),transparent 55%) !important;
+}
+body[data-theme="light"] .bottom-nav .nav-item.active{
+  background:rgba(255,224,110,.20) !important;
+  color:#D09A21 !important;
+}
+
+/* Tudo que era dark vira branco/suave */
+body[data-theme="light"] .hero,
+body[data-theme="light"] .hero-v161,
+body[data-theme="light"] .card,
+body[data-theme="light"] .compact,
+body[data-theme="light"] .match-row,
+body[data-theme="light"] .match-card,
+body[data-theme="light"] .live-v1617-group,
+body[data-theme="light"] .live-v153-card,
+body[data-theme="light"] .live-v153-up-row,
+body[data-theme="light"] .settings-pro-card,
+body[data-theme="light"] .modal,
+body[data-theme="light"] .ticket-card,
+body[data-theme="light"] .tip-card,
+body[data-theme="light"] .opportunity-card,
+body[data-theme="light"] .data-box,
+body[data-theme="light"] .stat-pill,
+body[data-theme="light"] .risk-card,
+body[data-theme="light"] .h2h-row,
+body[data-theme="light"] .table-row,
+body[data-theme="light"] .lineup-team,
+body[data-theme="light"] .player,
+body[data-theme="light"] .ai-answer,
+body[data-theme="light"] .favorites-card,
+body[data-theme="light"] .fav-v169-card,
+body[data-theme="light"] .fav-v169-panel,
+body[data-theme="light"] .scan-u-card,
+body[data-theme="light"] .tickets-v167-card,
+body[data-theme="light"] .tickets-v167-hero,
+body[data-theme="light"] .tickets-v167-auto-card,
+body[data-theme="light"] .tickets-v167-ready,
+body[data-theme="light"] .home-v161-card,
+body[data-theme="light"] .home-v161-best,
+body[data-theme="light"] .home-v161-ticket,
+body[data-theme="light"] .home-mini-stat,
+body[data-theme="light"] .home-pro-callout,
+body[data-theme="light"] .home-action-card,
+body[data-theme="light"] .home-focus-card,
+body[data-theme="light"] .stats-pro-section{
+  background:#FFFFFF !important;
+  border-color:rgba(15,23,42,.11) !important;
+  box-shadow:0 12px 30px rgba(15,23,42,.07), inset 0 1px 0 rgba(255,255,255,.8) !important;
+  color:#0B1522 !important;
+}
+
+/* cards especiais claros */
+body[data-theme="light"] .premium-v1620,
+body[data-theme="light"] .premium-v1618{
+  background:
+    radial-gradient(circle at 88% 5%,rgba(255,224,110,.30),transparent 34%),
+    linear-gradient(150deg,#FFF8DE,#FFFFFF) !important;
+  border-color:rgba(210,158,36,.28) !important;
+}
+body[data-theme="light"] .premium-v1620-head h3,
+body[data-theme="light"] .premium-v1618 h3{
+  color:#0B1522 !important;
+}
+body[data-theme="light"] .premium-v1620-sub,
+body[data-theme="light"] .premium-v1620-price small{
+  color:#647284 !important;
+}
+body[data-theme="light"] .premium-v1620-mini-benefits span,
+body[data-theme="light"] .premium-v1620-code,
+body[data-theme="light"] .premium-v1618-benefit,
+body[data-theme="light"] .premium-v1618-code,
+body[data-theme="light"] .settings-pro-line,
+body[data-theme="light"] .switch-row,
+body[data-theme="light"] .support-row,
+body[data-theme="light"] .theme-v1619-option,
+body[data-theme="light"] .summary-item,
+body[data-theme="light"] .compare-row,
+body[data-theme="light"] .fav-v169-status-box{
+  background:#F8FAFD !important;
+  border-color:rgba(15,23,42,.10) !important;
+  color:#0B1522 !important;
+}
+
+/* Texto claro */
+body[data-theme="light"] h1,
+body[data-theme="light"] h2,
+body[data-theme="light"] h3,
+body[data-theme="light"] .section-title,
+body[data-theme="light"] .card-title,
+body[data-theme="light"] .team-name,
+body[data-theme="light"] .name,
+body[data-theme="light"] .live-v1617-league,
+body[data-theme="light"] .settings-pro-title h3,
+body[data-theme="light"] .summary-item b,
+body[data-theme="light"] .table-team b,
+body[data-theme="light"] .player-meta b,
+body[data-theme="light"] .fav-v169-title,
+body[data-theme="light"] .answer-entry{
+  color:#0B1522 !important;
+}
+body[data-theme="light"] p,
+body[data-theme="light"] small,
+body[data-theme="light"] .muted,
+body[data-theme="light"] .legal,
+body[data-theme="light"] .compare-label,
+body[data-theme="light"] .settings-pro-title p,
+body[data-theme="light"] .responsible-text,
+body[data-theme="light"] .live-v1617-country,
+body[data-theme="light"] .match-time,
+body[data-theme="light"] .premium-v1618-mini,
+body[data-theme="light"] .premium-v1618-benefit small{
+  color:#647284 !important;
+}
+body[data-theme="light"] input,
+body[data-theme="light"] select,
+body[data-theme="light"] textarea,
+body[data-theme="light"] .field{
+  background:#FFFFFF !important;
+  color:#0B1522 !important;
+  border-color:rgba(15,23,42,.14) !important;
+}
+body[data-theme="light"] input::placeholder{
+  color:#9AA5B2 !important;
+}
+body[data-theme="light"] .modal::backdrop{
+  background:rgba(15,23,42,.18) !important;
+  backdrop-filter:blur(8px);
+}
+body[data-theme="light"] #settingsModal.settings-premium-modal{
+  background:#FFFFFF !important;
+}
+body[data-theme="light"] #settingsModal.settings-premium-modal .modal-head{
+  background:#FFFFFF !important;
+  border-bottom:1px solid rgba(15,23,42,.10) !important;
+}
+body[data-theme="light"] .theme-v1619-option.active{
+  background:linear-gradient(145deg,rgba(33,230,161,.14),#FFFFFF) !important;
+  border-color:rgba(33,230,161,.58) !important;
+}
+
+/* ajuste celular */
+@media(max-width:430px){
+  #settingsModal.settings-premium-modal{
+    width:calc(100vw - 6px) !important;
+    height:calc(100dvh - 6px) !important;
+    border-radius:22px !important;
+  }
+  #settingsModal.settings-premium-modal .settings-pro{
+    gap:10px !important;
+    padding:10px 9px calc(20px + var(--safe-bottom)) !important;
+  }
+  #settingsModal.settings-premium-modal .settings-pro > .settings-pro-card{
+    padding:12px !important;
+  }
+  .premium-v1620-head{
+    grid-template-columns:50px 1fr;
+    gap:10px;
+  }
+  .premium-v1620-icon{
+    width:50px;
+    height:50px;
+  }
+  .premium-v1620-head h3{
+    font-size:21px;
+  }
+  .premium-v1620-price b{
+    font-size:29px;
+  }
+  .premium-v1620-mini-benefits{
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+  }
+  .premium-v1620-mini-benefits span{
+    font-size:9px;
+    min-height:32px;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -5314,32 +5700,29 @@ body[data-theme="light"] .theme-v1619-option.active{
         </div>
       </section>
 
-      <section class="settings-pro-card premium-v1618">
-        <div class="premium-v1618-head">
-          <div class="premium-v1618-icon">💎</div>
+      <section class="settings-pro-card premium-v1620">
+        <div class="premium-v1620-head">
+          <div class="premium-v1620-icon">💎</div>
           <div>
-            <span class="premium-v1618-kicker">Prado Premium</span>
+            <span>Prado Premium</span>
             <h3>Desbloqueie a IA completa</h3>
           </div>
         </div>
-        <p class="premium-v1618-sub">Tenha bilhetes automáticos, leitura ao vivo e análises avançadas por apenas:</p>
-        <div class="premium-v1618-price">
-          <b>R$ 19,90</b><span>/ mês</span>
+        <p class="premium-v1620-sub">Bilhetes automáticos, leitura ao vivo e análises avançadas por apenas:</p>
+        <div class="premium-v1620-price"><b>R$ 19,90</b><small>/ mês</small></div>
+        <div class="premium-v1620-mini-benefits">
+          <span>✓ Bilhetes IA</span>
+          <span>⚡ Leitura ao vivo</span>
+          <span>📊 Stats Pro</span>
+          <span>🤖 IA Prado</span>
         </div>
-        <div class="premium-v1618-benefits">
-          <div class="premium-v1618-benefit"><i>🎟️</i><div><b>Bilhetes IA</b><small>Conservador, moderado e agressivo</small></div></div>
-          <div class="premium-v1618-benefit"><i>🤖</i><div><b>IA Prado</b><small>Análise pronta por jogo</small></div></div>
-          <div class="premium-v1618-benefit"><i>📡</i><div><b>Ao vivo Pro</b><small>Oportunidades em tempo real</small></div></div>
-        </div>
-        <div class="premium-v1618-actions">
+        <div class="premium-v1620-actions">
           <button class="btn gold wide" onclick="openPayment()">👑 Liberar Premium agora</button>
           <button class="btn secondary wide" onclick="openSupportWhatsApp()">💬 Falar no WhatsApp</button>
         </div>
-        <div class="premium-v1618-code">
-          <div class="premium-v1618-code-title">Já comprou? Digite seu código</div>
+        <div class="premium-v1620-code">
           <input id="premiumCode" class="field" placeholder="Digite o código premium" />
           <button class="btn primary wide" onclick="unlockPremium()">Validar acesso</button>
-          <div class="premium-v1618-mini">Após o pagamento, você recebe um código individual para liberar o app.</div>
         </div>
       </section>
 
