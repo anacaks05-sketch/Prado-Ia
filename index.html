@@ -4562,6 +4562,137 @@ body[data-page="live"] .live-v153-chip{
   color:rgba(92,168,255,.86) !important;
 }
 
+
+/* ===== V16.17 — AO VIVO AGRUPADO POR CAMPEONATO ===== */
+body[data-page="live"] .live-v1617-groups{
+  display:grid;
+  gap:9px;
+  margin-top:8px;
+}
+body[data-page="live"] .live-v1617-group{
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(145deg,rgba(17,25,36,.95),rgba(8,12,18,.99));
+  overflow:hidden;
+  box-shadow:0 14px 34px rgba(0,0,0,.18);
+}
+body[data-page="live"] .live-v1617-row{
+  width:100%;
+  min-height:70px;
+  border:0;
+  background:transparent;
+  color:#fff;
+  display:grid;
+  grid-template-columns:48px 1fr auto;
+  gap:10px;
+  align-items:center;
+  padding:11px 12px;
+  text-align:left;
+}
+body[data-page="live"] .live-v1617-flag{
+  width:42px;
+  height:42px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  font-size:22px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.09);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08);
+}
+body[data-page="live"] .live-v1617-info{
+  min-width:0;
+}
+body[data-page="live"] .live-v1617-country{
+  display:block;
+  color:#8e9bad;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+body[data-page="live"] .live-v1617-league{
+  display:block;
+  color:#fff;
+  font-family:'Space Grotesk',Inter,sans-serif;
+  font-size:18px;
+  line-height:1.05;
+  font-weight:900;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+body[data-page="live"] .live-v1617-count{
+  min-width:74px;
+  height:34px;
+  padding:0 10px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  color:var(--gold);
+  background:rgba(255,224,110,.08);
+  border:1px solid rgba(255,224,110,.20);
+  font-size:12px;
+  font-weight:900;
+  white-space:nowrap;
+}
+body[data-page="live"] .live-v1617-count i{
+  font-style:normal;
+  color:#b7c0ce;
+  font-size:15px;
+  transform:rotate(0deg);
+  transition:.18s ease;
+}
+body[data-page="live"] .live-v1617-group.open .live-v1617-count i{
+  transform:rotate(90deg);
+}
+body[data-page="live"] .live-v1617-matches{
+  display:none;
+  gap:8px;
+  padding:0 10px 10px;
+}
+body[data-page="live"] .live-v1617-group.open .live-v1617-matches{
+  display:grid;
+}
+body[data-page="live"] .live-v1617-matches .live-v153-card{
+  margin:0;
+  border-radius:17px;
+  background:linear-gradient(145deg,rgba(12,18,28,.97),rgba(7,11,17,.99));
+}
+body[data-page="live"] .live-v1617-summary{
+  color:#9aa7b8;
+  font-size:11px;
+  line-height:1.35;
+  margin:-2px 0 6px;
+}
+@media(max-width:390px){
+  body[data-page="live"] .live-v1617-row{
+    grid-template-columns:42px 1fr auto;
+    min-height:64px;
+    padding:10px;
+  }
+  body[data-page="live"] .live-v1617-flag{
+    width:38px;
+    height:38px;
+    border-radius:13px;
+    font-size:20px;
+  }
+  body[data-page="live"] .live-v1617-league{
+    font-size:16px;
+  }
+  body[data-page="live"] .live-v1617-count{
+    min-width:62px;
+    height:31px;
+    font-size:11px;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -5661,6 +5792,34 @@ function renderHome(){
   `;
 }
 
+
+function liveGroupKey(m){
+  return String(`${m.country || 'Mundo'}-${m.league || 'Liga'}`)
+    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+    .replace(/[^a-zA-Z0-9]+/g,'-').replace(/^-|-$/g,'').toLowerCase() || 'grupo';
+}
+function liveLeagueFlag(country, league){
+  const text = `${country || ''} ${league || ''}`.toLowerCase();
+  if(text.includes('brasil') || text.includes('copa do brasil') || text.includes('brasileirão')) return '🇧🇷';
+  if(text.includes('premier')) return '🏴';
+  if(text.includes('la liga')) return '🇪🇸';
+  if(text.includes('serie a')) return '🇮🇹';
+  if(text.includes('portugal')) return '🇵🇹';
+  if(text.includes('ligue')) return '🇫🇷';
+  if(text.includes('saudi')) return '🇸🇦';
+  if(text.includes('libertadores')) return '🌎';
+  if(text.includes('champions') || text.includes('mundo')) return '🌍';
+  return '🏆';
+}
+function isLiveGroupOpen(key){
+  return localStorage.getItem(`prado_live_group_${key}`) === 'true';
+}
+function toggleLiveGroup(key){
+  const id = `prado_live_group_${key}`;
+  localStorage.setItem(id, localStorage.getItem(id) === 'true' ? 'false' : 'true');
+  renderLive();
+}
+
 function renderLive(){
   const live = filteredMatches().filter(m=>m.status==='live');
   const pre = filteredMatches().filter(m=>m.status!=='live').slice(0,8);
@@ -5695,6 +5854,36 @@ function renderLive(){
     </article>`;
   };
 
+  const liveGroups = Object.values(live.reduce((acc, m) => {
+    const key = liveGroupKey(m);
+    if(!acc[key]){
+      acc[key] = {
+        key,
+        country: m.country || 'Mundo',
+        league: m.league || 'Campeonato',
+        flag: liveLeagueFlag(m.country, m.league),
+        rows: []
+      };
+    }
+    acc[key].rows.push(m);
+    return acc;
+  }, {})).sort((a,b)=>b.rows.length-a.rows.length || a.league.localeCompare(b.league));
+
+  const leagueGroupCard = (group) => {
+    const open = isLiveGroupOpen(group.key);
+    return `<section class="live-v1617-group ${open ? 'open' : ''}">
+      <button class="live-v1617-row" onclick="toggleLiveGroup('${group.key}')">
+        <div class="live-v1617-flag">${group.flag}</div>
+        <div class="live-v1617-info">
+          <span class="live-v1617-country">${safe(group.country)}</span>
+          <span class="live-v1617-league">${safe(group.league)}</span>
+        </div>
+        <span class="live-v1617-count">${group.rows.length} jogos <i>›</i></span>
+      </button>
+      <div class="live-v1617-matches">${group.rows.map(liveCard).join('')}</div>
+    </section>`;
+  };
+
   const upcomingCard = (m) => {
     return `<article class="live-v153-up-row" onclick="openMatchDetail('${m.id}')">
       <div class="live-v153-time"><b>${m.status==='finished' ? 'FIM' : fmtTime(m.date)}</b><span>${fmtDate(m.date)}</span></div>
@@ -5720,7 +5909,7 @@ function renderLive(){
       </div>
     </div>
 
-    ${live.length ? `<div class="live-v153-list">${live.map(liveCard).join('')}</div>` : '<div class="card empty">Nenhum jogo ao vivo neste momento.</div>'}
+    ${live.length ? `<div class="live-v1617-summary">Campeonatos agrupados para a aba não ficar gigante quando tiver muitos jogos.</div><div class="live-v1617-groups">${liveGroups.map(leagueGroupCard).join('')}</div>` : '<div class="card empty">Nenhum jogo ao vivo neste momento.</div>'}
 
     ${bestLive ? `<div class="card compact live-v153-note live-v153-best">
       <div class="card-title">Melhor leitura ao vivo</div>
@@ -6756,6 +6945,7 @@ window.setScannerFilter = setScannerFilter;
 window.unlockPremium = unlockPremium;
 window.openPayment = openPayment;
 window.openSupportWhatsApp = openSupportWhatsApp;
+window.toggleLiveGroup = toggleLiveGroup;
 window.answerQuiz = answerQuiz;
 window.openFloatingAIChat = openFloatingAIChat;
 window.closeFloatingAIChat = closeFloatingAIChat;

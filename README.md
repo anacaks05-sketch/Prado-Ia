@@ -1,15 +1,10 @@
-# Prado Sports AI — V16.16 Ao Vivo com mais jogos
+# Prado Sports AI — V16.17 Ao Vivo por Campeonatos
 
 ## Alterado
-- Aba Ao Vivo agora tem mais jogos em modo prévia visual.
-- A lista ao vivo saiu de poucos jogos para uma central maior.
-- Adicionados jogos de Brasileirão, Copa do Brasil, Premier League, Serie A, Liga Portugal e outros.
-- Próximos jogos para monitorar também ficou mais completo.
-- Mantido o visual aprovado e os escudos premium.
-
-## Importante
-- Ainda é prévia visual/demo.
-- Quando a API real estiver conectada, a lista será puxada em tempo real.
+- Aba Ao Vivo agora agrupa jogos por campeonato/liga.
+- Cada linha mostra país/competição e quantidade de jogos.
+- Ao tocar no campeonato, ele abre/fecha os jogos daquela liga.
+- Isso evita a aba ficar gigante quando tiver muitos jogos no dia.
 
 ## Não alterado
 - Splash
@@ -23,4 +18,4 @@
 - Stats avançado
 
 ## Teste
-Use: ?v=16-16
+Use: ?v=16-17
