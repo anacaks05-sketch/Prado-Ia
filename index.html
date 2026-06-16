@@ -5552,6 +5552,333 @@ body[data-theme="light"] .theme-v1619-option.active{
   }
 }
 
+
+/* ===== V16.20.1 — CONFIG CLARO MODELO APROVADO ===== */
+#settingsModal.settings-premium-modal{
+  width:min(560px,calc(100vw - 8px)) !important;
+  height:calc(100dvh - 8px) !important;
+  border-radius:24px !important;
+  max-height:none !important;
+}
+#settingsModal.settings-premium-modal[open]{
+  display:flex !important;
+  flex-direction:column !important;
+}
+#settingsModal.settings-premium-modal .modal-head{
+  flex:0 0 auto !important;
+  padding:18px 18px 16px !important;
+}
+#settingsModal.settings-premium-modal .settings-pro{
+  flex:1 1 auto !important;
+  min-height:0 !important;
+  overflow-y:auto !important;
+  -webkit-overflow-scrolling:touch !important;
+  display:flex !important;
+  flex-direction:column !important;
+  gap:12px !important;
+  padding:13px 13px calc(26px + var(--safe-bottom)) !important;
+}
+#settingsModal.settings-premium-modal .settings-pro > .settings-pro-card{
+  flex:0 0 auto !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:auto !important;
+  max-height:none !important;
+  overflow:visible !important;
+  padding:14px !important;
+}
+
+/* Notificações igual ao modelo, sem botão bugado */
+#settingsModal .settings-pro-card.notifications-card .settings-pro-line{
+  grid-template-columns:34px 1fr auto !important;
+  gap:12px !important;
+  min-height:94px !important;
+  padding:14px !important;
+  border-radius:18px !important;
+}
+#settingsModal .settings-pro-card.notifications-card .settings-pro-line .btn{
+  min-width:78px !important;
+  background:#fff !important;
+  color:#0B1522 !important;
+  border:1px solid rgba(15,23,42,.12) !important;
+  box-shadow:0 10px 22px rgba(15,23,42,.10) !important;
+}
+body:not([data-theme="light"]) #settingsModal .settings-pro-card.notifications-card .settings-pro-line .btn{
+  background:linear-gradient(145deg,rgba(24,35,51,.98),rgba(9,15,23,.98)) !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,.10) !important;
+}
+
+/* Premium compacto e completo */
+.premium-v1621{
+  position:relative;
+  overflow:hidden !important;
+  border-color:rgba(255,224,110,.32) !important;
+  background:
+    radial-gradient(circle at 88% 8%,rgba(255,224,110,.22),transparent 34%),
+    linear-gradient(150deg,rgba(37,29,8,.82),rgba(10,15,22,.98)) !important;
+}
+.premium-v1621-head{
+  display:grid;
+  grid-template-columns:54px 1fr;
+  align-items:center;
+  gap:12px;
+  margin-bottom:10px;
+}
+.premium-v1621-icon{
+  width:54px;
+  height:54px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  font-size:26px;
+  background:linear-gradient(145deg,#FFF2A6,#D99825);
+  box-shadow:0 14px 28px rgba(255,224,110,.16);
+}
+.premium-v1621-head span{
+  display:block;
+  color:var(--gold);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+.premium-v1621-head h3{
+  margin:0;
+  font-family:'Space Grotesk',Inter,sans-serif;
+  font-size:23px;
+  line-height:1.02;
+  letter-spacing:-.04em;
+  color:#fff;
+}
+.premium-v1621-sub{
+  margin:0 0 8px;
+  color:#c8d3df;
+  font-size:12px;
+  line-height:1.4;
+}
+.premium-v1621-price{
+  display:flex;
+  align-items:flex-end;
+  gap:8px;
+  margin-bottom:10px;
+}
+.premium-v1621-price b{
+  font-family:'Space Grotesk',Inter,sans-serif;
+  font-size:32px;
+  line-height:.9;
+  color:var(--gold);
+  letter-spacing:-.06em;
+}
+.premium-v1621-price small{
+  color:#a6b1bf;
+  font-size:13px;
+  font-weight:900;
+}
+.premium-v1621-benefits{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:7px;
+  margin-bottom:10px;
+}
+.premium-v1621-benefits span{
+  min-height:36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 8px;
+  border-radius:14px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.09);
+  color:#f0f5fb;
+  font-size:10px;
+  font-weight:900;
+  text-align:center;
+}
+.premium-v1621-actions{
+  display:grid;
+  gap:8px;
+}
+.premium-v1621-actions .btn{
+  min-height:44px !important;
+  border-radius:15px !important;
+  font-weight:900 !important;
+}
+.premium-v1621-actions .btn.dark{
+  background:linear-gradient(145deg,#102033,#07111F) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+}
+.premium-v1621-code{
+  margin-top:8px;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:15px;
+  background:rgba(0,0,0,.10);
+  padding:0;
+  overflow:hidden;
+}
+.premium-v1621-code summary{
+  list-style:none;
+  min-height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--gold);
+  font-weight:900;
+  font-size:12px;
+  cursor:pointer;
+}
+.premium-v1621-code summary::-webkit-details-marker{
+  display:none;
+}
+.premium-v1621-code[open]{
+  padding:8px;
+}
+.premium-v1621-code[open] summary{
+  margin-bottom:8px;
+}
+.premium-v1621-code .field{
+  margin-bottom:8px;
+}
+
+/* Tema claro realmente branco */
+body[data-theme="light"],
+body[data-theme="light"] .app,
+body[data-theme="light"] .page,
+body[data-theme="light"] main{
+  background:#fff !important;
+  color:#0B1522 !important;
+}
+body[data-theme="light"]::before{
+  display:none !important;
+}
+body[data-theme="light"] .topbar{
+  background:#fff !important;
+  border-bottom:1px solid rgba(15,23,42,.10) !important;
+  box-shadow:0 10px 28px rgba(15,23,42,.06) !important;
+}
+body[data-theme="light"] .bottom-nav{
+  background:rgba(255,255,255,.98) !important;
+  border-top:1px solid rgba(15,23,42,.10) !important;
+}
+body[data-theme="light"] #settingsModal.settings-premium-modal,
+body[data-theme="light"] #settingsModal.settings-premium-modal .modal-head{
+  background:#fff !important;
+}
+body[data-theme="light"] #settingsModal.settings-premium-modal .settings-pro > .settings-pro-card,
+body[data-theme="light"] .card,
+body[data-theme="light"] .compact,
+body[data-theme="light"] .match-row,
+body[data-theme="light"] .live-v1617-group,
+body[data-theme="light"] .live-v153-card,
+body[data-theme="light"] .live-v153-up-row,
+body[data-theme="light"] .theme-v1619-option,
+body[data-theme="light"] .settings-pro-line,
+body[data-theme="light"] .support-row,
+body[data-theme="light"] .switch-row,
+body[data-theme="light"] .summary-item,
+body[data-theme="light"] .compare-row{
+  background:#fff !important;
+  border-color:rgba(15,23,42,.10) !important;
+  box-shadow:0 10px 26px rgba(15,23,42,.06), inset 0 1px 0 rgba(255,255,255,.85) !important;
+  color:#0B1522 !important;
+}
+body[data-theme="light"] .premium-v1621{
+  background:
+    radial-gradient(circle at 88% 8%,rgba(255,224,110,.30),transparent 34%),
+    linear-gradient(150deg,#FFF6CF,#FFFFFF) !important;
+  border-color:rgba(210,158,36,.28) !important;
+}
+body[data-theme="light"] .premium-v1621-head h3,
+body[data-theme="light"] .premium-v1621-benefits span,
+body[data-theme="light"] .premium-v1621-code summary{
+  color:#0B1522 !important;
+}
+body[data-theme="light"] .premium-v1621-head span{
+  color:#D39C24 !important;
+}
+body[data-theme="light"] .premium-v1621-sub,
+body[data-theme="light"] .premium-v1621-price small{
+  color:#647284 !important;
+}
+body[data-theme="light"] .premium-v1621-benefits span,
+body[data-theme="light"] .premium-v1621-code{
+  background:#F8FAFD !important;
+  border-color:rgba(15,23,42,.10) !important;
+}
+body[data-theme="light"] .premium-v1621-actions .btn.dark{
+  background:#0B1522 !important;
+  color:#fff !important;
+  border-color:#0B1522 !important;
+}
+body[data-theme="light"] h1,
+body[data-theme="light"] h2,
+body[data-theme="light"] h3,
+body[data-theme="light"] .card-title,
+body[data-theme="light"] .section-title,
+body[data-theme="light"] .settings-pro-title h3,
+body[data-theme="light"] .brand-line strong,
+body[data-theme="light"] .team-name,
+body[data-theme="light"] .name,
+body[data-theme="light"] .live-v1617-league{
+  color:#0B1522 !important;
+}
+body[data-theme="light"] p,
+body[data-theme="light"] small,
+body[data-theme="light"] .muted,
+body[data-theme="light"] .settings-pro-title p,
+body[data-theme="light"] .responsible-text,
+body[data-theme="light"] .notif-text,
+body[data-theme="light"] .legal{
+  color:#647284 !important;
+}
+body[data-theme="light"] input,
+body[data-theme="light"] select,
+body[data-theme="light"] textarea,
+body[data-theme="light"] .field{
+  background:#fff !important;
+  color:#0B1522 !important;
+  border-color:rgba(15,23,42,.14) !important;
+}
+
+/* Ajuste celular */
+@media(max-width:430px){
+  #settingsModal.settings-premium-modal{
+    width:calc(100vw - 6px) !important;
+    height:calc(100dvh - 6px) !important;
+    border-radius:22px !important;
+  }
+  #settingsModal.settings-premium-modal .settings-pro{
+    padding:10px 9px calc(22px + var(--safe-bottom)) !important;
+    gap:10px !important;
+  }
+  #settingsModal.settings-premium-modal .settings-pro > .settings-pro-card{
+    padding:12px !important;
+  }
+  .premium-v1621-head{
+    grid-template-columns:50px 1fr;
+    gap:10px;
+  }
+  .premium-v1621-icon{
+    width:50px;
+    height:50px;
+  }
+  .premium-v1621-head h3{
+    font-size:21px;
+  }
+  .premium-v1621-price b{
+    font-size:29px;
+  }
+  .premium-v1621-benefits{
+    gap:6px;
+  }
+  .premium-v1621-benefits span{
+    min-height:33px;
+    font-size:9px;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -5700,30 +6027,31 @@ body[data-theme="light"] .theme-v1619-option.active{
         </div>
       </section>
 
-      <section class="settings-pro-card premium-v1620">
-        <div class="premium-v1620-head">
-          <div class="premium-v1620-icon">💎</div>
+      <section class="settings-pro-card premium-v1621">
+        <div class="premium-v1621-head">
+          <div class="premium-v1621-icon">💎</div>
           <div>
             <span>Prado Premium</span>
             <h3>Desbloqueie a IA completa</h3>
           </div>
         </div>
-        <p class="premium-v1620-sub">Bilhetes automáticos, leitura ao vivo e análises avançadas por apenas:</p>
-        <div class="premium-v1620-price"><b>R$ 19,90</b><small>/ mês</small></div>
-        <div class="premium-v1620-mini-benefits">
+        <p class="premium-v1621-sub">Bilhetes automáticos, leitura ao vivo e análises avançadas por apenas:</p>
+        <div class="premium-v1621-price"><b>R$ 19,90</b><small>/ mês</small></div>
+        <div class="premium-v1621-benefits">
           <span>✓ Bilhetes IA</span>
           <span>⚡ Leitura ao vivo</span>
           <span>📊 Stats Pro</span>
           <span>🤖 IA Prado</span>
         </div>
-        <div class="premium-v1620-actions">
+        <div class="premium-v1621-actions">
           <button class="btn gold wide" onclick="openPayment()">👑 Liberar Premium agora</button>
-          <button class="btn secondary wide" onclick="openSupportWhatsApp()">💬 Falar no WhatsApp</button>
+          <button class="btn dark wide" onclick="openSupportWhatsApp()">💬 Falar no WhatsApp</button>
         </div>
-        <div class="premium-v1620-code">
+        <details class="premium-v1621-code">
+          <summary>Já tenho código premium</summary>
           <input id="premiumCode" class="field" placeholder="Digite o código premium" />
           <button class="btn primary wide" onclick="unlockPremium()">Validar acesso</button>
-        </div>
+        </details>
       </section>
 
       <section class="settings-pro-card green-line">

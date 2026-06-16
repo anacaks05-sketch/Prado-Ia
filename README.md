@@ -1,21 +1,23 @@
-# Prado Sports AI — V16.20 Tema Claro Geral + Config
+# Prado Sports AI — V16.20.1 Config Claro Modelo
 
 ## Alterado
-- Tema claro agora fica branco em todas as abas.
-- Configurações continua igual em todas as telas.
-- Bloco Premium dentro de Configurações ficou compacto e não fica cortado.
-- Mantido seletor Tema escuro / Tema claro.
-- Configurações abre em tela grande no celular.
+- Configurações ajustada no modelo aprovado.
+- Tema claro fica branco e limpo.
+- Botão Abrir das notificações corrigido.
+- Botão Falar no WhatsApp corrigido no tema claro.
+- Premium ficou completo e compacto.
+- Código premium ficou recolhido em "Já tenho código premium" para não cortar a tela.
 
 ## Não alterado
 - Splash
-- Pagamento
-- WhatsApp com mensagem
+- Home
+- Ao vivo
 - IA
 - Favoritos
 - Bilhetes
 - Stats
-- Ao vivo agrupado
+- Pagamento
+- WhatsApp com mensagem
 
 ## Teste
-Use: ?v=16-20
+Use: ?v=16-20-1
