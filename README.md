@@ -18,3 +18,6 @@
 
 ## Teste
 Use: ?v=16-14
+
+
+Atualização: removidos os placares brancos duplicados nos cards de Ao Vivo, mantendo apenas o placar principal amarelo no topo direito.
