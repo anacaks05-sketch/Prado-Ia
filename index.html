@@ -4536,7 +4536,7 @@ body[data-page="favorites"] #page-favorites{padding-bottom:96px}
           </div>
         </div>
         <div class="support-list">
-          <button class="support-row" onclick="window.open('https://wa.me/'+(window.PRADO_CONFIG?.SUPPORT_WHATSAPP||'5599999999999'),'_blank')"><span>🟢</span><span>Falar no WhatsApp</span><span>›</span></button>
+          <button class="support-row" onclick="openSupportWhatsApp()"><span>🟢</span><span>Falar no WhatsApp</span><span>›</span></button>
           <button class="support-row" onclick="toast('Para ajuda rápida, fale com o suporte pelo WhatsApp.','❔')"><span>❔</span><span>Ajuda</span><span>›</span></button>
           <button class="support-row" onclick="toast('Termos e política disponíveis em breve.','📄')"><span>📄</span><span>Política e termos</span><span>›</span></button>
           <button class="support-row" onclick="toast('Prado Sports AI — Cliente v16.11','ℹ️')"><span>ℹ️</span><span>Versão do app</span><small>v16.11</small></button>
@@ -4597,6 +4597,7 @@ window.PRADO_CONFIG = {
 
   // Coloque seu WhatsApp com DDI e DDD. Ex.: 5599999999999
   SUPPORT_WHATSAPP: '5598982356674',
+  SUPPORT_MESSAGE: 'Olá, vim pelo Prado Sports AI e quero liberar meu acesso premium. Pode me ajudar?',
 
   PREMIUM_PRICE: 'R$ 19,90/mês',
 
@@ -5875,6 +5876,14 @@ function renderPremium(){
   `;
 }
 function benefit(icon,title,desc){ return `<div class="benefit"><span>${icon}</span><div><b>${title}</b><small>${desc}</small></div></div>`; }
+
+function openSupportWhatsApp(){
+  const phone = (PRADO_CONFIG.SUPPORT_WHATSAPP || '5598982356674').replace(/\D/g,'');
+  const message = PRADO_CONFIG.SUPPORT_MESSAGE || 'Olá, vim pelo Prado Sports AI e quero liberar meu acesso premium. Pode me ajudar?';
+  const link = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+  window.open(link, '_blank');
+}
+
 async function unlockPremium(){
   const input = $('#premiumCode');
   const code = (input?.value || '').trim().toUpperCase();
@@ -6423,6 +6432,7 @@ window.setDetailTab = setDetailTab;
 window.setScannerFilter = setScannerFilter;
 window.unlockPremium = unlockPremium;
 window.openPayment = openPayment;
+window.openSupportWhatsApp = openSupportWhatsApp;
 window.answerQuiz = answerQuiz;
 window.openFloatingAIChat = openFloatingAIChat;
 window.closeFloatingAIChat = closeFloatingAIChat;

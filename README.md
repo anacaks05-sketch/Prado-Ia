@@ -1,23 +1,23 @@
-# Prado Sports AI — V16.12 Pagamento e WhatsApp
+# Prado Sports AI — V16.13 WhatsApp com Mensagem
 
 ## Alterado
-- Link de pagamento Mercado Pago configurado.
-- WhatsApp de suporte configurado.
+- Botão de WhatsApp agora abre conversa com mensagem pronta.
+- Mensagem configurada:
+  "Olá, vim pelo Prado Sports AI e quero liberar meu acesso premium. Pode me ajudar?"
 
-## Dados configurados
-- PAYMENT_LINK: https://mpago.la/1SzQVkr
-- SUPPORT_WHATSAPP: 5598982356674
+## Dados mantidos
+- Link de pagamento: https://mpago.la/1SzQVkr
+- WhatsApp: 5598982356674
 
 ## Não alterado
-- Visual aprovado
-- Splash
-- Home
-- Ao vivo
-- IA
-- Favoritos
-- Bilhetes
-- Configurações
-- Validação premium por CSV
+- Visual aprovado.
+- Splash.
+- Home.
+- Ao vivo.
+- IA.
+- Favoritos.
+- Bilhetes.
+- Validação premium por CSV.
 
 ## Teste
-Use: ?v=16-12
+Use: ?v=16-13
