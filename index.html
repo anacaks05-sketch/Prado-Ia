@@ -3778,6 +3778,213 @@ body[data-page="tips"] .tickets-v167-ready .ready-badge{
   padding:6px 2px 2px;
 }
 
+
+/* ===== V16.9 — FAVORITOS NO MENU / SCANNER FORA DO MENU ===== */
+body[data-page="favorites"] #page-favorites{padding-bottom:96px}
+.fav-page-v169{display:grid;gap:10px}
+.fav-v169-head{
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
+  padding:16px;
+  border:1px solid rgba(33,230,161,.20);
+  background:
+    radial-gradient(circle at 88% 8%, rgba(33,230,161,.17), transparent 34%),
+    linear-gradient(145deg, rgba(17,27,39,.96), rgba(7,11,17,.99));
+  box-shadow:0 18px 40px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.04);
+}
+.fav-v169-head::after{
+  content:"★";
+  position:absolute;
+  right:18px;
+  top:14px;
+  color:rgba(33,230,161,.15);
+  font-size:92px;
+  line-height:1;
+}
+.fav-v169-kicker{
+  color:var(--green);
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+.fav-v169-head h2{
+  position:relative;
+  z-index:1;
+  margin:6px 0 5px;
+  color:#fff;
+  font-family:'Space Grotesk';
+  font-size:31px;
+  line-height:1;
+}
+.fav-v169-head p{
+  position:relative;
+  z-index:1;
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.35;
+  max-width:280px;
+}
+.fav-v169-team-card{
+  border-radius:22px;
+  padding:13px;
+  border:1px solid rgba(255,255,255,.09);
+  background:linear-gradient(145deg,rgba(15,24,36,.96),rgba(7,11,17,.99));
+}
+.fav-v169-label{
+  color:#f4f8ff;
+  font-size:13px;
+  font-weight:900;
+  margin-bottom:9px;
+}
+.fav-v169-input-row{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:8px;
+}
+.fav-v169-input-row .field{
+  min-height:43px !important;
+  border-radius:15px !important;
+  font-size:16px !important;
+}
+.fav-v169-save{
+  min-height:43px;
+  padding:0 14px;
+  border:0;
+  border-radius:15px;
+  background:linear-gradient(135deg,#20e698,#7affcc);
+  color:#06120d;
+  font-weight:900;
+  font-size:12px;
+}
+.fav-v169-tabs{
+  display:flex;
+  gap:8px;
+  overflow:auto;
+  padding:1px 0 2px;
+}
+.fav-v169-tabs::-webkit-scrollbar{display:none}
+.fav-v169-tab{
+  min-height:36px;
+  padding:0 13px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.035);
+  color:#dfe7ef;
+  font-size:11px;
+  font-weight:900;
+  white-space:nowrap;
+}
+.fav-v169-tab.active{
+  color:#06120d;
+  background:linear-gradient(135deg,#21e6a1,#70ffd0);
+  border-color:transparent;
+}
+.fav-v169-leagues{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+}
+.fav-v169-league{
+  min-height:31px;
+  padding:0 10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.04);
+  color:#eaf0f8;
+  font-size:9.5px;
+  font-weight:900;
+}
+.fav-v169-league.active{
+  color:var(--green);
+  border-color:rgba(33,230,161,.52);
+  background:rgba(33,230,161,.11);
+}
+.fav-v169-section-title{
+  color:#fff;
+  font-family:'Space Grotesk';
+  font-size:20px;
+  margin:3px 0 0;
+}
+.fav-v169-list{
+  display:grid;
+  gap:8px;
+}
+.fav-v169-date{
+  margin:10px 0 3px;
+  color:#f7fbff;
+  font-family:'Space Grotesk';
+  font-size:18px;
+  font-weight:900;
+}
+.fav-v169-match{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  align-items:center;
+  min-height:70px;
+  padding:11px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.09);
+  background:
+    radial-gradient(circle at 5% 50%, rgba(33,230,161,.10), transparent 30%),
+    linear-gradient(145deg,rgba(13,22,32,.96),rgba(7,11,17,.99));
+}
+.fav-v169-league-title{
+  color:var(--muted);
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:900;
+  margin-bottom:5px;
+}
+.fav-v169-teams{
+  color:#fff;
+  font-size:15px;
+  font-weight:900;
+  line-height:1.25;
+}
+.fav-v169-meta{
+  margin-top:4px;
+  color:var(--green);
+  font-size:10px;
+  font-weight:800;
+}
+.fav-v169-time{
+  display:grid;
+  gap:4px;
+  text-align:right;
+  color:#fff;
+  font-family:'JetBrains Mono';
+  font-size:15px;
+  font-weight:900;
+}
+.fav-v169-time small{
+  color:var(--gold);
+  font-size:10px;
+  font-family:Inter;
+  font-weight:900;
+}
+.fav-v169-empty{
+  padding:14px;
+  border-radius:18px;
+  border:1px solid rgba(255,224,110,.20);
+  background:rgba(255,224,110,.07);
+  color:#ffe8a6;
+  font-size:12px;
+  line-height:1.45;
+}
+@media(max-width:430px){
+  .fav-v169-head{padding:14px}
+  .fav-v169-head h2{font-size:28px}
+  .fav-v169-input-row{grid-template-columns:1fr}
+  .fav-v169-save{width:100%}
+  .fav-v169-match{min-height:64px;padding:10px}
+  .fav-v169-teams{font-size:14px}
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -3827,7 +4034,7 @@ body[data-page="tips"] .tickets-v167-ready .ready-badge{
     <section id="page-live" class="page"></section>
     <section id="page-match" class="page"></section>
     <section id="page-ai" class="page"></section>
-    <section id="page-scanner" class="page"></section>
+    <section id="page-favorites" class="page"></section>
     <section id="page-tips" class="page"></section>
 
     <button id="floatingAI" class="floating-ai" title="IA Prado"><b>AI</b><span>IA</span></button>
@@ -3867,7 +4074,7 @@ body[data-page="tips"] .tickets-v167-ready .ready-badge{
       <button class="nav-item active" data-page="home"><span class="nav-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.2 12 4l8 7.2v8.3a1.5 1.5 0 0 1-1.5 1.5H15v-6h-6v6H5.5A1.5 1.5 0 0 1 4 19.5v-8.3Z" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linejoin="round"/></svg></span>Home</button>
       <button class="nav-item" data-page="live"><span class="nav-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"/><path d="M6.4 6.4a8 8 0 0 0 0 11.2M17.6 6.4a8 8 0 0 1 0 11.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>Ao vivo</button>
       <button class="nav-item" data-page="ai"><span class="nav-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="6.5" width="14" height="12" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 11.5h.01M15 11.5h.01M10 15h4M12 3v3.5M8 3h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>IA</button>
-      <button class="nav-item" data-page="scanner"><span class="nav-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8V5.5A1.5 1.5 0 0 1 5.5 4H8M16 4h2.5A1.5 1.5 0 0 1 20 5.5V8M20 16v2.5a1.5 1.5 0 0 1-1.5 1.5H16M8 20H5.5A1.5 1.5 0 0 1 4 18.5V16M7 12h10" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/><path d="M12 8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".55"/></svg></span>Scanner</button>
+      <button class="nav-item" data-page="favorites"><span class="nav-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.8 2.45 4.95 5.45.8-3.95 3.85.93 5.43L12 16.26l-4.88 2.57.93-5.43L4.1 9.55l5.45-.8L12 3.8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>Favoritos</button>
       <button class="nav-item" data-page="tips"><span class="nav-svg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.8 8.5a2 2 0 0 1 2-2h10.4a2 2 0 0 1 2 2v2.1a2.2 2.2 0 0 0 0 4.8v2.1a2 2 0 0 1-2 2H6.8a2 2 0 0 1-2-2v-2.1a2.2 2.2 0 0 0 0-4.8V8.5Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 9h4M10 12h4M10 15h3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>Bilhetes</button>
     </nav>
   </main>
@@ -3911,51 +4118,12 @@ body[data-page="tips"] .tickets-v167-ready .ready-badge{
         </div>
       </section>
 
-      <section class="settings-pro-card favorites-card green-line">
-        <div class="settings-pro-title">
-          <div class="settings-pro-icon">⭐</div>
-          <div>
-            <h3>Favoritos</h3>
-            <p>Defina o time e os campeonatos que o app deve priorizar nas leituras da IA.</p>
-          </div>
-        </div>
-
-        <div class="fav-label">Time favorito</div>
-        <div class="fav-team-row">
-          <input id="favoriteTeamInput" class="field" placeholder="Ex.: Flamengo, Palmeiras, Corinthians" />
-          <button class="fav-save" onclick="saveFavoriteTeam()">Salvar</button>
-        </div>
-
-        <div class="fav-label">Campeonatos favoritos</div>
-        <div class="fav-chips">
-          <button class="fav-chip" data-league="Brasileirão" onclick="toggleFavLeague('Brasileirão')">Brasileirão</button>
-          <button class="fav-chip" data-league="Copa do Brasil" onclick="toggleFavLeague('Copa do Brasil')">Copa do Brasil</button>
-          <button class="fav-chip" data-league="Premier League" onclick="toggleFavLeague('Premier League')">Premier League</button>
-          <button class="fav-chip" data-league="Champions" onclick="toggleFavLeague('Champions')">Champions</button>
-          <button class="fav-chip" data-league="La Liga" onclick="toggleFavLeague('La Liga')">La Liga</button>
-          <button class="fav-chip" data-league="Libertadores" onclick="toggleFavLeague('Libertadores')">Libertadores</button>
-        </div>
-
-        <div class="fav-fixtures">
-          <div class="fav-fixtures-head">
-            <div>
-              <h4>Jogos do time favorito</h4>
-              <p>Mostra 2 a 3 partidas do time salvo, nesse visual mais organizado.</p>
-            </div>
-            <span class="fav-badge">Preview</span>
-          </div>
-          <div id="favoriteFixtures" class="fav-fixture-list"></div>
-        </div>
-
-        <p class="fav-note">Esses favoritos ficam salvos no navegador e depois podem ser ligados à API real.</p>
-      </section>
-
       <section class="settings-pro-card gold-line">
         <div class="settings-pro-title">
           <div class="settings-pro-icon">💎</div>
           <div>
             <h3>Premium e liberação</h3>
-            <p>Bilhetes IA, Scanner IA, IA Prado e oportunidades ao vivo.</p>
+            <p>Bilhetes IA, Favoritos, IA Prado e oportunidades ao vivo.</p>
           </div>
         </div>
         <div class="premium-price">R$ 19,90/mês</div>
@@ -3989,7 +4157,6 @@ body[data-page="tips"] .tickets-v167-ready .ready-badge{
           </div>
         </div>
         <div class="settings-switch-list">
-          <label class="switch-row"><span>Tema escuro</span><input type="checkbox" data-setting="darkTheme" checked></label>
           <label class="switch-row"><span>Sons de alerta</span><input type="checkbox" data-setting="soundAlerts" checked></label>
           <label class="switch-row"><span>Vibração</span><input type="checkbox" data-setting="vibration" checked></label>
           <label class="switch-row"><span>Modo compacto iPhone</span><input type="checkbox" data-setting="compactIphone"></label>
@@ -4346,8 +4513,76 @@ async function loadData(){
   renderAll();
 }
 
+
+function renderFavorites(){
+  const page = $('#page-favorites');
+  if(!page) return;
+  const team = (localStorage.getItem('prado_favorite_team') || '').trim();
+  const leagues = getFavoriteLeagues();
+  const games = team ? getFavoriteFixturesData(team, leagues).slice(0,3) : [];
+  page.innerHTML = `
+    <div class="fav-page-v169">
+      <section class="fav-v169-head">
+        <div class="fav-v169-kicker">Central de favoritos</div>
+        <h2>Favoritos</h2>
+        <p>Escolha seu time e veja 2 ou 3 jogos dele organizados para acompanhar.</p>
+      </section>
+
+      <section class="fav-v169-team-card">
+        <div class="fav-v169-label">Time favorito</div>
+        <div class="fav-v169-input-row">
+          <input id="favoriteTeamPageInput" class="field" placeholder="Ex.: Flamengo, Brasil, Liverpool" value="${safe(team)}" />
+          <button class="fav-v169-save" onclick="saveFavoriteTeamFromPage()">Salvar</button>
+        </div>
+      </section>
+
+      <div class="fav-v169-tabs">
+        <button class="fav-v169-tab active">Jogos</button>
+        <button class="fav-v169-tab">Equipes</button>
+        <button class="fav-v169-tab">Campeonatos</button>
+        <button class="fav-v169-tab">Notícias</button>
+      </div>
+
+      <section class="fav-v169-team-card">
+        <div class="fav-v169-label">Campeonatos favoritos</div>
+        <div class="fav-v169-leagues">
+          ${['Brasileirão','Copa do Brasil','Premier League','Champions','La Liga','Libertadores'].map(l=>`<button class="fav-v169-league ${leagues.includes(l)?'active':''}" onclick="toggleFavLeague('${l}')">${l}</button>`).join('')}
+        </div>
+      </section>
+
+      <h3 class="fav-v169-section-title">${team ? `Próximos jogos de ${safe(team)}` : 'Jogos do time favorito'}</h3>
+
+      ${team ? `<div class="fav-v169-list">
+        ${games.map(g=>`
+          <div>
+            <div class="fav-v169-date">${g.label}</div>
+            <article class="fav-v169-match">
+              <div>
+                <div class="fav-v169-league-title">${safe(g.league)}</div>
+                <div class="fav-v169-teams">${safe(g.match)}</div>
+                <div class="fav-v169-meta">Preview · favorito</div>
+              </div>
+              <div class="fav-v169-time">${safe(g.time)}<small>pré-jogo</small></div>
+            </article>
+          </div>
+        `).join('')}
+      </div>` : `<div class="fav-v169-empty">Digite e salve um time favorito para aparecerem aqui 2 ou 3 jogos dele.</div>`}
+    </div>
+  `;
+}
+function saveFavoriteTeamFromPage(){
+  const input = $('#favoriteTeamPageInput');
+  const team = (input?.value || '').trim();
+  localStorage.setItem('prado_favorite_team', team);
+  const settingsInput = $('#favoriteTeamInput');
+  if(settingsInput) settingsInput.value = team;
+  renderFavorites();
+  renderFavoriteFixtures?.();
+  toast(team ? `Time favorito salvo: ${team}` : 'Time favorito removido.', '⭐');
+}
+
 function renderAll(){
-  renderHome(); renderLive(); renderMatchDetail(); renderAI(); renderScanner(); renderTips(); updateNav();
+  renderHome(); renderLive(); renderMatchDetail(); renderAI(); renderFavorites(); renderTips(); updateNav();
 }
 function filteredMatches(){
   const q = state.search.trim().toLowerCase();
@@ -5332,6 +5567,7 @@ function saveFavoriteTeam(){
   const team = (input?.value || '').trim();
   localStorage.setItem('prado_favorite_team', team);
   renderFavoriteFixtures();
+  if(state.page === 'favorites') renderFavorites();
   toast(team ? `Time favorito salvo: ${team}` : 'Time favorito removido.', '⭐');
 }
 function toggleFavLeague(league){
@@ -5340,6 +5576,7 @@ function toggleFavLeague(league){
   setFavoriteLeagues(next);
   refreshFavoriteLeagueChips();
   renderFavoriteFixtures();
+  if(state.page === 'favorites') renderFavorites();
   toast(next.includes(league) ? `${league} adicionado aos favoritos` : `${league} removido dos favoritos`, '🏆');
 }
 function initFavoritesSettings(){
@@ -5347,6 +5584,7 @@ function initFavoritesSettings(){
   if(input) input.value = localStorage.getItem('prado_favorite_team') || '';
   refreshFavoriteLeagueChips();
   renderFavoriteFixtures();
+  if(state.page === 'favorites') renderFavorites();
 }
 
 function bindEvents(){

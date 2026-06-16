@@ -1,22 +1,23 @@
-# Prado Sports AI — V16.8.3 Configurações com Favoritos + Jogos
+# Prado Sports AI — V16.9 Favoritos no menu
 
 ## Escopo
-Somente Configurações.
+Menu, Favoritos e Configurações.
 
 ## Alterado
-- Mantido bloco Favoritos.
-- Adicionado preview visual com 2 a 3 jogos do time favorito.
-- Visual inspirado no modelo de favoritos enviado pelo usuário.
-- Atualiza quando salvar time favorito ou trocar campeonatos favoritos.
+- Scanner saiu do menu inferior.
+- No lugar do Scanner entrou Favoritos.
+- Criada aba Favoritos com time favorito, campeonatos favoritos e 2 a 3 jogos do time.
+- Removida a parte de Time/Campeonatos favoritos de Configurações.
+- Removidos de Configurações os itens marcados:
+  - Modo prévia visual sem API
+  - Tema escuro
 
 ## Não alterado
 - Home
 - Ao vivo
 - IA
-- Scanner
 - Bilhetes
-- Botão flutuante
-- Menu inferior
+- restante das Configurações
 
 ## Teste
-Use: ?v=16-8-3
+Use: ?v=16-9
