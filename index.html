@@ -4415,6 +4415,134 @@ body[data-page="live"] .live-v153-chip{
   max-width:100% !important;
 }
 
+
+/* ===== V16.15 — STATS AVANÇADO / ABA DETALHES ===== */
+.stats-pro-v1615{
+  padding:12px !important;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(33,230,161,.10), transparent 32%),
+    linear-gradient(145deg,rgba(8,28,31,.96),rgba(10,15,22,.98)) !important;
+}
+.stats-pro-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:9px;
+}
+.stats-pro-title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+}
+.stats-pro-icon{
+  width:27px;
+  height:27px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  color:var(--green);
+  background:rgba(33,230,161,.10);
+  border:1px solid rgba(33,230,161,.20);
+  font-weight:900;
+}
+.stats-pro-title b{
+  font-family:'Space Grotesk',Inter,sans-serif;
+  font-size:14px;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  color:#dfe9f4;
+}
+.stats-pro-badge{
+  min-height:27px;
+  padding:0 10px;
+  border-radius:999px;
+  display:inline-flex;
+  align-items:center;
+  color:var(--gold);
+  background:rgba(255,224,110,.08);
+  border:1px solid rgba(255,224,110,.20);
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+  white-space:nowrap;
+}
+.stats-pro-section{
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:18px;
+  padding:10px;
+  background:rgba(255,255,255,.025);
+  margin-top:9px;
+}
+.stats-pro-section:first-of-type{
+  margin-top:0;
+}
+.stats-pro-section-title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0 0 9px;
+  color:#c9d5e2;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.stats-pro-section-title span{
+  color:#9fb0c4;
+}
+.stats-pro-v1615 .compare-row{
+  margin-bottom:10px !important;
+}
+.stats-pro-v1615 .compare-top{
+  grid-template-columns:92px 1fr 92px !important;
+  margin-bottom:5px !important;
+}
+.stats-pro-v1615 .compare-value{
+  font-size:16px !important;
+  line-height:1.08;
+}
+.stats-pro-v1615 .compare-value small{
+  display:inline;
+  font-size:11px;
+  color:#9ca8b6;
+  font-weight:900;
+}
+.stats-pro-v1615 .compare-label{
+  font-size:12.2px !important;
+  color:#a8b3c2 !important;
+}
+.stats-pro-v1615 .compare-bar{
+  height:7px !important;
+  background:rgba(37,51,70,.55) !important;
+}
+.stats-pro-v1615 .compare-note{
+  margin-top:11px !important;
+  padding:10px;
+  border-radius:15px;
+  background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.06);
+  color:#8f9bad !important;
+}
+@media(max-width:390px){
+  .stats-pro-v1615 .compare-top{
+    grid-template-columns:78px 1fr 78px !important;
+    gap:6px !important;
+  }
+  .stats-pro-v1615 .compare-value{
+    font-size:14px !important;
+  }
+  .stats-pro-v1615 .compare-value small{
+    display:block;
+    margin-top:2px;
+    font-size:9px;
+  }
+  .stats-pro-v1615 .compare-label{
+    font-size:11px !important;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -5280,6 +5408,69 @@ function statCompareRow(row){
     <div class="compare-bar" style="--left:${left}%;--right:${right}%"><span class="left-fill"></span><span class="right-fill"></span></div>
   </div>`;
 }
+
+function compactNum(n){ return Number(n).toLocaleString('pt-BR'); }
+function makePassStats(m){
+  const s = m.stats || {};
+  const homePoss = clamp(Math.round(s.homeForm || 52), 34, 66);
+  const awayPoss = 100 - homePoss;
+  const passTotalHome = Math.round(260 + homePoss * 4.4);
+  const passTotalAway = Math.round(260 + awayPoss * 4.4);
+  const accHome = clamp(Math.round(65 + homePoss * .26), 62, 91);
+  const accAway = clamp(Math.round(65 + awayPoss * .26), 62, 91);
+  const okHome = Math.round(passTotalHome * accHome / 100);
+  const okAway = Math.round(passTotalAway * accAway / 100);
+  const longHome = Math.round(30 + (100-homePoss) * .20);
+  const longAway = Math.round(30 + (100-awayPoss) * .20);
+  const longOkHome = Math.round(longHome * clamp(accHome-37, 18, 62) / 100);
+  const longOkAway = Math.round(longAway * clamp(accAway-37, 18, 62) / 100);
+  const finalHome = Math.round(62 + homePoss * 1.35);
+  const finalAway = Math.round(62 + awayPoss * 1.35);
+  const finalOkHome = Math.round(finalHome * clamp(accHome-25, 30, 83) / 100);
+  const finalOkAway = Math.round(finalAway * clamp(accAway-25, 30, 83) / 100);
+  const crossesHome = clamp(Math.round(3 + (s.cornersAvg || 8) * .38 + homePoss * .05), 3, 18);
+  const crossesAway = clamp(Math.round(3 + (s.cornersAvg || 8) * .35 + awayPoss * .05), 3, 18);
+  const xaHome = clamp((Number(s.homeGoalsAvg || 1.2) * .42 + homePoss * .008), .15, 2.30);
+  const xaAway = clamp((Number(s.awayGoalsAvg || 1.0) * .42 + awayPoss * .008), .15, 2.30);
+  const throwHome = clamp(Math.round(12 + homePoss * .12), 10, 28);
+  const throwAway = clamp(Math.round(12 + awayPoss * .12), 10, 28);
+  return [
+    {label:'Passes', left:`${accHome}% <small>(${compactNum(okHome)}/${compactNum(passTotalHome)})</small>`, right:`${accAway}% <small>(${compactNum(okAway)}/${compactNum(passTotalAway)})</small>`, lnum:okHome, rnum:okAway},
+    {label:'Passes longos', left:`${Math.round(longOkHome/longHome*100)}% <small>(${longOkHome}/${longHome})</small>`, right:`${Math.round(longOkAway/longAway*100)}% <small>(${longOkAway}/${longAway})</small>`, lnum:longOkHome, rnum:longOkAway},
+    {label:'Passes no terço final', left:`${Math.round(finalOkHome/finalHome*100)}% <small>(${finalOkHome}/${finalHome})</small>`, right:`${Math.round(finalOkAway/finalAway*100)}% <small>(${finalOkAway}/${finalAway})</small>`, lnum:finalOkHome, rnum:finalOkAway},
+    {label:'Cruzamentos', left:`${Math.round(crossesHome/(crossesHome+crossesAway)*100)}% <small>(${Math.max(1,Math.round(crossesHome*.36))}/${crossesHome})</small>`, right:`${Math.round(crossesAway/(crossesHome+crossesAway)*100)}% <small>(${Math.max(1,Math.round(crossesAway*.36))}/${crossesAway})</small>`, lnum:crossesHome, rnum:crossesAway},
+    {label:'Assistências esperadas (xA)', left:xaHome.toFixed(2), right:xaAway.toFixed(2), lnum:xaHome, rnum:xaAway},
+    {label:'Laterais cobrados', left:throwHome, right:throwAway, lnum:throwHome, rnum:throwAway}
+  ];
+}
+function makeDefenseStats(m){
+  const base = makeCompareStats(m);
+  const fouls = base.find(x=>x.label==='Faltas') || {lnum:8,rnum:7,left:8,right:7};
+  const yellow = base.find(x=>x.label==='Cartões amarelos') || {lnum:1,rnum:1,left:1,right:1};
+  const homeBase = Number(m.stats?.homeForm || 55);
+  const awayBase = Number(m.stats?.awayForm || 52);
+  const tacklesHome = clamp(Math.round(8 + (100-homeBase)*.08 + Number(fouls.lnum)*.38), 3, 22);
+  const tacklesAway = clamp(Math.round(8 + (100-awayBase)*.08 + Number(fouls.rnum)*.38), 3, 22);
+  const duelHome = clamp(Math.round(34 + homeBase*.18 + Number(fouls.rnum)*.45), 25, 64);
+  const duelAway = clamp(Math.round(34 + awayBase*.18 + Number(fouls.lnum)*.45), 25, 64);
+  const clearHome = clamp(Math.round(15 + Number(fouls.rnum)*1.15 + Number(yellow.lnum)*2), 8, 55);
+  const clearAway = clamp(Math.round(15 + Number(fouls.lnum)*1.15 + Number(yellow.rnum)*2), 8, 55);
+  const interceptionsHome = clamp(Math.round(5 + tacklesHome*.38), 2, 18);
+  const interceptionsAway = clamp(Math.round(5 + tacklesAway*.38), 2, 18);
+  return [
+    {label:'Faltas', left:fouls.left, right:fouls.right, lnum:fouls.lnum, rnum:fouls.rnum},
+    {label:'Desarmes', left:`${clamp(Math.round(58+tacklesHome),45,88)}% <small>(${Math.max(1,Math.round(tacklesHome*.7))}/${tacklesHome})</small>`, right:`${clamp(Math.round(58+tacklesAway),45,88)}% <small>(${Math.max(1,Math.round(tacklesAway*.7))}/${tacklesAway})</small>`, lnum:tacklesHome, rnum:tacklesAway},
+    {label:'Duelos ganhos', left:duelHome, right:duelAway, lnum:duelHome, rnum:duelAway},
+    {label:'Rebatidas', left:clearHome, right:clearAway, lnum:clearHome, rnum:clearAway},
+    {label:'Interceptações', left:interceptionsHome, right:interceptionsAway, lnum:interceptionsHome, rnum:interceptionsAway}
+  ];
+}
+function statGroup(title, icon, rows){
+  return `<section class="stats-pro-section">
+    <div class="stats-pro-section-title"><span>${icon}</span>${title}</div>
+    ${rows.map(statCompareRow).join('')}
+  </section>`;
+}
 function renderMatchDetail(){
   const mount = $('#page-match');
   if(!mount) return;
@@ -5296,10 +5487,17 @@ function renderMatchDetail(){
   if(state.detailTab==='summary'){
     content = `<div class="card"><div class="card-title">Resumo da partida</div><div class="summary-list">${summaryItems(m,p).map(([a,b])=>`<div class="summary-item"><span>${safe(a)}</span><b>${safe(b)}</b></div>`).join('')}</div></div>`;
   } else if(state.detailTab==='stats'){
-    const rows = makeCompareStats(m);
-    content = `<div class="card stat-compare-card">
-      <div class="card-title">Stats do jogo</div>
-      ${rows.map(statCompareRow).join('')}
+    const mainRows = makeCompareStats(m);
+    const passRows = makePassStats(m);
+    const defenseRows = makeDefenseStats(m);
+    content = `<div class="card stat-compare-card stats-pro-v1615">
+      <div class="stats-pro-head">
+        <div class="stats-pro-title"><span class="stats-pro-icon">▮</span><b>Estatísticas completas</b></div>
+        <span class="stats-pro-badge">Modelo premium</span>
+      </div>
+      ${statGroup('Estatísticas principais','▮', mainRows)}
+      ${statGroup('Passes','▮', passRows)}
+      ${statGroup('Defesa','⬡', defenseRows)}
       <div class="compare-note">Modelo visual em prévia. Quando a API entrar, esses dados serão puxados em tempo real do jogo.</div>
     </div>`;
   } else if(state.detailTab==='lineup'){

@@ -1,20 +1,24 @@
-# Prado Sports AI — V16.14.2 Ao Vivo sem placar amarelo
+# Prado Sports AI — V16.15 Stats Avançado
 
 ## Alterado
-- Removido o placar amarelo grande do canto direito nos cards Ao Vivo.
-- Mantidos os placares pequenos por time, do jeito que o Carlos marcou.
-- Ajustado o topo do card para não ficar espaço estranho.
+- Aba Stats dos detalhes do jogo ficou mais completa.
+- Adicionados blocos:
+  - Estatísticas principais
+  - Passes
+  - Defesa
+- Adicionadas métricas como passes, passes longos, terço final, cruzamentos, xA, laterais, desarmes, duelos, rebatidas e interceptações.
+- Visual mantido no padrão premium escuro do Prado AI.
 
 ## Não alterado
-- Escudos premium.
-- Splash.
-- Home.
-- IA.
-- Favoritos.
-- Bilhetes.
-- Configurações.
-- Pagamento.
-- WhatsApp com mensagem.
+- Splash
+- Home
+- Ao vivo
+- IA
+- Favoritos
+- Bilhetes
+- Configurações
+- Pagamento
+- WhatsApp com mensagem
 
 ## Teste
-Use: ?v=16-14-2
+Use: ?v=16-15
