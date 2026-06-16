@@ -4693,6 +4693,15 @@ body[data-page="live"] .live-v1617-summary{
   }
 }
 
+
+/* ===== V16.17.1 — AO VIVO LIMPO ===== */
+body[data-page="live"] .live-v153-dashboard{
+  margin-bottom:8px !important;
+}
+body[data-page="live"] .live-v1617-groups{
+  margin-top:0 !important;
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -5903,13 +5912,9 @@ function renderLive(){
         <div class="live-v153-kpi gold"><b>${bestLive ? bestLive.confidence+'%' : '--'}</b><span>Top IA</span></div>
         <div class="live-v153-kpi"><b>${avgConfidence || '--'}%</b><span>Média IA</span></div>
       </div>
-      <div class="card compact live-v153-note">
-        <div class="card-title">Central ao vivo compacta</div>
-        <p class="muted">Toque em qualquer jogo para abrir resumo, stats, escalação, H2H, classificação e melhor entrada da IA.</p>
-      </div>
     </div>
 
-    ${live.length ? `<div class="live-v1617-summary">Campeonatos agrupados para a aba não ficar gigante quando tiver muitos jogos.</div><div class="live-v1617-groups">${liveGroups.map(leagueGroupCard).join('')}</div>` : '<div class="card empty">Nenhum jogo ao vivo neste momento.</div>'}
+    ${live.length ? `<div class="live-v1617-groups">${liveGroups.map(leagueGroupCard).join('')}</div>` : '<div class="card empty">Nenhum jogo ao vivo neste momento.</div>'}
 
     ${bestLive ? `<div class="card compact live-v153-note live-v153-best">
       <div class="card-title">Melhor leitura ao vivo</div>
