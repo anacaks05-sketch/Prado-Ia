@@ -1,23 +1,20 @@
-# Prado Sports AI — V16.14 Escudos Premium
+# Prado Sports AI — V16.14.2 Ao Vivo sem placar amarelo
 
 ## Alterado
-- Corrigidos escudos/ícones dos times.
-- Quando o escudo real não carregar, aparece um brasão premium com iniciais do time.
-- Remove visual de ícone quebrado com "?".
+- Removido o placar amarelo grande do canto direito nos cards Ao Vivo.
+- Mantidos os placares pequenos por time, do jeito que o Carlos marcou.
+- Ajustado o topo do card para não ficar espaço estranho.
 
 ## Não alterado
-- Splash
-- Home
-- Ao vivo
-- IA
-- Favoritos
-- Bilhetes
-- Configurações
-- Link de pagamento
-- WhatsApp com mensagem
+- Escudos premium.
+- Splash.
+- Home.
+- IA.
+- Favoritos.
+- Bilhetes.
+- Configurações.
+- Pagamento.
+- WhatsApp com mensagem.
 
 ## Teste
-Use: ?v=16-14
-
-
-Atualização: removidos os placares brancos duplicados nos cards de Ao Vivo, mantendo apenas o placar principal amarelo no topo direito.
+Use: ?v=16-14-2

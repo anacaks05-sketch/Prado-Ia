@@ -4406,6 +4406,15 @@ body[data-page="favorites"] #page-favorites{padding-bottom:96px}
   border-radius:10px !important;
 }
 
+
+/* ===== V16.14.2 — AO VIVO SEM PLACAR AMARELO ===== */
+body[data-page="live"] .live-v153-top{
+  justify-content:flex-start !important;
+}
+body[data-page="live"] .live-v153-chip{
+  max-width:100% !important;
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -5419,14 +5428,15 @@ function renderLive(){
     return `<article class="live-v153-card" onclick="openMatchDetail('${m.id}')">
       <div class="live-v153-top">
         <div class="live-v153-chip"><span class="pulse"></span>${m.minute || 0}' AO VIVO · ${safe(m.league)}</div>
-        <div class="live-v153-score">${m.score.home}-${m.score.away}</div>
       </div>
       <div class="live-v153-teams">
         <div class="live-v153-team">
           <div class="live-v153-team-main">${crestHTML(m.home,28)}<span class="name">${safe(m.home.name)}</span></div>
+          <div class="live-v153-goal">${m.score.home}</div>
         </div>
         <div class="live-v153-team">
           <div class="live-v153-team-main">${crestHTML(m.away,28)}<span class="name">${safe(m.away.name)}</span></div>
+          <div class="live-v153-goal">${m.score.away}</div>
         </div>
       </div>
       <div class="live-v153-bottom">
