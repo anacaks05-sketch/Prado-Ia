@@ -6287,6 +6287,134 @@ body[data-page="tips"] .tickets-v211-risk-card.active .risk-level{
   }
 }
 
+
+/* ===== V16.22 — FAVORITOS / ABAS EM CIMA DO TIME FAVORITO ===== */
+body[data-page="favorites"] #page-favorites{
+  padding-bottom:96px !important;
+}
+body[data-page="favorites"] .fav-v122-clean{
+  display:grid !important;
+  gap:10px !important;
+}
+body[data-page="favorites"] .fav-v122-tabs-top{
+  order:0;
+  min-height:60px;
+  display:grid !important;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0 !important;
+  padding:6px !important;
+  border-radius:22px !important;
+  border:1px solid rgba(255,255,255,.10);
+  background:
+    radial-gradient(circle at 0% 50%, rgba(33,230,161,.10), transparent 35%),
+    linear-gradient(145deg,rgba(13,22,32,.96),rgba(7,11,17,.99));
+  box-shadow:0 14px 32px rgba(0,0,0,.17), inset 0 1px 0 rgba(255,255,255,.04);
+  overflow:hidden !important;
+}
+body[data-page="favorites"] .fav-v122-tab{
+  min-height:48px !important;
+  height:48px !important;
+  padding:0 8px !important;
+  border-radius:17px !important;
+  background:transparent !important;
+  border:0 !important;
+  color:#aab4c4 !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:7px !important;
+  font-size:11px !important;
+  font-weight:900 !important;
+  white-space:nowrap !important;
+  position:relative;
+}
+body[data-page="favorites"] .fav-v122-tab:not(:last-child)::after{
+  content:"";
+  position:absolute;
+  right:-1px;
+  height:24px;
+  width:1px;
+  background:rgba(255,255,255,.08);
+}
+body[data-page="favorites"] .fav-v122-tab span{
+  font-size:14px;
+  color:inherit;
+}
+body[data-page="favorites"] .fav-v122-tab.active{
+  color:var(--green) !important;
+  background:linear-gradient(145deg,rgba(33,230,161,.18),rgba(33,230,161,.06)) !important;
+  box-shadow:inset 0 -3px 0 rgba(33,230,161,.92);
+}
+body[data-page="favorites"] .fav-v122-tab.active::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:-4px;
+  transform:translateX(-50%) rotate(45deg);
+  width:10px;
+  height:10px;
+  background:var(--green);
+  border-radius:2px;
+}
+body[data-page="favorites"] .fav-v122-team-main{
+  order:1;
+  border-radius:22px !important;
+  padding:13px !important;
+  background:
+    radial-gradient(circle at 96% 10%, rgba(33,230,161,.07), transparent 30%),
+    linear-gradient(145deg,rgba(15,24,36,.96),rgba(7,11,17,.99)) !important;
+}
+body[data-page="favorites"] .fav-v122-team-main .fav-v169-label{
+  font-size:15px !important;
+  margin-bottom:10px !important;
+}
+body[data-page="favorites"] .fav-v122-input-row{
+  grid-template-columns:1fr !important;
+  gap:9px !important;
+}
+body[data-page="favorites"] .fav-v122-input-row .field{
+  min-height:44px !important;
+  border-radius:16px !important;
+  font-size:15px !important;
+}
+body[data-page="favorites"] .fav-v122-input-row .fav-v169-save{
+  width:100%;
+  min-height:46px !important;
+  border-radius:16px !important;
+  font-size:14px !important;
+}
+body[data-page="favorites"] .fav-v169-content{
+  order:2;
+  display:grid;
+  gap:10px;
+}
+body[data-page="favorites"] .fav-v169-head{
+  display:none !important;
+}
+body[data-page="favorites"] .fav-v122-suggestions{
+  margin-top:0 !important;
+}
+@media(max-width:390px){
+  body[data-page="favorites"] .fav-v122-tabs-top{
+    min-height:54px;
+    padding:5px !important;
+    border-radius:20px !important;
+  }
+  body[data-page="favorites"] .fav-v122-tab{
+    min-height:43px !important;
+    height:43px !important;
+    gap:4px !important;
+    font-size:9.4px !important;
+    padding:0 5px !important;
+  }
+  body[data-page="favorites"] .fav-v122-tab span{
+    font-size:12px;
+  }
+  body[data-page="favorites"] .fav-v122-team-main{
+    padding:12px !important;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -6915,26 +7043,19 @@ function renderFavoriteGamesView(team, leagues){
 function renderFavoriteTeamsView(team){
   const suggestions = ['Flamengo','Palmeiras','Corinthians','São Paulo','Liverpool','Manchester City','Argentina','Brasil'];
   return `
-    <section class="fav-v169-team-card compact">
+    <section class="fav-v169-team-card compact fav-v122-suggestions">
       <div class="fav-v169-panel-title">
-        <h3>Equipe favorita</h3>
-        <span>${team ? 'salvo' : 'pendente'}</span>
+        <h3>Sugestões rápidas</h3>
+        <span>${team ? 'time salvo' : 'escolha'}</span>
       </div>
-      <div class="fav-v169-input-row" style="margin-top:10px">
-        <input id="favoriteTeamPageInput" class="field" placeholder="Ex.: Flamengo, Brasil, Liverpool" value="${safe(team)}" />
-        <button class="fav-v169-save" onclick="saveFavoriteTeamFromPage()">Salvar</button>
-      </div>
-      <div class="fav-v169-helper">Esse time será usado para jogos, notícias e organização da IA.</div>
-    </section>
-
-    <section class="fav-v169-team-card compact">
-      <div class="fav-v169-label">Sugestões rápidas</div>
       <div class="fav-v169-team-pills">
         ${suggestions.map(item=>`<button class="fav-v169-pill ${team===item?'active':''}" onclick="selectFavoriteTeam('${item}')">${item}</button>`).join('')}
       </div>
+      <div class="fav-v169-helper">Toque em uma equipe ou digite o nome no campo acima.</div>
     </section>
   `;
 }
+
 function renderFavoriteLeaguesView(leagues){
   const all = ['Brasileirão','Copa do Brasil','Premier League','Champions','La Liga','Libertadores'];
   return `
@@ -6986,10 +7107,10 @@ function renderFavorites(){
   const leagues = getFavoriteLeagues();
   const tab = getFavoriteTab();
   const tabs = [
-    ['games','Jogos'],
-    ['teams','Equipes'],
-    ['leagues','Campeonatos'],
-    ['news','Notícias']
+    ['games','Jogos','▣'],
+    ['teams','Equipes','▱'],
+    ['leagues','Campeonatos','♕'],
+    ['news','Notícias','▤']
   ];
   let content = '';
   if(tab === 'teams') content = renderFavoriteTeamsView(team);
@@ -6998,14 +7119,19 @@ function renderFavorites(){
   else content = renderFavoriteGamesView(team, leagues);
 
   page.innerHTML = `
-    <div class="fav-page-v169">
-      <section class="fav-v169-head">
-        <div class="fav-v169-tabs top-inside">
-          ${tabs.map(([key,label])=>`<button class="fav-v169-tab ${tab===key?'active':''}" onclick="setFavoriteTab('${key}')">${label}</button>`).join('')}
+    <div class="fav-page-v169 fav-v122-clean">
+      <div class="fav-v169-tabs fav-v122-tabs-top">
+        ${tabs.map(([key,label,ico])=>`<button class="fav-v169-tab fav-v122-tab ${tab===key?'active':''}" onclick="setFavoriteTab('${key}')"><span>${ico}</span>${label}</button>`).join('')}
+      </div>
+
+      <section class="fav-v169-team-card compact fav-v122-team-main">
+        <div class="fav-v169-label">Time favorito</div>
+        <div class="fav-v169-input-row fav-v122-input-row">
+          <input id="favoriteTeamPageInput" class="field" placeholder="Ex.: Flamengo, Brasil, Liverpool" value="${safe(team)}" />
+          <button class="fav-v169-save" onclick="saveFavoriteTeamFromPage()">Salvar</button>
         </div>
-        <h2>Favoritos</h2>
-        <p>Jogos, equipes, campeonatos e notícias do que você acompanha.</p>
       </section>
+
       <div class="fav-v169-content">${content}</div>
     </div>
   `;

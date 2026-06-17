@@ -1,20 +1,21 @@
-# Prado Sports AI — V16.21.1 Bilhetes Risco Forte
+# Prado Sports AI — V16.22 Favoritos Abas em Cima
 
-## Corrigido
-- A alteração no bloco Conservador / Moderado / Agressivo agora ficou mais forte e visível.
-- Cards maiores, verticais e premium.
-- Card ativo com brilho verde, check e destaque.
-- Texto de risco e descrição em cada card.
+## Alterado
+- Aba Favoritos ajustada.
+- Removido o banner/título grande de Favoritos.
+- As abas Jogos, Equipes, Campeonatos e Notícias agora ficam em cima.
+- O campo Time favorito fica logo abaixo das abas.
+- Evitei duplicar o campo dentro da aba Equipes.
 
 ## Não alterado
 - Home
 - Ao vivo
 - IA
-- Favoritos
+- Bilhetes
 - Stats
 - Configurações
 - Pagamento
 - WhatsApp
 
 ## Teste
-Use: ?v=16-21-1
+Use: ?v=16-22
