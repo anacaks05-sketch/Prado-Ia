@@ -1,11 +1,10 @@
-# Prado Sports AI — V16.20.2 Config Notificação Simples
+# Prado Sports AI — V16.20.3 Somente Tema Preto
 
 ## Alterado
-- Em Configurações, a área de Notificações ficou em uma única linha/card.
-- Removido o bloco duplicado "Notificações" dentro de Notificações.
-- Removido texto longo com gols, escanteios, cartões etc.
-- Removido ícone de três linhas/pontinhos.
-- Botão "Abrir" ficou no canto direito da linha Notificações.
+- Removida a opção de tema claro/branco.
+- Removido o card "Tema do app" das Configurações.
+- App agora fica fixo no tema preto premium.
+- Mesmo se o celular tiver salvo tema claro antes, o app força tema escuro.
 
 ## Não alterado
 - Home
@@ -16,7 +15,7 @@
 - Stats
 - Pagamento
 - WhatsApp
-- Tema claro/escuro
+- Config Notificação Simples
 
 ## Teste
-Use: ?v=16-20-2
+Use: ?v=16-20-3

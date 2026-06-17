@@ -5948,6 +5948,100 @@ body:not([data-theme="light"]) #settingsModal .notifications-simple-v1622 .notif
   }
 }
 
+
+/* ===== V16.20.3 — SOMENTE TEMA PRETO ===== */
+.theme-v1619-card,
+.theme-v1619-options,
+.theme-v1619-option{
+  display:none !important;
+}
+body,
+body[data-theme="dark"]{
+  color-scheme:dark !important;
+  background:#070B11 !important;
+}
+body[data-theme="light"]{
+  color-scheme:dark !important;
+  background:#070B11 !important;
+}
+body[data-theme="light"]::before{
+  display:none !important;
+}
+body[data-theme="light"] .app,
+body[data-theme="light"] .page,
+body[data-theme="light"] main{
+  background:#070B11 !important;
+  color:var(--text) !important;
+}
+body[data-theme="light"] .topbar{
+  background:#070B11 !important;
+  border-bottom:1px solid rgba(255,255,255,.05) !important;
+  box-shadow:none !important;
+  color:var(--text) !important;
+}
+body[data-theme="light"] #settingsModal.settings-premium-modal,
+body[data-theme="light"] #settingsModal.settings-premium-modal .modal-head,
+body[data-theme="light"] #settingsModal.settings-premium-modal .settings-pro > .settings-pro-card,
+body[data-theme="light"] .card,
+body[data-theme="light"] .compact,
+body[data-theme="light"] .match-row,
+body[data-theme="light"] .live-v1617-group,
+body[data-theme="light"] .live-v153-card,
+body[data-theme="light"] .live-v153-up-row,
+body[data-theme="light"] .modal{
+  background:
+    radial-gradient(circle at 8% 4%,rgba(33,230,161,.07),transparent 28%),
+    linear-gradient(145deg,rgba(18,29,42,.98),rgba(7,11,17,.99)) !important;
+  border-color:rgba(148,163,184,.22) !important;
+  color:var(--text) !important;
+}
+body[data-theme="light"] .premium-v1621{
+  background:
+    radial-gradient(circle at 88% 8%,rgba(255,224,110,.22),transparent 34%),
+    linear-gradient(150deg,rgba(37,29,8,.82),rgba(10,15,22,.98)) !important;
+  border-color:rgba(255,224,110,.32) !important;
+}
+body[data-theme="light"] h1,
+body[data-theme="light"] h2,
+body[data-theme="light"] h3,
+body[data-theme="light"] .card-title,
+body[data-theme="light"] .section-title,
+body[data-theme="light"] .settings-pro-title h3,
+body[data-theme="light"] .brand-line strong,
+body[data-theme="light"] .team-name,
+body[data-theme="light"] .name{
+  color:#fff !important;
+}
+body[data-theme="light"] p,
+body[data-theme="light"] small,
+body[data-theme="light"] .muted,
+body[data-theme="light"] .settings-pro-title p,
+body[data-theme="light"] .responsible-text,
+body[data-theme="light"] .notif-text,
+body[data-theme="light"] .legal{
+  color:var(--muted) !important;
+}
+body[data-theme="light"] .bottom-nav{
+  background:rgba(7,11,17,.97) !important;
+  border-top:1px solid rgba(255,255,255,.08) !important;
+}
+body[data-theme="light"] .top-action-btn,
+body[data-theme="light"] .icon-btn,
+body[data-theme="light"] #settingsModal .notifications-simple-v1622 .notif-open-v1622,
+body[data-theme="light"] .premium-v1621-actions .btn.dark{
+  background:linear-gradient(145deg,rgba(24,35,51,.98),rgba(9,15,23,.98)) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+}
+body[data-theme="light"] input,
+body[data-theme="light"] select,
+body[data-theme="light"] textarea,
+body[data-theme="light"] .field{
+  background:rgba(255,255,255,.04) !important;
+  color:#fff !important;
+  border-color:rgba(255,255,255,.10) !important;
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -6064,19 +6158,7 @@ body:not([data-theme="light"]) #settingsModal .notifications-simple-v1622 .notif
     </div>
 
     <div class="settings-grid settings-pro">
-      <section class="settings-pro-card theme-v1619-card">
-        <div class="settings-pro-title">
-          <div class="settings-pro-icon">🎨</div>
-          <div>
-            <h3>Tema do app</h3>
-            <p>Escolha o visual que combina melhor com você.</p>
-          </div>
-        </div>
-        <div class="theme-v1619-options">
-          <button class="theme-v1619-option" data-theme="dark" onclick="setAppTheme('dark')"><span class="ico">🌙</span><span>Tema escuro</span><span class="check">✓</span></button>
-          <button class="theme-v1619-option" data-theme="light" onclick="setAppTheme('light')"><span class="ico">☀️</span><span>Tema claro</span><span class="check">✓</span></button>
-        </div>
-      </section>
+      
 
       <section class="settings-pro-card notifications-card notifications-simple-v1622">
         <div class="settings-pro-title">
@@ -7858,21 +7940,20 @@ function initFavoritesSettings(){
 
 
 function getAppTheme(){
-  return localStorage.getItem('prado_theme') || 'dark';
+  return 'dark';
 }
 function updateThemeButtons(){
   const current = document.body.dataset.theme || getAppTheme();
   $$('.theme-v1619-option').forEach(btn=>btn.classList.toggle('active', btn.dataset.theme === current));
 }
 function applyAppTheme(theme){
-  const next = theme === 'light' ? 'light' : 'dark';
-  document.body.dataset.theme = next;
-  localStorage.setItem('prado_theme', next);
+  document.body.dataset.theme = 'dark';
+  localStorage.setItem('prado_theme', 'dark');
   updateThemeButtons();
 }
 function setAppTheme(theme){
-  applyAppTheme(theme);
-  toast(theme === 'light' ? 'Tema claro ativado' : 'Tema escuro ativado', theme === 'light' ? '☀️' : '🌙');
+  applyAppTheme('dark');
+  toast('Tema escuro fixo ativado', '🌙');
 }
 
 function bindEvents(){
@@ -8240,7 +8321,8 @@ window.closeFloatingAIChat = closeFloatingAIChat;
 window.sendFloatingAIQuick = sendFloatingAIQuick;
 window.sendFloatingAIMessage = sendFloatingAIMessage;
 
-applyAppTheme(getAppTheme());
+localStorage.setItem('prado_theme','dark');
+applyAppTheme('dark');
 initFloatingAIChat();
 makeFloatingDraggable($('#floatingAI'));
 bindEvents();
