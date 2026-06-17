@@ -1,14 +1,14 @@
-# Prado Sports AI — V16.28.2 Home Mais Compacta
+# Prado Sports AI — V16.28.3 Home Destaques Limpo
 
-## Alterado de verdade
-- Recriei o bloco Destaques do dia em versão menor.
-- Cards de Destaques agora têm altura reduzida.
-- Odds, escudos e textos ficaram bem menores.
-- Recriei o Bilhete automático em versão mais baixa.
-- Botão Abrir bilhetes ficou menor e lateral.
-- Jogos de hoje sobe mais na tela.
+## Alterado
+- Corrigi o visual estranho de Destaques do dia.
+- Os cards não ficam mais espremidos.
+- Agora aparecem mais proporcionais: menores que antes, mas sem ficar estranho.
+- Mantive o Bilhete automático compacto da V16.28.2.
 
 ## Não alterado
+- Banner Prado Sports Pro
+- Bilhete automático compacto
 - IA aprovada
 - Favoritos
 - Campeonatos Pro
@@ -19,4 +19,4 @@
 - WhatsApp
 
 ## Teste
-Use: ?v=16-28-2
+Use: ?v=16-28-3

@@ -8584,6 +8584,114 @@ body[data-page="home"] .section-title{
   }
 }
 
+
+/* ===== V16.28.3 — HOME / DESTAQUES LIMPO E MENOS ESTRANHO ===== */
+/* Ajusta somente Destaques do dia. Mantém Bilhete compacto da V16.28.2. */
+body[data-page="home"] .home-v282-highlights{
+  padding:10px !important;
+  border-radius:20px !important;
+  margin-bottom:8px !important;
+  background:
+    radial-gradient(circle at 92% 8%,rgba(33,230,161,.08),transparent 28%),
+    linear-gradient(145deg,rgba(13,22,32,.96),rgba(7,11,17,.99)) !important;
+}
+body[data-page="home"] .home-v282-head{
+  margin-bottom:8px !important;
+}
+body[data-page="home"] .home-v282-head h3{
+  font-size:20px !important;
+  letter-spacing:-.02em !important;
+}
+body[data-page="home"] .home-v282-head button{
+  font-size:11px !important;
+}
+
+body[data-page="home"] .home-v282-scroll{
+  gap:9px !important;
+  overflow-x:auto !important;
+  padding:0 2px 3px !important;
+  scroll-snap-type:x mandatory !important;
+}
+body[data-page="home"] .home-v282-scroll::-webkit-scrollbar{
+  display:none !important;
+}
+
+body[data-page="home"] .home-v282-card{
+  flex:0 0 166px !important;
+  min-width:166px !important;
+  height:178px !important;
+  padding:10px !important;
+  border-radius:17px !important;
+  border:1px solid rgba(255,255,255,.09) !important;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(33,230,161,.09),transparent 40%),
+    linear-gradient(145deg,rgba(10,16,24,.98),rgba(4,7,12,.99)) !important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04), 0 10px 22px rgba(0,0,0,.14) !important;
+}
+
+body[data-page="home"] .home-v282-league{
+  font-size:9px !important;
+  color:#e3cf85 !important;
+  letter-spacing:.02em !important;
+}
+body[data-page="home"] .home-v282-time{
+  font-size:9px !important;
+  margin-top:3px !important;
+}
+
+body[data-page="home"] .home-v282-teams{
+  grid-template-columns:1fr 16px 1fr !important;
+  gap:5px !important;
+  margin:12px 0 10px !important;
+}
+body[data-page="home"] .home-v282-teams .crest{
+  width:34px !important;
+  height:34px !important;
+}
+body[data-page="home"] .home-v282-teams b{
+  font-size:9.8px !important;
+  max-width:62px !important;
+}
+body[data-page="home"] .home-v282-teams > span{
+  font-size:12px !important;
+}
+
+body[data-page="home"] .home-v282-odds{
+  gap:5px !important;
+}
+body[data-page="home"] .home-v282-odds span{
+  min-height:37px !important;
+  border-radius:10px !important;
+  font-size:8px !important;
+}
+body[data-page="home"] .home-v282-odds b{
+  font-size:13px !important;
+}
+
+/* remove aparência espremida no iPhone menor */
+@media(max-width:390px){
+  body[data-page="home"] .home-v282-card{
+    flex-basis:154px !important;
+    min-width:154px !important;
+    height:168px !important;
+    padding:9px !important;
+  }
+  body[data-page="home"] .home-v282-teams .crest{
+    width:31px !important;
+    height:31px !important;
+  }
+  body[data-page="home"] .home-v282-teams b{
+    font-size:9px !important;
+    max-width:56px !important;
+  }
+  body[data-page="home"] .home-v282-odds span{
+    min-height:34px !important;
+  }
+  body[data-page="home"] .home-v282-odds b{
+    font-size:12px !important;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
