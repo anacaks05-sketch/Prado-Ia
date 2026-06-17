@@ -1,11 +1,11 @@
-# Prado Sports AI — V16.22 Favoritos Abas em Cima
+# Prado Sports AI — V16.22.2 Favoritos Campeonatos Premium
 
 ## Alterado
-- Aba Favoritos ajustada.
-- Removido o banner/título grande de Favoritos.
-- As abas Jogos, Equipes, Campeonatos e Notícias agora ficam em cima.
-- O campo Time favorito fica logo abaixo das abas.
-- Evitei duplicar o campo dentro da aba Equipes.
+- Somente a aba Campeonatos dentro de Favoritos.
+- Mantive o estilo atual.
+- Visual dos campeonatos ficou mais premium.
+- Cards de ligas com ícone, país, descrição e check.
+- Bloco de selecionados ficou mais organizado.
 
 ## Não alterado
 - Home
@@ -16,6 +16,7 @@
 - Configurações
 - Pagamento
 - WhatsApp
+- Outras abas de Favoritos
 
 ## Teste
-Use: ?v=16-22
+Use: ?v=16-22-2
