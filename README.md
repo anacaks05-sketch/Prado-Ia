@@ -1,11 +1,10 @@
-# Prado Sports AI — V16.21 Bilhetes Bloco de Risco
+# Prado Sports AI — V16.21.1 Bilhetes Risco Forte
 
-## Alterado
-- Somente o bloco de perfis da aba Bilhetes.
-- Conservador, Moderado e Agressivo ficaram mais premium.
-- Card ativo ganhou brilho verde, check e destaque.
-- Cada perfil agora mostra descrição e nível de risco.
-- Mantido tema preto premium.
+## Corrigido
+- A alteração no bloco Conservador / Moderado / Agressivo agora ficou mais forte e visível.
+- Cards maiores, verticais e premium.
+- Card ativo com brilho verde, check e destaque.
+- Texto de risco e descrição em cada card.
 
 ## Não alterado
 - Home
@@ -18,4 +17,4 @@
 - WhatsApp
 
 ## Teste
-Use: ?v=16-21
+Use: ?v=16-21-1
