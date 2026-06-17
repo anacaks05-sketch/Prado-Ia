@@ -7006,6 +7006,180 @@ body[data-page="favorites"] .fav-v169-cta button{
   }
 }
 
+
+/* ===== V16.24 — FAVORITOS / ABRIR E CALENDÁRIO FUNCIONANDO ===== */
+.fav-v124-modal{
+  width:min(540px,calc(100vw - 16px)) !important;
+  max-height:calc(100dvh - 20px) !important;
+  border-radius:26px !important;
+  overflow:auto !important;
+  border:1px solid rgba(255,255,255,.12) !important;
+  background:
+    radial-gradient(circle at 92% 4%,rgba(33,230,161,.13),transparent 28%),
+    linear-gradient(145deg,rgba(13,22,32,.98),rgba(7,11,17,.99)) !important;
+  color:#fff !important;
+}
+.fav-v124-modal::backdrop{
+  background:rgba(0,0,0,.62);
+  backdrop-filter:blur(10px);
+}
+.fav-v124-head{
+  position:sticky;
+  top:0;
+  z-index:5;
+  background:linear-gradient(145deg,rgba(13,22,32,.98),rgba(7,11,17,.99)) !important;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.fav-v124-head small{
+  display:block;
+  color:var(--green);
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-size:9px;
+  font-weight:900;
+  margin-bottom:5px;
+}
+.fav-v124-head h2{
+  margin:0;
+  font-family:'Space Grotesk';
+  font-size:24px;
+  line-height:1.05;
+}
+.fav-v124-body{
+  display:grid;
+  gap:12px;
+  padding:14px;
+}
+.fav-v124-score-card{
+  display:grid;
+  grid-template-columns:1fr 44px 1fr;
+  align-items:center;
+  gap:10px;
+  min-height:96px;
+  padding:12px;
+  border-radius:22px;
+  border:1px solid rgba(33,230,161,.18);
+  background:radial-gradient(circle at 50% 50%,rgba(33,230,161,.10),transparent 42%),rgba(255,255,255,.035);
+}
+.fav-v124-score-card div{
+  display:grid;
+  justify-items:center;
+  gap:7px;
+  min-width:0;
+}
+.fav-v124-score-card b{
+  color:#fff;
+  font-size:13px;
+  text-align:center;
+}
+.fav-v124-score-card span{
+  color:var(--gold);
+  font-family:'JetBrains Mono';
+  font-weight:900;
+  text-align:center;
+}
+.fav-v124-info-grid,
+.fav-v124-calendar-summary{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+}
+.fav-v124-calendar-summary{
+  grid-template-columns:repeat(3,1fr);
+}
+.fav-v124-info-grid div,
+.fav-v124-calendar-summary div{
+  min-height:58px;
+  border-radius:17px;
+  padding:10px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.035);
+}
+.fav-v124-info-grid small,
+.fav-v124-calendar-summary small{
+  display:block;
+  color:var(--muted);
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-weight:900;
+}
+.fav-v124-info-grid b,
+.fav-v124-calendar-summary b{
+  display:block;
+  margin-top:6px;
+  color:#fff;
+  font-size:13px;
+}
+.fav-v124-read{
+  padding:13px;
+  border-radius:20px;
+  border:1px solid rgba(255,224,110,.18);
+  background:linear-gradient(145deg,rgba(255,224,110,.07),rgba(255,255,255,.025));
+}
+.fav-v124-read small{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:.10em;
+  font-size:9px;
+  font-weight:900;
+}
+.fav-v124-read h3{
+  margin:6px 0;
+  color:#fff;
+  font-size:21px;
+  font-family:'Space Grotesk';
+}
+.fav-v124-read p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.45;
+}
+.fav-v124-calendar-list{
+  display:grid;
+  gap:9px;
+}
+.fav-v124-calendar-row{
+  border-radius:18px;
+  padding:10px;
+  border:1px solid rgba(255,255,255,.09);
+  background:linear-gradient(145deg,rgba(13,22,32,.96),rgba(7,11,17,.99));
+}
+.fav-v124-calendar-row .fav-v123-game-main{
+  grid-template-columns:1fr 20px 1fr !important;
+}
+.fav-v124-calendar-row .fav-v123-team strong{
+  font-size:12px !important;
+}
+body[data-page="favorites"] .fav-v123-game-tags button,
+body[data-page="favorites"] .fav-v123-calendar{
+  cursor:pointer;
+}
+@media(max-width:390px){
+  .fav-v124-modal{
+    width:calc(100vw - 10px) !important;
+    max-height:calc(100dvh - 10px) !important;
+    border-radius:22px !important;
+  }
+  .fav-v124-head h2{
+    font-size:21px;
+  }
+  .fav-v124-body{
+    padding:11px;
+  }
+  .fav-v124-info-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .fav-v124-calendar-summary{
+    gap:6px;
+  }
+  .fav-v124-calendar-summary div{
+    min-height:52px;
+    padding:8px;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -7641,42 +7815,124 @@ function getFavoriteNewsData(team, leagues){
     { badge:leagueB, time:'Atualizado', title:`Notícias e contexto para decisões mais seguras`, text:`Além dos jogos, a área Favoritos agora reúne contexto do time, campeonatos e alertas importantes em um visual premium.`}
   ];
 }
+function getFavoriteCalendarData(teams, leagues){
+  const favTeams = Array.isArray(teams) ? teams : (teams ? [teams] : []);
+  const markets = ['Over 1.5 gols','Ambas marcam','Over 2.5 gols','Over 8.5 escanteios','Over 3.5 cartões','Dupla chance'];
+  const confidence = [91,88,86,84,83,82,80,79,78];
+  const rows = favTeams.flatMap((team, ti)=>getFavoriteFixturesData(team, leagues).map((g, gi)=>({
+    ...g,
+    owner: team,
+    ownerIndex: ti,
+    gameIndex: gi,
+    market: markets[(ti*3+gi) % markets.length],
+    confidence: confidence[(ti*3+gi) % confidence.length],
+    id: `${ti}_${gi}_${String(team).replace(/[^a-z0-9]/gi,'')}_${String(g.match).replace(/[^a-z0-9]/gi,'')}`
+  })));
+  return rows.slice(0,9);
+}
+function getFavoriteGameById(id){
+  return getFavoriteCalendarData(getFavoriteTeams(), getFavoriteLeagues()).find(g=>g.id === id);
+}
+function favoriteGameMarkup(g, opts={}){
+  if(!g) return '';
+  const parts = String(g.match || '').split(' x ');
+  const home = parts[0] || g.owner || 'Time';
+  const away = parts[1] || 'Adversário';
+  const size = opts.size || 42;
+  return `<article class="${opts.compact?'fav-v124-calendar-row':'fav-v123-game-card'}">
+    <div class="fav-v123-game-top">
+      <span>${safe(g.label)} · ${safe(g.league)}</span>
+      <b>${safe(g.time)}</b>
+    </div>
+    <div class="fav-v123-game-main">
+      <div class="fav-v123-team">
+        ${crestHTML({name:home},size)}
+        <strong>${safe(home)}</strong>
+      </div>
+      <div class="fav-v123-vs">x</div>
+      <div class="fav-v123-team right">
+        ${crestHTML({name:away},size)}
+        <strong>${safe(away)}</strong>
+      </div>
+    </div>
+    <div class="fav-v123-game-tags">
+      <span class="green">IA ${g.confidence}%</span>
+      <span>${safe(g.market)}</span>
+      <button onclick="openFavoriteGameDetail('${safe(g.id)}')">Abrir ›</button>
+    </div>
+  </article>`;
+}
+function ensureFavoriteModal(id, cls=''){
+  let dlg = document.getElementById(id);
+  if(!dlg){
+    dlg = document.createElement('dialog');
+    dlg.id = id;
+    dlg.className = `modal fav-v124-modal ${cls}`;
+    document.body.appendChild(dlg);
+  }
+  return dlg;
+}
+function openFavoriteGameDetail(id){
+  const g = getFavoriteGameById(id);
+  if(!g){
+    toast('Jogo não encontrado nos favoritos.', '⚠️');
+    return;
+  }
+  const parts = String(g.match || '').split(' x ');
+  const home = parts[0] || g.owner || 'Time';
+  const away = parts[1] || 'Adversário';
+  const dlg = ensureFavoriteModal('favoriteGameModal','fav-v124-game-modal');
+  dlg.innerHTML = `
+    <div class="modal-head fav-v124-head">
+      <div><small>Detalhe favorito</small><h2>${safe(home)} x ${safe(away)}</h2></div>
+      <button class="icon-btn" onclick="this.closest('dialog').close()">×</button>
+    </div>
+    <div class="fav-v124-body">
+      <div class="fav-v124-score-card">
+        <div>${crestHTML({name:home},46)}<b>${safe(home)}</b></div>
+        <span>VS</span>
+        <div>${crestHTML({name:away},46)}<b>${safe(away)}</b></div>
+      </div>
+      <div class="fav-v124-info-grid">
+        <div><small>Data</small><b>${safe(g.label)}</b></div>
+        <div><small>Horário</small><b>${safe(g.time)}</b></div>
+        <div><small>Campeonato</small><b>${safe(g.league)}</b></div>
+        <div><small>Confiança IA</small><b>${g.confidence}%</b></div>
+      </div>
+      <div class="fav-v124-read">
+        <small>Leitura Prado IA</small>
+        <h3>${safe(g.market)}</h3>
+        <p>Jogo favorito salvo para acompanhamento. Quando a API entrar, essa tela pode puxar odds reais, estatísticas, escalação e alertas.</p>
+      </div>
+      <button class="btn primary wide" onclick="this.closest('dialog').close()">Fechar</button>
+    </div>
+  `;
+  dlg.showModal();
+}
+function openFavoriteCalendar(){
+  const games = getFavoriteCalendarData(getFavoriteTeams(), getFavoriteLeagues());
+  const dlg = ensureFavoriteModal('favoriteCalendarModal','fav-v124-calendar-modal');
+  dlg.innerHTML = `
+    <div class="modal-head fav-v124-head">
+      <div><small>Calendário favorito</small><h2>Jogos das equipes favoritas</h2></div>
+      <button class="icon-btn" onclick="this.closest('dialog').close()">×</button>
+    </div>
+    <div class="fav-v124-body">
+      <div class="fav-v124-calendar-summary">
+        <div><small>Jogos</small><b>${games.length}</b></div>
+        <div><small>Equipes</small><b>${getFavoriteTeams().length}/3</b></div>
+        <div><small>Ligas</small><b>${getFavoriteLeagues().length || 1}</b></div>
+      </div>
+      ${games.length ? `<div class="fav-v124-calendar-list">${games.map(g=>favoriteGameMarkup(g,{compact:true,size:34})).join('')}</div>` : `<div class="fav-v169-cta"><b>Nenhuma equipe salva</b><p>Escolha 2 ou 3 equipes na aba Equipes para montar o calendário.</p></div>`}
+    </div>
+  `;
+  dlg.showModal();
+}
 function renderFavoriteGamesView(teams, leagues){
   const favTeams = Array.isArray(teams) ? teams : (teams ? [teams] : []);
-  const leagueCount = leagues.length || 1;
-  const games = favTeams.length
-    ? favTeams.flatMap((t,ti)=>getFavoriteFixturesData(t, leagues).slice(0, favTeams.length === 1 ? 3 : 1).map((g,gi)=>({...g, owner:t, ownerIndex:ti, gameIndex:gi}))).slice(0,3)
-    : [];
+  const allGames = getFavoriteCalendarData(favTeams, leagues);
+  const games = allGames.slice(0,3);
   const displayName = favTeams.length ? favTeams.join(', ') : 'Escolha suas equipes';
-  const gameCard = (g,i) => {
-    const parts = String(g.match || '').split(' x ');
-    const home = parts[0] || g.owner || 'Time';
-    const away = parts[1] || 'Adversário';
-    const confidence = [91,88,86][i] || 84;
-    const market = i === 0 ? 'Over 1.5 gols' : i === 1 ? 'Ambas marcam' : 'Over 2.5 gols';
-    return `<article class="fav-v123-game-card">
-      <div class="fav-v123-game-top">
-        <span>${safe(g.label)} · ${safe(g.league)}</span>
-        <b>${safe(g.time)}</b>
-      </div>
-      <div class="fav-v123-game-main">
-        <div class="fav-v123-team">
-          ${crestHTML({name:home},42)}
-          <strong>${safe(home)}</strong>
-        </div>
-        <div class="fav-v123-vs">x</div>
-        <div class="fav-v123-team right">
-          ${crestHTML({name:away},42)}
-          <strong>${safe(away)}</strong>
-        </div>
-      </div>
-      <div class="fav-v123-game-tags">
-        <span class="green">IA ${confidence}%</span>
-        <span>${safe(market)}</span>
-        <button onclick="toast('Na próxima etapa vamos abrir o detalhe desse jogo.','🧭')">Abrir ›</button>
-      </div>
-    </article>`;
-  };
 
   return `
     <section class="fav-v123-radar">
@@ -7688,7 +7944,7 @@ function renderFavoriteGamesView(teams, leagues){
         <div class="fav-v123-ai">AI</div>
       </div>
       <div class="fav-v123-kpis">
-        <div><span>Jogos</span><b>${games.length || 0}</b></div>
+        <div><span>Jogos</span><b>${allGames.length || 0}</b></div>
         <div><span>Equipes</span><b>${favTeams.length || 0}/3</b></div>
         <div><span>Modo</span><b>Pro</b></div>
       </div>
@@ -7703,8 +7959,8 @@ function renderFavoriteGamesView(teams, leagues){
     </div>
 
     ${favTeams.length ? `<div class="fav-v123-games">
-      ${games.map(gameCard).join('')}
-      <button class="fav-v123-calendar" onclick="toast('Calendário completo entra na próxima etapa.','📅')">Ver calendário completo <span>›</span></button>
+      ${games.map(g=>favoriteGameMarkup(g)).join('')}
+      <button class="fav-v123-calendar" onclick="openFavoriteCalendar()">Ver calendário completo <span>›</span></button>
     </div>` : `<div class="fav-v169-cta">
       <b>Escolha suas equipes favoritas</b>
       <p>Entre na aba Equipes e salve 2 ou 3 times para a IA organizar seus jogos.</p>
