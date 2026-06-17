@@ -7445,6 +7445,343 @@ body[data-page="favorites"] .fav-v125-selected-panel{
   }
 }
 
+
+/* ===== V16.26 — IA USANDO FAVORITOS ===== */
+body[data-page="ai"] .ia-v126-page{
+  padding-bottom:18px;
+}
+body[data-page="ai"] .ia-v126-fav-panel{
+  position:relative;
+  overflow:hidden;
+  border-radius:24px;
+  padding:14px;
+  border:1px solid rgba(33,230,161,.24);
+  background:
+    radial-gradient(circle at 96% 6%,rgba(33,230,161,.18),transparent 30%),
+    radial-gradient(circle at 0% 100%,rgba(255,224,110,.10),transparent 34%),
+    linear-gradient(145deg,rgba(13,22,32,.98),rgba(7,11,17,.99));
+  box-shadow:0 18px 38px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.04);
+}
+body[data-page="ai"] .ia-v126-fav-panel::after{
+  content:"AI";
+  position:absolute;
+  right:14px;
+  top:8px;
+  color:rgba(33,230,161,.07);
+  font-family:'Space Grotesk';
+  font-size:74px;
+  font-weight:900;
+  pointer-events:none;
+}
+body[data-page="ai"] .ia-v126-fav-head{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1fr 68px;
+  gap:12px;
+  align-items:start;
+}
+body[data-page="ai"] .ia-v126-fav-head small,
+.fav-v126-report-hero small{
+  display:block;
+  color:var(--green);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}
+body[data-page="ai"] .ia-v126-fav-head h3{
+  margin:0;
+  color:#fff;
+  font-family:'Space Grotesk';
+  font-size:23px;
+  line-height:1.02;
+}
+body[data-page="ai"] .ia-v126-fav-head p{
+  margin:7px 0 0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.35;
+}
+body[data-page="ai"] .ia-v126-fav-score{
+  min-height:62px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  align-content:center;
+  border:1px solid rgba(255,224,110,.24);
+  background:rgba(255,224,110,.08);
+}
+body[data-page="ai"] .ia-v126-fav-score b{
+  color:var(--gold);
+  font-family:'Space Grotesk';
+  font-size:22px;
+  line-height:1;
+}
+body[data-page="ai"] .ia-v126-fav-score span{
+  color:#ffe8a6;
+  font-size:8px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+body[data-page="ai"] .ia-v126-fav-kpis{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:12px;
+}
+body[data-page="ai"] .ia-v126-fav-kpis div{
+  min-height:52px;
+  border-radius:17px;
+  display:grid;
+  align-content:center;
+  gap:4px;
+  padding:9px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.035);
+}
+body[data-page="ai"] .ia-v126-fav-kpis span{
+  color:var(--muted);
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+body[data-page="ai"] .ia-v126-fav-kpis b{
+  color:#fff;
+  font-family:'Space Grotesk';
+  font-size:19px;
+}
+body[data-page="ai"] .ia-v126-fav-games{
+  position:relative;
+  z-index:1;
+  display:grid;
+  gap:8px;
+  margin-top:12px;
+}
+body[data-page="ai"] .ia-v126-fav-games button{
+  min-height:66px;
+  border:1px solid rgba(255,255,255,.09);
+  border-radius:18px;
+  padding:10px;
+  background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.018));
+  color:#fff;
+  text-align:left;
+  display:grid;
+  gap:3px;
+}
+body[data-page="ai"] .ia-v126-fav-games span{
+  color:var(--green);
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+body[data-page="ai"] .ia-v126-fav-games b{
+  font-size:13px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+body[data-page="ai"] .ia-v126-fav-games small{
+  color:var(--muted);
+  font-size:10px;
+}
+body[data-page="ai"] .ia-v126-empty{
+  position:relative;
+  z-index:1;
+  display:grid;
+  gap:4px;
+  margin-top:12px;
+  border-radius:18px;
+  padding:12px;
+  border:1px solid rgba(255,224,110,.18);
+  background:rgba(255,224,110,.06);
+}
+body[data-page="ai"] .ia-v126-empty b{
+  color:#fff;
+}
+body[data-page="ai"] .ia-v126-empty span{
+  color:var(--muted);
+  font-size:12px;
+}
+body[data-page="ai"] .ia-v126-fav-actions{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1fr 120px;
+  gap:8px;
+  margin-top:12px;
+}
+body[data-page="ai"] .ia-v126-context-line{
+  margin:10px 0;
+  padding:11px;
+  border-radius:16px;
+  border:1px solid rgba(33,230,161,.18);
+  background:rgba(33,230,161,.07);
+  color:var(--muted);
+  font-size:12px;
+}
+body[data-page="ai"] .ia-v126-context-line b{
+  color:var(--green);
+}
+.fav-v126-report-hero{
+  display:grid;
+  grid-template-columns:1fr 70px;
+  gap:12px;
+  align-items:start;
+  padding:13px;
+  border-radius:21px;
+  border:1px solid rgba(33,230,161,.20);
+  background:radial-gradient(circle at 100% 0%,rgba(33,230,161,.13),transparent 34%),rgba(255,255,255,.035);
+}
+.fav-v126-report-hero h3{
+  margin:0;
+  color:#fff;
+  font-family:'Space Grotesk';
+  font-size:21px;
+  line-height:1.08;
+}
+.fav-v126-report-hero p{
+  margin:7px 0 0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.4;
+}
+.fav-v126-score{
+  min-height:64px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  align-content:center;
+  border:1px solid rgba(255,224,110,.22);
+  background:rgba(255,224,110,.08);
+}
+.fav-v126-score b{
+  color:var(--gold);
+  font-family:'Space Grotesk';
+  font-size:22px;
+}
+.fav-v126-score span{
+  color:#ffe8a6;
+  font-size:8px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+.fav-v126-main-pick{
+  padding:13px;
+  border-radius:21px;
+  border:1px solid rgba(255,224,110,.20);
+  background:linear-gradient(145deg,rgba(255,224,110,.08),rgba(255,255,255,.025));
+}
+.fav-v126-pick-top{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  color:var(--muted);
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+.fav-v126-pick-top b{
+  color:var(--green);
+}
+.fav-v126-main-pick h3{
+  margin:8px 0 4px;
+  color:#fff;
+  font-family:'Space Grotesk';
+  font-size:21px;
+}
+.fav-v126-main-pick p{
+  margin:0;
+  color:var(--muted);
+  font-size:12px;
+}
+.fav-v126-entry{
+  margin-top:10px;
+  border-radius:16px;
+  padding:10px;
+  color:#06120d;
+  background:linear-gradient(135deg,#21e6a1,#7affcc);
+  font-weight:900;
+}
+.fav-v126-report-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+}
+.fav-v126-report-grid div{
+  min-height:70px;
+  border-radius:17px;
+  padding:10px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.035);
+  display:grid;
+  gap:4px;
+}
+.fav-v126-report-grid small{
+  color:var(--muted);
+  font-size:9px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+.fav-v126-report-grid b{
+  color:#fff;
+  font-size:18px;
+  font-family:'Space Grotesk';
+}
+.fav-v126-report-grid span{
+  color:var(--muted);
+  font-size:10px;
+}
+.fav-v126-alerts{
+  padding:13px;
+  border-radius:21px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.03);
+}
+.fav-v126-alerts h4{
+  margin:0 0 10px;
+  color:#fff;
+  font-family:'Space Grotesk';
+}
+.fav-v126-alerts div{
+  display:grid;
+  grid-template-columns:27px 1fr;
+  gap:8px;
+  align-items:center;
+  min-height:36px;
+}
+.fav-v126-alerts div b{
+  width:27px;
+  height:27px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#06120d;
+  background:linear-gradient(135deg,#21e6a1,#7affcc);
+  font-size:12px;
+}
+.fav-v126-alerts div span{
+  color:var(--muted);
+  font-size:12px;
+}
+@media(max-width:390px){
+  body[data-page="ai"] .ia-v126-fav-head{
+    grid-template-columns:1fr 58px;
+  }
+  body[data-page="ai"] .ia-v126-fav-head h3{
+    font-size:20px;
+  }
+  body[data-page="ai"] .ia-v126-fav-actions{
+    grid-template-columns:1fr;
+  }
+  .fav-v126-report-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -9128,12 +9465,82 @@ function buildAIPlaybook(pred, intent){
   return { primary: chosen, backup: alt1, live: alt2 };
 }
 
+
+function getFavoriteAIContext(){
+  const teams = getFavoriteTeams();
+  const leagues = getFavoriteLeagues();
+  const games = getFavoriteCalendarData(teams, leagues);
+  const top = games[0] || null;
+  const avg = games.length ? Math.round(games.reduce((a,g)=>a+(Number(g.confidence)||80),0)/games.length) : 0;
+  const bestLeague = leagues[0] || (top ? top.league : 'Nenhuma liga');
+  return {teams, leagues, games, top, avg, bestLeague};
+}
+function openFavoriteAIReport(){
+  const ctx = getFavoriteAIContext();
+  const dlg = ensureFavoriteModal('favoriteAIReportModal','fav-v126-ai-modal');
+  const top = ctx.top;
+  dlg.innerHTML = `
+    <div class="modal-head fav-v124-head fav-v126-head">
+      <div><small>IA usando Favoritos</small><h2>Relatório Prado AI</h2></div>
+      <button class="icon-btn" onclick="this.closest('dialog').close()">×</button>
+    </div>
+    <div class="fav-v124-body fav-v126-body">
+      <section class="fav-v126-report-hero">
+        <div>
+          <small>Contexto ativo</small>
+          <h3>${ctx.teams.length ? safe(ctx.teams.join(', ')) : 'Nenhuma equipe salva'}</h3>
+          <p>${ctx.leagues.length ? `${ctx.leagues.length} campeonatos favoritos conectados na leitura da IA.` : 'Escolha campeonatos favoritos para melhorar a leitura.'}</p>
+        </div>
+        <div class="fav-v126-score"><b>${ctx.avg || '--'}%</b><span>média IA</span></div>
+      </section>
+
+      ${top ? `<section class="fav-v126-main-pick">
+        <div class="fav-v126-pick-top"><span>Melhor oportunidade favorita</span><b>${top.confidence}%</b></div>
+        <h3>${safe(top.match)}</h3>
+        <p>${safe(top.league)} · ${safe(top.label)} às ${safe(top.time)}</p>
+        <div class="fav-v126-entry">${safe(top.market)}</div>
+      </section>` : `<section class="fav-v169-cta"><b>Favoritos ainda vazio</b><p>Escolha 2 ou 3 equipes e alguns campeonatos para a IA gerar o relatório.</p><button onclick="this.closest('dialog').close(); goToPage('favorites'); setFavoriteTab('teams')">Escolher equipes</button></section>`}
+
+      <div class="fav-v126-report-grid">
+        <div><small>Equipes</small><b>${ctx.teams.length}/3</b><span>${ctx.teams.length ? safe(ctx.teams.slice(0,3).join(', ')) : 'não definido'}</span></div>
+        <div><small>Campeonatos</small><b>${ctx.leagues.length}</b><span>${safe(ctx.bestLeague)}</span></div>
+        <div><small>Jogos mapeados</small><b>${ctx.games.length}</b><span>calendário favorito</span></div>
+        <div><small>Modo</small><b>Pro</b><span>prioridade favorita</span></div>
+      </div>
+
+      <section class="fav-v126-alerts">
+        <h4>Como a IA vai usar isso</h4>
+        <div><b>1</b><span>Priorizar jogos dos seus times favoritos nas leituras.</span></div>
+        <div><b>2</b><span>Filtrar oportunidades pelos campeonatos favoritos.</span></div>
+        <div><b>3</b><span>Montar alertas e bilhetes com base nessa agenda.</span></div>
+      </section>
+
+      <button class="btn primary wide" onclick="copyFavoriteAIReport()">📋 Copiar relatório IA</button>
+    </div>
+  `;
+  dlg.showModal();
+}
+function copyFavoriteAIReport(){
+  const ctx = getFavoriteAIContext();
+  const top = ctx.top;
+  const text = `Prado AI — Relatório dos Favoritos
+Equipes: ${ctx.teams.length ? ctx.teams.join(', ') : 'nenhuma'}
+Campeonatos: ${ctx.leagues.length ? ctx.leagues.slice(0,8).join(', ') : 'nenhum'}
+Jogos mapeados: ${ctx.games.length}
+${top ? `Melhor oportunidade: ${top.match} · ${top.market} · ${top.confidence}% IA` : 'Sem oportunidade favorita ainda.'}
+Sem garantia de resultado.`;
+  navigator.clipboard?.writeText(text).then(()=>toast('Relatório IA copiado 📋'));
+}
+
 function renderAI(){
   const options = filteredMatches().map(m=>`<option value="${m.id}">${safe(m.home.name)} x ${safe(m.away.name)} · ${safe(m.league)}</option>`).join('');
   const best = filteredPredictions()[0];
   const liveCount = filteredMatches().filter(m=>m.status==='live').length;
+  const favCtx = getFavoriteAIContext();
+  const favPreview = favCtx.games.slice(0,3);
+  const favTeamsText = favCtx.teams.length ? favCtx.teams.join(', ') : 'Nenhuma equipe salva';
   $('#page-ai').innerHTML = `
-    <div class="ia-m1-page">
+    <div class="ia-m1-page ia-v126-page">
       <article class="ia-m1-hero">
         <div class="ia-m1-hero-top">
           <div class="ia-m1-brain">
@@ -9143,24 +9550,56 @@ function renderAI(){
             <div class="ia-m1-kicker">IA Prado</div>
             <h2>IA Prado</h2>
             <p>Análises avançadas, leitura de jogo e inteligência para encontrar valor.</p>
-            <div class="ia-m1-formula">Dados + IA + Contexto = Vantagem</div>
+            <div class="ia-m1-formula">Dados + Favoritos + IA = Vantagem</div>
           </div>
           <div class="ia-m1-online"><i></i>ONLINE</div>
         </div>
       </article>
 
+      <section class="ia-v126-fav-panel">
+        <div class="ia-v126-fav-head">
+          <div>
+            <small>Favoritos conectados</small>
+            <h3>IA usando seus times e campeonatos</h3>
+            <p>${safe(favTeamsText)}</p>
+          </div>
+          <div class="ia-v126-fav-score"><b>${favCtx.avg || '--'}%</b><span>média</span></div>
+        </div>
+        <div class="ia-v126-fav-kpis">
+          <div><span>Equipes</span><b>${favCtx.teams.length}/3</b></div>
+          <div><span>Campeonatos</span><b>${favCtx.leagues.length}</b></div>
+          <div><span>Jogos</span><b>${favCtx.games.length}</b></div>
+        </div>
+        ${favPreview.length ? `<div class="ia-v126-fav-games">
+          ${favPreview.map(g=>`
+            <button onclick="openFavoriteGameDetail('${safe(g.id)}')">
+              <span>${safe(g.label)} · ${safe(g.time)}</span>
+              <b>${safe(g.match)}</b>
+              <small>${safe(g.market)} · ${g.confidence}% IA</small>
+            </button>
+          `).join('')}
+        </div>` : `<div class="ia-v126-empty">
+          <b>Favoritos ainda sem equipes</b>
+          <span>Salve 2 ou 3 equipes na aba Favoritos para a IA priorizar seus jogos.</span>
+        </div>`}
+        <div class="ia-v126-fav-actions">
+          <button class="btn primary wide" onclick="openFavoriteAIReport()">Gerar relatório dos favoritos</button>
+          <button class="btn secondary wide" onclick="goToPage('favorites')">Editar favoritos</button>
+        </div>
+      </section>
+
       <div class="ia-m1-stats">
         <div class="ia-m1-stat">
           <div class="head"><span class="icon">▣</span><span>Confiança média</span></div>
-          <div><b>${best ? Math.max(68, Math.round(best.confidence*.82))+'%' : '68%'}</b><div class="ia-m1-progress"><i></i></div><small>+6% vs ontem ↑</small></div>
+          <div><b>${best ? Math.max(68, Math.round(best.confidence*.82))+'%' : '68%'}</b><div class="ia-m1-progress"><i></i></div><small>${favCtx.teams.length ? 'Favoritos conectados ↑' : '+6% vs ontem ↑'}</small></div>
         </div>
         <div class="ia-m1-stat">
           <div class="head"><span class="icon">⌁</span><span>Jogos ao vivo</span></div>
-          <div><b>${liveCount}</b><small>Ligas ativas: ${Math.max(1, Math.min(8, filteredMatches().length))}</small></div>
+          <div><b>${liveCount}</b><small>Ligas favoritas: ${favCtx.leagues.length || 0}</small></div>
         </div>
         <div class="ia-m1-stat gold">
-          <div class="head"><span class="icon">☆</span><span>Melhor leitura</span></div>
-          <div><b>${best ? best.confidence+'%' : '83%'}</b><small>Confiança máxima hoje</small></div>
+          <div class="head"><span class="icon">☆</span><span>Melhor favorito</span></div>
+          <div><b>${favCtx.top ? favCtx.top.confidence+'%' : (best ? best.confidence+'%' : '83%')}</b><small>${favCtx.top ? safe(favCtx.top.market) : 'Confiança máxima hoje'}</small></div>
         </div>
       </div>
 
@@ -9249,6 +9688,10 @@ function generateAIAnswer(){
       <div class="ia-m1-mini"><span>xG combinado</span><b>${s.xg || '2.74'}</b></div>
       <div class="ia-m1-mini green"><span>Tendência</span><b>Favorável</b></div>
     </div>
+
+    ${getFavoriteAIContext().teams.length ? `<div class="ia-v126-context-line">
+      <b>Favoritos ativos:</b> ${safe(getFavoriteAIContext().teams.join(', '))} · ${getFavoriteAIContext().leagues.length} campeonatos conectados
+    </div>` : ''}
 
     <div class="ia-m1-strategy">
       <div class="ia-m1-strategy-card">

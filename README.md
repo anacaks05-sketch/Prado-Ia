@@ -1,24 +1,24 @@
-# Prado Sports AI — V16.25 Campeonatos Pro
+# Prado Sports AI — V16.26 IA usando Favoritos
 
 ## Alterado
-- Aba Campeonatos dentro de Favoritos virou Campeonatos Pro.
-- Mais de 50 ligas organizadas por grupos.
-- Grupos: Brasil, Europa Top, Copas UEFA, América do Sul, Américas/MLS, Ásia/Oceania e Seleções/Copas.
-- Cada grupo abre/fecha para não deixar a tela gigante.
-- Adicionado botão Pacote principal.
-- Adicionado botão Limpar.
-- Mantido visual preto premium.
+- Aba IA agora lê equipes favoritas.
+- Aba IA agora lê campeonatos favoritos.
+- Aba IA agora lê calendário favorito.
+- Adicionado painel "Favoritos conectados" dentro da IA.
+- Adicionado botão "Gerar relatório dos favoritos".
+- Relatório mostra melhor oportunidade favorita, média IA, equipes, campeonatos e jogos mapeados.
+- Resposta da IA mostra contexto dos favoritos quando existir.
 
 ## Não alterado
 - Home
 - Ao vivo
-- IA
 - Bilhetes
 - Stats
 - Configurações
 - Pagamento
 - WhatsApp
-- Jogos favoritos e calendário da V16.24
+- Favoritos visual aprovado
+- Campeonatos Pro aprovado
 
 ## Teste
-Use: ?v=16-25
+Use: ?v=16-26
