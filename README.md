@@ -1,14 +1,21 @@
-# Prado Sports AI — V16.20.4
+# Prado Sports AI — V16.21 Bilhetes Bloco de Risco
 
-## Ajuste feito
-- Corrigido o corte na aba Configurações.
-- Modal de configurações agora usa melhor a altura do celular.
-- Rolagem da configuração ficou mais estável no iPhone.
-- Cabeçalho continua fixo no topo.
-- Parte de Preferências da IA / App não fica mais cortando no final.
+## Alterado
+- Somente o bloco de perfis da aba Bilhetes.
+- Conservador, Moderado e Agressivo ficaram mais premium.
+- Card ativo ganhou brilho verde, check e destaque.
+- Cada perfil agora mostra descrição e nível de risco.
+- Mantido tema preto premium.
 
-## Base
-Feito em cima da versão V16.20.3 — Somente Tema Preto.
+## Não alterado
+- Home
+- Ao vivo
+- IA
+- Favoritos
+- Stats
+- Configurações
+- Pagamento
+- WhatsApp
 
 ## Teste
-Use: ?v=16-20-4
+Use: ?v=16-21
