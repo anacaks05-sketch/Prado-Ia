@@ -5879,6 +5879,75 @@ body[data-theme="light"] .field{
   }
 }
 
+
+/* ===== V16.20.2 — CONFIG / NOTIFICAÇÕES SIMPLES ===== */
+#settingsModal .notifications-simple-v1622{
+  padding:14px !important;
+}
+#settingsModal .notifications-simple-v1622 .settings-pro-title{
+  display:grid !important;
+  grid-template-columns:44px 1fr auto !important;
+  align-items:center !important;
+  gap:12px !important;
+  margin:0 !important;
+}
+#settingsModal .notifications-simple-v1622 .settings-pro-icon{
+  width:44px !important;
+  height:44px !important;
+  flex:0 0 44px !important;
+  font-size:22px !important;
+}
+#settingsModal .notifications-simple-v1622 h3{
+  margin:0 !important;
+  font-size:19px !important;
+}
+#settingsModal .notifications-simple-v1622 p{
+  margin:4px 0 0 !important;
+  font-size:12px !important;
+  line-height:1.25 !important;
+}
+#settingsModal .notifications-simple-v1622 .notif-open-v1622{
+  min-width:82px !important;
+  min-height:43px !important;
+  border-radius:16px !important;
+  font-size:13px !important;
+  font-weight:900 !important;
+  padding:0 16px !important;
+  justify-self:end !important;
+}
+body[data-theme="light"] #settingsModal .notifications-simple-v1622 .notif-open-v1622{
+  background:#FFFFFF !important;
+  color:#0B1522 !important;
+  border:1px solid rgba(15,23,42,.13) !important;
+  box-shadow:0 10px 24px rgba(15,23,42,.10) !important;
+}
+body:not([data-theme="light"]) #settingsModal .notifications-simple-v1622 .notif-open-v1622{
+  background:linear-gradient(145deg,rgba(24,35,51,.98),rgba(9,15,23,.98)) !important;
+  color:#fff !important;
+  border:1px solid rgba(255,255,255,.10) !important;
+}
+@media(max-width:390px){
+  #settingsModal .notifications-simple-v1622 .settings-pro-title{
+    grid-template-columns:40px 1fr auto !important;
+    gap:10px !important;
+  }
+  #settingsModal .notifications-simple-v1622 .settings-pro-icon{
+    width:40px !important;
+    height:40px !important;
+  }
+  #settingsModal .notifications-simple-v1622 h3{
+    font-size:17px !important;
+  }
+  #settingsModal .notifications-simple-v1622 p{
+    font-size:11px !important;
+  }
+  #settingsModal .notifications-simple-v1622 .notif-open-v1622{
+    min-width:72px !important;
+    min-height:40px !important;
+    padding:0 13px !important;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -6009,21 +6078,14 @@ body[data-theme="light"] .field{
         </div>
       </section>
 
-      <section class="settings-pro-card notifications-card">
+      <section class="settings-pro-card notifications-card notifications-simple-v1622">
         <div class="settings-pro-title">
           <div class="settings-pro-icon">🔔</div>
           <div>
             <h3>Notificações</h3>
-            <p>Alertas de jogo, IA e bilhetes ficam organizados em um só lugar.</p>
+            <p>Alertas do jogo, IA e bilhetes.</p>
           </div>
-        </div>
-        <div class="settings-pro-line">
-          <div class="line-ico">☷</div>
-          <div>
-            <span class="notif-label">Notificações</span>
-            <span class="notif-text">Gols, escanteios, cartão amarelo, cartão vermelho, escalação confirmada, oportunidade da IA e bilhetes do dia.</span>
-          </div>
-          <button class="btn secondary" onclick="openNotifications()">Abrir</button>
+          <button class="btn secondary notif-open-v1622" onclick="openNotifications()">Abrir</button>
         </div>
       </section>
 

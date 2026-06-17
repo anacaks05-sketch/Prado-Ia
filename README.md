@@ -1,15 +1,13 @@
-# Prado Sports AI — V16.20.1 Config Claro Modelo
+# Prado Sports AI — V16.20.2 Config Notificação Simples
 
 ## Alterado
-- Configurações ajustada no modelo aprovado.
-- Tema claro fica branco e limpo.
-- Botão Abrir das notificações corrigido.
-- Botão Falar no WhatsApp corrigido no tema claro.
-- Premium ficou completo e compacto.
-- Código premium ficou recolhido em "Já tenho código premium" para não cortar a tela.
+- Em Configurações, a área de Notificações ficou em uma única linha/card.
+- Removido o bloco duplicado "Notificações" dentro de Notificações.
+- Removido texto longo com gols, escanteios, cartões etc.
+- Removido ícone de três linhas/pontinhos.
+- Botão "Abrir" ficou no canto direito da linha Notificações.
 
 ## Não alterado
-- Splash
 - Home
 - Ao vivo
 - IA
@@ -17,7 +15,8 @@
 - Bilhetes
 - Stats
 - Pagamento
-- WhatsApp com mensagem
+- WhatsApp
+- Tema claro/escuro
 
 ## Teste
-Use: ?v=16-20-1
+Use: ?v=16-20-2
