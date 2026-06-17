@@ -1,13 +1,16 @@
-# Prado Sports AI — V16.26 IA usando Favoritos
+# Prado Sports AI — V16.27 IA Premium Modelo 2 + Gold
 
 ## Alterado
-- Aba IA agora lê equipes favoritas.
-- Aba IA agora lê campeonatos favoritos.
-- Aba IA agora lê calendário favorito.
-- Adicionado painel "Favoritos conectados" dentro da IA.
-- Adicionado botão "Gerar relatório dos favoritos".
-- Relatório mostra melhor oportunidade favorita, média IA, equipes, campeonatos e jogos mapeados.
-- Resposta da IA mostra contexto dos favoritos quando existir.
+- Tela IA redesenhada no estilo premium do Modelo 2.
+- Mantive o preto com verde neon.
+- Adicionei detalhes dourados inspirados no Modelo 3.
+- Novo topo premium com selo PRO.
+- Novo bloco de recursos da IA.
+- Oportunidades da IA com cards mais fortes.
+- Top jogos do dia.
+- Favoritos conectados continuam funcionando.
+- Relatório dos favoritos continua funcionando.
+- Construtor de análise foi mantido.
 
 ## Não alterado
 - Home
@@ -17,8 +20,8 @@
 - Configurações
 - Pagamento
 - WhatsApp
-- Favoritos visual aprovado
-- Campeonatos Pro aprovado
+- Favoritos aprovados
+- Campeonatos Pro aprovados
 
 ## Teste
-Use: ?v=16-26
+Use: ?v=16-27
