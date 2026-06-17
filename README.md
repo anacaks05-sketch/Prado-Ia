@@ -1,11 +1,13 @@
-# Prado Sports AI — V16.24 Favoritos Abrir + Calendário
+# Prado Sports AI — V16.25 Campeonatos Pro
 
 ## Alterado
-- Botão Abrir em cada jogo favorito agora funciona.
-- Ao clicar em Abrir, abre um detalhe premium do jogo.
-- Botão Ver calendário completo agora funciona.
-- Calendário completo mostra mais jogos das equipes favoritas.
-- Mantido o visual aprovado da aba Favoritos.
+- Aba Campeonatos dentro de Favoritos virou Campeonatos Pro.
+- Mais de 50 ligas organizadas por grupos.
+- Grupos: Brasil, Europa Top, Copas UEFA, América do Sul, Américas/MLS, Ásia/Oceania e Seleções/Copas.
+- Cada grupo abre/fecha para não deixar a tela gigante.
+- Adicionado botão Pacote principal.
+- Adicionado botão Limpar.
+- Mantido visual preto premium.
 
 ## Não alterado
 - Home
@@ -16,7 +18,7 @@
 - Configurações
 - Pagamento
 - WhatsApp
-- Campeonatos Pro ainda fica para a próxima etapa
+- Jogos favoritos e calendário da V16.24
 
 ## Teste
-Use: ?v=16-24
+Use: ?v=16-25

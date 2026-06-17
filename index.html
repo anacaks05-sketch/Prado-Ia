@@ -7180,6 +7180,271 @@ body[data-page="favorites"] .fav-v123-calendar{
   }
 }
 
+
+/* ===== V16.25 — FAVORITOS / CAMPEONATOS PRO 50+ LIGAS ===== */
+body[data-page="favorites"] .fav-v125-hero{
+  position:relative;
+  overflow:hidden;
+  border-color:rgba(255,224,110,.25) !important;
+  background:
+    radial-gradient(circle at 92% 8%,rgba(255,224,110,.17),transparent 30%),
+    radial-gradient(circle at 0% 90%,rgba(33,230,161,.13),transparent 34%),
+    linear-gradient(145deg,rgba(16,24,35,.98),rgba(7,11,17,.99)) !important;
+  box-shadow:0 18px 38px rgba(0,0,0,.20), inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+body[data-page="favorites"] .fav-v125-hero::after{
+  content:"🏆";
+  position:absolute;
+  right:16px;
+  top:8px;
+  font-size:74px;
+  opacity:.10;
+  pointer-events:none;
+}
+body[data-page="favorites"] .fav-v125-head{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1fr 68px;
+  gap:12px;
+  align-items:start;
+}
+body[data-page="favorites"] .fav-v125-head small{
+  display:block;
+  color:var(--gold);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+  margin-bottom:5px;
+}
+body[data-page="favorites"] .fav-v125-head h3{
+  margin:0;
+  color:#fff;
+  font-family:'Space Grotesk';
+  font-size:24px;
+  line-height:1;
+}
+body[data-page="favorites"] .fav-v125-head p{
+  margin:7px 0 0;
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.35;
+}
+body[data-page="favorites"] .fav-v125-count{
+  min-height:62px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  align-content:center;
+  border:1px solid rgba(33,230,161,.26);
+  background:rgba(33,230,161,.08);
+}
+body[data-page="favorites"] .fav-v125-count b{
+  color:var(--green);
+  font-family:'Space Grotesk';
+  font-size:23px;
+  line-height:1;
+}
+body[data-page="favorites"] .fav-v125-count span{
+  color:#b8ffe8;
+  font-size:8px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+body[data-page="favorites"] .fav-v125-quick{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1fr 92px;
+  gap:8px;
+  margin-top:12px;
+}
+body[data-page="favorites"] .fav-v125-quick button{
+  min-height:40px;
+  border-radius:15px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.045);
+  color:#fff;
+  font-size:11px;
+  font-weight:900;
+}
+body[data-page="favorites"] .fav-v125-quick button:first-child{
+  color:#06120d;
+  background:linear-gradient(135deg,#21e6a1,#7affcc);
+  border-color:transparent;
+}
+body[data-page="favorites"] .fav-v125-groups{
+  display:grid;
+  gap:9px;
+}
+body[data-page="favorites"] .fav-v125-group{
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.09);
+  background:linear-gradient(145deg,rgba(13,22,32,.96),rgba(7,11,17,.99));
+  box-shadow:0 14px 30px rgba(0,0,0,.13);
+}
+body[data-page="favorites"] .fav-v125-group summary{
+  min-height:66px;
+  display:grid;
+  grid-template-columns:42px 1fr 42px;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  list-style:none;
+  cursor:pointer;
+}
+body[data-page="favorites"] .fav-v125-group summary::-webkit-details-marker{
+  display:none;
+}
+body[data-page="favorites"] .fav-v125-group-icon{
+  width:42px;
+  height:42px;
+  border-radius:15px;
+  display:grid;
+  place-items:center;
+  font-size:21px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.08);
+}
+body[data-page="favorites"] .fav-v125-group summary b{
+  display:block;
+  color:#fff;
+  font-family:'Space Grotesk';
+  font-size:17px;
+  line-height:1;
+}
+body[data-page="favorites"] .fav-v125-group summary small{
+  display:block;
+  margin-top:5px;
+  color:var(--muted);
+  font-size:10px;
+  line-height:1.2;
+}
+body[data-page="favorites"] .fav-v125-group summary em{
+  width:38px;
+  height:30px;
+  border-radius:999px;
+  display:grid;
+  place-items:center;
+  color:var(--gold);
+  background:rgba(255,224,110,.08);
+  border:1px solid rgba(255,224,110,.18);
+  font-style:normal;
+  font-size:11px;
+  font-weight:900;
+}
+body[data-page="favorites"] .fav-v125-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  padding:0 10px 10px;
+}
+body[data-page="favorites"] .fav-v125-league-card{
+  min-height:62px;
+  border-radius:17px;
+  padding:8px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.035);
+  display:grid;
+  grid-template-columns:32px 1fr 24px;
+  align-items:center;
+  gap:7px;
+  color:#fff;
+  text-align:left;
+}
+body[data-page="favorites"] .fav-v125-league-card.active{
+  border-color:rgba(33,230,161,.55);
+  background:
+    radial-gradient(circle at 0% 50%,rgba(33,230,161,.15),transparent 34%),
+    rgba(33,230,161,.075);
+  box-shadow:0 0 18px rgba(33,230,161,.10);
+}
+body[data-page="favorites"] .fav-v125-league-icon{
+  width:32px;
+  height:32px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  font-size:16px;
+  background:rgba(255,255,255,.055);
+}
+body[data-page="favorites"] .fav-v125-league-info{
+  min-width:0;
+  display:grid;
+  gap:3px;
+}
+body[data-page="favorites"] .fav-v125-league-info b{
+  color:#fff;
+  font-size:9.8px;
+  font-weight:900;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+body[data-page="favorites"] .fav-v125-league-info small{
+  color:#9da8b7;
+  font-size:7.4px;
+  font-weight:800;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+body[data-page="favorites"] .fav-v125-league-check{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#aeb9c8;
+  background:rgba(255,255,255,.045);
+  font-size:12px;
+  font-weight:900;
+}
+body[data-page="favorites"] .fav-v125-league-card.active .fav-v125-league-check{
+  color:#06120d;
+  background:linear-gradient(135deg,#21e6a1,#7affcc);
+}
+body[data-page="favorites"] .fav-v125-selected-panel{
+  border-color:rgba(255,224,110,.18) !important;
+}
+@media(max-width:390px){
+  body[data-page="favorites"] .fav-v125-head{
+    grid-template-columns:1fr 56px;
+  }
+  body[data-page="favorites"] .fav-v125-head h3{
+    font-size:21px;
+  }
+  body[data-page="favorites"] .fav-v125-count{
+    min-height:56px;
+  }
+  body[data-page="favorites"] .fav-v125-quick{
+    grid-template-columns:1fr 78px;
+  }
+  body[data-page="favorites"] .fav-v125-grid{
+    gap:7px;
+    padding:0 8px 8px;
+  }
+  body[data-page="favorites"] .fav-v125-league-card{
+    min-height:58px;
+    grid-template-columns:29px 1fr 22px;
+    border-radius:15px;
+    padding:7px;
+  }
+  body[data-page="favorites"] .fav-v125-league-icon{
+    width:29px;
+    height:29px;
+    border-radius:11px;
+  }
+  body[data-page="favorites"] .fav-v125-league-info b{
+    font-size:8.8px;
+  }
+  body[data-page="favorites"] .fav-v125-league-info small{
+    font-size:6.8px;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -8004,43 +8269,127 @@ function renderFavoriteTeamsView(teams){
 }
 
 function renderFavoriteLeaguesView(leagues){
-  const all = ['Brasileirão','Copa do Brasil','Premier League','Champions','La Liga','Libertadores'];
-  const meta = {
-    'Brasileirão': {icon:'🇧🇷', country:'Brasil', desc:'Jogos nacionais'},
-    'Copa do Brasil': {icon:'🏆', country:'Brasil', desc:'Mata-mata'},
-    'Premier League': {icon:'🏴', country:'Inglaterra', desc:'Liga forte'},
-    'Champions': {icon:'⭐', country:'Europa', desc:'Elite europeia'},
-    'La Liga': {icon:'🇪🇸', country:'Espanha', desc:'Técnica'},
-    'Libertadores': {icon:'🔥', country:'América', desc:'Clássicos'}
+  const groups = [
+    {title:'Brasil', icon:'🇧🇷', desc:'principais competições nacionais', open:true, items:[
+      ['Brasileirão Série A','Brasil','Elite nacional','🇧🇷'],
+      ['Brasileirão Série B','Brasil','Bons mercados','🇧🇷'],
+      ['Copa do Brasil','Brasil','Mata-mata','🏆'],
+      ['Paulistão','Brasil','Estadual forte','🇧🇷'],
+      ['Carioca','Brasil','Clássicos','🇧🇷'],
+      ['Mineiro','Brasil','Regional','🇧🇷'],
+      ['Gaúcho','Brasil','Regional','🇧🇷'],
+      ['Copa do Nordeste','Brasil','Volume alto','🔥']
+    ]},
+    {title:'Europa Top', icon:'🌍', desc:'ligas com mais dados e liquidez', open:true, items:[
+      ['Premier League','Inglaterra','Liga forte','🏴'],
+      ['Championship','Inglaterra','Muitos jogos','🏴'],
+      ['La Liga','Espanha','Técnica','🇪🇸'],
+      ['La Liga 2','Espanha','Mercados alternativos','🇪🇸'],
+      ['Serie A','Itália','Tática','🇮🇹'],
+      ['Serie B Itália','Itália','Odds boas','🇮🇹'],
+      ['Bundesliga','Alemanha','Gols','🇩🇪'],
+      ['2. Bundesliga','Alemanha','Gols e cantos','🇩🇪'],
+      ['Ligue 1','França','Top clubes','🇫🇷'],
+      ['Ligue 2','França','Regularidade','🇫🇷'],
+      ['Liga Portugal','Portugal','Boa leitura','🇵🇹'],
+      ['Eredivisie','Holanda','Muitos gols','🇳🇱'],
+      ['Bélgica Pro League','Bélgica','Over gols','🇧🇪'],
+      ['Super Lig Turquia','Turquia','Volume ofensivo','🇹🇷']
+    ]},
+    {title:'Copas UEFA', icon:'⭐', desc:'competições internacionais de clubes', open:false, items:[
+      ['Champions League','Europa','Elite europeia','⭐'],
+      ['Europa League','Europa','Mercados fortes','🏆'],
+      ['Conference League','Europa','Valor escondido','🏆'],
+      ['Supercopa UEFA','Europa','Jogo único','⭐'],
+      ['Youth League','Europa','Gols jovens','⚡']
+    ]},
+    {title:'América do Sul', icon:'🌎', desc:'clássicos, copas e ligas de alto valor', open:false, items:[
+      ['Libertadores','América','Clássicos','🔥'],
+      ['Sul-Americana','América','Valor','🌎'],
+      ['Argentina Primera','Argentina','Clássicos','🇦🇷'],
+      ['Argentina B Nacional','Argentina','Under/Cartões','🇦🇷'],
+      ['Uruguai Primera','Uruguai','Tradicional','🇺🇾'],
+      ['Chile Primera','Chile','Bons mercados','🇨🇱'],
+      ['Colômbia Primera A','Colômbia','Cantos e gols','🇨🇴'],
+      ['Paraguai Primera','Paraguai','Sul-americano','🇵🇾'],
+      ['Equador Liga Pro','Equador','Altitude/valor','🇪🇨'],
+      ['Bolívia División','Bolívia','Gols/altitude','🇧🇴'],
+      ['Peru Liga 1','Peru','Alternativo','🇵🇪'],
+      ['Venezuela Primera','Venezuela','Alternativo','🇻🇪']
+    ]},
+    {title:'Américas e MLS', icon:'🌐', desc:'ligas boas para calendário e horários alternativos', open:false, items:[
+      ['MLS','Estados Unidos','Muitos gols','🇺🇸'],
+      ['USL Championship','Estados Unidos','Alternativo','🇺🇸'],
+      ['Liga MX','México','Forte liquidez','🇲🇽'],
+      ['Liga de Expansión MX','México','Alternativo','🇲🇽'],
+      ['Canadá Premier League','Canadá','Mercado menor','🇨🇦'],
+      ['Costa Rica Primera','Costa Rica','Centro-América','🇨🇷']
+    ]},
+    {title:'Ásia e Oceania', icon:'🌏', desc:'bons jogos em horários diferentes', open:false, items:[
+      ['Saudi Pro League','Arábia','Estrelas','🇸🇦'],
+      ['J1 League','Japão','Organizada','🇯🇵'],
+      ['J2 League','Japão','Alternativo','🇯🇵'],
+      ['K League 1','Coreia','Regularidade','🇰🇷'],
+      ['China Super League','China','Calendário','🇨🇳'],
+      ['A-League','Austrália','Muitos gols','🇦🇺'],
+      ['Qatar Stars League','Qatar','Ofensiva','🇶🇦'],
+      ['UAE Pro League','Emirados','Alternativo','🇦🇪']
+    ]},
+    {title:'Seleções e Copas', icon:'🏆', desc:'seleções, eliminatórias e torneios curtos', open:false, items:[
+      ['Copa do Mundo','FIFA','Seleções','🌍'],
+      ['Eliminatórias CONMEBOL','América','Seleções','🌎'],
+      ['Eliminatórias UEFA','Europa','Seleções','🌍'],
+      ['Eurocopa','Europa','Seleções','🇪🇺'],
+      ['Copa América','América','Seleções','🏆'],
+      ['Nations League','UEFA','Seleções','⭐'],
+      ['Amistosos Internacionais','Mundo','Prévia','🤝'],
+      ['Mundial de Clubes','FIFA','Clubes','🌍']
+    ]}
+  ];
+  const total = groups.reduce((n,g)=>n+g.items.length,0);
+  const leagueButton = ([name,country,desc,icon]) => {
+    const active = leagues.includes(name);
+    return `<button class="fav-v125-league-card ${active?'active':''}" onclick="toggleFavLeague('${name}')">
+      <span class="fav-v125-league-icon">${icon}</span>
+      <span class="fav-v125-league-info">
+        <b>${safe(name)}</b>
+        <small>${safe(country)} · ${safe(desc)}</small>
+      </span>
+      <span class="fav-v125-league-check">${active?'✓':'+'}</span>
+    </button>`;
   };
   return `
-    <section class="fav-v169-team-card compact fav-v122-league-hero">
-      <div class="fav-v122-league-head">
+    <section class="fav-v169-team-card compact fav-v125-hero">
+      <div class="fav-v125-head">
         <div>
-          <small>Organização da IA</small>
-          <h3>Campeonatos favoritos</h3>
-          <p>Escolha as ligas que devem aparecer primeiro na área Favoritos.</p>
+          <small>Campeonatos Pro</small>
+          <h3>Ligas boas para apostador</h3>
+          <p>Mais de ${total} ligas organizadas por grupo para não deixar a tela bagunçada.</p>
         </div>
-        <div class="fav-v122-league-count"><b>${leagues.length}</b><span>ativos</span></div>
+        <div class="fav-v125-count"><b>${leagues.length}</b><span>ativos</span></div>
       </div>
-
-      <div class="fav-v122-league-grid">
-        ${all.map(l=>{
-          const m = meta[l] || {icon:'🏆', country:'Liga', desc:'Jogos'};
-          const active = leagues.includes(l);
-          return `<button class="fav-v122-league-card ${active?'active':''}" onclick="toggleFavLeague('${l}')">
-            <span class="fav-v122-league-icon">${m.icon}</span>
-            <span class="fav-v122-league-info">
-              <b>${safe(l)}</b>
-              <small>${safe(m.country)} · ${safe(m.desc)}</small>
-            </span>
-            <span class="fav-v122-league-check">${active?'✓':'+'}</span>
-          </button>`;
-        }).join('')}
+      <div class="fav-v125-quick">
+        <button onclick="setFavoriteLeagues(['Brasileirão Série A','Copa do Brasil','Premier League','Champions League','Libertadores','MLS']); renderFavorites(); toast('Pacote principal aplicado.','🏆')">Pacote principal</button>
+        <button onclick="setFavoriteLeagues([]); renderFavorites(); toast('Campeonatos limpos.','🧹')">Limpar</button>
       </div>
     </section>
 
-    <section class="fav-v169-mini-card fav-v122-selected-panel">
+    <div class="fav-v125-groups">
+      ${groups.map((group,idx)=>`
+        <details class="fav-v125-group" ${group.open?'open':''}>
+          <summary>
+            <span class="fav-v125-group-icon">${group.icon}</span>
+            <span><b>${safe(group.title)}</b><small>${safe(group.desc)}</small></span>
+            <em>${group.items.length}</em>
+          </summary>
+          <div class="fav-v125-grid">
+            ${group.items.map(leagueButton).join('')}
+          </div>
+        </details>
+      `).join('')}
+    </div>
+
+    <section class="fav-v169-mini-card fav-v125-selected-panel">
       <div class="fav-v122-selected-head">
         <div>
           <small>Selecionados</small>
