@@ -1,27 +1,22 @@
-# Prado Sports AI — V16.27 IA Premium Modelo 2 + Gold
+# Prado Sports AI — V16.27.1 IA Ajustada
 
 ## Alterado
-- Tela IA redesenhada no estilo premium do Modelo 2.
-- Mantive o preto com verde neon.
-- Adicionei detalhes dourados inspirados no Modelo 3.
-- Novo topo premium com selo PRO.
-- Novo bloco de recursos da IA.
-- Oportunidades da IA com cards mais fortes.
-- Top jogos do dia.
-- Favoritos conectados continuam funcionando.
-- Relatório dos favoritos continua funcionando.
-- Construtor de análise foi mantido.
+- Removido o campo Pergunta do Construtor de análise.
+- Removido o botão Copiar análise da resposta da IA.
+- Botões de mercado agora ficam verdes quando clicados.
+- Topo grande da IA foi diminuído.
+- Mantido o visual premium Modelo 2 + detalhes dourados.
 
 ## Não alterado
 - Home
 - Ao vivo
+- Favoritos
+- Campeonatos Pro
 - Bilhetes
 - Stats
 - Configurações
 - Pagamento
 - WhatsApp
-- Favoritos aprovados
-- Campeonatos Pro aprovados
 
 ## Teste
-Use: ?v=16-27
+Use: ?v=16-27-1
