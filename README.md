@@ -1,21 +1,14 @@
-# Prado Sports AI — V16.20.3 Somente Tema Preto
+# Prado Sports AI — V16.20.4
 
-## Alterado
-- Removida a opção de tema claro/branco.
-- Removido o card "Tema do app" das Configurações.
-- App agora fica fixo no tema preto premium.
-- Mesmo se o celular tiver salvo tema claro antes, o app força tema escuro.
+## Ajuste feito
+- Corrigido o corte na aba Configurações.
+- Modal de configurações agora usa melhor a altura do celular.
+- Rolagem da configuração ficou mais estável no iPhone.
+- Cabeçalho continua fixo no topo.
+- Parte de Preferências da IA / App não fica mais cortando no final.
 
-## Não alterado
-- Home
-- Ao vivo
-- IA
-- Favoritos
-- Bilhetes
-- Stats
-- Pagamento
-- WhatsApp
-- Config Notificação Simples
+## Base
+Feito em cima da versão V16.20.3 — Somente Tema Preto.
 
 ## Teste
-Use: ?v=16-20-3
+Use: ?v=16-20-4

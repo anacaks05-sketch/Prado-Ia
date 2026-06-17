@@ -6042,6 +6042,65 @@ body[data-theme="light"] .field{
   border-color:rgba(255,255,255,.10) !important;
 }
 
+
+
+/* ===== V16.20.4 — CORREÇÃO DO CORTE NAS CONFIGURAÇÕES ===== */
+#settingsModal.settings-premium-modal{
+  width:min(540px,calc(100vw - 6px)) !important;
+  height:calc(100dvh - 6px) !important;
+  max-height:calc(100dvh - 6px) !important;
+  margin:3px auto !important;
+  padding:0 !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  -webkit-overflow-scrolling:touch !important;
+  overscroll-behavior:contain !important;
+}
+#settingsModal.settings-premium-modal[open]{
+  display:block !important;
+}
+#settingsModal.settings-premium-modal .modal-head{
+  position:sticky !important;
+  top:0 !important;
+  z-index:40 !important;
+  padding:18px 16px 16px !important;
+}
+#settingsModal.settings-premium-modal .settings-pro{
+  display:grid !important;
+  gap:12px !important;
+  min-height:auto !important;
+  overflow:visible !important;
+  padding:12px 10px calc(24px + var(--safe-bottom)) !important;
+}
+#settingsModal.settings-premium-modal .settings-pro > .settings-pro-card{
+  margin:0 !important;
+}
+#settingsModal.settings-premium-modal .premium-v1621,
+#settingsModal.settings-premium-modal .green-line,
+#settingsModal.settings-premium-modal .settings-pro-card{
+  scroll-margin-top:88px !important;
+}
+@media(max-width:430px){
+  #settingsModal.settings-premium-modal{
+    width:calc(100vw - 4px) !important;
+    height:calc(100dvh - 4px) !important;
+    max-height:calc(100dvh - 4px) !important;
+    margin:2px auto !important;
+    border-radius:24px !important;
+  }
+  #settingsModal.settings-premium-modal .settings-pro{
+    padding:10px 8px calc(22px + var(--safe-bottom)) !important;
+    gap:10px !important;
+  }
+}
+@supports (-webkit-touch-callout:none){
+  #settingsModal.settings-premium-modal{
+    min-height:calc(100svh - 4px) !important;
+    height:calc(100svh - 4px) !important;
+    max-height:calc(100svh - 4px) !important;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
