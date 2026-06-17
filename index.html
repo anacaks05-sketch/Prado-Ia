@@ -6922,6 +6922,90 @@ body[data-page="favorites"] .fav-v122-selected-list{
   }
 }
 
+
+/* ===== V16.23 — FAVORITOS / EQUIPES 2 A 3 E CAMPO SÓ NA ABA EQUIPES ===== */
+body[data-page="favorites"] .fav-v123-fixed .fav-v122-team-main{
+  display:none !important;
+}
+body[data-page="favorites"] .fav-v123-team-picker{
+  border-color:rgba(33,230,161,.22) !important;
+  background:
+    radial-gradient(circle at 96% 8%,rgba(33,230,161,.14),transparent 30%),
+    linear-gradient(145deg,rgba(13,22,32,.97),rgba(7,11,17,.99)) !important;
+}
+body[data-page="favorites"] .fav-v123-team-input{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:8px;
+  margin-top:12px;
+}
+body[data-page="favorites"] .fav-v123-team-input .field{
+  min-height:45px !important;
+  border-radius:16px !important;
+  font-size:14px !important;
+}
+body[data-page="favorites"] .fav-v123-team-input .fav-v169-save{
+  min-height:45px !important;
+  border-radius:16px !important;
+  padding:0 15px !important;
+}
+body[data-page="favorites"] .fav-v123-selected-teams{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:12px;
+}
+body[data-page="favorites"] .fav-v123-team-chip,
+body[data-page="favorites"] .fav-v123-team-empty{
+  min-height:34px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border-radius:999px;
+  padding:0 11px;
+  font-size:12px;
+  font-weight:900;
+  color:var(--green);
+  border:1px solid rgba(33,230,161,.36);
+  background:rgba(33,230,161,.09);
+}
+body[data-page="favorites"] .fav-v123-team-chip button{
+  width:21px;
+  height:21px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.08);
+  color:#fff;
+  font-weight:900;
+}
+body[data-page="favorites"] .fav-v123-team-empty{
+  color:#ffe8a6;
+  border-color:rgba(255,224,110,.25);
+  background:rgba(255,224,110,.07);
+}
+body[data-page="favorites"] .fav-v123-radar-head h3{
+  font-size:20px !important;
+  line-height:1.15 !important;
+  max-width:250px;
+}
+body[data-page="favorites"] .fav-v123-kpis div:nth-child(2) b{
+  font-size:15px !important;
+}
+body[data-page="favorites"] .fav-v169-cta button{
+  cursor:pointer;
+}
+@media(max-width:390px){
+  body[data-page="favorites"] .fav-v123-team-input{
+    grid-template-columns:1fr;
+  }
+  body[data-page="favorites"] .fav-v123-team-input .fav-v169-save{
+    width:100%;
+  }
+  body[data-page="favorites"] .fav-v123-radar-head h3{
+    font-size:18px !important;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -7489,13 +7573,63 @@ function setFavoriteTab(tab){
   localStorage.setItem('prado_favorite_tab', tab);
   renderFavorites();
 }
+function getFavoriteTeams(){
+  try{
+    const arr = JSON.parse(localStorage.getItem('prado_favorite_teams') || '[]');
+    if(Array.isArray(arr) && arr.length) return arr.map(x=>String(x).trim()).filter(Boolean).slice(0,3);
+  }catch(e){}
+  const old = (localStorage.getItem('prado_favorite_team') || '').trim();
+  return old ? [old] : [];
+}
+function setFavoriteTeams(teams){
+  const clean = [...new Set((teams || []).map(x=>String(x).trim()).filter(Boolean))].slice(0,3);
+  localStorage.setItem('prado_favorite_teams', JSON.stringify(clean));
+  localStorage.setItem('prado_favorite_team', clean[0] || '');
+  return clean;
+}
 function selectFavoriteTeam(team){
-  localStorage.setItem('prado_favorite_team', team);
-  const input = $('#favoriteTeamInput');
-  if(input) input.value = team;
-  renderFavoriteFixtures();
+  const teams = getFavoriteTeams();
+  if(teams.includes(team)){
+    setFavoriteTeams(teams.filter(t=>t !== team));
+    toast(`Removido dos favoritos: ${team}`, '⭐');
+  }else{
+    if(teams.length >= 3){
+      toast('Você pode escolher até 3 equipes favoritas.', '⚠️');
+      return;
+    }
+    setFavoriteTeams([...teams, team]);
+    toast(`Equipe adicionada: ${team}`, '⭐');
+  }
+  renderFavoriteFixtures?.();
   renderFavorites();
-  toast(`Time favorito salvo: ${team}`, '⭐');
+}
+function removeFavoriteTeam(team){
+  setFavoriteTeams(getFavoriteTeams().filter(t=>t !== team));
+  renderFavoriteFixtures?.();
+  renderFavorites();
+  toast(`Equipe removida: ${team}`, '⭐');
+}
+function saveFavoriteTeamFromPage(){
+  const input = $('#favoriteTeamPageInput');
+  const team = (input?.value || '').trim();
+  if(!team){
+    toast('Digite o nome de uma equipe.', '⚠️');
+    return;
+  }
+  const teams = getFavoriteTeams();
+  if(teams.includes(team)){
+    toast(`${team} já está nos favoritos.`, '⭐');
+    return;
+  }
+  if(teams.length >= 3){
+    toast('Limite de 3 equipes favoritas. Remova uma para adicionar outra.', '⚠️');
+    return;
+  }
+  setFavoriteTeams([...teams, team]);
+  if(input) input.value = '';
+  renderFavoriteFixtures?.();
+  renderFavorites();
+  toast(`Equipe favorita salva: ${team}`, '⭐');
 }
 function getFavoriteNewsData(team, leagues){
   const baseTeam = team || 'seu time favorito';
@@ -7507,12 +7641,16 @@ function getFavoriteNewsData(team, leagues){
     { badge:leagueB, time:'Atualizado', title:`Notícias e contexto para decisões mais seguras`, text:`Além dos jogos, a área Favoritos agora reúne contexto do time, campeonatos e alertas importantes em um visual premium.`}
   ];
 }
-function renderFavoriteGamesView(team, leagues){
-  const games = team ? getFavoriteFixturesData(team, leagues).slice(0,3) : [];
+function renderFavoriteGamesView(teams, leagues){
+  const favTeams = Array.isArray(teams) ? teams : (teams ? [teams] : []);
   const leagueCount = leagues.length || 1;
+  const games = favTeams.length
+    ? favTeams.flatMap((t,ti)=>getFavoriteFixturesData(t, leagues).slice(0, favTeams.length === 1 ? 3 : 1).map((g,gi)=>({...g, owner:t, ownerIndex:ti, gameIndex:gi}))).slice(0,3)
+    : [];
+  const displayName = favTeams.length ? favTeams.join(', ') : 'Escolha suas equipes';
   const gameCard = (g,i) => {
     const parts = String(g.match || '').split(' x ');
-    const home = parts[0] || team || 'Time';
+    const home = parts[0] || g.owner || 'Time';
     const away = parts[1] || 'Adversário';
     const confidence = [91,88,86][i] || 84;
     const market = i === 0 ? 'Over 1.5 gols' : i === 1 ? 'Ambas marcam' : 'Over 2.5 gols';
@@ -7535,7 +7673,7 @@ function renderFavoriteGamesView(team, leagues){
       <div class="fav-v123-game-tags">
         <span class="green">IA ${confidence}%</span>
         <span>${safe(market)}</span>
-        <button onclick="setFavoriteTab('games')">Abrir ›</button>
+        <button onclick="toast('Na próxima etapa vamos abrir o detalhe desse jogo.','🧭')">Abrir ›</button>
       </div>
     </article>`;
   };
@@ -7545,47 +7683,66 @@ function renderFavoriteGamesView(team, leagues){
       <div class="fav-v123-radar-head">
         <div>
           <small>Radar favorito</small>
-          <h3>${team ? safe(team) : 'Escolha seu time'}</h3>
+          <h3>${safe(displayName)}</h3>
         </div>
         <div class="fav-v123-ai">AI</div>
       </div>
       <div class="fav-v123-kpis">
         <div><span>Jogos</span><b>${games.length || 0}</b></div>
-        <div><span>Ligas</span><b>${leagueCount}</b></div>
+        <div><span>Equipes</span><b>${favTeams.length || 0}/3</b></div>
         <div><span>Modo</span><b>Pro</b></div>
       </div>
     </section>
 
     <div class="fav-v123-panel-title">
       <div>
-        <h3>${team ? `Próximos jogos` : 'Jogos favoritos'}</h3>
-        <p>${team ? `Agenda premium de ${safe(team)}` : 'Salve um time para ativar a agenda premium.'}</p>
+        <h3>${favTeams.length ? `Próximos jogos` : 'Jogos favoritos'}</h3>
+        <p>${favTeams.length ? `Agenda premium das equipes favoritas` : 'Escolha 2 ou 3 equipes na aba Equipes.'}</p>
       </div>
       <span>${games.length || 0} jogos</span>
     </div>
 
-    ${team ? `<div class="fav-v123-games">
+    ${favTeams.length ? `<div class="fav-v123-games">
       ${games.map(gameCard).join('')}
-      <button class="fav-v123-calendar">Ver calendário completo <span>›</span></button>
+      <button class="fav-v123-calendar" onclick="toast('Calendário completo entra na próxima etapa.','📅')">Ver calendário completo <span>›</span></button>
     </div>` : `<div class="fav-v169-cta">
-      <b>Escolha seu time favorito</b>
-      <p>Digite o time no campo acima para aparecerem aqui 2 ou 3 jogos em cards premium.</p>
-      <button onclick="setFavoriteTab('teams')">Ver sugestões</button>
+      <b>Escolha suas equipes favoritas</b>
+      <p>Entre na aba Equipes e salve 2 ou 3 times para a IA organizar seus jogos.</p>
+      <button onclick="setFavoriteTab('teams')">Escolher equipes</button>
     </div>`}
   `;
 }
-function renderFavoriteTeamsView(team){
+function renderFavoriteTeamsView(teams){
+  const favTeams = Array.isArray(teams) ? teams : (teams ? [teams] : []);
   const suggestions = ['Flamengo','Palmeiras','Corinthians','São Paulo','Liverpool','Manchester City','Argentina','Brasil'];
   return `
+    <section class="fav-v169-team-card compact fav-v123-team-picker">
+      <div class="fav-v169-panel-title">
+        <h3>Equipes favoritas</h3>
+        <span>${favTeams.length}/3 salvas</span>
+      </div>
+      <div class="fav-v169-helper">Escolha de 2 a 3 equipes para a IA organizar jogos, notícias e alertas.</div>
+
+      <div class="fav-v123-team-input">
+        <input id="favoriteTeamPageInput" class="field" placeholder="Ex.: Flamengo, Brasil, Liverpool" value="" />
+        <button class="fav-v169-save" onclick="saveFavoriteTeamFromPage()">Adicionar</button>
+      </div>
+
+      <div class="fav-v123-selected-teams">
+        ${(favTeams.length ? favTeams : ['Nenhuma equipe salva']).map(item=>favTeams.length ? `
+          <span class="fav-v123-team-chip">${safe(item)} <button onclick="removeFavoriteTeam('${safe(item)}')">×</button></span>
+        ` : `<span class="fav-v123-team-empty">${safe(item)}</span>`).join('')}
+      </div>
+    </section>
+
     <section class="fav-v169-team-card compact fav-v122-suggestions">
       <div class="fav-v169-panel-title">
         <h3>Sugestões rápidas</h3>
-        <span>${team ? 'time salvo' : 'escolha'}</span>
+        <span>toque para adicionar</span>
       </div>
       <div class="fav-v169-team-pills">
-        ${suggestions.map(item=>`<button class="fav-v169-pill ${team===item?'active':''}" onclick="selectFavoriteTeam('${item}')">${item}</button>`).join('')}
+        ${suggestions.map(item=>`<button class="fav-v169-pill ${favTeams.includes(item)?'active':''}" onclick="selectFavoriteTeam('${item}')">${item}</button>`).join('')}
       </div>
-      <div class="fav-v169-helper">Toque em uma equipe ou digite o nome no campo acima.</div>
     </section>
   `;
 }
@@ -7667,7 +7824,8 @@ function renderFavoriteNewsView(team, leagues){
 function renderFavorites(){
   const page = $('#page-favorites');
   if(!page) return;
-  const team = (localStorage.getItem('prado_favorite_team') || '').trim();
+  const teams = getFavoriteTeams();
+  const primaryTeam = teams[0] || '';
   const leagues = getFavoriteLeagues();
   const tab = getFavoriteTab();
   const tabs = [
@@ -7677,40 +7835,20 @@ function renderFavorites(){
     ['news','Notícias','▤']
   ];
   let content = '';
-  if(tab === 'teams') content = renderFavoriteTeamsView(team);
+  if(tab === 'teams') content = renderFavoriteTeamsView(teams);
   else if(tab === 'leagues') content = renderFavoriteLeaguesView(leagues);
-  else if(tab === 'news') content = renderFavoriteNewsView(team, leagues);
-  else content = renderFavoriteGamesView(team, leagues);
+  else if(tab === 'news') content = renderFavoriteNewsView(teams.length ? teams.join(', ') : primaryTeam, leagues);
+  else content = renderFavoriteGamesView(teams, leagues);
 
   page.innerHTML = `
-    <div class="fav-page-v169 fav-v122-clean">
+    <div class="fav-page-v169 fav-v122-clean fav-v123-fixed">
       <div class="fav-v169-tabs fav-v122-tabs-top">
         ${tabs.map(([key,label,ico])=>`<button class="fav-v169-tab fav-v122-tab ${tab===key?'active':''}" onclick="setFavoriteTab('${key}')"><span>${ico}</span>${label}</button>`).join('')}
       </div>
-
-      <section class="fav-v169-team-card compact fav-v122-team-main">
-        <div class="fav-v169-label">Time favorito</div>
-        <div class="fav-v169-input-row fav-v122-input-row">
-          <input id="favoriteTeamPageInput" class="field" placeholder="Ex.: Flamengo, Brasil, Liverpool" value="${safe(team)}" />
-          <button class="fav-v169-save" onclick="saveFavoriteTeamFromPage()">Salvar</button>
-        </div>
-      </section>
-
       <div class="fav-v169-content">${content}</div>
     </div>
   `;
 }
-function saveFavoriteTeamFromPage(){
-  const input = $('#favoriteTeamPageInput');
-  const team = (input?.value || '').trim();
-  localStorage.setItem('prado_favorite_team', team);
-  const settingsInput = $('#favoriteTeamInput');
-  if(settingsInput) settingsInput.value = team;
-  renderFavorites();
-  renderFavoriteFixtures?.();
-  toast(team ? `Time favorito salvo: ${team}` : 'Time favorito removido.', '⭐');
-}
-
 function renderAll(){
   renderHome(); renderLive(); renderMatchDetail(); renderAI(); renderFavorites(); renderTips(); updateNav();
 }
