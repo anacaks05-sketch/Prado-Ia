@@ -1,21 +1,22 @@
-# Prado Sports AI — V16.28 Home Pro + Destaques
+# Prado Sports AI — V16.28.1 Home Compacta
 
 ## Alterado
-- Na tela inicial, removi os 3 cards: Scanner IA, Bilhetes e IA Prado.
-- No lugar deles, coloquei o banner Prado Sports Pro em amarelo/dourado.
-- No lugar do card Melhor do dia / Over 2.5 gols, coloquei a seção Destaques do dia.
-- Mantive o restante da tela inicial sem alteração.
+- Destaques do dia ficou menor.
+- Cards dos jogos em Destaques ficaram menores.
+- Odds, escudos e textos dos cards foram reduzidos.
+- Bilhete automático ficou mais compacto.
+- Linhas do bilhete e botão Abrir bilhetes ficaram menores.
 
 ## Não alterado
 - IA aprovada
 - Favoritos aprovados
 - Campeonatos Pro aprovado
 - Ao vivo
-- Bilhetes
 - Stats
 - Configurações
 - Pagamento
 - WhatsApp
+- Estrutura da Home aprovada
 
 ## Teste
-Use: ?v=16-28
+Use: ?v=16-28-1
