@@ -1,17 +1,16 @@
-# Prado Sports AI — V16.27.1 IA Ajustada
+# Prado Sports AI — V16.28 Home Pro + Destaques
 
 ## Alterado
-- Removido o campo Pergunta do Construtor de análise.
-- Removido o botão Copiar análise da resposta da IA.
-- Botões de mercado agora ficam verdes quando clicados.
-- Topo grande da IA foi diminuído.
-- Mantido o visual premium Modelo 2 + detalhes dourados.
+- Na tela inicial, removi os 3 cards: Scanner IA, Bilhetes e IA Prado.
+- No lugar deles, coloquei o banner Prado Sports Pro em amarelo/dourado.
+- No lugar do card Melhor do dia / Over 2.5 gols, coloquei a seção Destaques do dia.
+- Mantive o restante da tela inicial sem alteração.
 
 ## Não alterado
-- Home
+- IA aprovada
+- Favoritos aprovados
+- Campeonatos Pro aprovado
 - Ao vivo
-- Favoritos
-- Campeonatos Pro
 - Bilhetes
 - Stats
 - Configurações
@@ -19,4 +18,4 @@
 - WhatsApp
 
 ## Teste
-Use: ?v=16-27-1
+Use: ?v=16-28

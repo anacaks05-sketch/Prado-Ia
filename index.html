@@ -7947,6 +7947,270 @@ body[data-page="ai"] #aiPrompt{
   }
 }
 
+
+/* ===== V16.28 — HOME: PRADO SPORTS PRO + DESTAQUES DO DIA ===== */
+body[data-page="home"] .home-v28-pro-banner{
+  position:relative;
+  overflow:hidden;
+  min-height:86px;
+  display:grid;
+  grid-template-columns:72px 1fr auto;
+  gap:12px;
+  align-items:center;
+  margin:0 0 10px;
+  padding:12px;
+  border-radius:20px;
+  border:1px solid rgba(255,224,110,.50);
+  background:
+    radial-gradient(circle at 88% 10%,rgba(255,224,110,.24),transparent 26%),
+    radial-gradient(circle at 4% 80%,rgba(255,178,62,.14),transparent 28%),
+    linear-gradient(145deg,rgba(20,16,8,.98),rgba(7,11,17,.99));
+  box-shadow:0 18px 38px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.06);
+  cursor:pointer;
+}
+body[data-page="home"] .home-v28-pro-banner::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(110deg,transparent,rgba(255,224,110,.12),transparent);
+  transform:translateX(-80%);
+  animation:homeV28Shine 3.6s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes homeV28Shine{
+  0%,55%{transform:translateX(-90%)}
+  100%{transform:translateX(90%)}
+}
+body[data-page="home"] .home-v28-rocket{
+  width:64px;
+  height:64px;
+  border-radius:18px;
+  display:grid;
+  place-items:center;
+  font-size:38px;
+  background:rgba(255,224,110,.10);
+  filter:drop-shadow(0 0 14px rgba(255,224,110,.20));
+}
+body[data-page="home"] .home-v28-pro-copy{
+  min-width:0;
+}
+body[data-page="home"] .home-v28-pro-copy h3{
+  margin:0;
+  color:var(--gold);
+  font-family:'Space Grotesk';
+  font-size:21px;
+  line-height:1;
+  letter-spacing:.02em;
+}
+body[data-page="home"] .home-v28-pro-copy p{
+  margin:7px 0 0;
+  max-width:330px;
+  color:#f3ead1;
+  font-size:12px;
+  line-height:1.35;
+  font-weight:700;
+}
+body[data-page="home"] .home-v28-pro-banner button{
+  position:relative;
+  z-index:2;
+  min-height:50px;
+  border:0;
+  border-radius:16px;
+  padding:0 16px;
+  color:#171006;
+  background:linear-gradient(135deg,#f6c34d,#fff08a,#d79a21);
+  font-size:13px;
+  font-weight:1000;
+  box-shadow:0 10px 24px rgba(255,178,62,.18);
+  white-space:nowrap;
+}
+body[data-page="home"] .home-v28-pro-banner button span{
+  font-size:22px;
+  vertical-align:-2px;
+  margin-left:6px;
+}
+body[data-page="home"] .home-v28-highlights{
+  padding:12px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.08);
+  background:linear-gradient(145deg,rgba(13,22,32,.94),rgba(7,11,17,.99));
+  box-shadow:0 18px 38px rgba(0,0,0,.16);
+}
+body[data-page="home"] .home-v28-section-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:10px;
+}
+body[data-page="home"] .home-v28-section-head h3{
+  margin:0;
+  color:#fff;
+  font-family:'Space Grotesk';
+  font-size:22px;
+  line-height:1;
+}
+body[data-page="home"] .home-v28-section-head button{
+  border:0;
+  background:transparent;
+  color:var(--green);
+  font-size:12px;
+  font-weight:900;
+  white-space:nowrap;
+}
+body[data-page="home"] .home-v28-section-head button span{
+  font-size:22px;
+  vertical-align:-4px;
+  margin-left:2px;
+}
+body[data-page="home"] .home-v28-highlight-scroll{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(160px,1fr));
+  gap:9px;
+}
+body[data-page="home"] .home-v28-match-card{
+  min-height:238px;
+  border-radius:18px;
+  padding:10px;
+  border:1px solid rgba(255,255,255,.09);
+  background:
+    radial-gradient(circle at 50% 0%,rgba(33,230,161,.08),transparent 36%),
+    linear-gradient(145deg,rgba(10,16,24,.96),rgba(4,7,12,.99));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.035);
+  cursor:pointer;
+}
+body[data-page="home"] .home-v28-match-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:8px;
+}
+body[data-page="home"] .home-v28-match-top b{
+  display:block;
+  color:#d8c685;
+  font-size:10px;
+  font-weight:900;
+  text-transform:uppercase;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+body[data-page="home"] .home-v28-match-top span{
+  display:block;
+  margin-top:3px;
+  color:var(--muted);
+  font-size:10px;
+}
+body[data-page="home"] .home-v28-match-top button{
+  border:0;
+  background:transparent;
+  color:#aeb9c8;
+  font-size:24px;
+  line-height:1;
+}
+body[data-page="home"] .home-v28-teams{
+  display:grid;
+  grid-template-columns:1fr 20px 1fr;
+  align-items:center;
+  gap:6px;
+  margin:16px 0 12px;
+}
+body[data-page="home"] .home-v28-teams div{
+  display:grid;
+  justify-items:center;
+  gap:8px;
+  min-width:0;
+}
+body[data-page="home"] .home-v28-teams strong{
+  color:#fff;
+  font-size:12px;
+  line-height:1.1;
+  text-align:center;
+  max-width:76px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+body[data-page="home"] .home-v28-teams > span{
+  color:var(--muted);
+  font-size:15px;
+  font-weight:900;
+  text-align:center;
+}
+body[data-page="home"] .home-v28-odds{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:7px;
+}
+body[data-page="home"] .home-v28-odds div{
+  min-height:54px;
+  border-radius:11px;
+  display:grid;
+  place-items:center;
+  align-content:center;
+  gap:3px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.035);
+}
+body[data-page="home"] .home-v28-odds small{
+  color:var(--muted);
+  font-size:10px;
+  font-weight:900;
+}
+body[data-page="home"] .home-v28-odds b{
+  color:var(--green);
+  font-family:'JetBrains Mono';
+  font-size:17px;
+}
+body[data-page="home"] .home-v28-market{
+  margin-top:11px;
+  padding-top:10px;
+  border-top:1px solid rgba(255,255,255,.06);
+  color:var(--muted);
+  text-align:center;
+  font-size:11px;
+  font-weight:800;
+}
+@media(max-width:430px){
+  body[data-page="home"] .home-v28-pro-banner{
+    grid-template-columns:54px 1fr;
+    min-height:82px;
+    padding:10px;
+  }
+  body[data-page="home"] .home-v28-rocket{
+    width:50px;
+    height:50px;
+    font-size:29px;
+  }
+  body[data-page="home"] .home-v28-pro-copy h3{
+    font-size:18px;
+  }
+  body[data-page="home"] .home-v28-pro-copy p{
+    font-size:11px;
+  }
+  body[data-page="home"] .home-v28-pro-banner button{
+    grid-column:1 / -1;
+    min-height:42px;
+    width:100%;
+    font-size:12px;
+  }
+  body[data-page="home"] .home-v28-highlight-scroll{
+    display:flex;
+    gap:9px;
+    overflow-x:auto;
+    padding-bottom:2px;
+    scroll-snap-type:x mandatory;
+  }
+  body[data-page="home"] .home-v28-highlight-scroll::-webkit-scrollbar{
+    display:none;
+  }
+  body[data-page="home"] .home-v28-match-card{
+    min-width:168px;
+    min-height:226px;
+    scroll-snap-align:start;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -9292,21 +9556,43 @@ function renderHome(){
       </div>
     </div>
 
-    <div class="home-v161-grid">
-      <button class="home-v161-card" onclick="goToPage('scanner')"><span class="icon">IA</span><div><b>Scanner IA</b><small>${predictions.slice(0,4).length} oportunidades</small></div></button>
-      <button class="home-v161-card" onclick="goToPage('tips')"><span class="icon">🎟</span><div><b>Bilhetes</b><small>Automático + cliente</small></div></button>
-      <button class="home-v161-card" onclick="goToPage('ai')"><span class="icon">↗</span><div><b>IA Prado</b><small>Entrada + plano B</small></div></button>
-    </div>
+    <article class="home-v28-pro-banner" onclick="goToPage('premium')">
+      <div class="home-v28-rocket">🚀</div>
+      <div class="home-v28-pro-copy">
+        <h3>PRADO SPORTS PRO</h3>
+        <p>Tenha acesso completo à IA, bilhetes, scanner, stats e muito mais.</p>
+      </div>
+      <button>♛ VER PLANOS <span>›</span></button>
+    </article>
 
     <div class="home-v161-focus">
-      ${best ? `<article class="card home-v161-best">
-        <div class="eyebrow">Melhor do dia</div>
-        <h2 class="answer-entry">${safe(best.entry)}</h2>
-        <div class="pick-sub">${safe(best.match.home.name)} x ${safe(best.match.away.name)} · ${safe(best.match.league)}</div>
-        <div class="confidence"><div class="bar"><i style="width:${best.confidence}%"></i></div><small>${best.confidence}% IA</small></div>
-        <div class="market-tags"><span class="tag green">Odd mín. ${best.oddMin.toFixed(2)}</span><span class="tag gold">${safe(best.risk)}</span><span class="tag">Prévia visual + IA Prado</span></div>
-        <button class="btn primary wide" onclick="openMatchDetail('${best.match.id}')">Ver leitura completa</button>
-      </article>` : ''}
+      <section class="home-v28-highlights">
+        <div class="home-v28-section-head">
+          <h3>Destaques do dia</h3>
+          <button onclick="goToPage('live')">Ver todos <span>›</span></button>
+        </div>
+        <div class="home-v28-highlight-scroll">
+          ${(today.length ? today : matches).slice(0,3).map((m,i)=>`
+            <article class="home-v28-match-card" onclick="openMatchDetail('${m.id}')">
+              <div class="home-v28-match-top">
+                <div><b>${safe(m.league)}</b><span>${safe(m.time || 'Hoje')}</span></div>
+                <button onclick="event.stopPropagation(); toast('Jogo salvo nos favoritos ⭐')">☆</button>
+              </div>
+              <div class="home-v28-teams">
+                <div>${crestHTML(m.home,46)}<strong>${safe(m.home.name)}</strong></div>
+                <span>x</span>
+                <div>${crestHTML(m.away,46)}<strong>${safe(m.away.name)}</strong></div>
+              </div>
+              <div class="home-v28-odds">
+                <div><small>1</small><b>${(1.80 + i*.10).toFixed(2)}</b></div>
+                <div><small>X</small><b>${(3.20 + i*.20).toFixed(2)}</b></div>
+                <div><small>2</small><b>${(3.40 + i*.40).toFixed(2)}</b></div>
+              </div>
+              <div class="home-v28-market">+${[120,150,110][i] || 100} mercados</div>
+            </article>
+          `).join('')}
+        </div>
+      </section>
 
       <article class="card home-v161-ticket">
         <h3>Bilhete automático</h3>
