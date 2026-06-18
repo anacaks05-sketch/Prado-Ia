@@ -1,22 +1,16 @@
-# Prado Sports AI — V16.29.5 Home Pro Benefícios
+# Prado Sports AI — V16.29.6 Home Pro Compacto
 
 ## Alterado
-- Removi o nome Scanner IA do hero da Home.
-- Troquei por IA Prado.
-- Botão do hero agora abre IA Prado.
-- Banner Prado Sports Pro ganhou benefícios do Premium:
-  - Bilhetes IA
-  - Leitura ao vivo
-  - Análises avançadas
-  - Alertas inteligentes
-  - Scanner Pro
-- Botão Ver Planos agora abre direto o plano Premium dentro do aplicativo.
-- Mantive a Configurações compacta iPhone da V16.29.4.
+- Card Prado Sports Pro ficou menor.
+- Benefícios Premium ficaram em linha mais compacta.
+- Texto do card ficou mais limpo.
+- Botão Ver Planos mantido abrindo o plano dentro do app.
 
 ## Não alterado
 - Home Scanner dinâmica
 - Jogos monitorados pela IA
 - Campo/mapa de calor
+- Configurações compacta iPhone
 - IA aprovada
 - Favoritos
 - Campeonatos Pro
@@ -27,4 +21,4 @@
 - WhatsApp
 
 ## Teste
-Use: ?v=16-29-5
+Use: ?v=16-29-6
