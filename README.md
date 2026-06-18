@@ -1,16 +1,18 @@
-# Prado Sports AI — V16.29.2 Home Campo Organizado
+# Prado Sports AI — V16.29.3 Home Sem Contadores no Hero
 
 ## Alterado
-- Campo/mapa de calor ficou maior.
-- Campo ficou mais largo e mais organizado.
-- Área, meio de campo e círculo central ficaram mais proporcionais.
-- Scanner e odds ficaram abaixo do campo, mais alinhados.
-- Mantido preto e dourado.
-- Mantida rotação automática de jogos, odds e mapa.
+- Removi os 3 contadores do bloco Scanner IA para hoje:
+  - Jogos lidos
+  - Ao vivo
+  - Top IA
+- Ajustei a altura do bloco para não ficar espaço vazio.
 
 ## Não alterado
-- Banner Prado Sports Pro
+- Prado Sports Pro
 - Jogos monitorados pela IA
+- Prado Scanner AI
+- Campo/mapa de calor organizado
+- Rotação automática de jogos, odds e mapa
 - IA aprovada
 - Favoritos
 - Campeonatos Pro
@@ -22,4 +24,4 @@
 - WhatsApp
 
 ## Teste
-Use: ?v=16-29-2
+Use: ?v=16-29-3
