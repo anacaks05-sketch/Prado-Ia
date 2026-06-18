@@ -8987,6 +8987,174 @@ body[data-page="home"] .home-v291-score{color:var(--gold);font-family:'JetBrains
   body[data-page="home"] .home-v291-team strong{font-size:9px}
 }
 
+
+/* ===== V16.29.2 — HOME / CAMPO MAIS ORGANIZADO ===== */
+body[data-page="home"] .home-v291-live-scanner{
+  border-color:rgba(255,224,110,.68) !important;
+  background:
+    radial-gradient(circle at 24% 36%,rgba(255,224,110,.12),transparent 30%),
+    radial-gradient(circle at 86% 8%,rgba(255,178,62,.10),transparent 28%),
+    linear-gradient(145deg,rgba(12,10,7,.99),rgba(4,6,8,.99)) !important;
+}
+body[data-page="home"] .home-v291-scan-head{
+  align-items:center !important;
+  margin-bottom:13px !important;
+}
+body[data-page="home"] .home-v291-scan-head > div{
+  flex-wrap:wrap !important;
+}
+body[data-page="home"] .home-v291-scan-head h3{
+  font-size:20px !important;
+  letter-spacing:.04em !important;
+  white-space:normal !important;
+  max-width:230px !important;
+}
+body[data-page="home"] .home-v291-scan-head span{
+  min-height:26px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  padding:0 9px !important;
+  border-radius:9px !important;
+  border:1px solid rgba(255,224,110,.30) !important;
+  background:rgba(255,224,110,.06) !important;
+  color:var(--gold) !important;
+}
+body[data-page="home"] .home-v291-scan-grid{
+  grid-template-columns:1fr !important;
+  gap:12px !important;
+}
+body[data-page="home"] .home-v291-field{
+  height:205px !important;
+  border-radius:16px !important;
+  border-color:rgba(255,224,110,.78) !important;
+  background:
+    radial-gradient(circle at 18% 35%,rgba(255,224,110,.08),transparent 25%),
+    radial-gradient(circle at 78% 60%,rgba(255,178,62,.08),transparent 26%),
+    linear-gradient(145deg,rgba(30,25,12,.70),rgba(7,8,8,.98)) !important;
+  box-shadow:inset 0 0 34px rgba(255,224,110,.08), 0 0 20px rgba(255,224,110,.07) !important;
+}
+body[data-page="home"] .home-v291-field::before{
+  background:
+    linear-gradient(90deg,rgba(255,224,110,.18) 1px,transparent 1px),
+    linear-gradient(0deg,rgba(255,224,110,.10) 1px,transparent 1px) !important;
+  opacity:.45 !important;
+}
+body[data-page="home"] .home-v291-field .mid{
+  width:2px !important;
+  background:rgba(255,224,110,.78) !important;
+}
+body[data-page="home"] .home-v291-field .circle{
+  width:70px !important;
+  height:70px !important;
+  border-color:rgba(255,224,110,.78) !important;
+}
+body[data-page="home"] .home-v291-field .box{
+  top:25% !important;
+  width:70px !important;
+  height:94px !important;
+  border-color:rgba(255,224,110,.78) !important;
+}
+body[data-page="home"] .home-v291-field .box.left::after,
+body[data-page="home"] .home-v291-field .box.right::after{
+  content:"";
+  position:absolute;
+  top:28%;
+  width:34px;
+  height:42px;
+  border:1px solid rgba(255,224,110,.70);
+}
+body[data-page="home"] .home-v291-field .box.left::after{
+  left:0;
+  border-left:0;
+}
+body[data-page="home"] .home-v291-field .box.right::after{
+  right:0;
+  border-right:0;
+}
+body[data-page="home"] .home-v291-spot{
+  background:radial-gradient(circle,#fff4a4 0%,#ffbd36 35%,rgba(255,178,45,.25) 70%,transparent 100%) !important;
+  box-shadow:0 0 24px rgba(255,178,45,.72) !important;
+}
+body[data-page="home"] .home-v291-heat-wrap p{
+  margin-top:9px !important;
+  font-size:10px !important;
+  color:#d9bd67 !important;
+}
+body[data-page="home"] .home-v291-markets{
+  gap:7px !important;
+}
+body[data-page="home"] .home-v291-markets button{
+  min-height:38px !important;
+  border-radius:12px !important;
+  grid-template-columns:1fr 52px 44px !important;
+  padding:0 11px !important;
+  background:rgba(255,224,110,.045) !important;
+}
+body[data-page="home"] .home-v291-markets span{
+  font-size:11px !important;
+  letter-spacing:.04em !important;
+}
+body[data-page="home"] .home-v291-markets b,
+body[data-page="home"] .home-v291-markets em{
+  font-size:11px !important;
+}
+body[data-page="home"] .home-v291-live-top{
+  margin-top:2px !important;
+}
+body[data-page="home"] .home-v291-live-top h4{
+  font-size:14px !important;
+}
+body[data-page="home"] .home-v291-live-rows article{
+  min-height:60px !important;
+  border-radius:14px !important;
+  border-color:rgba(255,224,110,.26) !important;
+}
+body[data-page="home"] .home-v291-score{
+  color:var(--gold) !important;
+  font-size:18px !important;
+}
+
+@media(max-width:430px){
+  body[data-page="home"] .home-v291-scan-head h3{
+    font-size:18px !important;
+    max-width:185px !important;
+  }
+  body[data-page="home"] .home-v291-scan-head span{
+    font-size:8px !important;
+  }
+  body[data-page="home"] .home-v291-field{
+    height:178px !important;
+  }
+  body[data-page="home"] .home-v291-field .circle{
+    width:58px !important;
+    height:58px !important;
+  }
+  body[data-page="home"] .home-v291-field .box{
+    top:27% !important;
+    width:54px !important;
+    height:80px !important;
+  }
+  body[data-page="home"] .home-v291-field .box.left::after,
+  body[data-page="home"] .home-v291-field .box.right::after{
+    width:26px !important;
+    height:34px !important;
+  }
+  body[data-page="home"] .home-v291-markets button{
+    min-height:36px !important;
+  }
+  body[data-page="home"] .home-v291-live-rows article{
+    min-height:58px !important;
+  }
+}
+@media(max-width:390px){
+  body[data-page="home"] .home-v291-field{
+    height:166px !important;
+  }
+  body[data-page="home"] .home-v291-scan-head h3{
+    font-size:16px !important;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
