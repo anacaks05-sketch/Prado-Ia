@@ -1,15 +1,16 @@
-# Prado Sports AI — V16.29 Home Scanner Pro
+# Prado Sports AI — V16.29.1 Home Dinâmica Scanner
 
 ## Alterado
-- Mantive o bloco Scanner IA para hoje na Home.
 - Removi Destaques do dia.
 - Removi Bilhete automático.
 - Removi Jogos de hoje.
-- Adicionei banner Prado Sports Pro.
+- Mantive Scanner IA para hoje.
+- Mantive banner Prado Sports Pro.
 - Adicionei Jogos monitorados pela IA.
-- Adicionei painel Prado Scanner AI no estilo do vídeo.
-- Campo do mapa de calor ficou preto e dourado.
-- Removi o nome True Signal AI e usei Prado Scanner AI.
+- Adicionei Prado Scanner AI com mapa de calor preto e dourado.
+- Jogos do scanner mudam automaticamente.
+- Odds e mercados mudam automaticamente.
+- Mapa de calor muda automaticamente.
 
 ## Não alterado
 - IA aprovada
@@ -23,4 +24,4 @@
 - WhatsApp
 
 ## Teste
-Use: ?v=16-29
+Use: ?v=16-29-1
