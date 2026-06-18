@@ -9322,6 +9322,113 @@ body[data-page="home"] .home-panel-copy{
   }
 }
 
+
+/* ===== V16.29.5 — HOME PRO BENEFÍCIOS + VER PLANOS INTERNO ===== */
+
+/* Hero: remove aparência de scanner antigo */
+body[data-page="home"] .hero-v161 .home-panel-copy h1{
+  max-width:290px !important;
+}
+body[data-page="home"] .hero-v161 .home-panel-actions .btn.ghost{
+  color:#fff !important;
+  border-color:rgba(255,255,255,.18) !important;
+  background:rgba(255,255,255,.075) !important;
+}
+
+/* Banner Prado Sports Pro com benefícios reais */
+body[data-page="home"] .home-v295-pro-benefits{
+  display:grid !important;
+  grid-template-columns:1fr !important;
+  gap:11px !important;
+  min-height:auto !important;
+  padding:14px !important;
+  cursor:pointer;
+}
+body[data-page="home"] .home-v295-pro-benefits::after{
+  right:18px !important;
+  top:8px !important;
+  font-size:90px !important;
+}
+body[data-page="home"] .home-v295-pro-benefits .home-v291-pro-copy{
+  position:relative;
+  z-index:1;
+  padding-right:70px;
+}
+body[data-page="home"] .home-v295-pro-benefits .home-v291-pro-copy h3{
+  font-size:23px !important;
+}
+body[data-page="home"] .home-v295-pro-benefits .home-v291-pro-copy p{
+  color:#fff4c4 !important;
+  font-size:12px !important;
+  text-transform:none !important;
+  letter-spacing:.01em !important;
+  font-weight:800 !important;
+}
+body[data-page="home"] .home-v295-benefits{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:7px;
+}
+body[data-page="home"] .home-v295-benefits span{
+  min-height:58px;
+  border-radius:15px;
+  padding:7px 5px;
+  display:grid;
+  place-items:center;
+  align-content:center;
+  gap:5px;
+  text-align:center;
+  border:1px solid rgba(255,224,110,.18);
+  background:rgba(255,224,110,.055);
+  color:var(--gold);
+}
+body[data-page="home"] .home-v295-benefits b{
+  color:#fff7d5;
+  font-size:8.2px;
+  line-height:1.15;
+  font-weight:900;
+}
+body[data-page="home"] .home-v295-pro-benefits button{
+  width:100% !important;
+  min-height:44px !important;
+  border-radius:14px !important;
+  font-size:12px !important;
+}
+
+/* Destaque rápido no plano quando abrir Configurações */
+#settingsModal .premium-focus-v295{
+  animation:premiumFocusV295 1.2s ease-in-out 1;
+}
+@keyframes premiumFocusV295{
+  0%,100%{box-shadow:0 0 0 rgba(255,224,110,0)}
+  45%{box-shadow:0 0 0 4px rgba(255,224,110,.22), 0 0 34px rgba(255,224,110,.22)}
+}
+
+@media(max-width:430px){
+  body[data-page="home"] .home-v295-pro-benefits{
+    padding:12px !important;
+    gap:9px !important;
+  }
+  body[data-page="home"] .home-v295-pro-benefits .home-v291-pro-copy h3{
+    font-size:20px !important;
+  }
+  body[data-page="home"] .home-v295-pro-benefits .home-v291-pro-copy p{
+    font-size:11px !important;
+  }
+  body[data-page="home"] .home-v295-benefits{
+    grid-template-columns:repeat(3,1fr);
+  }
+  body[data-page="home"] .home-v295-benefits span{
+    min-height:50px;
+    border-radius:13px;
+  }
+  body[data-page="home"] .home-v295-benefits b{
+    font-size:7.6px;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -10718,11 +10825,11 @@ function renderHome(){
       <div class="hero-content home-panel-grid">
         <div class="home-panel-copy">
           <div class="home-kicker">Painel Prado · Futebol</div>
-          <h1>Scanner IA <span>para hoje.</span></h1>
+          <h1>IA Prado <span>para hoje.</span></h1>
           <p>Jogos ao vivo, bilhetes por risco e análise rápida em uma tela premium.</p>
           <div class="home-panel-actions">
             <button class="btn primary" onclick="goToPage('live')">Ao vivo</button>
-            <button class="btn ghost" onclick="goToPage('scanner')">Scanner IA</button>
+            <button class="btn ghost" onclick="goToPage('ai')">IA Prado</button>
           </div>
         </div>
         <div class="home-panel-stats">
@@ -10733,12 +10840,19 @@ function renderHome(){
       </div>
     </div>
 
-    <article class="home-v291-pro-banner" onclick="goToPage('premium')">
+    <article class="home-v291-pro-banner home-v295-pro-benefits" onclick="openPlansPanel()">
       <div class="home-v291-pro-copy">
         <h3>PRADO SPORTS PRO</h3>
-        <p>Máxima performance para seus resultados.</p>
+        <p>Desbloqueie todo o poder da IA Prado.</p>
       </div>
-      <button>VER PLANOS <span>›</span></button>
+      <div class="home-v295-benefits">
+        <span>🎟️<b>Bilhetes IA</b></span>
+        <span>📡<b>Leitura ao vivo</b></span>
+        <span>📈<b>Análises avançadas</b></span>
+        <span>🔔<b>Alertas inteligentes</b></span>
+        <span>⚡<b>Scanner Pro</b></span>
+      </div>
+      <button onclick="event.stopPropagation(); openPlansPanel()">VER PLANOS <span>›</span></button>
     </article>
 
     <section class="home-v291-monitor">
@@ -11562,6 +11676,23 @@ async function unlockPremium(){
     toast('Código inválido. Confira com o suporte.', '⚠️');
   }
 }
+
+function openPlansPanel(){
+  const settings = $('#settingsModal');
+  if(!settings){
+    openPayment();
+    return;
+  }
+  document.body.classList.add('modal-open');
+  if(!settings.open) settings.showModal();
+  setTimeout(()=>{
+    const premium = $('#settingsModal .premium-v1621') || $('#settingsModal .premium-v1620') || $('#settingsModal [class*="premium"]');
+    premium?.scrollIntoView({behavior:'smooth', block:'start'});
+    premium?.classList.add('premium-focus-v295');
+    setTimeout(()=>premium?.classList.remove('premium-focus-v295'), 1800);
+  }, 120);
+}
+
 function openPayment(){
   const link = PRADO_CONFIG.PAYMENT_LINK || '';
   if(link && !link.includes('SEU-LINK')) window.open(link, '_blank');
