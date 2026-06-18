@@ -9753,6 +9753,9 @@ body[data-page="home"] .home-v295-pro-benefits button{
 window.PRADO_CONFIG = {
   API_KEY: '',
   API_BASE: 'https://v3.football.api-sports.io',
+  ODDS_API_PROXY: '/api/odds',
+  ODDS_REGIONS: 'eu,uk',
+  ODDS_MARKETS: 'h2h,totals',
   TIMEZONE: 'America/Fortaleza',
 
   // Cole aqui seu link real de pagamento.
@@ -9885,6 +9888,137 @@ window.PradoFootballAPI = (() => {
   return { fixturesByDate, liveFixtures, prediction, browserKey, todayISO };
 })();
 
+
+  </script>
+  <script>
+/* =====================================================
+   Odds API adapter — Prado Sports AI
+   Usa /api/odds com ODDS_API_KEY protegida na Vercel
+===================================================== */
+window.PradoOddsAPI = (() => {
+  const cfg = () => window.PRADO_CONFIG || {};
+
+  function cleanName(name){
+    return String(name || '')
+      .toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+      .replace(/\b(fc|sc|ec|cf|ac|afc|club|clube|de|da|do|the)\b/g,'')
+      .replace(/[^a-z0-9]+/g,' ')
+      .trim();
+  }
+
+  function tokens(name){
+    return cleanName(name).split(/\s+/).filter(t=>t.length > 2);
+  }
+
+  function teamScore(a,b){
+    const aa = cleanName(a), bb = cleanName(b);
+    if(!aa || !bb) return 0;
+    if(aa === bb) return 1;
+    if(aa.includes(bb) || bb.includes(aa)) return .88;
+    const ta = tokens(a), tb = tokens(b);
+    if(!ta.length || !tb.length) return 0;
+    const hit = ta.filter(t=>tb.includes(t)).length;
+    return hit / Math.max(ta.length, tb.length);
+  }
+
+  async function allOdds(){
+    const params = new URLSearchParams();
+    params.set('regions', cfg().ODDS_REGIONS || 'eu,uk');
+    params.set('markets', cfg().ODDS_MARKETS || 'h2h,totals');
+    params.set('oddsFormat', 'decimal');
+    const url = `${cfg().ODDS_API_PROXY || '/api/odds'}?${params.toString()}`;
+    const res = await fetch(url, { cache: 'no-store' });
+    if(!res.ok) throw new Error(`Odds API erro ${res.status}`);
+    const data = await res.json();
+    if(data.error) throw new Error(data.error);
+    return data.response || data.events || [];
+  }
+
+  function bestPrice(outcomes, nameTest){
+    let best = null;
+    (outcomes || []).forEach(o=>{
+      if(nameTest(o.name || '', o.point)){
+        const price = Number(o.price);
+        if(Number.isFinite(price) && (!best || price > best)) best = price;
+      }
+    });
+    return best;
+  }
+
+  function normalizeEvent(event){
+    const result = {
+      id: event.id || '',
+      sportKey: event.sport_key || '',
+      league: event.sport_title || '',
+      home: event.home_team || '',
+      away: event.away_team || '',
+      commenceTime: event.commence_time || '',
+      h2h: {},
+      totals: {}
+    };
+
+    const allMarkets = [];
+    (event.bookmakers || []).forEach(book=>{
+      (book.markets || []).forEach(m=>allMarkets.push(m));
+    });
+
+    const h2hMarkets = allMarkets.filter(m=>m.key === 'h2h');
+    h2hMarkets.forEach(m=>{
+      const outcomes = m.outcomes || [];
+      const home = bestPrice(outcomes, n=>teamScore(n, result.home) >= .55);
+      const away = bestPrice(outcomes, n=>teamScore(n, result.away) >= .55);
+      const draw = bestPrice(outcomes, n=>/draw|empate/i.test(n));
+      if(home) result.h2h.home = Math.max(result.h2h.home || 0, home);
+      if(away) result.h2h.away = Math.max(result.h2h.away || 0, away);
+      if(draw) result.h2h.draw = Math.max(result.h2h.draw || 0, draw);
+    });
+
+    const totalMarkets = allMarkets.filter(m=>m.key === 'totals');
+    totalMarkets.forEach(m=>{
+      const outcomes = m.outcomes || [];
+      const over25 = bestPrice(outcomes, (n,p)=>/over/i.test(n) && Number(p) === 2.5);
+      const over15 = bestPrice(outcomes, (n,p)=>/over/i.test(n) && Number(p) === 1.5);
+      const over35 = bestPrice(outcomes, (n,p)=>/over/i.test(n) && Number(p) === 3.5);
+      if(over15) result.totals.over15 = Math.max(result.totals.over15 || 0, over15);
+      if(over25) result.totals.over25 = Math.max(result.totals.over25 || 0, over25);
+      if(over35) result.totals.over35 = Math.max(result.totals.over35 || 0, over35);
+    });
+
+    return result;
+  }
+
+  function matchEvent(match, events){
+    let best = null;
+    let bestScore = 0;
+    (events || []).forEach(event=>{
+      const e = normalizeEvent(event);
+      const direct = (teamScore(match.home?.name, e.home) + teamScore(match.away?.name, e.away)) / 2;
+      const inverse = (teamScore(match.home?.name, e.away) + teamScore(match.away?.name, e.home)) / 2;
+      const score = Math.max(direct, inverse);
+      if(score > bestScore){
+        bestScore = score;
+        best = e;
+      }
+    });
+    return bestScore >= .45 ? best : null;
+  }
+
+  function mergeMatches(matches, events){
+    return (matches || []).map(match=>{
+      const event = matchEvent(match, events);
+      if(!event) return match;
+      return {
+        ...match,
+        odds: event,
+        oddsSource: 'Odds API'
+      };
+    });
+  }
+
+  return { allOdds, mergeMatches, normalizeEvent };
+})();
+
   </script>
   <script>
 /* =====================================================
@@ -9998,6 +10132,39 @@ function sameDay(iso){ return String(iso).slice(0,10) === todayKey(); }
 function logo(team){ return team.logo || TEAM_LOGOS[team.name] || ''; }
 function safe(s){ return String(s || '').replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
 
+
+function pickRealOddForMarket(match, marketType, market){
+  const odds = match?.odds;
+  if(!odds) return null;
+  const text = String(market || '').toLowerCase();
+
+  if(text.includes('over 1.5') && odds.totals?.over15) return odds.totals.over15;
+  if(text.includes('over 2.5') && odds.totals?.over25) return odds.totals.over25;
+  if(text.includes('over 3.5') && odds.totals?.over35) return odds.totals.over35;
+
+  if(marketType === 'resultado'){
+    const h = odds.h2h || {};
+    if(text.includes(String(match.home?.name || '').toLowerCase()) && h.home) return h.home;
+    if(text.includes(String(match.away?.name || '').toLowerCase()) && h.away) return h.away;
+    return h.home || h.away || h.draw || null;
+  }
+
+  return odds.totals?.over25 || odds.totals?.over15 || odds.h2h?.home || odds.h2h?.away || null;
+}
+
+async function enrichMatchesWithOdds(matches){
+  try{
+    const oddsEvents = await PradoOddsAPI.allOdds();
+    const merged = PradoOddsAPI.mergeMatches(matches, oddsEvents);
+    const hits = merged.filter(m=>m.odds).length;
+    state.oddsStatus = hits ? `Odds API · ${hits} jogos com odds` : 'Odds API sem correspondência';
+    return merged;
+  }catch(err){
+    state.oddsStatus = 'Odds API não conectada';
+    return matches;
+  }
+}
+
 function computePredictions(matches){
   return matches.map((m, i) => {
     const s = m.stats || {};
@@ -10013,6 +10180,9 @@ function computePredictions(matches){
     if(Math.abs(formGap) > 18 && base > 68){ market = formGap > 0 ? `${m.home.name} empate anula` : `${m.away.name} empate anula`; marketType = 'resultado'; oddMin = 1.45; }
     if((s.cornersAvg || 8) > 9.7 && pressure > 66){ market = 'Over 8.5 escanteios'; marketType = 'escanteios'; oddMin = 1.60; }
     if((s.cardsAvg || 3.5) > 4.7){ market = 'Over 3.5 cartões'; marketType = 'cartões'; oddMin = 1.50; }
+
+    const realOdd = pickRealOddForMarket(m, marketType, market);
+    if(realOdd) oddMin = realOdd;
 
     const risk = base >= 82 && oddMin <= 1.50 ? 'conservador' : oddMin >= 1.65 ? 'agressivo' : 'moderado';
     const valueScore = clamp(Math.round(base + (oddMin-1.25)*18 + (m.status==='live'?8:0)), 55, 98);
@@ -10033,7 +10203,7 @@ function computePredictions(matches){
       risk,
       reasons,
       status:m.status,
-      source:m.apiId ? 'API real + IA Prado' : 'Prévia visual + IA Prado'
+      source:m.odds ? 'API-Football + Odds API + IA Prado' : m.apiId ? 'API-Football + IA Prado' : 'Prévia visual + IA Prado'
     };
   }).sort((a,b)=>b.valueScore-a.valueScore);
 }
@@ -10051,9 +10221,10 @@ async function loadData(){
     if(live.status === 'fulfilled') rows.push(...live.value);
     const unique = [...new Map(rows.map(m=>[m.id,m])).values()].slice(0,80);
     if(unique.length){
-      state.matches = unique;
+      state.matches = await enrichMatchesWithOdds(unique);
       state.source = 'api';
-      dataStatus.textContent = `API conectada · ${unique.length} jogos carregados`;
+      const oddsHits = state.matches.filter(m=>m.odds).length;
+      dataStatus.textContent = oddsHits ? `API-Football + Odds API · ${unique.length} jogos · ${oddsHits} com odds` : `API-Football conectada · ${unique.length} jogos · Odds depois`;
     }else throw new Error('Sem jogos na API');
   }catch(err){
     state.matches = makeDemoMatches();
@@ -10859,6 +11030,18 @@ function homeScannerRows(step=0){
   `).join('');
 }
 function homeScannerMarketRows(step=0){
+  const preds = filteredPredictions();
+  if(preds.length){
+    const ordered = preds.slice(step % preds.length).concat(preds).slice(0,4);
+    return ordered.map(p=>`
+      <button onclick="openMatchDetail('${p.match.id}')">
+        <span>${safe(p.entry)}</span>
+        <b>${Number(p.oddMin || 1.50).toFixed(2)}</b>
+        <em>${p.confidence}%</em>
+      </button>
+    `).join('');
+  }
+
   const markets = getHomeScannerMarkets();
   const ordered = markets.slice(step % markets.length).concat(markets).slice(0,4);
   return ordered.map((m,i)=>`
