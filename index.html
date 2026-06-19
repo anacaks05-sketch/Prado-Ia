@@ -9592,6 +9592,99 @@ body[data-page="home"] .home-v302-market-empty{
   grid-column:1 / -1;
 }
 
+
+/* ===== V16.30.3 — ABAS REAIS PROTEGIDAS ===== */
+.real-safe-wrap{
+  padding:12px 14px 120px;
+}
+.real-safe-head{
+  border:1px solid rgba(255,224,110,.22);
+  border-radius:22px;
+  padding:16px;
+  background:
+    radial-gradient(circle at 85% 0%,rgba(255,224,110,.14),transparent 34%),
+    linear-gradient(145deg,rgba(18,24,34,.96),rgba(8,12,18,.98));
+  margin-bottom:12px;
+}
+.real-safe-head b{
+  display:block;
+  color:var(--gold);
+  font-family:'Space Grotesk';
+  font-size:24px;
+  letter-spacing:.01em;
+}
+.real-safe-head span{
+  display:block;
+  color:var(--muted);
+  margin-top:5px;
+  font-size:13px;
+  line-height:1.35;
+}
+.real-safe-head small{
+  display:block;
+  margin-top:8px;
+  color:#ffb23e;
+  font-size:10px;
+  line-height:1.35;
+}
+.real-safe-list{
+  display:grid;
+  gap:8px;
+}
+.real-safe-row{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  align-items:center;
+  min-height:64px;
+  padding:12px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.035);
+}
+.real-safe-row b{
+  display:block;
+  color:#fff;
+  font-size:13px;
+  line-height:1.2;
+}
+.real-safe-row span{
+  display:block;
+  color:var(--muted);
+  font-size:10px;
+  margin-top:4px;
+  line-height:1.25;
+}
+.real-safe-row strong{
+  color:var(--green);
+  font-family:'JetBrains Mono';
+  font-size:13px;
+  white-space:nowrap;
+}
+.real-safe-empty{
+  border:1px solid rgba(255,178,62,.24);
+  border-radius:18px;
+  padding:16px;
+  color:var(--gold);
+  background:rgba(255,178,62,.055);
+  font-size:13px;
+  font-weight:800;
+}
+.real-safe-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  margin-top:12px;
+}
+.real-safe-actions button{
+  min-height:46px;
+  border-radius:15px;
+  border:1px solid rgba(255,224,110,.24);
+  background:rgba(255,224,110,.08);
+  color:var(--gold);
+  font-weight:900;
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -10774,8 +10867,90 @@ function renderFavorites(){
     </div>
   `;
 }
+function renderRealPageFallback(page, err=null){
+  const matches = state.matches || [];
+  const preds = state.predictions || [];
+  const matchItems = matches.slice(0,12).map(m=>`
+    <article class="real-safe-row" onclick="openMatchDetail('${m.id}')">
+      <div>
+        <b>${safe(m.home?.name || 'Mandante')} x ${safe(m.away?.name || 'Visitante')}</b>
+        <span>${safe(m.league || 'Campeonato')} · ${m.status==='live' ? `${m.minute || 0}' ao vivo` : m.status==='finished' ? 'Finalizado' : formatTime(m.date)}</span>
+      </div>
+      <strong>${m.status==='live' || m.status==='finished' ? `${m.score?.home ?? 0}-${m.score?.away ?? 0}` : 'Abrir'}</strong>
+    </article>
+  `).join('');
+
+  const predItems = preds.slice(0,8).map(p=>`
+    <article class="real-safe-row" onclick="openMatchDetail('${p.match.id}')">
+      <div>
+        <b>${safe(p.entry)}</b>
+        <span>${safe(p.match.home?.name)} x ${safe(p.match.away?.name)} · ${p.confidence}% IA · odd ${Number(p.oddMin || 1).toFixed(2)}</span>
+      </div>
+      <strong>IA</strong>
+    </article>
+  `).join('');
+
+  const titles = {
+    live:'Jogos reais carregados',
+    ai:'IA Prado com jogos reais',
+    favorites:'Favoritos',
+    tips:'Bilhetes IA com jogos reais',
+    home:'Home Prado AI',
+    match:'Detalhes da partida'
+  };
+
+  const subtitles = {
+    live:'A aba Ao vivo foi protegida para não ficar em branco.',
+    ai:'A IA está usando os jogos reais carregados pela API-Football.',
+    favorites:'Escolha seus times e campeonatos favoritos para personalizar a IA.',
+    tips:'Bilhetes gerados com base nas partidas reais disponíveis.',
+    home:'Dados reais carregados pela API-Football.',
+    match:'Abra um jogo para ver os detalhes.'
+  };
+
+  if(page === 'favorites'){
+    return `<div class="real-safe-wrap">
+      <div class="real-safe-head"><b>${titles[page]}</b><span>${subtitles[page]}</span></div>
+      <div class="real-safe-actions">
+        <button onclick="document.getElementById('openSettingsMini')?.click()">Abrir Configurações</button>
+        <button onclick="goToPage('home')">Voltar Home</button>
+      </div>
+    </div>`;
+  }
+
+  const body = page === 'ai' || page === 'tips' ? (predItems || matchItems) : (matchItems || predItems);
+
+  return `<div class="real-safe-wrap">
+    <div class="real-safe-head">
+      <b>${titles[page] || 'Prado AI'}</b>
+      <span>${subtitles[page] || 'Aba protegida para teste.'}</span>
+      ${err ? `<small>Diagnóstico: ${safe(String(err.message || err).slice(0,120))}</small>` : ''}
+    </div>
+    <div class="real-safe-list">${body || `<div class="real-safe-empty">Nenhum jogo real carregado nesta aba. Confira APISPORTS_KEY e faça redeploy.</div>`}</div>
+  </div>`;
+}
+
+function renderSafePage(page, fn){
+  const el = $(`#page-${page}`);
+  try{
+    fn();
+    if(el && !String(el.innerHTML || '').trim()){
+      el.innerHTML = renderRealPageFallback(page);
+    }
+  }catch(err){
+    console.error(`Erro ao renderizar ${page}:`, err);
+    if(el) el.innerHTML = renderRealPageFallback(page, err);
+  }
+}
+
 function renderAll(){
-  renderHome(); renderLive(); renderMatchDetail(); renderAI(); renderFavorites(); renderTips(); updateNav();
+  renderSafePage('home', renderHome);
+  renderSafePage('live', renderLive);
+  renderSafePage('match', renderMatchDetail);
+  renderSafePage('ai', renderAI);
+  renderSafePage('favorites', renderFavorites);
+  renderSafePage('tips', renderTips);
+  updateNav();
 }
 function filteredMatches(){
   const q = state.search.trim().toLowerCase();
@@ -11706,7 +11881,7 @@ function renderAI(){
             <span>PRADO SPORTS <b>AI</b></span>
             <small>Modelo Premium · Favoritos conectados</small>
           </div>
-          <button class="ia-v127-pro" onclick="goToPage('premium')">♛ PRO</button>
+          <button class="ia-v127-pro" onclick="openPlansPanel()">♛ PRO</button>
         </div>
 
         <div class="ia-v127-hero-main">
@@ -12105,7 +12280,17 @@ function goToPage(page){
   document.body.dataset.page = page;
   $$('.page').forEach(p=>p.classList.remove('active'));
   $(`#page-${page}`)?.classList.add('active');
-  if(page === 'match') renderMatchDetail();
+
+  const renderMap = {
+    home: renderHome,
+    live: renderLive,
+    match: renderMatchDetail,
+    ai: renderAI,
+    favorites: renderFavorites,
+    tips: renderTips
+  };
+  if(renderMap[page]) renderSafePage(page, renderMap[page]);
+
   updateNav();
   window.scrollTo({top:0,behavior:'smooth'});
 }

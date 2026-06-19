@@ -1,17 +1,12 @@
-# Prado Sports AI — V16.30.2 Somente Jogos Reais
+# Prado Sports AI — V16.30.3 Abas Reais Corrigidas
 
-## Alterado
-- Removi o modo demo da carga principal.
-- Se a API-Football não carregar, o app não mostra jogos de demonstração.
-- Home mostra claramente: Aguardando API-Football.
-- Green, Red e Aguardando Resultado agora são calculados pelas entradas da IA do dia.
-- Green/Red só é contado quando o jogo terminou e o mercado pode ser conferido pelo placar.
-- Entradas sem resultado oficial suficiente ficam em Aguardando Resultado.
-- Scanner não inventa mercados se não tiver jogo real.
-
-## Variáveis Vercel
-APISPORTS_KEY
-ODDS_API_KEY
+## Corrigido
+- As abas não ficam mais em branco.
+- Ao Vivo, IA, Favoritos e Bilhetes agora têm proteção de renderização.
+- Se alguma aba der erro, o app mostra uma lista real dos jogos carregados em vez de tela vazia.
+- Ao trocar de aba, ela renderiza novamente com segurança.
+- Mantido: somente jogos reais, sem demo.
+- Mantido: Green/Red/Aguardando Resultado pelas entradas da IA do dia.
 
 ## Teste
-Use: ?v=16-30-2
+Use: ?v=16-30-3
