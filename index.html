@@ -9560,6 +9560,38 @@ body[data-page="home"] .home-v301-api-status span{
   }
 }
 
+
+/* ===== V16.30.2 — SOMENTE JOGOS REAIS + RESULTADO IA DO DIA ===== */
+body[data-page="home"] .home-v302-ia-results button strong{
+  font-family:'JetBrains Mono';
+}
+body[data-page="home"] .home-v302-ia-results small{
+  text-transform:none !important;
+  letter-spacing:0 !important;
+  font-size:10px !important;
+}
+body[data-page="home"] .home-v302-empty-real{
+  grid-template-columns:1fr !important;
+  min-height:68px !important;
+  cursor:default !important;
+}
+body[data-page="home"] .home-v302-empty-real div{
+  padding:4px 8px;
+}
+body[data-page="home"] .home-v302-empty-real b{
+  color:var(--gold);
+  font-size:13px;
+}
+body[data-page="home"] .home-v302-empty-real span{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:11px;
+}
+body[data-page="home"] .home-v302-market-empty{
+  grid-column:1 / -1;
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -10088,7 +10120,7 @@ const state = {
   scannerFilter: 'all',
   premium: localStorage.getItem('prado_premium') === 'true',
   profile: JSON.parse(localStorage.getItem('prado_profile') || 'null'),
-  source: 'demo',
+  source: 'real-only',
   oddsStatus: 'Odds API aguardando teste',
   selectedMatchId: null,
   detailTab: 'summary',
@@ -10280,10 +10312,11 @@ async function loadData(){
       dataStatus.textContent = oddsHits ? `API-Football + Odds API · ${unique.length} jogos · ${oddsHits} com odds` : `API-Football conectada · ${unique.length} jogos · Odds depois`;
     }else throw new Error('Sem jogos na API');
   }catch(err){
-    state.matches = makeDemoMatches();
-    state.source = 'demo';
+    state.matches = [];
+    state.predictions = [];
+    state.source = 'real-only';
     state.oddsStatus = 'Odds API não testada porque a API-Football não carregou';
-    dataStatus.textContent = 'Prévia visual · API depois';
+    dataStatus.textContent = 'Somente jogos reais · configure APISPORTS_KEY na Vercel';
   }
   state.predictions = computePredictions(state.matches);
   renderAll();
@@ -11073,12 +11106,14 @@ function homeScannerRows(step=0){
   const matches = filteredMatches();
   const live = matches.filter(m=>m.status==='live');
   const pool = (live.length ? live : matches).slice(0,8);
-  if(!pool.length) return '';
+  if(!pool.length){
+    return `<article class="home-v302-empty-real"><div><b>Sem jogos reais carregados</b><span>Configure APISPORTS_KEY e faça redeploy na Vercel.</span></div></article>`;
+  }
   return pool.slice(step % Math.max(1,pool.length), pool.length).concat(pool).slice(0,2).map((m,i)=>`
     <article onclick="openMatchDetail('${m.id}')">
       <div class="home-v291-min"><b>${m.status==='live'?'AO VIVO':m.status==='finished'?'ENCERRADO':'HOJE'}</b><span>${m.status==='live' ? `${m.minute || 0}'` : formatTime(m.date)}</span></div>
       <div class="home-v291-team">${crestHTML(m.home,30)}<strong>${safe(m.home.name)}</strong></div>
-      <div class="home-v291-score">${m.score?.home ?? ((step+i)%2)} - ${m.score?.away ?? ((step+i+1)%2)}</div>
+      <div class="home-v291-score">${m.score?.home ?? 0} - ${m.score?.away ?? 0}</div>
       <div class="home-v291-team right"><strong>${safe(m.away.name)}</strong>${crestHTML(m.away,30)}</div>
     </article>
   `).join('');
@@ -11096,15 +11131,7 @@ function homeScannerMarketRows(step=0){
     `).join('');
   }
 
-  const markets = getHomeScannerMarkets();
-  const ordered = markets.slice(step % markets.length).concat(markets).slice(0,4);
-  return ordered.map((m,i)=>`
-    <button>
-      <span>${safe(m[0])}</span>
-      <b>${(Number(m[1]) + ((step+i)%3)*0.03).toFixed(2)}</b>
-      <em>${Math.min(96, m[2] + ((step+i)%4))}%</em>
-    </button>
-  `).join('');
+  return `<button class="home-v302-market-empty"><span>Aguardando jogos reais</span><b>--</b><em>IA</em></button>`;
 }
 function startHomeDynamicScanner(){
   if(window.pradoHomeScannerTimer) clearInterval(window.pradoHomeScannerTimer);
@@ -11126,6 +11153,47 @@ function startHomeDynamicScanner(){
   window.pradoHomeScannerTimer = setInterval(update, 3200);
 }
 
+
+function evaluateIaPickResult(pred){
+  const m = pred?.match;
+  if(!m) return 'pending';
+  if(m.status !== 'finished') return 'pending';
+
+  const home = Number(m.score?.home ?? 0);
+  const away = Number(m.score?.away ?? 0);
+  const total = home + away;
+  const entry = String(pred.entry || '').toLowerCase();
+
+  if(entry.includes('over 1.5')) return total > 1.5 ? 'green' : 'red';
+  if(entry.includes('over 2.5')) return total > 2.5 ? 'green' : 'red';
+  if(entry.includes('over 3.5')) return total > 3.5 ? 'green' : 'red';
+
+  if(entry.includes('empate anula')){
+    const homeName = String(m.home?.name || '').toLowerCase();
+    const awayName = String(m.away?.name || '').toLowerCase();
+    if(home === away) return 'pending';
+    if(entry.includes(homeName)) return home > away ? 'green' : 'red';
+    if(entry.includes(awayName)) return away > home ? 'green' : 'red';
+    return 'pending';
+  }
+
+  if(entry.includes('escanteio') || entry.includes('cart')) return 'pending';
+
+  return 'pending';
+}
+
+function dailyIaResults(){
+  const preds = filteredPredictions();
+  const result = { green:0, red:0, pending:0, total:preds.length };
+  preds.forEach(p=>{
+    const status = evaluateIaPickResult(p);
+    if(status === 'green') result.green++;
+    else if(status === 'red') result.red++;
+    else result.pending++;
+  });
+  return result;
+}
+
 function renderHome(){
   const matches = filteredMatches();
   const live = matches.filter(m=>m.status==='live');
@@ -11136,8 +11204,9 @@ function renderHome(){
   const monitoredTotal = matches.length;
   const scheduledTotal = today.length;
   const finishedTotal = finished.length;
-  const apiLabel = state.source === 'api' ? 'API-Football conectada' : 'Modo prévia/demo';
+  const apiLabel = state.source === 'api' ? 'API-Football conectada' : 'Aguardando API-Football';
   const oddsLabel = oddsHits ? `Odds reais em ${oddsHits} jogos` : (state.oddsStatus || 'Odds API aguardando');
+  const iaDay = dailyIaResults();
 
   $('#page-home').innerHTML = `
     <div class="hero hero-v161">
@@ -11177,7 +11246,7 @@ function renderHome(){
     <section class="home-v301-api-status">
       <div class="${state.source === 'api' ? 'ok' : 'warn'}">
         <b>${apiLabel}</b>
-        <span>${monitoredTotal} jogos reais carregados</span>
+        <span>${state.source === 'api' ? `${monitoredTotal} jogos reais carregados` : 'Nenhum jogo demo será exibido'}</span>
       </div>
       <div class="${oddsHits ? 'ok' : 'warn'}">
         <b>${oddsHits ? 'Odds API conectada' : 'Odds API aguardando'}</b>
@@ -11198,10 +11267,10 @@ function renderHome(){
         <div><b>${finishedTotal}</b><span>Finalizados</span></div>
       </div>
 
-      <div class="home-v291-status">
-        <button class="green"><span>✓</span><div><b>Green</b><small>0 bilhetes</small></div><strong>0</strong><em>⌃</em></button>
-        <button class="red"><span>×</span><div><b>Red</b><small>0 bilhetes</small></div><strong>0</strong><em>⌄</em></button>
-        <button class="yellow"><span>◷</span><div><b>Aguardando Resultado</b><small>0 bilhetes</small></div><strong>0</strong><em>⌄</em></button>
+      <div class="home-v291-status home-v302-ia-results">
+        <button class="green"><span>✓</span><div><b>Green</b><small>${iaDay.green} entrada${iaDay.green===1?'':'s'} da IA no dia</small></div><strong>${iaDay.green}</strong><em>⌃</em></button>
+        <button class="red"><span>×</span><div><b>Red</b><small>${iaDay.red} entrada${iaDay.red===1?'':'s'} da IA no dia</small></div><strong>${iaDay.red}</strong><em>⌄</em></button>
+        <button class="yellow"><span>◷</span><div><b>Aguardando Resultado</b><small>${iaDay.pending} entrada${iaDay.pending===1?'':'s'} ainda aberta${iaDay.pending===1?'':'s'}</small></div><strong>${iaDay.pending}</strong><em>⌄</em></button>
       </div>
     </section>
 

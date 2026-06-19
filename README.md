@@ -1,18 +1,17 @@
-# Prado Sports AI — V16.30.1 APIs Diagnóstico
+# Prado Sports AI — V16.30.2 Somente Jogos Reais
 
-## O que mudou
-- Removi contadores falsos/fixos da Home.
-- Agora os números mostram o que carregou de verdade.
-- Adicionei status visível:
-  - API-Football conectada ou Modo prévia/demo
-  - Odds API conectada ou aguardando
-- Scanner não mostra mais 128 jogos fixos.
-- Ao vivo não mostra mais número fake.
-- Se não configurar as chaves, o app mostra claramente que está em prévia/demo.
+## Alterado
+- Removi o modo demo da carga principal.
+- Se a API-Football não carregar, o app não mostra jogos de demonstração.
+- Home mostra claramente: Aguardando API-Football.
+- Green, Red e Aguardando Resultado agora são calculados pelas entradas da IA do dia.
+- Green/Red só é contado quando o jogo terminou e o mercado pode ser conferido pelo placar.
+- Entradas sem resultado oficial suficiente ficam em Aguardando Resultado.
+- Scanner não inventa mercados se não tiver jogo real.
 
 ## Variáveis Vercel
 APISPORTS_KEY
 ODDS_API_KEY
 
 ## Teste
-Use: ?v=16-30-1
+Use: ?v=16-30-2
