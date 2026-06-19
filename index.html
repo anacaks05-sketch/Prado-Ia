@@ -9507,6 +9507,59 @@ body[data-page="home"] .home-v295-pro-benefits button{
   }
 }
 
+
+/* ===== V16.30.1 — DIAGNÓSTICO API REAL ===== */
+body[data-page="home"] .home-v301-api-status{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin:-2px 0 10px;
+}
+body[data-page="home"] .home-v301-api-status div{
+  min-height:54px;
+  border-radius:16px;
+  padding:10px;
+  display:grid;
+  gap:3px;
+  align-content:center;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.035);
+}
+body[data-page="home"] .home-v301-api-status div.ok{
+  border-color:rgba(33,230,161,.28);
+  background:rgba(33,230,161,.06);
+}
+body[data-page="home"] .home-v301-api-status div.warn{
+  border-color:rgba(255,178,62,.26);
+  background:rgba(255,178,62,.055);
+}
+body[data-page="home"] .home-v301-api-status b{
+  color:#fff;
+  font-size:11px;
+  font-weight:950;
+  line-height:1.1;
+}
+body[data-page="home"] .home-v301-api-status div.ok b{
+  color:var(--green);
+}
+body[data-page="home"] .home-v301-api-status div.warn b{
+  color:var(--gold);
+}
+body[data-page="home"] .home-v301-api-status span{
+  color:var(--muted);
+  font-size:9px;
+  line-height:1.25;
+  font-weight:800;
+}
+@media(max-width:390px){
+  body[data-page="home"] .home-v301-api-status{
+    grid-template-columns:1fr;
+  }
+  body[data-page="home"] .home-v301-api-status div{
+    min-height:46px;
+  }
+}
+
 </style>
 </head>
 <body data-page="home">
@@ -9888,8 +9941,8 @@ window.PradoFootballAPI = (() => {
   return { fixturesByDate, liveFixtures, prediction, browserKey, todayISO };
 })();
 
-
   </script>
+
   <script>
 /* =====================================================
    Odds API adapter — Prado Sports AI
@@ -9963,8 +10016,7 @@ window.PradoOddsAPI = (() => {
       (book.markets || []).forEach(m=>allMarkets.push(m));
     });
 
-    const h2hMarkets = allMarkets.filter(m=>m.key === 'h2h');
-    h2hMarkets.forEach(m=>{
+    allMarkets.filter(m=>m.key === 'h2h').forEach(m=>{
       const outcomes = m.outcomes || [];
       const home = bestPrice(outcomes, n=>teamScore(n, result.home) >= .55);
       const away = bestPrice(outcomes, n=>teamScore(n, result.away) >= .55);
@@ -9974,8 +10026,7 @@ window.PradoOddsAPI = (() => {
       if(draw) result.h2h.draw = Math.max(result.h2h.draw || 0, draw);
     });
 
-    const totalMarkets = allMarkets.filter(m=>m.key === 'totals');
-    totalMarkets.forEach(m=>{
+    allMarkets.filter(m=>m.key === 'totals').forEach(m=>{
       const outcomes = m.outcomes || [];
       const over25 = bestPrice(outcomes, (n,p)=>/over/i.test(n) && Number(p) === 2.5);
       const over15 = bestPrice(outcomes, (n,p)=>/over/i.test(n) && Number(p) === 1.5);
@@ -10020,6 +10071,7 @@ window.PradoOddsAPI = (() => {
 })();
 
   </script>
+
   <script>
 /* =====================================================
    PRADO SPORTS AI V12 — Bilhetes IA + IA Prado + Scanner
@@ -10037,6 +10089,7 @@ const state = {
   premium: localStorage.getItem('prado_premium') === 'true',
   profile: JSON.parse(localStorage.getItem('prado_profile') || 'null'),
   source: 'demo',
+  oddsStatus: 'Odds API aguardando teste',
   selectedMatchId: null,
   detailTab: 'summary',
   lastMainPage: 'home',
@@ -10157,7 +10210,7 @@ async function enrichMatchesWithOdds(matches){
     const oddsEvents = await PradoOddsAPI.allOdds();
     const merged = PradoOddsAPI.mergeMatches(matches, oddsEvents);
     const hits = merged.filter(m=>m.odds).length;
-    state.oddsStatus = hits ? `Odds API · ${hits} jogos com odds` : 'Odds API sem correspondência';
+    state.oddsStatus = hits ? `Odds reais em ${hits} jogos` : 'Odds API sem correspondência para os jogos de hoje';
     return merged;
   }catch(err){
     state.oddsStatus = 'Odds API não conectada';
@@ -10229,6 +10282,7 @@ async function loadData(){
   }catch(err){
     state.matches = makeDemoMatches();
     state.source = 'demo';
+    state.oddsStatus = 'Odds API não testada porque a API-Football não carregou';
     dataStatus.textContent = 'Prévia visual · API depois';
   }
   state.predictions = computePredictions(state.matches);
@@ -11022,7 +11076,7 @@ function homeScannerRows(step=0){
   if(!pool.length) return '';
   return pool.slice(step % Math.max(1,pool.length), pool.length).concat(pool).slice(0,2).map((m,i)=>`
     <article onclick="openMatchDetail('${m.id}')">
-      <div class="home-v291-min"><b>AO VIVO</b><span>${m.minute || ([45,18,62,33][(step+i)%4])}'</span></div>
+      <div class="home-v291-min"><b>${m.status==='live'?'AO VIVO':m.status==='finished'?'ENCERRADO':'HOJE'}</b><span>${m.status==='live' ? `${m.minute || 0}'` : formatTime(m.date)}</span></div>
       <div class="home-v291-team">${crestHTML(m.home,30)}<strong>${safe(m.home.name)}</strong></div>
       <div class="home-v291-score">${m.score?.home ?? ((step+i)%2)} - ${m.score?.away ?? ((step+i+1)%2)}</div>
       <div class="home-v291-team right"><strong>${safe(m.away.name)}</strong>${crestHTML(m.away,30)}</div>
@@ -11064,7 +11118,7 @@ function startHomeDynamicScanner(){
     heat.innerHTML = homeScannerHeatSpots(step);
     rows.innerHTML = homeScannerRows(step);
     markets.innerHTML = homeScannerMarketRows(step);
-    if(liveLabel) liveLabel.textContent = `AO VIVO ${(step % 4) + 2}/5`;
+    if(liveLabel) liveLabel.textContent = `${filteredMatches().filter(m=>m.status==='live').length} AO VIVO`;
     step++;
     sessionStorage.setItem('prado_home_scan_step', String(step));
   };
@@ -11077,9 +11131,13 @@ function renderHome(){
   const live = matches.filter(m=>m.status==='live');
   const today = matches.filter(m=>sameDay(m.date) && m.status!=='live');
   const predictions = filteredPredictions();
-  const monitoredTotal = Math.max(174, matches.length);
-  const scheduledTotal = Math.max(49, today.length);
-  const finishedTotal = 118;
+  const finished = matches.filter(m=>m.status==='finished');
+  const oddsHits = matches.filter(m=>m.odds).length;
+  const monitoredTotal = matches.length;
+  const scheduledTotal = today.length;
+  const finishedTotal = finished.length;
+  const apiLabel = state.source === 'api' ? 'API-Football conectada' : 'Modo prévia/demo';
+  const oddsLabel = oddsHits ? `Odds reais em ${oddsHits} jogos` : (state.oddsStatus || 'Odds API aguardando');
 
   $('#page-home').innerHTML = `
     <div class="hero hero-v161">
@@ -11116,6 +11174,17 @@ function renderHome(){
       <button onclick="event.stopPropagation(); openPlansPanel()">VER PLANOS <span>›</span></button>
     </article>
 
+    <section class="home-v301-api-status">
+      <div class="${state.source === 'api' ? 'ok' : 'warn'}">
+        <b>${apiLabel}</b>
+        <span>${monitoredTotal} jogos reais carregados</span>
+      </div>
+      <div class="${oddsHits ? 'ok' : 'warn'}">
+        <b>${oddsHits ? 'Odds API conectada' : 'Odds API aguardando'}</b>
+        <span>${oddsLabel}</span>
+      </div>
+    </section>
+
     <section class="home-v291-monitor">
       <div class="home-v291-title">
         <span>👁</span>
@@ -11124,7 +11193,7 @@ function renderHome(){
 
       <div class="home-v291-kpis">
         <div><b>${monitoredTotal}</b><span>Total</span></div>
-        <div class="red"><b>${live.length || 5}</b><span>Ao vivo</span></div>
+        <div class="red"><b>${live.length}</b><span>Ao vivo</span></div>
         <div class="blue"><b>${scheduledTotal}</b><span>Agendados</span></div>
         <div><b>${finishedTotal}</b><span>Finalizados</span></div>
       </div>
@@ -11139,7 +11208,7 @@ function renderHome(){
     <section class="home-v291-live-scanner">
       <div class="home-v291-scan-head">
         <div><i></i><h3>Prado Scanner AI</h3><span>Scanner ao vivo</span></div>
-        <b>${Math.max(128, matches.length)} jogos</b>
+        <b>${matches.length} jogos</b>
       </div>
 
       <div class="home-v291-scan-grid">
